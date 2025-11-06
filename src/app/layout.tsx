@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
@@ -75,6 +76,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <Analytics />
+        <SpeedInsights />
         <WhatsAppWidget phoneNumber="919889988408" message={whatsappMessage} />
       </body>
     </html>
