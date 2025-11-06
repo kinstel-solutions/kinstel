@@ -75,8 +75,8 @@ export default function RootLayout({
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, fontSerif.variable)}>
         {children}
         <Toaster />
-        <Analytics />
-        <SpeedInsights />
+        <Analytics /> // Vercel Analytics
+        <SpeedInsights /> // Vercel Speed Insights
         <WhatsAppWidget phoneNumber="919889988408" message={whatsappMessage} />
       </body>
     </html>
