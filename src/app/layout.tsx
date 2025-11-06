@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css';
 import { cn } from '@/lib/utils';
@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { fontSans, fontSerif } from '@/app/fonts';
 import { WhatsAppWidget } from '@/components/ui/whatsapp-widget';
 import { siteConfig } from '@/lib/site-config';
+import GoogleAnalytics from '@/components/GA-analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -75,8 +76,14 @@ export default function RootLayout({
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, fontSerif.variable)}>
         {children}
         <Toaster />
-        <Analytics /> // Vercel Analytics
-        <SpeedInsights /> // Vercel Speed Insights
+        {/* Google Analytics (GA4) client component — loads gtag.js & tracks pageviews */}
+        <GoogleAnalytics />
+
+        {/* Vercel Analytics */}
+        <VercelAnalytics />
+
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
         <WhatsAppWidget phoneNumber="919889988408" message={whatsappMessage} />
       </body>
     </html>
