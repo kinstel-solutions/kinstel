@@ -4,32 +4,32 @@ import { Palette, Rocket, CheckCircle } from 'lucide-react';
 const services = [
   {
     icon: <Palette className="h-8 w-8 text-accent" />,
-    title: 'Custom Web Design',
-    description: 'We create unique, professional websites that reflect your brand and vision.',
+    title: 'Credibility by Design',
+    description: 'Our law firm website development process focuses on clean layouts and strong visuals that reflect your professionalism.',
   },
   {
     icon: <Rocket className="h-8 w-8 text-accent" />,
-    title: 'Responsive Development',
-    description: 'We build fast, mobile-friendly websites that work perfectly on all devices.',
+    title: 'Performance & SEO',
+    description: 'We build blazing-fast, SEO-friendly websites designed to rank higher and convert visitors into clients.',
   },
   {
     icon: <CheckCircle className="h-8 w-8 text-accent" />,
-    title: 'Performance & SEO',
-    description: 'Our websites are optimized for speed and search engines to help you reach a wider audience.',
+    title: 'Conversion-Focused UX',
+    description: 'With a focus on user experience and SEO for lawyers, our designs ensure visitors can easily take action.',
   },
 ];
 
-export function Services() {
+export function ServicesLawyer() {
   return (
     <section id="services" className="bg-secondary py-20 sm:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-semibold uppercase tracking-wider text-accent">Designed for Growth</p>
+          <p className="font-semibold uppercase tracking-wider text-accent">Built for Trust. Designed for Growth.</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Modern <span className="text-accent">Web Design</span> Services
+            Strategic <span className="text-accent">Legal Marketing</span> Services
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            We build beautiful, high-performing websites that are designed to convert visitors into customers. Every project is built around speed, simplicity, and strategic design.
+            We don’t just make websites—we craft digital first impressions that convert visitors into clients. Every project is built around speed, simplicity, and strategic design tailored for legal professionals.
           </p>
         </div>
         <div className="mt-16 grid gap-8 md:grid-cols-3">

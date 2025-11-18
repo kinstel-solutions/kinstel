@@ -6,42 +6,42 @@ import { ArrowRight } from "lucide-react";
 
 const portfolioItems = [
   {
-    image: "/showcase-1.png",
-    imageHint: "screenshot of a modern website dashboard",
-    title: "SaaS Platform",
-    category: "Web Application",
-    metrics: ["UI/UX Design", "Next.js", "Scalability"],
-    link: "#"
+    image: "/advratnasingh.png",
+    imageHint: "screenshot advocate ratna singh website",
+    title: "Advocate Ratna Singh",
+    category: "Independent Advocate",
+    metrics: ["Modern Design", "Client-Focused"],
+    link: "https://advratnasingh.vercel.app/"
   },
   {
-    image: "/showcase-2.png",
-    imageHint: "screenshot of a creative agency website",
-    title: "Creative Agency",
-    category: "Branding & Identity",
-    metrics: ["Visual Design", "Webflow", "Animations"],
-    link: "#"
+    image: "/ababneh-law.png",
+    imageHint: "screenshot ababneh and associates law firm website",
+    title: "Ababneh & Associates",
+    category: "International Law Firm",
+    metrics: ["Multilingual", "Corporate Branding"],
+    link: "https://ababneh-law.vercel.app/"
   },
   {
-    image: "/showcase-3.png",
-    imageHint: "screenshot of an e-commerce website for a fashion brand",
-    title: "E-commerce Store",
-    category: "Online Retail",
-    metrics: ["Shopify", "Conversion Rate", "Mobile-First"],
-    link: "#"
+    image: "/advonex.png",
+    imageHint: "screenshot advonex legal consultancy website",
+    title: "Advonex",
+    category: "Modern Legal Consultancy",
+    metrics: ["Sleek UI", "Fast Load Times"],
+    link: "https://advonex.vercel.app/"
   }
 ];
 
-export function Portfolio() {
+export function PortfolioLawyer() {
   return (
     <section id="portfolio" className="bg-background py-20 sm:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-semibold uppercase tracking-wider text-accent">Our Work</p>
+          <p className="font-semibold uppercase tracking-wider text-accent">Proven Results</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Websites That <span className="text-accent">Drive Growth</span>
+            Legal Marketing That <span className="text-accent">Delivers Results</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            We create beautiful, high-performing websites that deliver measurable results for our clients. Explore some of our recent projects.
+            We've helped law firms across different practice areas increase their online presence and generate more qualified leads through expert website development.
           </p>
         </div>
         
@@ -55,7 +55,7 @@ export function Portfolio() {
                 <div className="relative h-64 w-full overflow-hidden">
                   <Image 
                     src={item.image} 
-                    alt={`Showcase of the ${item.title} project`}
+                    alt={`Showcase of the ${item.title} website project`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -75,7 +75,7 @@ export function Portfolio() {
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
                     <span className="flex items-center text-sm font-semibold text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      View Project <ArrowRight className="ml-2 h-4 w-4" />
+                      View Live Site <ArrowRight className="ml-2 h-4 w-4" />
                     </span>
                 </CardFooter>
               </Card>

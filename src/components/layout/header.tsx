@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils';
 import { SmartCtaButton } from '../ui/smart-cta-button';
 
 const navLinks = [
-  { href: '/home', label: 'Home' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#portfolio', label: 'Portfolio' },
+  { href: '/lawyers', label: 'For Lawyers' },
+  { href: '#services', label: 'Services' },
+  { href: '#portfolio', label: 'Portfolio' },
   { href: '/contact', label: 'Contact' },
 ];
 

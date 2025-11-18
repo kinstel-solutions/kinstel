@@ -5,23 +5,23 @@ const stats = [
     icon: <Zap className="h-8 w-8 text-accent" />,
     value: '98%',
     label: 'Page Speed Score',
-    description: 'Blazing-fast load times to keep your users engaged.',
+    description: 'Blazing-fast load times to keep potential clients engaged.',
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
     value: '150+',
-    label: 'Clients Served',
-    description: 'Trusted by businesses across various industries.',
+    label: 'Law Firms Served',
+    description: 'Trusted by legal professionals across various practice areas.',
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
     value: '300%',
-    label: 'Avg. Conversion Uplift',
+    label: 'Avg. Lead Increase',
     description: 'Our conversion-focused designs deliver measurable results.',
   },
 ];
 
-export function Stats() {
+export function StatsLawyer() {
   return (
     <section id="stats" className="bg-secondary py-20 sm:py-28">
       <div className="container mx-auto px-4 md:px-6">
