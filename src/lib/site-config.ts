@@ -2,14 +2,14 @@ export const siteConfig = {
   name: 'Kinstel',
   url: 'https://kinstel.com',
   ogImage: 'https://kinstel.com/og-image.png',
-  title: 'Kinstel | Premier Law Firm Marketing Firm for Legal Growth',
+  title: 'Kinstel | Premier Web Design & Digital Marketing Agency',
   description:
-    'Kinstel empowers lawyers and law firms to elevate their practice with custom website development, proven SEO, and legally compliant marketing.',
+    'Kinstel is a leading web design and digital marketing agency that helps businesses grow with professional websites, SEO, and targeted marketing strategies.',
   keywords: [
-    'law firm marketing firm',
-    'legal marketing firm',
-    'website developers for lawyers',
-    'law firm website development',
-    'law firm seo'
+    'web design agency',
+    'digital marketing agency',
+    'professional website design',
+    'seo services',
+    'digital marketing strategies',
   ],
 };

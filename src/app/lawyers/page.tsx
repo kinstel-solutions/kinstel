@@ -4,6 +4,19 @@ import { HeroLawyer } from '@/components/sections/hero-lawyer';
 import dynamic from 'next/dynamic';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CallToActionLawyer } from '@/components/sections/call-to-action-lawyer';
+import { type Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Kinstel | Premier Law Firm Marketing Firm for Legal Growth',
+    description: 'Kinstel empowers lawyers and law firms to elevate their practice with custom website development, proven SEO, and legally compliant marketing.',
+    keywords: [
+        'law firm marketing firm',
+        'legal marketing firm',
+        'website developers for lawyers',
+        'law firm website development',
+        'law firm seo'
+    ],
+  };
 
 const StatsLawyer = dynamic(() => import('@/components/sections/stats-lawyer').then(m => m.StatsLawyer), {
   loading: () => <Skeleton className="h-48 w-full" />,
