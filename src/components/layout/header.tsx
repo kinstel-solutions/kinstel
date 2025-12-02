@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { SmartCtaButton } from "../ui/smart-cta-button";
@@ -20,6 +25,7 @@ export function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -51,7 +57,8 @@ export function Header() {
           asChild>
           <Link
             href={link.href}
-            className="text-sm font-medium transition-colors">
+            className="text-sm font-medium transition-colors"
+            onClick={() => setIsSheetOpen(false)}>
             {link.label}
           </Link>
         </Button>
@@ -59,7 +66,8 @@ export function Header() {
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
-        className={cn(isMobile && "w-full", "ml-4")}>
+        className={cn(isMobile && "w-full", "ml-4")}
+        onClick={() => setIsSheetOpen(false)}>
         Inquire Now
       </SmartCtaButton>
     </nav>
@@ -86,7 +94,9 @@ export function Header() {
           />
         </Link>
         {isMobile ? (
-          <Sheet>
+          <Sheet
+            open={isSheetOpen}
+            onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -98,6 +108,7 @@ export function Header() {
             <SheetContent
               side="right"
               className="pt-16 w-full">
+              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
               {navContent}
             </SheetContent>
           </Sheet>
