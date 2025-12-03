@@ -26,9 +26,10 @@ export function InquiryForm() {
     resolver: zodResolver(inquirySchema),
     defaultValues: {
       name: '',
-      firm: '',
+      businessName: '',
       email: '',
       phone: '',
+      subject: '',
       details: '',
     },
   });
@@ -78,12 +79,12 @@ export function InquiryForm() {
                 />
                 <FormField
                     control={form.control}
-                    name="firm"
+                    name="businessName"
                     render={({ field }) => (
                     <FormItem>
-                        <FormLabel>Law Firm (Optional)</FormLabel>
+                        <FormLabel>Business Name (Optional)</FormLabel>
                         <FormControl>
-                        <Input placeholder="Doe & Associates" {...field} />
+                        <Input placeholder="Acme Inc." {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -118,6 +119,19 @@ export function InquiryForm() {
                     )}
                 />
                 </div>
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Subject</FormLabel>
+                      <FormControl>
+                        <Input placeholder="e.g., Project Proposal" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <FormField
                 control={form.control}
                 name="details"

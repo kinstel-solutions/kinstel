@@ -2,10 +2,19 @@ import { z } from 'zod';
 
 export const inquirySchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  firm: z.string().optional(),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  businessName: z.string().optional(),
+  email: z.string().email({ message: 'Please enter a valid email address.' }).optional(),
   phone: z.string().optional(),
-  details: z.string().min(10, { message: 'Please provide at least 10 characters of details.' }).max(500, {message: 'Details cannot exceed 500 characters.'}),
+  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
+  details: z.string().optional(),
+}).superRefine((data, ctx) => {
+    if (!data.email && !data.phone) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: "Please provide either an email or a phone number.",
+            path: ["email"],
+        });
+    }
 });
 
 export type InquiryFormValues = z.infer<typeof inquirySchema>;
