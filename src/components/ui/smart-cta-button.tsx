@@ -10,6 +10,7 @@ interface SmartCtaButtonProps extends ButtonProps {
   emailSubject?: string;
   emailBody?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
 export function SmartCtaButton({
@@ -18,6 +19,7 @@ export function SmartCtaButton({
   emailSubject = 'Website Inquiry',
   emailBody = 'Hello, I was on your website and would like to learn more about your services.',
   children,
+  onClick,
   ...props
 }: SmartCtaButtonProps) {
   const isMobile = useIsMobile();
@@ -42,7 +44,7 @@ export function SmartCtaButton({
 
   return (
     <Button asChild {...props}>
-      <a href={href}>{children}</a>
+      <a href={href} onClick={onClick}>{children}</a>
     </Button>
   );
 }

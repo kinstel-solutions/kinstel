@@ -1,99 +1,114 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
-import { SmartCtaButton } from '../ui/smart-cta-button';
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import { SmartCtaButton } from "../ui/smart-cta-button";
+import Image from "next/image";
 
 const navLinks = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#portfolio', label: 'Portfolio' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/lawyers", label: "For Lawyers" },
+  { href: "#services", label: "Services" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
     const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
     checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener("resize", checkIsMobile);
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('resize', checkIsMobile);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("resize", checkIsMobile);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const navContent = (
-    <nav className={cn('flex items-center gap-1', isMobile ? 'flex-col space-y-4 pt-8' : 'space-x-4')}>
+    <nav
+      className={cn(
+        "flex items-center gap-1",
+        isMobile ? "flex-col space-y-4 pt-8" : "space-x-4",
+      )}>
       {navLinks.map((link) => (
-        <Button key={link.href} variant="ghost" asChild>
+        <Button
+          key={link.href}
+          variant="ghost"
+          asChild>
           <Link
             href={link.href}
             className="text-sm font-medium transition-colors"
-          >
+            onClick={() => setIsSheetOpen(false)}>
             {link.label}
           </Link>
         </Button>
       ))}
-       <SmartCtaButton 
-          phoneNumber="+919889988408" 
-          email="contact@kinstel.com"
-          className={cn(isMobile && 'w-full', 'ml-4')}
-        >
-          Inquire Now
-        </SmartCtaButton>
+      <SmartCtaButton
+        phoneNumber="+919889988408"
+        email="contact@kinstel.com"
+        className={cn(isMobile && "w-full", "ml-4")}
+        onClick={() => setIsSheetOpen(false)}>
+        Inquire Now
+      </SmartCtaButton>
     </nav>
   );
 
-  if (!isClient) {
-    // Render a placeholder header on the server to avoid layout shift
-    return (
-      <header className="sticky top-0 z-50 w-full bg-transparent">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold font-headline text-foreground">
-              <span className=" text-accent">K</span>instel
-            </span>
-          </Link>
-        </div>
-      </header>
-    );
-  }
-
   return (
-    <header className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300', 
-        isScrolled ? 'border-b border-border/40 bg-background/95 backdrop-blur-sm' : 'bg-transparent'
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isScrolled
+          ? "border-b border-border/40 bg-background/95 backdrop-blur-sm"
+          : "bg-transparent",
       )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold font-headline text-foreground">
-            <span className="text-accent">K</span>instel
-          </span>
+        <Link
+          href="/"
+          className="flex items-center gap-2">
+          <Image
+            src="/Logo.svg"
+            alt="Kinstel Logo"
+            width={150}
+            height={40}
+            className="object-contain"
+          />
         </Link>
-
         {isMobile ? (
-          <Sheet>
+          <Sheet
+            open={isSheetOpen}
+            onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button
+                variant="ghost"
+                size="icon">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="pt-16 w-full">
+            <SheetContent
+              side="right"
+              className="pt-16 w-full">
+              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
               {navContent}
             </SheetContent>
           </Sheet>
