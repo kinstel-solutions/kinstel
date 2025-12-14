@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface PortfolioItem {
     image: string;
@@ -114,7 +114,7 @@ export function PortfolioSection({
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
                   <span className="flex items-center text-sm font-semibold text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    View Project <ArrowRight className="ml-2 h-4 w-4" />
+                    View Project <ArrowUpRight className="ml-2 h-5 w-5" />
                   </span>
                 </CardFooter>
               </Card>

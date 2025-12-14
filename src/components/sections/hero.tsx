@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { HeroIllustration } from './hero-illustration';
+import { ArrowUpRight } from 'lucide-react';
 
 interface HeroProps {
   title: React.ReactNode;
@@ -34,7 +34,7 @@ export function HeroSection({
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="shadow-lg shadow-primary/20">
               <Link href={primaryButtonLink}>
-                {primaryButtonText} <ArrowRight className="ml-2" />
+                {primaryButtonText} <ArrowUpRight className="ml-1 h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
