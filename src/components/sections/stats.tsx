@@ -1,6 +1,17 @@
-import { Award, Users, Zap } from 'lucide-react';
+import { Award, Users, Zap, LucideIcon } from 'lucide-react';
 
-const stats = [
+interface StatItem {
+  icon: React.ReactNode;
+  value: string;
+  label: string;
+  description: string;
+}
+
+interface StatsProps {
+  items: StatItem[];
+}
+
+const defaultStats: StatItem[] = [
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
     value: '98%',
@@ -21,12 +32,12 @@ const stats = [
   },
 ];
 
-export function Stats() {
+export function StatsSection({ items }: StatsProps) {
   return (
     <section id="stats" className="bg-secondary py-20 sm:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {stats.map((stat, index) => (
+          {items.map((stat, index) => (
             <div
               key={index}
               className="flex flex-col items-center p-6 text-center animate-in fade-in slide-in-from-bottom-5"
@@ -42,4 +53,8 @@ export function Stats() {
       </div>
     </section>
   );
+}
+
+export function Stats() {
+  return <StatsSection items={defaultStats} />;
 }

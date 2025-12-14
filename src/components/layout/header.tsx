@@ -16,6 +16,7 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/lawyers", label: "For Lawyers" },
+  { href: "/lucknow", label: "Lucknow" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },

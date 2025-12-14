@@ -55,6 +55,16 @@ export function Footer() {
                 className="text-muted-foreground hover:text-foreground">
                 Contact
               </Link>
+              <Link
+                href="/lawyers"
+                className="text-muted-foreground hover:text-foreground">
+                For Lawyers
+              </Link>
+              <Link
+                href="/lucknow"
+                className="text-muted-foreground hover:text-foreground">
+                Lucknow
+              </Link>
             </div>
             <div className="grid gap-2">
               <h3 className="font-semibold">Legal</h3>
