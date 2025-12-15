@@ -20,6 +20,7 @@ export default {
         sans: ['var(--font-sans)', 'sans-serif'],
         headline: ['var(--font-serif)', 'serif'],
         code: ['monospace'],
+        logo: ['var(--font-logo)', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

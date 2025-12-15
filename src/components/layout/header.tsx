@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { KLogo } from "@/components/ui/k-logo";
 import { SmartCtaButton } from "../ui/smart-cta-button";
 import Image from "next/image";
 
@@ -51,31 +52,30 @@ export function Header() {
         "flex items-center gap-6",
         isMobile ? "flex-col space-y-4 pt-8 gap-0" : "space-x-1",
       )}>
-      {navLinks.map((link) => (
+      {navLinks.map((link) =>
         isMobile ? (
-             <Button
-              key={link.href}
-              variant="ghost"
-              asChild
-              className="w-full justify-start text-lg h-auto py-3"
-             >
-              <Link
-                href={link.href}
-                onClick={() => setIsSheetOpen(false)}>
-                {link.label}
-              </Link>
-            </Button>
-        ) : (
+          <Button
+            key={link.href}
+            variant="ghost"
+            asChild
+            className="w-full justify-start text-lg h-auto py-3">
             <Link
-                key={link.href}
-                href={link.href}
-                className="group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80"
-                onClick={() => setIsSheetOpen(false)}>
-                {link.label}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+              href={link.href}
+              onClick={() => setIsSheetOpen(false)}>
+              {link.label}
             </Link>
-        )
-      ))}
+          </Button>
+        ) : (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80"
+            onClick={() => setIsSheetOpen(false)}>
+            {link.label}
+            <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+          </Link>
+        ),
+      )}
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
@@ -95,17 +95,7 @@ export function Header() {
           : "bg-transparent",
       )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link
-          href="/"
-          className="flex items-center gap-2">
-          <Image
-            src="/Logo.svg"
-            alt="Kinstel Logo"
-            width={150}
-            height={40}
-            className="object-contain"
-          />
-        </Link>
+        <KLogo />
         {isMobile ? (
           <Sheet
             open={isSheetOpen}
