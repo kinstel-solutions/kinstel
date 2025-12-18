@@ -39,7 +39,7 @@ export function ServicesSection({
     items
 }: ServicesProps) {
   return (
-    <section id="services" className="bg-secondary py-20 sm:py-28">
+    <section id="services" className="bg-background py-20 sm:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-semibold uppercase tracking-wider text-accent">{subHeading}</p>

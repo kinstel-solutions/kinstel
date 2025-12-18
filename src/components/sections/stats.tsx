@@ -34,7 +34,7 @@ const defaultStats: StatItem[] = [
 
 export function StatsSection({ items }: StatsProps) {
   return (
-    <section id="stats" className="bg-secondary py-20 sm:py-28">
+    <section id="stats" className="bg-background py-20 sm:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {items.map((stat, index) => (
