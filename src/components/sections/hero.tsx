@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { HeroIllustration } from './hero-illustration';
+import { InquiryForm } from './inquiry-form';
 import { ArrowUpRight } from 'lucide-react';
 
 interface HeroProps {
@@ -24,14 +24,14 @@ export function HeroSection({
   return (
     <section className="relative overflow-hidden bg-background py-20 md:py-32">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 md:grid-cols-2 md:px-6">
-        <div className="max-w-xl animate-in fade-in slide-in-from-left-12 duration-500">
+        <div className="max-w-xl animate-in fade-in slide-in-from-left-12 duration-500 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
             {title}
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             {subtitle}
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
             <Button asChild size="lg" className="shadow-lg shadow-primary/20">
               <Link href={primaryButtonLink}>
                 {primaryButtonText} <ArrowUpRight className="ml-1 h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -43,7 +43,7 @@ export function HeroSection({
           </div>
         </div>
         <div className="flex items-center justify-center animate-in fade-in slide-in-from-right-12 duration-500">
-          <HeroIllustration className="w-full h-auto max-w-lg" />
+          <InquiryForm />
         </div>
       </div>
     </section>
