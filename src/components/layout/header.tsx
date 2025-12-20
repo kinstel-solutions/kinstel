@@ -79,7 +79,7 @@ export function Header() {
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
-        className={cn(isMobile && "w-full mt-4", "ml-2")}
+        className={cn(isMobile && "w-full mt-4", "ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm")}
         onClick={() => setIsSheetOpen(false)}>
         Inquire Now
       </SmartCtaButton>

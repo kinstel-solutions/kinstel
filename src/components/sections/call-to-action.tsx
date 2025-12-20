@@ -29,7 +29,7 @@ export function CallToActionSection({
                             phoneNumber="+919889988408" 
                             email="contact@kinstel.com"
                             size="lg"
-                            className="shadow-lg shadow-primary/20"
+                            className="shadow-lg shadow-accent/20"
                         >
                             {buttonText}
                         </SmartCtaButton>

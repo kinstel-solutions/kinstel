@@ -25,6 +25,7 @@ import {
   useDynamicIslandSize,
   useScheduledAnimations,
 } from "@/components/ui/dynamic-island";
+import { InquiryPopover } from "@/components/sections/inquiry-popover";
 
 const DynamicAction = () => {
   const { state: blobState, setSize } = useDynamicIslandSize();
@@ -56,7 +57,7 @@ const DynamicAction = () => {
     <DynamicContainer className="flex items-center justify-center h-full w-full">
       <div className="relative w-full flex items-center">
         <DynamicDescription className="absolute left-4  my-auto text-lg font-medium tracking-tighter text-white ">
-          <MessageCircle className=" h-5 w-5 fill-cyan-400 text-cyan-400" />
+          <MessageCircle className=" h-5 w-5 text-accent" />
         </DynamicDescription>
 
         <DynamicDescription className="absolute text-white right-4  my-auto text-lg font-bold tracking-tighter ">
@@ -70,7 +71,7 @@ const DynamicAction = () => {
   const renderLargeState = () => (
     <DynamicContainer className="flex items-center justify-center h-full w-full">
       <div className="relative  flex w-full items-center justify-between gap-6 px-4">
-        <Loader className="animate-spin h-12 w-12  text-yellow-300" />
+        <Loader className="animate-spin h-12 w-12  text-accent" />
 
         <DynamicTitle className="my-auto text-2xl font-black tracking-tighter text-white ">
           Namaste...
@@ -82,10 +83,10 @@ const DynamicAction = () => {
   // Great for user onboarding, forms, etc
   const renderTallState = () => (
     <DynamicContainer className="  flex flex-col mt-6 w-full items-start  gap-1 px-8 font-semibold">
-      <DynamicDescription className="bg-cyan-300 rounded-2xl tracking-tight leading-5  p-2">
+      <DynamicDescription className="bg-accent rounded-2xl tracking-tight leading-5  p-2">
         Modern Web Design
       </DynamicDescription>
-      <DynamicDescription className="bg-cyan-300 rounded-2xl tracking-tight leading-5  p-2 text-left">
+      <DynamicDescription className="bg-accent rounded-2xl tracking-tight leading-5  p-2 text-left">
         We build high-performance websites that help your business grow and
         succeed online.
       </DynamicDescription>
@@ -100,7 +101,7 @@ const DynamicAction = () => {
     <DynamicContainer className="flex items-center justify-center h-full w-full">
       <DynamicDiv className="relative  flex w-full items-center justify-between gap-6 px-4">
         <div>
-          <Waves className=" text-cyan-400 h-8 w-8" />
+          <Waves className=" text-accent h-8 w-8" />
         </div>
 
         <DynamicTitle className="my-auto text-xl font-black tracking-tighter text-white ">
@@ -120,13 +121,10 @@ const DynamicAction = () => {
       </DynamicDescription>
 
       <DynamicDiv className="flex flex-col mt-auto space-y-1 mb-2 bg-neutral-700 p-2 rounded-b-2xl">
-        <Button>
-          <Mail className="mr-2 h-4 w-4 fill-cyan-400 text-neutral-900" /> Get
-          Free Quotes
-        </Button>
+        <InquiryPopover />
 
-        <Button className="mt-1 ">
-          <User className="mr-2 h-4 w-4 fill-cyan-400 text-cyan-400" /> View
+        <Button className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+          <User className="mr-2 h-4 w-4 text-neutral-900" /> View
           Portfolio
         </Button>
       </DynamicDiv>
@@ -137,7 +135,7 @@ const DynamicAction = () => {
   const renderOtherStates = () => (
     <div className="flex items-center justify-center h-full w-full">
       <div>
-        <ArrowUpLeftSquareIcon className="text-white" />
+        <ArrowUpLeftSquareIcon className="text-accent" />
       </div>
       <p className="text-white"> Hello</p>
     </div>
