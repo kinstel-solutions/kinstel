@@ -5,7 +5,10 @@ import { ArrowUpRight } from "lucide-react";
 import { DynamicIslandDemo } from "@/components/ui/d-island";
 import { Particles } from "@/components/ui/particles";
 import { AuroraText } from "../ui/aurora-text";
-import LogoCarousel from "../ui/logo-carousel";
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "@/components/ui/scroll-based-velocity";
 
 interface HeroProps {
   title: React.ReactNode;
@@ -25,7 +28,7 @@ export function HeroSection({
   secondaryButtonLink,
 }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-background py-20 md:py-32 min-h-screen flex items-center justify-center">
+    <section className="relative overflow-hidden bg-background min-h-screen flex flex-col items-center justify-center py-20">
       <Particles
         className="absolute inset-0 animate-fade-in"
         quantity={140}
@@ -46,15 +49,22 @@ export function HeroSection({
           <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
             <DynamicIslandDemo />
           </div>
-          <div className="mt-16 flex flex-col items-center justify-center animate-in fade-in slide-in-from-bottom-16 duration-700 delay-300">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-8">
-              Powering modern digital experiences with
-            </p>
-            <div className="overflow-hidden w-full flex justify-center">
-              <LogoCarousel />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="relative flex w-full flex-col mt-8 items-center justify-center overflow-hidden">
+        <ScrollVelocityContainer className="text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-[5rem]">
+          <ScrollVelocityRow
+            baseVelocity={20}
+            direction={1}>
+             Kinstel Solutions
+          </ScrollVelocityRow>
+          <ScrollVelocityRow
+            baseVelocity={20}
+            direction={-1}>
+            Kinstel Solutions
+          </ScrollVelocityRow>
+        </ScrollVelocityContainer>
       </div>
     </section>
   );
