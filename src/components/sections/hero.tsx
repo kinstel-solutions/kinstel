@@ -1,8 +1,9 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { InquiryForm } from './inquiry-form';
-import { ArrowUpRight } from 'lucide-react';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { InquiryForm } from "./inquiry-form";
+import { ArrowUpRight } from "lucide-react";
+import { DynamicIslandDemo } from "@/components/ui/d-island";
 
 interface HeroProps {
   title: React.ReactNode;
@@ -32,14 +33,7 @@ export function HeroSection({
             {subtitle}
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
-            <Button asChild size="lg" className="shadow-lg shadow-primary/20">
-              <Link href={primaryButtonLink}>
-                {primaryButtonText} <ArrowUpRight className="ml-1 h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href={secondaryButtonLink}>{secondaryButtonText}</Link>
-            </Button>
+            <DynamicIslandDemo />
           </div>
         </div>
         <div className="flex items-center justify-center animate-in fade-in slide-in-from-right-12 duration-500">
@@ -55,7 +49,8 @@ export function Hero() {
     <HeroSection
       title={
         <>
-          Expert <span className="text-accent">Web Design</span> for Modern Businesses
+          Expert <span className="text-accent">Web Design</span> for Modern
+          Businesses
         </>
       }
       subtitle="We are a web design agency that helps businesses grow online. We build beautiful, high-performing websites that are designed to convert."
