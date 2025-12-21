@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { AuroraText } from "./aurora-text";
 
 export function KLogo() {
   return (
@@ -13,7 +14,11 @@ export function KLogo() {
         height={30}
         className="object-contain"
       />
-      <span className="font-logo -ml-2 text-2xl tracking-wide">INSTEL</span>
+      <AuroraText
+        colors={["#F59E0B", "#D97706", "#FCD34D", "#F59E0B"]}
+        className="font-logo -ml-2 text-2xl tracking-wide">
+        INSTEL
+      </AuroraText>
     </Link>
   );
 }
