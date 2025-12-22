@@ -20,6 +20,7 @@ export default {
         sans: ['var(--font-sans)', 'sans-serif'],
         headline: ['var(--font-serif)', 'serif'],
         code: ['monospace'],
+        logo: ['var(--font-logo)', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -95,10 +96,15 @@ export default {
             height: '0',
           },
         },
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        shimmer: 'shimmer 8s linear infinite',
       },
     },
   },

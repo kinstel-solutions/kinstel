@@ -5,7 +5,6 @@ import { inquirySchema, type InquiryFormValues } from '@/app/inquiry-schema';
 import InquiryNotificationEmail from '@/emails/inquiry-notification-email';
 import UserConfirmationEmail from '@/emails/user-confirmation-email';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.EMAIL_FROM;
 const toEmails = process.env.EMAIL_TO?.split(',') || [];
 
@@ -21,10 +20,17 @@ export async function submitInquiryAction(data: InquiryFormValues) {
   const { name, email, subject } = parsed.data;
 
   // 2. Ensure environment variables are loaded
+  if (!process.env.RESEND_API_KEY) {
+     console.error('Missing RESEND_API_KEY environment variable.');
+     return { success: false, message: 'Server configuration error: Missing API Key.' };
+  }
+  
   if (!fromEmail || toEmails.length === 0) {
     console.error('Missing environment variables for sending email.');
     return { success: false, message: 'Server configuration error. Could not send email.' };
   }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     // 3. Send emails

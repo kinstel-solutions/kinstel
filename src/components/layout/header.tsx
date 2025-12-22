@@ -11,11 +11,13 @@ import {
 } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { KLogo } from "@/components/ui/k-logo";
 import { SmartCtaButton } from "../ui/smart-cta-button";
 import Image from "next/image";
 
 const navLinks = [
   { href: "/lawyers", label: "For Lawyers" },
+  { href: "/lucknow", label: "Lucknow" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
@@ -47,26 +49,37 @@ export function Header() {
   const navContent = (
     <nav
       className={cn(
-        "flex items-center gap-1",
-        isMobile ? "flex-col space-y-4 pt-8" : "space-x-4",
+        "flex items-center gap-6",
+        isMobile ? "flex-col space-y-4 pt-8 gap-0" : "space-x-1",
       )}>
-      {navLinks.map((link) => (
-        <Button
-          key={link.href}
-          variant="ghost"
-          asChild>
+      {navLinks.map((link) =>
+        isMobile ? (
+          <Button
+            key={link.href}
+            variant="ghost"
+            asChild
+            className="w-full justify-start text-lg h-auto py-3">
+            <Link
+              href={link.href}
+              onClick={() => setIsSheetOpen(false)}>
+              {link.label}
+            </Link>
+          </Button>
+        ) : (
           <Link
+            key={link.href}
             href={link.href}
-            className="text-sm font-medium transition-colors"
+            className="group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80"
             onClick={() => setIsSheetOpen(false)}>
             {link.label}
+            <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
           </Link>
-        </Button>
-      ))}
+        ),
+      )}
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
-        className={cn(isMobile && "w-full", "ml-4")}
+        className={cn(isMobile && "w-full mt-4", "ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm")}
         onClick={() => setIsSheetOpen(false)}>
         Inquire Now
       </SmartCtaButton>
@@ -82,17 +95,7 @@ export function Header() {
           : "bg-transparent",
       )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link
-          href="/"
-          className="flex items-center gap-2">
-          <Image
-            src="/Logo.svg"
-            alt="Kinstel Logo"
-            width={150}
-            height={40}
-            className="object-contain"
-          />
-        </Link>
+        <KLogo />
         {isMobile ? (
           <Sheet
             open={isSheetOpen}
