@@ -3,6 +3,7 @@
 import React from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button, type ButtonProps } from '@/components/ui/button';
+import { ArrowUpRight } from 'lucide-react';
 
 interface SmartCtaButtonProps extends ButtonProps {
   phoneNumber: string;
@@ -38,13 +39,17 @@ export function SmartCtaButton({
     return (
       <Button {...props} disabled>
         {children}
+        <ArrowUpRight className="ml-1 h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </Button>
     );
   }
 
   return (
     <Button asChild {...props}>
-      <a href={href} onClick={onClick}>{children}</a>
+      <a href={href} onClick={onClick}>
+        {children}
+        <ArrowUpRight className="ml-1 h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      </a>
     </Button>
   );
 }

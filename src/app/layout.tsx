@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
-import { fontSans, fontSerif } from '@/app/fonts';
+import { fontSans, fontSerif, fontLogo } from '@/app/fonts';
 import { WhatsAppWidget } from '@/components/ui/whatsapp-widget';
 import { siteConfig } from '@/lib/site-config';
 import GoogleAnalytics from '@/components/GA-analytics';
@@ -73,7 +73,7 @@ export default function RootLayout({
   const whatsappMessage = "Hello! I'm visiting your website and would like to inquire about your law firm website development services.";
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, fontSerif.variable)}>
+      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, fontSerif.variable, fontLogo.variable)}>
         {children}
         <Toaster />
         {/* Google Analytics (GA4) client component — loads gtag.js & tracks pageviews */}

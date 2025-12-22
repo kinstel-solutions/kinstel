@@ -10,62 +10,61 @@ import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
 
 export const metadata: Metadata = {
-  title: "Kinstel | Premier Law Firm Marketing Firm for Legal Growth",
+  title: "Kinstel | Top Web Design Company in Lucknow",
   description:
-    "Kinstel empowers lawyers and law firms to elevate their practice with custom website development, proven SEO, and legally compliant marketing.",
+    "Kinstel is the leading web design company in Lucknow. We deliver custom websites, SEO, and digital marketing solutions to businesses in Lucknow.",
   keywords: [
-    "law firm marketing firm",
-    "legal marketing firm",
-    "website developers for lawyers",
-    "law firm website development",
-    "law firm seo",
+    "web design company in lucknow",
+    "website design lucknow",
+    "seo company lucknow",
+    "digital marketing lucknow",
+    "web development lucknow",
   ],
 };
 
-const lawyerStats = [
+const lucknowStats = [
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    value: "98%",
-    label: "Page Speed Score",
-    description: "Blazing-fast load times to keep potential clients engaged.",
+    value: "99%",
+    label: "Uptime Guarantee",
+    description: "Reliable hosting and support for Lucknow businesses.",
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
-    value: "150+",
-    label: "Law Firms Served",
-    description:
-      "Trusted by legal professionals across various practice areas.",
+    value: "50+",
+    label: "Local Clients",
+    description: "Helping businesses in Lucknow grow their online presence.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
-    value: "300%",
-    label: "Avg. Lead Increase",
-    description: "Our conversion-focused designs deliver measurable results.",
+    value: "Top Rated",
+    label: "Agency in Lucknow",
+    description: "Recognized for excellence in web design and SEO.",
   },
 ];
 
-const lawyerServices = [
+const lucknowServices = [
   {
     icon: <Palette className="h-8 w-8 text-accent" />,
-    title: "Credibility by Design",
+    title: "Custom Websites in Lucknow",
     description:
-      "Our law firm website development process focuses on clean layouts and strong visuals that reflect your professionalism.",
+      "We create unique, professional websites tailored for the Lucknow market and your specific brand.",
   },
   {
     icon: <Rocket className="h-8 w-8 text-accent" />,
-    title: "Performance & SEO",
+    title: "Local SEO & Speed",
     description:
-      "We build blazing-fast, SEO-friendly websites designed to rank higher and convert visitors into clients.",
+      "We optimize for local search to ensure your business ranks high when customers search in Lucknow.",
   },
   {
     icon: <CheckCircle className="h-8 w-8 text-accent" />,
-    title: "Conversion-Focused UX",
+    title: "Affordable Packages",
     description:
-      "With a focus on user experience and SEO for lawyers, our designs ensure visitors can easily take action.",
+      "High-quality web design and marketing solutions at competitive rates for Lucknow businesses.",
   },
 ];
 
-const lawyerPortfolioItems = [
+const portfolioItems = [
   {
     image: "/advratnasingh.png",
     imageHint: "screenshot advocate ratna singh website",
@@ -92,7 +91,7 @@ const lawyerPortfolioItems = [
   },
 ];
 
-export default function LawyersPage() {
+export default function LucknowPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
@@ -102,15 +101,15 @@ export default function LawyersPage() {
           <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
             <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
-                Expert <span className="text-accent">Legal Marketing</span> for Law Firms
+                Premier <span className="text-accent">Web Design Company</span> in Lucknow
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                As a specialized law marketing firm, we focus on law firm website development and SEO for lawyers. We blend professional design with performance to make your practice stand out.
+                We are Lucknow's trusted web design agency. We create stunning, mobile-friendly websites that help local businesses attract more customers and grow online.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
                 <Button asChild size="lg" className="h-12 px-8 text-lg">
                   <Link href="/contact">
-                    Book a Free Consultation
+                    Get a Free Quote
                     <ArrowUpRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -120,7 +119,7 @@ export default function LawyersPage() {
                   size="lg"
                   className="h-12 px-8 text-lg"
                 >
-                  <Link href="#portfolio">View Demo Designs</Link>
+                  <Link href="#portfolio">View Our Portfolio</Link>
                 </Button>
               </div>
             </div>
@@ -131,7 +130,7 @@ export default function LawyersPage() {
         <section id="stats" className="bg-background py-20 sm:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {lawyerStats.map((stat, index) => (
+              {lucknowStats.map((stat, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center p-6 text-center animate-in fade-in slide-in-from-bottom-5"
@@ -151,16 +150,16 @@ export default function LawyersPage() {
         <section id="services" className="bg-background py-20 sm:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="font-semibold uppercase tracking-wider text-accent">Built for Trust. Designed for Growth.</p>
+              <p className="font-semibold uppercase tracking-wider text-accent">Local Expertise</p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Strategic <span className="text-accent">Legal Marketing</span> Services
+                Best <span className="text-accent">Web Services</span> in Lucknow
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                We don’t just make websites—we craft digital first impressions that convert visitors into clients. Every project is built around speed, simplicity, and strategic design tailored for legal professionals.
+                We provide comprehensive web design and digital marketing services to help Lucknow businesses thrive in the digital age.
               </p>
             </div>
             <div className="mt-16 grid gap-8 md:grid-cols-3">
-              {lawyerServices.map((service, index) => (
+              {lucknowServices.map((service, index) => (
                 <Card key={index} className="flex flex-col text-left p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg animate-in fade-in slide-in-from-bottom-5" style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'backwards' }}>
                   <CardHeader className="p-0">
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
@@ -181,17 +180,17 @@ export default function LawyersPage() {
         <section id="portfolio" className="bg-background py-20 sm:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="font-semibold uppercase tracking-wider text-accent">Proven Results</p>
+              <p className="font-semibold uppercase tracking-wider text-accent">Our Work</p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Legal Marketing That <span className="text-accent">Delivers Results</span>
+                Websites That <span className="text-accent">Drive Growth</span>
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                We've helped law firms across different practice areas increase their online presence and generate more qualified leads through expert website development.
+                We create beautiful, high-performing websites that deliver measurable results for our clients. Explore some of our recent projects.
               </p>
             </div>
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {lawyerPortfolioItems.map((item, index) => (
+              {portfolioItems.map((item, index) => (
                 <Link
                   key={index}
                   href={item.link}
@@ -248,12 +247,12 @@ export default function LawyersPage() {
         <section id="contact" className="bg-background py-20 sm:py-28">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <div className="max-w-3xl mx-auto">
-              <p className="font-semibold uppercase tracking-wider text-accent">Let's Get Started</p>
+              <p className="font-semibold uppercase tracking-wider text-accent">Grow Your Business</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Start Your Legal Marketing Strategy Today
+                Best Web Design Company in Lucknow
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Your website should work as hard as you do. Partner with a trusted legal marketing firm and get expert SEO for lawyers. Book a free consultation to get started.
+                Looking for the best web design company in Lucknow? We are here to help you establish a powerful online presence. Contact us today for a free consultation.
               </p>
               <div className="mt-10">
                 <SmartCtaButton
@@ -262,7 +261,7 @@ export default function LawyersPage() {
                   size="lg"
                   className="shadow-lg shadow-accent/20"
                 >
-                  Request a Free Quote
+                  Contact Us Today
                 </SmartCtaButton>
               </div>
             </div>
