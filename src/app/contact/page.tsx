@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Phone } from "lucide-react";
 import { ClickToCallLink } from "@/components/ui/click-to-call-link";
-import { InquiryPopover } from "@/components/sections/inquiry-popover";
+import { InquiryForm } from "@/components/sections/inquiry-form";
 
 export const metadata: Metadata = {
   title: "Kinstel Solutions | Contact Us",
@@ -21,15 +21,7 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-8 mb-32 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div className="flex flex-col items-center justify-center p-8 border rounded-xl bg-card text-card-foreground shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Send us a message</h2>
-            <p className="text-muted-foreground text-center mb-6">
-              Click the button below to fill out our inquiry form.
-            </p>
-            <div className="w-full max-w-xs">
-              <InquiryPopover />
-            </div>
-          </div>
+          <InquiryForm />
 
           <div className="space-y-8 text-lg">
             <div className="flex items-start gap-4">

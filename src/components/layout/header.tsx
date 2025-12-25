@@ -13,7 +13,6 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { KLogo } from "@/components/ui/k-logo";
 import { SmartCtaButton } from "../ui/smart-cta-button";
-import Image from "next/image";
 
 const navLinks = [
   { href: "/lawyers", label: "For Lawyers" },
@@ -24,62 +23,59 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-    const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("resize", checkIsMobile);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const navContent = (
-    <nav
-      className={cn(
-        "flex items-center gap-6",
-        isMobile ? "flex-col space-y-4 pt-8 gap-0" : "space-x-1",
-      )}>
-      {navLinks.map((link) =>
-        isMobile ? (
-          <Button
-            key={link.href}
-            variant="ghost"
-            asChild
-            className="w-full justify-start text-lg h-auto py-3">
-            <Link
-              href={link.href}
-              onClick={() => setIsSheetOpen(false)}>
-              {link.label}
-            </Link>
-          </Button>
-        ) : (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80"
-            onClick={() => setIsSheetOpen(false)}>
-            {link.label}
-            <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
-          </Link>
-        ),
-      )}
+  const DesktopNav = (
+    <nav className="hidden md:flex items-center space-x-1">
+      {navLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className="group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80">
+          {link.label}
+          <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+        </Link>
+      ))}
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
-        className={cn(isMobile && "w-full mt-4", "ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm")}
+        className="ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm">
+        Inquire Now
+      </SmartCtaButton>
+    </nav>
+  );
+
+  const MobileNav = (
+    <nav className="flex flex-col space-y-4 pt-8 gap-0">
+      {navLinks.map((link) => (
+        <Button
+          key={link.href}
+          variant="ghost"
+          asChild
+          className="w-full justify-start text-lg h-auto py-3">
+          <Link
+            href={link.href}
+            onClick={() => setIsSheetOpen(false)}>
+            {link.label}
+          </Link>
+        </Button>
+      ))}
+      <SmartCtaButton
+        phoneNumber="+919889988408"
+        email="contact@kinstel.com"
+        className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm"
         onClick={() => setIsSheetOpen(false)}>
         Inquire Now
       </SmartCtaButton>
@@ -96,7 +92,12 @@ export function Header() {
       )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <KLogo />
-        {isMobile ? (
+
+        {/* Desktop Navigation */}
+        {DesktopNav}
+
+        {/* Mobile Navigation Trigger */}
+        <div className="md:hidden">
           <Sheet
             open={isSheetOpen}
             onOpenChange={setIsSheetOpen}>
@@ -112,12 +113,10 @@ export function Header() {
               side="right"
               className="pt-16 w-full">
               <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-              {navContent}
+              {MobileNav}
             </SheetContent>
           </Sheet>
-        ) : (
-          navContent
-        )}
+        </div>
       </div>
     </header>
   );
