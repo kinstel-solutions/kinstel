@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -15,11 +15,9 @@ import { KLogo } from "@/components/ui/k-logo";
 import { SmartCtaButton } from "../ui/smart-cta-button";
 
 const navLinks = [
-  { href: "/lawyers", label: "For Lawyers" },
   { href: "/lucknow", label: "Lucknow" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -39,6 +37,12 @@ export function Header() {
 
   const DesktopNav = (
     <nav className="hidden md:flex items-center space-x-1">
+      <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground transition-colors mr-2">
+        <a href="tel:+919889988408">
+          <Phone className="h-4 w-4 text-accent animate-pulse" />
+          <span className="border-b border-accent/50">+91 98899 88408</span>
+        </a>
+      </Button>
       {navLinks.map((link) => (
         <Link
           key={link.href}
@@ -97,7 +101,13 @@ export function Header() {
         {DesktopNav}
 
         {/* Mobile Navigation Trigger */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <Button variant="ghost" size="sm" asChild className="h-9 px-2 text-muted-foreground hover:text-foreground">
+            <a href="tel:+919889988408">
+              <Phone className="h-4 w-4 text-accent" />
+              <span className="border-b border-accent/50">+91 98899 88408</span>
+            </a>
+          </Button>
           <Sheet
             open={isSheetOpen}
             onOpenChange={setIsSheetOpen}>

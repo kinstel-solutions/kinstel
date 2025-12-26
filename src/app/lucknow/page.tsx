@@ -24,7 +24,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
 import { InquiryForm } from "@/components/sections/inquiry-form";
-import { StripeBgGuides } from "@/components/ui/stripe-bg-guids";
+
 import { LiquidCard } from "@/components/ui/liquid-glass-card";
 
 export const metadata: Metadata = {
@@ -112,56 +112,55 @@ const portfolioItems = [
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-      <StripeBgGuides
-        columnCount={8}
-        animated={true}
-        animationDuration={8}
-        animationDelay={0.8}
-        glowColor="hsl(var(--accent))"
-        glowSize="5vh"
-        glowOpacity={0.8}
-        randomize={false}
-        randomInterval={120}
-        maxActiveColumns={8}
-        contained={false}
-        easing="spring"
-        darkMode={true}
-      />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative overflow-hidden  min-h-screen flex flex-col items-center justify-center py-12 md:py-24 lg:py-32">
-          <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
-            <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
-              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
-                Premier <span className="text-accent">Web Design Company</span>{" "}
-                in Lucknow
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                We are Lucknow's trusted web design agency. We create stunning,
-                mobile-friendly websites that help local businesses attract more
-                customers and grow online.
-              </p>
-              <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-12 px-8 text-lg">
-                  <Link href="/contact">
-                    Get a Free Quote
-                    <ArrowUpRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
+        <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center py-12 md:py-24 lg:py-32">
+          <div className="container relative z-10 mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="flex flex-col text-center lg:text-left items-center lg:items-start animate-in fade-in slide-in-from-bottom-12 duration-500">
+                <Badge
                   variant="outline"
-                  size="lg"
-                  className="h-12 px-8 text-lg">
-                  <Link href="#portfolio">View Our Portfolio</Link>
-                </Button>
-                <div className="mt-16">
-                  <InquiryForm minimal={true} />
+                  className="mb-6 px-4 py-1.5 text-sm font-medium border-accent/30 bg-accent/5 text-accent rounded-full">
+                  Premium Websites Starting @₹9,999/-
+                </Badge>
+                <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline leading-tight">
+                  Premier{" "}
+                  <span className="text-accent">Web Design Company</span> in
+                  Lucknow
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl">
+                  We are Lucknow's trusted web design agency. We create
+                  stunning, mobile-friendly websites that help local businesses
+                  attract more customers and grow online.
+                </p>
+                <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="h-12 px-8 text-lg">
+                    <Link href="/contact">
+                      Get a Free Quote
+                      <ArrowUpRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="h-12 px-8 text-lg">
+                    <Link href="#portfolio">View Our Portfolio</Link>
+                  </Button>
                 </div>
+              </div>
+
+              {/* Form Content */}
+              <div className="w-full max-w-md mx-auto lg:mr-0 animate-in fade-in slide-in-from-bottom-12 duration-500 delay-150">
+                <InquiryForm
+                  minimal={true}
+                  className="bg-card/50 backdrop-blur-sm border border-border/50 p-6 rounded-xl shadow-lg"
+                />
               </div>
             </div>
           </div>
@@ -176,7 +175,7 @@ export default function LucknowPage() {
               {lucknowStats.map((stat, index) => (
                 <LiquidCard
                   key={index}
-                  className="flex flex-col items-center p-6 text-center animate-in fade-in slide-in-from-bottom-5"
+                  className="flex flex-col items-center p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg text-center animate-in fade-in slide-in-from-bottom-5"
                   style={{
                     animationDelay: `${index * 150}ms`,
                     animationFillMode: "backwards",
@@ -265,7 +264,7 @@ export default function LucknowPage() {
                   rel="noopener noreferrer"
                   className="block h-full">
                   <LiquidCard
-                    className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl animate-in fade-in slide-in-from-bottom-5 h-full"
+                    className="group flex flex-col overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-lg animate-in fade-in slide-in-from-bottom-5 h-full"
                     style={{
                       animationDelay: `${index * 150}ms`,
                       animationFillMode: "backwards",

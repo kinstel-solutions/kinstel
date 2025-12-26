@@ -26,8 +26,14 @@ import {
   CardDescription,
 } from "../ui/card";
 import { LiquidCard } from "../ui/liquid-glass-card";
+import { cn } from "@/lib/utils";
 
-export function InquiryForm({ minimal = false }: { minimal?: boolean }) {
+interface InquiryFormProps {
+  minimal?: boolean;
+  className?: string;
+}
+
+export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
   const { toast } = useToast();
   const form = useForm<InquiryFormValues>({
     resolver: zodResolver(inquirySchema),
@@ -62,7 +68,11 @@ export function InquiryForm({ minimal = false }: { minimal?: boolean }) {
   }
 
   return (
-    <LiquidCard className="w-full shadow-lg">
+    <LiquidCard
+      className={cn(
+        "w-full transition-all duration-300 hover:border-accent/50 hover:shadow-lg shadow-lg",
+        className,
+      )}>
       <CardHeader>
         <CardTitle>Send an Inquiry</CardTitle>
         <CardDescription>
@@ -92,24 +102,23 @@ export function InquiryForm({ minimal = false }: { minimal?: boolean }) {
                 )}
               />
 
-              {!minimal && (
-                <FormField
-                  control={form.control}
-                  name="businessName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Business Name (Optional)</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Acme Inc."
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              )}
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="tel"
+                        placeholder="(123) 456-7890"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <FormField
@@ -129,16 +138,16 @@ export function InquiryForm({ minimal = false }: { minimal?: boolean }) {
                   </FormItem>
                 )}
               />
+
               <FormField
                 control={form.control}
-                name="phone"
+                name="businessName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number (Optional)</FormLabel>
+                    <FormLabel>Business Name (Optional)</FormLabel>
                     <FormControl>
                       <Input
-                        type="tel"
-                        placeholder="(123) 456-7890"
+                        placeholder="Acme Inc."
                         {...field}
                       />
                     </FormControl>
