@@ -98,10 +98,10 @@ export default function LawyersPage() {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-background min-h-screen flex flex-col items-center justify-center py-20">
+        <section className="relative overflow-hidden bg-background min-h-[100dvh] flex flex-col items-center justify-center py-12 md:py-24 lg:py-32">
           <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
             <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
+              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
                 Expert <span className="text-accent">Legal Marketing</span> for Law Firms
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -128,7 +128,7 @@ export default function LawyersPage() {
         </section>
 
         {/* Stats Section */}
-        <section id="stats" className="bg-background py-20 sm:py-28">
+        <section id="stats" className="bg-background py-12 md:py-24 lg:py-32 sm:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {lawyerStats.map((stat, index) => (
@@ -148,7 +148,7 @@ export default function LawyersPage() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="bg-background py-20 sm:py-28">
+        <section id="services" className="bg-background py-12 md:py-24 lg:py-32 sm:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
               <p className="font-semibold uppercase tracking-wider text-accent">Built for Trust. Designed for Growth.</p>
@@ -178,7 +178,7 @@ export default function LawyersPage() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="bg-background py-20 sm:py-28">
+        <section id="portfolio" className="bg-background py-12 md:py-24 lg:py-32 sm:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
               <p className="font-semibold uppercase tracking-wider text-accent">Proven Results</p>
@@ -245,7 +245,7 @@ export default function LawyersPage() {
         </section>
 
         {/* Call To Action Section */}
-        <section id="contact" className="bg-background py-20 sm:py-28">
+        <section id="contact" className="bg-background py-12 md:py-24 lg:py-32 sm:py-28">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <div className="max-w-3xl mx-auto">
               <p className="font-semibold uppercase tracking-wider text-accent">Let's Get Started</p>

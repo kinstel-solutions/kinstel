@@ -25,7 +25,8 @@ import {
   useDynamicIslandSize,
   useScheduledAnimations,
 } from "@/components/ui/dynamic-island";
-import { InquiryPopover } from "@/components/sections/inquiry-popover";
+import { InquiryForm } from "@/components/sections/inquiry-form";
+import Link from "next/link";
 
 const DynamicAction = () => {
   const { state: blobState, setSize } = useDynamicIslandSize();
@@ -121,11 +122,14 @@ const DynamicAction = () => {
       </DynamicDescription>
 
       <DynamicDiv className="flex flex-col mt-auto space-y-1 mb-2 bg-neutral-700 p-2 rounded-b-2xl">
-        <InquiryPopover />
+        <Button className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+          <User className="mr-2 h-4 w-4 text-neutral-900" />{" "}
+          <Link href="/contact">Contact Us</Link>
+        </Button>
 
         <Button className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-          <User className="mr-2 h-4 w-4 text-neutral-900" /> View
-          Portfolio
+          <User className="mr-2 h-4 w-4 text-neutral-900" />{" "}
+          <Link href="/#portfolio">View Portfolio</Link>
         </Button>
       </DynamicDiv>
     </DynamicContainer>

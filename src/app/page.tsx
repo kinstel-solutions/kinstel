@@ -30,6 +30,7 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "@/components/ui/scroll-based-velocity";
+import { StripeBgGuides } from "@/components/ui/stripe-bg-guids";
 
 export const metadata: Metadata = {
   title: "Kinstel | Web Design & Digital Marketing Agency",
@@ -108,24 +109,30 @@ const defaultPortfolioItems = [
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background relative">
-      <Particles
-        className="fixed inset-0 pointer-events-none z-0 animate-fade-in"
-        quantity={140}
-        staticity={30}
-        ease={50}
-        size={1.0}
-        color="#F59E0B"
-        refresh
+    <div className="flex flex-col gap-8 py-4">
+      <StripeBgGuides
+        columnCount={8}
+        animated={true}
+        animationDuration={8}
+        animationDelay={0.8}
+        glowColor="hsl(var(--accent))"
+        glowSize="5vh"
+        glowOpacity={0.8}
+        randomize={false}
+        randomInterval={120}
+        maxActiveColumns={8}
+        contained={false}
+        easing="spring"
+        darkMode={true}
       />
       <div className="relative z-10 flex min-h-screen flex-col">
         <Header />
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center py-20">
+          <section className="relative overflow-hidden min-h-[100dvh] flex flex-col items-center justify-center py-20">
             <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
               <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
+                <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
                   Expert{" "}
                   <AuroraText
                     colors={["#F59E0B", "#D97706", "#FCD34D", "#F59E0B"]}>
@@ -144,7 +151,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative flex w-full flex-col mt-12 items-center justify-center overflow-hidden">
+            {/* <div className="relative flex w-full flex-col mt-12 items-center justify-center overflow-hidden">
               <ScrollVelocityContainer className="text-4xl tracking-[-0.02em] md:text-5xl md:leading-[5rem]">
                 <ScrollVelocityRow
                   baseVelocity={20}
@@ -157,13 +164,13 @@ export default function Home() {
                   Everything Is Permitted
                 </ScrollVelocityRow>
               </ScrollVelocityContainer>
-            </div>
+            </div> */}
           </section>
 
           {/* Stats Section */}
           <section
             id="stats"
-            className="py-20 sm:py-28">
+            className="py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 {defaultStats.map((stat, index) => (
@@ -191,7 +198,7 @@ export default function Home() {
           {/* Services Section */}
           <section
             id="services"
-            className="py-20 sm:py-28">
+            className="py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="font-semibold uppercase tracking-wider text-accent">
@@ -234,7 +241,7 @@ export default function Home() {
           {/* Portfolio Section */}
           <section
             id="portfolio"
-            className="py-20 sm:py-28">
+            className="py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="font-semibold uppercase tracking-wider text-accent">
@@ -308,7 +315,7 @@ export default function Home() {
           {/* Call To Action Section */}
           <section
             id="contact"
-            className="py-20 sm:py-28">
+            className="py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6 text-center">
               <div className="max-w-3xl mx-auto">
                 <p className="font-semibold uppercase tracking-wider text-accent">

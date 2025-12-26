@@ -42,27 +42,27 @@ export function Footer() {
               <h3 className="font-semibold">Navigation</h3>
               <Link
                 href="/#services"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Services
               </Link>
               <Link
                 href="/#portfolio"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Portfolio
               </Link>
               <Link
                 href="/contact"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Contact
               </Link>
               <Link
                 href="/lawyers"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 For Lawyers
               </Link>
               <Link
                 href="/lucknow"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Lucknow
               </Link>
             </div>
@@ -70,22 +70,22 @@ export function Footer() {
               <h3 className="font-semibold">Legal</h3>
               <Link
                 href="/privacy-policy"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-and-conditions"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Terms & Conditions
               </Link>
               <Link
                 href="/refund-policy"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Refund Policy
               </Link>
               <Link
                 href="/shipping"
-                className="text-muted-foreground hover:text-foreground">
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Shipping Policy
               </Link>
             </div>

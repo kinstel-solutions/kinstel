@@ -346,7 +346,7 @@ const calculateDimensions = (
     return { width: "350px", height: MAX_HEIGHT_MOBILE_ULTRA }
   }
 
-  const width = min(currentSize.width, MIN_WIDTH)
+  const width = screenSize === "mobile" ? min(currentSize.width, 340) : min(currentSize.width, MIN_WIDTH)
   return { width: `${width}px`, height: currentSize.aspectRatio * width }
 }
 
