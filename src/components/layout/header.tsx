@@ -94,18 +94,18 @@ export function Header() {
           ? "border-b border-border/40 bg-background/95 backdrop-blur-sm"
           : "bg-transparent",
       )}>
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-3 md:px-6">
         <KLogo />
 
         {/* Desktop Navigation */}
         {DesktopNav}
 
         {/* Mobile Navigation Trigger */}
-        <div className="md:hidden flex items-center gap-2">
-          <Button variant="ghost" size="sm" asChild className="h-9 px-2 text-muted-foreground hover:text-foreground">
+        <div className="md:hidden flex items-center gap-1">
+          <Button variant="ghost" size="sm" asChild className="h-9 px-1.5 gap-1.5 text-muted-foreground hover:text-foreground">
             <a href="tel:+919889988408">
               <Phone className="h-4 w-4 text-accent" />
-              <span className="border-b border-accent/50">+91 98899 88408</span>
+              <span className="border-b border-accent/50 text-xs sm:text-sm">+91 98899 88408</span>
             </a>
           </Button>
           <Sheet
@@ -114,7 +114,8 @@ export function Header() {
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
-                size="icon">
+                size="icon"
+                className="h-9 w-9">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>

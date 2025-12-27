@@ -23,9 +23,13 @@ type WhatsAppWidgetProps = {
   message?: string;
 };
 
-export function WhatsAppWidget({ phoneNumber, message }: WhatsAppWidgetProps) {
+export const getWhatsAppUrl = (phoneNumber: string, message?: string) => {
   const encodedMessage = message ? encodeURIComponent(message) : '';
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+};
+
+export function WhatsAppWidget({ phoneNumber, message }: WhatsAppWidgetProps) {
+  const whatsappUrl = getWhatsAppUrl(phoneNumber, message);
 
   return (
     <a
