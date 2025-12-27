@@ -12,11 +12,11 @@ export function KLogo() {
         alt="Kinstel Logo"
         width={35}
         height={30}
-        className="object-contain"
+        className="object-contain w-6 md:w-[35px] h-auto"
       />
       <AuroraText
         colors={["#F59E0B", "#D97706", "#FCD34D", "#F59E0B"]}
-        className="font-logo -ml-2 text-2xl tracking-wide">
+        className="font-logo -ml-2 text-lg md:text-2xl tracking-wide">
         INSTEL
       </AuroraText>
     </Link>

@@ -109,6 +109,12 @@ const portfolioItems = [
   },
 ];
 
+import { getWhatsAppUrl } from "@/components/ui/whatsapp-widget";
+
+const whatsappNumber = "+919889988408";
+const whatsappMessage =
+  "Hello Kinstel, I'm interested in getting a free quote for web design services in Lucknow.";
+
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
@@ -140,7 +146,10 @@ export default function LucknowPage() {
                     asChild
                     size="lg"
                     className="h-12 px-8 text-lg">
-                    <Link href="/contact">
+                    <Link
+                      href={getWhatsAppUrl(whatsappNumber, whatsappMessage)}
+                      target="_blank"
+                      rel="noopener noreferrer">
                       Get a Free Quote
                       <ArrowUpRight className="ml-2 h-5 w-5" />
                     </Link>
@@ -170,22 +179,22 @@ export default function LucknowPage() {
         <section
           id="stats"
           className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-4">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {lucknowStats.map((stat, index) => (
                 <LiquidCard
                   key={index}
-                  className="flex flex-col items-center p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg text-center animate-in fade-in slide-in-from-bottom-5"
+                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
                   style={{
                     animationDelay: `${index * 150}ms`,
                     animationFillMode: "backwards",
                   }}>
-                  <div className="mb-4">{stat.icon}</div>
+                  <div>{stat.icon}</div>
                   <p className="text-5xl font-bold text-foreground">
                     {stat.value}
                   </p>
-                  <h3 className="mt-2 text-lg font-semibold">{stat.label}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
+                  <p className=" text-sm text-muted-foreground">
                     {stat.description}
                   </p>
                 </LiquidCard>
@@ -216,7 +225,7 @@ export default function LucknowPage() {
               {lucknowServices.map((service, index) => (
                 <LiquidCard
                   key={index}
-                  className="flex flex-col text-left p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg animate-in fade-in slide-in-from-bottom-5"
+                  className="flex flex-col text-left p-6 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
                   style={{
                     animationDelay: `${index * 150}ms`,
                     animationFillMode: "backwards",
@@ -264,7 +273,7 @@ export default function LucknowPage() {
                   rel="noopener noreferrer"
                   className="block h-full">
                   <LiquidCard
-                    className="group flex flex-col overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-lg animate-in fade-in slide-in-from-bottom-5 h-full"
+                    className="group flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5 h-full"
                     style={{
                       animationDelay: `${index * 150}ms`,
                       animationFillMode: "backwards",
@@ -276,7 +285,7 @@ export default function LucknowPage() {
                         alt={`Showcase of the ${item.title} project`}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover object-top transition-transform duration-500"
                         data-ai-hint={item.imageHint}
                       />
                     </div>
