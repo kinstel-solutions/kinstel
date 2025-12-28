@@ -158,7 +158,7 @@ export default function LucknowPage() {
                     phoneNumber="+919889988408"
                     email="contact@kinstel.com"
                     className="h-12 px-8 text-lg">
-                    Inquire Now
+                    Let's Discuss On Call
                   </SmartCtaButton>
                   <Button
                     asChild
@@ -196,7 +196,7 @@ export default function LucknowPage() {
                     animationFillMode: "backwards",
                   }}>
                   <div>{stat.icon}</div>
-                  <p className="text-5xl font-bold text-foreground">
+                  <p className="text-3xl font-semibold text-foreground">
                     {stat.value}
                   </p>
                   <h3 className=" text-lg font-semibold">{stat.label}</h3>
@@ -334,7 +334,7 @@ export default function LucknowPage() {
                 Grow Your Business
               </p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Best Web Design Company in Lucknow
+                Expert Web Designers in Lucknow
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Looking for the best web design company in Lucknow? We are here

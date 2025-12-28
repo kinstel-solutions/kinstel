@@ -37,12 +37,6 @@ export function Header() {
 
   const DesktopNav = (
     <nav className="hidden md:flex items-center space-x-1">
-      <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground transition-colors mr-2">
-        <a href="tel:+919889988408">
-          <Phone className="h-4 w-4 text-accent animate-pulse" />
-          <span className="border-b border-accent/50">+91 98899 88408</span>
-        </a>
-      </Button>
       {navLinks.map((link) => (
         <Link
           key={link.href}
@@ -56,7 +50,8 @@ export function Header() {
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
         className="ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm">
-        Inquire Now
+        <Phone className="h-4 w-4 text-green-700 animate-pulse" />
+        9889988408
       </SmartCtaButton>
     </nav>
   );
@@ -102,12 +97,15 @@ export function Header() {
 
         {/* Mobile Navigation Trigger */}
         <div className="md:hidden flex items-center gap-1">
-          <Button variant="ghost" size="sm" asChild className="h-9 px-1.5 gap-1.5 text-muted-foreground hover:text-foreground">
-            <a href="tel:+919889988408">
-              <Phone className="h-4 w-4 text-accent" />
-              <span className="border-b border-accent/50 text-xs sm:text-sm">+91 98899 88408</span>
-            </a>
-          </Button>
+          <SmartCtaButton
+            size="sm"
+            arrow={false}
+            phoneNumber="+919889988408"
+            email="contact@kinstel.com"
+            className="ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm">
+            <Phone className="h-4 w-4 text-green-700 animate-pulse" />
+            9889988408
+          </SmartCtaButton>
           <Sheet
             open={isSheetOpen}
             onOpenChange={setIsSheetOpen}>
