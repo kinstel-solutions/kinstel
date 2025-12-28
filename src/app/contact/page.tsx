@@ -1,9 +1,14 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Phone } from "lucide-react";
 import { ClickToCallLink } from "@/components/ui/click-to-call-link";
-import { InquiryForm } from "@/components/sections/inquiry-form";
+
+const InquiryForm = dynamic(() => import("@/components/sections/inquiry-form").then(mod => mod.InquiryForm), {
+  ssr: true,
+  loading: () => <div className="h-[400px] w-full animate-pulse bg-card/50 border border-border/50 rounded-xl" />
+});
 
 export const metadata: Metadata = {
   title: "Kinstel Solutions | Contact Us",

@@ -12,6 +12,7 @@ export function KLogo() {
         alt="Kinstel Logo"
         width={35}
         height={30}
+        priority
         className="object-contain w-6 md:w-[35px] h-auto"
       />
       <AuroraText

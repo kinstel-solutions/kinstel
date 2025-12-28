@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { type Metadata } from "next";
+import dynamic from "next/dynamic";
 import {
   Award,
   Users,
@@ -14,7 +15,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
   CardContent,
   CardHeader,
   CardTitle,
@@ -23,7 +23,18 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
-import { InquiryForm } from "@/components/sections/inquiry-form";
+
+// Dynamically import InquiryForm as it pulls in zod and react-hook-form
+const InquiryForm = dynamic(
+  () =>
+    import("@/components/sections/inquiry-form").then((mod) => mod.InquiryForm),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] w-full animate-pulse bg-card/50 border border-border/50 rounded-xl" />
+    ),
+  },
+);
 
 import { LiquidCard } from "@/components/ui/liquid-glass-card";
 
@@ -109,11 +120,12 @@ const portfolioItems = [
   },
 ];
 
-import { getWhatsAppUrl } from "@/components/ui/whatsapp-widget";
+// for WhatsApp widget
+// import { getWhatsAppUrl } from "@/components/ui/whatsapp-widget";
 
-const whatsappNumber = "+919889988408";
-const whatsappMessage =
-  "Hello Kinstel, I'm interested in getting a free quote for web design services in Lucknow.";
+// const whatsappNumber = "+919889988408";
+// const whatsappMessage =
+//   "Hello Kinstel, I'm interested in getting a free quote for web design services in Lucknow.";
 
 export default function LucknowPage() {
   return (
@@ -142,18 +154,12 @@ export default function LucknowPage() {
                   attract more customers and grow online.
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <Button
-                    asChild
-                    size="lg"
+                  <SmartCtaButton
+                    phoneNumber="+919889988408"
+                    email="contact@kinstel.com"
                     className="h-12 px-8 text-lg">
-                    <Link
-                      href={getWhatsAppUrl(whatsappNumber, whatsappMessage)}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      Get a Free Quote
-                      <ArrowUpRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
+                    Inquire Now
+                  </SmartCtaButton>
                   <Button
                     asChild
                     variant="outline"
