@@ -39,10 +39,10 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
     resolver: zodResolver(inquirySchema),
     defaultValues: {
       name: "",
-      businessName: "",
+      // businessName: "",
       email: "",
       phone: "",
-      subject: "",
+      // subject: "",
       details: "",
     },
   });
@@ -71,10 +71,10 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
     <LiquidCard
       className={cn("w-full transition-all duration-300 ", className)}>
       <CardHeader>
-        <CardTitle>Send an Inquiry</CardTitle>
-        <CardDescription>
+        <CardTitle className="text-center">Send an Inquiry</CardTitle>
+        {/* <CardDescription>
           Fill out the form and we'll be in touch shortly.
-        </CardDescription>
+        </CardDescription> */}
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -87,10 +87,11 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="John Doe"
+                        required
+                        placeholder="Sharma and sons"
                         {...field}
                       />
                     </FormControl>
@@ -108,7 +109,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                     <FormControl>
                       <Input
                         type="tel"
-                        placeholder="(123) 456-7890"
+                        placeholder="098XXXXXX00"
                         {...field}
                       />
                     </FormControl>
@@ -117,52 +118,16 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                 )}
               />
             </div>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email Address</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="john.doe@email.com"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="businessName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Name</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Acme Inc."
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
             <FormField
               control={form.control}
-              name="subject"
+              name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Subject</FormLabel>
+                  <FormLabel>Email Address</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="e.g., Project Proposal"
+                      type="email"
+                      placeholder="snsingh@gmail.com"
                       {...field}
                     />
                   </FormControl>
@@ -170,13 +135,12 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="details"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Project Details</FormLabel>
+                  <FormLabel>Project Details(Optional)</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Tell us about your project needs..."
@@ -199,7 +163,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                   Submitting...
                 </>
               ) : (
-                "Send Inquiry"
+                "Get a FREE Quote"
               )}
             </Button>
           </form>
