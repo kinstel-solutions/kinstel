@@ -17,7 +17,7 @@ export async function submitInquiryAction(data: InquiryFormValues) {
     return { success: false, message: `Invalid input: ${errorMessages}` };
   }
 
-  const { name, email, subject } = parsed.data;
+  const { name, email } = parsed.data;
 
   // 2. Ensure environment variables are loaded
   if (!process.env.RESEND_API_KEY) {
@@ -40,7 +40,7 @@ export async function submitInquiryAction(data: InquiryFormValues) {
     promises.push(resend.emails.send({
       from: fromEmail,
       to: toEmails,
-      subject: `New Inquiry: ${subject}`,
+      subject: `New Inquiry from ${name}`,
       react: InquiryNotificationEmail(parsed.data),
     }));
 
