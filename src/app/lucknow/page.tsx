@@ -54,42 +54,48 @@ export const metadata: Metadata = {
 const lucknowStats = [
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    value: "99%",
-    label: "Uptime Guarantee",
-    description: "Reliable hosting and support for Lucknow businesses.",
+    value: "95+",
+    label: "Performance & SEO Scores",
+    description: "Google PageSpeed Insights, Gold Standard test for websites.",
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
-    value: "50+",
-    label: "Local Clients",
-    description: "Helping businesses in Lucknow grow their online presence.",
+    value: "Zero",
+    label: "Booking or Upfront Costs",
+    description: "Pay only after you are satisfied with the results.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
-    value: "Top Rated",
-    label: "Agency in Lucknow",
-    description: "Recognized for excellence in web design and SEO.",
+    value: "5 Years",
+    label: "Warranty & Support",
+    description: "Your Website won't stop working under our watch.",
   },
 ];
 
 const lucknowServices = [
   {
     icon: <Palette className="h-8 w-8 text-accent" />,
-    title: "Custom Websites in Lucknow",
+    title: "Premium Websites in Lucknow",
     description:
-      "We create unique, professional websites tailored for the Lucknow market and your specific brand.",
+      "We create custom & unique websites tailored to your brand. Stand out from the competition",
   },
   {
     icon: <Rocket className="h-8 w-8 text-accent" />,
     title: "Local SEO & Speed",
     description:
-      "We optimize for local search to ensure your business ranks high when customers search in Lucknow.",
+      "We optimize for local search to ensure your business ranks high when customers search in Lucknow (or Your City).",
   },
+  // {
+  //   icon: <CheckCircle className="h-8 w-8 text-accent" />,
+  //   title: "Affordable Packages",
+  //   description:
+  //     "Our small team of highly skilled designers and developers leverage the latest AI tools to keep costs low without compromising quality.",
+  // },
   {
     icon: <CheckCircle className="h-8 w-8 text-accent" />,
-    title: "Affordable Packages",
+    title: "AI-Powered Development",
     description:
-      "High-quality web design and marketing solutions at competitive rates for Lucknow businesses.",
+      "By Leveraging the latest AI technologies, we can make your design or business ideas a reality without breaking the bank.",
   },
 ];
 
