@@ -25,7 +25,6 @@ import {
   useDynamicIslandSize,
   useScheduledAnimations,
 } from "@/components/ui/dynamic-island";
-import { InquiryForm } from "@/components/sections/inquiry-form";
 import Link from "next/link";
 
 const DynamicAction = () => {

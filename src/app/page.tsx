@@ -23,14 +23,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
-import { DynamicIslandDemo } from "@/components/ui/d-island";
-import { Particles } from "@/components/ui/particles";
 import { AuroraText } from "@/components/ui/aurora-text";
-import {
-  ScrollVelocityContainer,
-  ScrollVelocityRow,
-} from "@/components/ui/scroll-based-velocity";
-import { StripeBgGuides } from "@/components/ui/stripe-bg-guids";
+import { DynamicIslandDemo, StripeBgGuides } from "@/components/home-client-components";
 
 export const metadata: Metadata = {
   title: "Kinstel | Web Design & Digital Marketing Agency",

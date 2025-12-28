@@ -8,6 +8,7 @@ import { fontSans, fontSerif, fontLogo } from '@/app/fonts';
 import { WhatsAppWidget } from '@/components/ui/whatsapp-widget';
 import { siteConfig } from '@/lib/site-config';
 import GoogleAnalytics from '@/components/GA-analytics';
+import { GlassFilter } from '@/components/ui/liquid-glass-card';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -84,6 +85,7 @@ export default function RootLayout({
         {/* Vercel Speed Insights */}
         <SpeedInsights />
         <WhatsAppWidget phoneNumber="919889988408" message={whatsappMessage} />
+        <GlassFilter />
       </body>
     </html>
   );
