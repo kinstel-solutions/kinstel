@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { inquirySchema, type InquiryFormValues } from "@/app/inquiry-schema";
 import { submitInquiryAction } from "@/app/actions";
+import { event } from "@/lib/gtag";
 import {
   Card,
   CardContent,
@@ -53,6 +54,11 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
     const result = await submitInquiryAction(values);
 
     if (result.success) {
+      event({
+        action: "generate_lead",
+        category: "form",
+        label: "inquiry_submission",
+      });
       toast({
         title: "Inquiry Sent!",
         description: result.message,

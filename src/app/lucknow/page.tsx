@@ -60,6 +60,7 @@ import {
   ScrollVelocityContainerDynamic,
   ScrollVelocityRowDynamic,
 } from "./client-wrappers";
+import { TrackedLink } from "@/components/ui/tracked-link";
 
 // Dynamically import InquiryForm as it pulls in zod and react-hook-form
 const InquiryForm = dynamic(
@@ -293,18 +294,16 @@ export default function LucknowPage() {
                     className="h-12 px-8 text-lg">
                     Let's Discuss on Call
                   </SmartCtaButton>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="h-12 px-8 text-lg border-2 border-accent/80 text-accent hover:bg-accent hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] group">
-                    <Link href="#offers">
-                      <span className="flex items-center gap-2">
-                        View Offer
-                        <ArrowDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Link>
-                  </Button>
+                  <TrackedLink
+                    href="#offers"
+                    trackingAction="view_offer"
+                    trackingLabel="hero_cta"
+                    className="inline-flex items-center justify-center rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-8 border-2 border-accent/80 text-accent hover:bg-accent hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] group">
+                    <span className="flex items-center gap-2">
+                      View Offer
+                      <ArrowDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </TrackedLink>
                 </div>
               </div>
 
@@ -407,7 +406,10 @@ export default function LucknowPage() {
 
                 <ScrollToFormButton
                   size="lg"
-                  className="text-lg px-8 py-6 h-auto shadow-lg shadow-accent/25">
+                  className="text-lg px-8 py-6 h-auto shadow-lg shadow-accent/25"
+                  trackingAction="claim_offer"
+                  trackingCategory="conversion"
+                  trackingLabel="offers_section">
                   Claim Offer
                 </ScrollToFormButton>
                 <p className="mt-4 text-sm text-muted-foreground">

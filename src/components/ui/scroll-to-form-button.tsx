@@ -1,9 +1,31 @@
 "use client"
 
 import { Button, ButtonProps } from "@/components/ui/button"
+import { event } from "@/lib/gtag"
 
-export function ScrollToFormButton({ children, onClick, ...props }: ButtonProps) {
+interface ScrollToFormButtonProps extends ButtonProps {
+  trackingAction?: string;
+  trackingCategory?: string;
+  trackingLabel?: string;
+}
+
+export function ScrollToFormButton({ 
+  children, 
+  onClick, 
+  trackingAction,
+  trackingCategory,
+  trackingLabel,
+  ...props 
+}: ScrollToFormButtonProps) {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (trackingAction) {
+      event({
+        action: trackingAction,
+        category: trackingCategory || "engagement",
+        label: trackingLabel,
+      });
+    }
+
     if (onClick) onClick(e)
     
     const formContainer = document.getElementById("inquiry-form")
