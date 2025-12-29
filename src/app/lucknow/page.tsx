@@ -66,7 +66,7 @@ const InquiryForm = dynamic(
   () =>
     import("@/components/sections/inquiry-form").then((mod) => mod.InquiryForm),
   {
-    ssr: true, // Keep InquiryForm SSR for better initial paint of the form structure
+    ssr: true,
     loading: () => (
       <div className="h-[400px] w-full animate-pulse bg-card/50 border border-border/50 rounded-xl" />
     ),
@@ -74,7 +74,7 @@ const InquiryForm = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Kinstel | Best Website Designing Company in Lucknow",
+  title: "Best Website Designing Company in Lucknow",
   description:
     "Leading Web Design Company in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, No Upfront Cost. Schedule a consultation today!",
   keywords: [
@@ -245,13 +245,13 @@ const portfolioItems = [
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-      <ParticlesDynamic
+      {/* <ParticlesDynamic
         className="fixed inset-0 -z-10"
         quantity={150}
         staticity={30}
         color="#F59E0B"
         refresh
-      />
+      /> */}
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}

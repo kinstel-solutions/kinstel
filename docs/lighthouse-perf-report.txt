@@ -1,41 +1,15 @@
-87
-Performance
-98
-Accessibility
-73
-Best Practices
-100
-SEO
-87
-FCP
-+9
-LCP
-+18
-TBT
-+26
-CLS
-+25
-SI
-+10
-Performance
-Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
-0–49
-50–89
-90–100
-Final Screenshot
-
 Metrics
 Expand view
 First Contentful Paint
-2.0 s
+2.1 s
 Largest Contentful Paint
-3.2 s
+3.1 s
 Total Blocking Time
-250 ms
+260 ms
 Cumulative Layout Shift
-0
+0.001
 Speed Index
-2.0 s
+2.1 s
 View Treemap
 Screenshot
 Screenshot
@@ -57,16 +31,82 @@ TBT
 
 CLS
 Insights
-Render blocking requests Est savings of 920 ms
+Render blocking requests Est savings of 1,330 ms
 Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.FCPLCPUnscored
 URL
 Transfer Size
 Duration
 localhost 1st party
 16.9 KiB	610 ms
-…css/8a7b4fc9fda8141b.css(localhost)
+…css/33394a8655f386d4.css(localhost)
 14.8 KiB
 300 ms
 …css/7ffcba92a8e1a6b6.css(localhost)
 2.1 KiB
 300 ms
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Top function call
+Total reflow time
+794-aad115cd44dcb1b8.js:2
+3 ms
+Source
+Total reflow time
+[unattributed]
+40 ms
+content.bundle.js:1
+0 ms
+content.bundle.js:1
+0 ms
+content.bundle.js:1
+0 ms
+444-e6a1bca35760c626.js:1
+2 ms
+216-5a847cda7fb9a810.js:1
+0 ms
+_next/static/chunks/…8df17f05b4172c.js:1
+1 ms
+_next/static/chunks/…679322b2dc3c73.js:1
+1 ms
+_next/static/chunks/…eebc5d32a36c6b.js:1
+0 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 245 ms
+Initial Navigation
+/lucknow(localhost) - 31 ms, 24.29 KiB
+…css/7ffcba92a8e1a6b6.css(localhost) - 37 ms, 2.12 KiB
+…media/08aedeceaf1dcd57-s.woff2(localhost) - 245 ms, 20.00 KiB
+…media/cc978ac5ee68c2b6-s.woff2(localhost) - 245 ms, 15.18 KiB
+…media/5c0c2bcbaa4149ca-s.p.woff2(localhost) - 239 ms, 37.20 KiB
+…media/4c9affa5bc8f420e-s.p.woff2(localhost) - 237 ms, 24.29 KiB
+…media/5d41a8f21980dc9c-s.p.woff2(localhost) - 208 ms, 10.86 KiB
+…css/33394a8655f386d4.css(localhost) - 80 ms, 14.79 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Legacy JavaScript Est savings of 12 KiB
+Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support older browsers. Learn why most sites can deploy ES6+ code without transpilingFCPLCPUnscored
+URL
+Wasted bytes
+localhost 1st party
+11.7 KiB
+…chunks/794-aad115cd44dcb1b8.js(localhost)
+11.7 KiB
+794-aad115cd44dcb1b8.js:2
+Array.prototype.at
+794-aad115cd44dcb1b8.js:2
+Array.prototype.flat
+794-aad115cd44dcb1b8.js:2
+Array.prototype.flatMap
+794-aad115cd44dcb1b8.js:2
+Object.fromEntries
+794-aad115cd44dcb1b8.js:2
+Object.hasOwn
+794-aad115cd44dcb1b8.js:2
+String.prototype.trimEnd
+794-aad115cd44dcb1b8.js:2
+String.prototype.trimStart
