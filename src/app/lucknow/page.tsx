@@ -245,13 +245,6 @@ const portfolioItems = [
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-      <ParticlesDynamic
-        className="fixed inset-0 -z-10"
-        quantity={150}
-        staticity={30}
-        color="#F59E0B"
-        refresh
-      />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -330,7 +323,7 @@ export default function LucknowPage() {
         </section>
 
         {/* Velocity Scroll */}
-        <div className="bg-accent/5 py-4 border-y border-accent/10">
+        <div className="bg-accent/5 py-4 border-y border-accent/10 min-h-[52px]">
           <ScrollVelocityContainerDynamic>
             <ScrollVelocityRowDynamic baseVelocity={3}>
               <span className="mx-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
@@ -640,7 +633,7 @@ export default function LucknowPage() {
         </section>
 
         {/* Tech Stack Marquee */}
-        <div className="py-12 bg-background border-y border-border/50">
+        <div className="py-12 bg-background border-y border-border/50 min-h-[176px]">
           <div className="container mx-auto px-4 mb-8 text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Powered By Modern Tech
@@ -941,6 +934,13 @@ export default function LucknowPage() {
         </section>
       </main>
       <Footer />
+      <ParticlesDynamic
+        className="fixed inset-0 -z-10"
+        quantity={150}
+        staticity={30}
+        color="#F59E0B"
+        refresh
+      />
     </div>
   );
 }
