@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 
+
 export const ParticlesDynamic = dynamic(
   () => import("@/components/ui/particles").then((mod) => mod.Particles),
   {
@@ -25,3 +26,5 @@ export const ScrollVelocityRowDynamic = dynamic(
     ),
   { ssr: false },
 );
+
+

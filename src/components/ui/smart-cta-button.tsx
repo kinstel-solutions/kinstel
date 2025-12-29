@@ -4,6 +4,7 @@ import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { event } from "@/lib/gtag";
 
 interface SmartCtaButtonProps extends ButtonProps {
   arrow?: boolean;
@@ -12,7 +13,7 @@ interface SmartCtaButtonProps extends ButtonProps {
   emailSubject?: string;
   emailBody?: string;
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 export function SmartCtaButton({
@@ -36,6 +37,15 @@ export function SmartCtaButton({
     ? `tel:${phoneNumber}`
     : `mailto:${email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
+  const handleTrackedClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    event({
+      action: "contact",
+      category: "cta",
+      label: isMobile ? "phone_click" : "email_click",
+    });
+    if (onClick) onClick(e);
+  };
+
   if (!isClient) {
     // Render a placeholder or disabled button on the server to avoid hydration mismatch
     return (
@@ -56,7 +66,7 @@ export function SmartCtaButton({
       {...props}>
       <a
         href={href}
-        onClick={onClick}>
+        onClick={handleTrackedClick}>
         {children}
         {arrow && (
           <ArrowUpRight className="ml-1 h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
