@@ -318,7 +318,7 @@ export default function LucknowPage() {
               {/* Form Content */}
               <div
                 id="inquiry-form"
-                className="w-full max-w-md mx-auto lg:mr-0 animate-in fade-in slide-in-from-bottom-12 duration-500 delay-150 relative">
+                className="w-full max-w-md mx-auto lg:mr-0 relative">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent/20 to-primary/20 blur-xl opacity-50" />
                 <InquiryForm
                   minimal={true}
