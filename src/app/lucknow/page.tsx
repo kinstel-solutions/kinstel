@@ -10,6 +10,7 @@ import {
   Rocket,
   CheckCircle,
   ArrowUpRight,
+  ArrowRight,
   ShieldCheck,
   Smartphone,
   Search,
@@ -23,6 +24,8 @@ import {
   ShoppingBag,
   Briefcase,
   Utensils,
+  Gift,
+  ArrowDown,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -36,6 +39,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
+import { ScrollToFormButton } from "@/components/ui/scroll-to-form-button";
 import {
   Accordion,
   AccordionContent,
@@ -99,9 +103,9 @@ const lucknowStats = [
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
-    value: "₹15,000",
-    label: "Worth of Exclusive Offers",
-    description: "Schedule a consultation today to claim exclusive offers.",
+    value: "Zero",
+    label: "Maintenance",
+    description: "Your website Won't break under our watch.",
   },
 ];
 
@@ -120,9 +124,9 @@ const lucknowServices = [
   },
   {
     icon: <CheckCircle className="h-8 w-8 text-accent" />,
-    title: "No Upfront Cost",
+    title: "AI Powered Development",
     description:
-      "We trust our quality. Start your project with zero booking cost and pay only when satisfied.",
+      "By leveraging the latest AI technologies, We make your Design or Business Ideas into Reality without breaking the bank. ",
   },
 ];
 
@@ -262,19 +266,29 @@ export default function LucknowPage() {
                 <Badge
                   variant="outline"
                   className="mb-6 px-4 py-1.5 text-sm font-medium border-accent/30 bg-accent/5 text-accent rounded-full">
-                  Complete Web Package at ₹9999
+                  Premium Websites starting @9999
                 </Badge>
+                {/* <Badge
+                  variant="secondary"
+                  className="px-4 py-2 text-sm md:text-base font-medium bg-accent/10 text-accent border-accent/20">
+                  🎉 Limited Time New Year Offer: Save ₹20,000
+                </Badge> */}
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-7xl font-headline leading-tight">
-                  Leading{" "}
+                  Lucknow's 1st{" "}
                   <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent ">
-                    Web Designer
+                    AI Powered
                   </span>{" "}
-                  in Lucknow
+                  Web Design Company
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl">
-                  Convert Clicks into Clients with a Premium, SEO-Ready Website.
-                  Schedule a consultation today to claim exclusive offers worth{" "}
-                  <span className="text-foreground font-bold">₹15,000</span> &{" "}
+                  Convert Clicks into Clients/Customer with a Premium, SEO-Ready
+                  Website. Schedule a consultation today to claim (*Limited
+                  Time){" "}
+                  <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
+                    New Year's offers
+                  </span>{" "}
+                  worth{" "}
+                  <span className="text-foreground font-bold">₹20,000</span> &{" "}
                   <span className="text-foreground font-bold">
                     Zero booking cost.
                   </span>
@@ -284,24 +298,31 @@ export default function LucknowPage() {
                     phoneNumber="+919889988408"
                     email="contact@kinstel.com"
                     className="h-12 px-8 text-lg">
-                    Talk with a Senior Developer
+                    Let's Discuss on Call
                   </SmartCtaButton>
                   <Button
                     asChild
                     variant="outline"
                     size="lg"
-                    className="h-12 px-8 text-lg">
-                    <Link href="#package">View ₹9999 Package</Link>
+                    className="h-12 px-8 text-lg border-2 border-accent/80 text-accent hover:bg-accent hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] group">
+                    <Link href="#offers">
+                      <span className="flex items-center gap-2">
+                        View Offer
+                        <ArrowDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
                   </Button>
                 </div>
               </div>
 
               {/* Form Content */}
-              <div className="w-full max-w-md mx-auto lg:mr-0 animate-in fade-in slide-in-from-bottom-12 duration-500 delay-150 relative">
+              <div
+                id="inquiry-form"
+                className="w-full max-w-md mx-auto lg:mr-0 animate-in fade-in slide-in-from-bottom-12 duration-500 delay-150 relative">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent/20 to-primary/20 blur-xl opacity-50" />
                 <InquiryForm
                   minimal={true}
-                  className="bg-card/80 backdrop-blur-md border border-border/50 p-6 rounded-xl shadow-2xl relative z-10"
+                  className="p-6 relative z-10"
                 />
               </div>
             </div>
@@ -320,59 +341,86 @@ export default function LucknowPage() {
           </ScrollVelocityContainerDynamic>
         </div>
 
-        {/* Stats Section */}
+        {/* Offer Details */}
         <section
-          id="stats"
-          className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-4">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {lucknowStats.map((stat, index) => (
-                <LiquidCard
-                  key={index}
-                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}>
-                  <div>{stat.icon}</div>
-                  <p className="text-3xl font-semibold text-foreground">
-                    {stat.value}
-                  </p>
-                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
-                  <p className=" text-sm text-muted-foreground">
-                    {stat.description}
-                  </p>
-                </LiquidCard>
-              ))}
-            </div>
-          </div>
-        </section>
+          id="offers"
+          className="py-20">
+          <div className="container px-4 mx-auto">
+            <div className="bg-gradient-to-br from-accent/5 to-purple-500/5 border border-accent/20 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-32 bg-accent/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+              <div className="absolute bottom-0 left-0 p-32 bg-purple-500/10 rounded-full blur-3xl -ml-16 -mb-16"></div>
 
-        {/* Process Section */}
-        <section className="py-12 md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                How We Get You <span className="text-accent">Online</span>
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                From concept to launch in 4 simple steps.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <div
-                  key={index}
-                  className="relative flex flex-col items-center text-center p-6 bg-accent/5 rounded-xl border border-accent/10">
-                  <div className="absolute -top-4 bg-accent text-accent-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                    {index + 1}
+              <div className="relative z-10 max-w-4xl mx-auto">
+                <Gift className="h-16 w-16 text-accent mx-auto mb-6" />
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Unlock New Year's Offer Worth ₹20,000*
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Schedule your consultation today and claim your free digital
+                  growth package.
+                </p>
+
+                <div className="grid sm:grid-cols-3 gap-6 mb-10 text-left">
+                  <div className="bg-card/50 p-4 rounded-xl border border-border/50">
+                    <span className="block text-2xl font-bold text-accent mb-1">
+                      Free
+                    </span>
+                    <span className="font-medium">
+                      SSL + 1 Year Hosting (worth ₹4,000){" "}
+                    </span>
                   </div>
-                  <h3 className="mt-4 text-xl font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {step.description}
-                  </p>
+                  <div className="bg-card/50 p-4 rounded-xl border border-border/50">
+                    <span className="block text-2xl font-bold text-accent mb-1">
+                      Free
+                    </span>
+                    <span className="font-medium">
+                      Basic SEO Setup (worth ₹5,000)
+                    </span>
+                  </div>
+                  <div className="bg-card/50 p-4 rounded-xl border border-border/50">
+                    <span className="block text-2xl font-bold text-accent mb-1">
+                      Free
+                    </span>
+                    <span className="font-medium">
+                      Basic Logo (worth ₹2,000)
+                    </span>
+                  </div>
+                  <div className="bg-card/50 p-4 rounded-xl border border-border/50">
+                    <span className="block text-2xl font-bold text-accent mb-1">
+                      Free
+                    </span>
+                    <span className="font-medium">
+                      1 year AMC (worth ₹6,000)
+                    </span>
+                  </div>
+                  <div className="bg-card/50 p-4 rounded-xl border border-border/50">
+                    <span className="block text-2xl font-bold text-accent mb-1">
+                      Free
+                    </span>
+                    <span className="font-medium">
+                      Google Analytics Setup (worth ₹1,500)
+                    </span>
+                  </div>
+
+                  <div className="bg-card/50 p-4 rounded-xl border border-border/50">
+                    <span className="block text-2xl font-bold text-accent mb-1">
+                      Free
+                    </span>
+                    <span className="font-medium">
+                      Professional Website Copy (worth ₹1,500)
+                    </span>
+                  </div>
                 </div>
-              ))}
+
+                <ScrollToFormButton
+                  size="lg"
+                  className="text-lg px-8 py-6 h-auto shadow-lg shadow-accent/25">
+                  Claim Offer
+                </ScrollToFormButton>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  *Offer valid for limited time only. Terms apply.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -421,7 +469,7 @@ export default function LucknowPage() {
               </div>
               <div className="relative">
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-accent/10 to-transparent blur-3xl" />
-                <LiquidCard className="p-8 border-accent/20 bg-card/50 backdrop-blur-sm">
+                <LiquidCard className="p-8 border-accent/20">
                   <div className="flex justify-between items-start mb-6">
                     <div>
                       <h3 className="text-2xl font-bold">Premium Starter</h3>
@@ -536,7 +584,7 @@ export default function LucknowPage() {
                   <TableRow>
                     <TableCell className="font-medium">Support</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold">
-                      5 Years Warranty
+                      1 year Free AMC
                     </TableCell>
                     <TableCell className="text-center">
                       Limited/Ghosted
@@ -546,47 +594,47 @@ export default function LucknowPage() {
                 </TableBody>
               </Table>
             </div>
+            <div className="mt-10 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Choose Kinstel Today
+              </ScrollToFormButton>
+            </div>
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Stats Section */}
         <section
-          id="services"
+          id="stats"
           className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="font-semibold uppercase tracking-wider text-accent">
-                Local Expertise
-              </p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Best <span className="text-accent">Web Design Company</span> in
-                Lucknow
-              </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
-                We provide comprehensive web design and digital marketing
-                services to help Lucknow businesses thrive in the digital age.
-              </p>
-            </div>
-            <div className="mt-16 grid gap-8 md:grid-cols-3">
-              {lucknowServices.map((service, index) => (
+          <div className="container mx-auto px-4 md:px-4">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {lucknowStats.map((stat, index) => (
                 <LiquidCard
                   key={index}
-                  className="flex flex-col text-left p-6 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
+                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
                   style={{
                     animationDelay: `${index * 150}ms`,
                     animationFillMode: "backwards",
                   }}>
-                  <CardHeader className="p-0">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0 mt-2">
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardContent>
+                  <div>{stat.icon}</div>
+                  <p className="text-3xl font-semibold text-foreground">
+                    {stat.value}
+                  </p>
+                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
+                  <p className=" text-sm text-muted-foreground">
+                    {stat.description}
+                  </p>
                 </LiquidCard>
               ))}
+            </div>
+            <div className="mt-10 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Boost Your Stats
+              </ScrollToFormButton>
             </div>
           </div>
         </section>
@@ -621,61 +669,6 @@ export default function LucknowPage() {
             </ScrollVelocityRowDynamic>
           </ScrollVelocityContainerDynamic>
         </div>
-
-        {/* Industries Section */}
-        <section className="py-12 md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Industries We <span className="text-accent">Serve</span>
-              </h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {industries.map((ind, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center justify-center p-6 bg-card border border-border/50 rounded-xl hover:border-accent/50 transition-colors">
-                  <div className="mb-3 text-accent">{ind.icon}</div>
-                  <span className="font-medium text-sm">{ind.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Frequently Asked <span className="text-accent">Questions</span>
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Everything you need to know about our web design services in
-                Lucknow.
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto">
-              <Accordion
-                type="single"
-                collapsible
-                className="w-full">
-                {faqs.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}>
-                    <AccordionTrigger className="text-left font-semibold">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-        </section>
 
         {/* Portfolio Section */}
         <section
@@ -747,6 +740,167 @@ export default function LucknowPage() {
                 </Link>
               ))}
             </div>
+            <div className="mt-12 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Get a Website Like This
+              </ScrollToFormButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section
+          id="services"
+          className=" py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="font-semibold uppercase tracking-wider text-accent">
+                Local Expertise
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                Best <span className="text-accent">Web Design Company</span> in
+                Lucknow
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground">
+                We provide comprehensive web design and digital marketing
+                services to help Lucknow businesses thrive in the digital era.
+              </p>
+            </div>
+            <div className="mt-16 grid gap-8 md:grid-cols-3">
+              {lucknowServices.map((service, index) => (
+                <LiquidCard
+                  key={index}
+                  className="flex flex-col text-left p-6 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
+                  style={{
+                    animationDelay: `${index * 150}ms`,
+                    animationFillMode: "backwards",
+                  }}>
+                  <CardHeader className="p-0">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 mt-2">
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardContent>
+                </LiquidCard>
+              ))}
+            </div>
+            <div className="mt-12 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Get a Custom Quote
+              </ScrollToFormButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Industries Section */}
+        <section className="py-12 md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Industries We <span className="text-accent">Serve</span>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {industries.map((ind, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center justify-center p-6 bg-card border border-border/50 rounded-xl hover:border-accent/50 transition-colors">
+                  <div className="mb-3 text-accent">{ind.icon}</div>
+                  <span className="font-medium text-sm">{ind.name}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Discuss Your Industry Needs
+              </ScrollToFormButton>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className=" py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Frequently Asked <span className="text-accent">Questions</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Everything you need to know about our web design services in
+                Lucknow.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}>
+                    <AccordionTrigger className="text-left font-semibold">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+            <div className="mt-10 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Ask a Question
+              </ScrollToFormButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-12 md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                How We Get You <span className="text-accent">Online</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                From concept to launch in 4 simple steps.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className="relative flex flex-col items-center text-center p-6 bg-accent/5 rounded-xl border border-accent/10">
+                  <div className="absolute -top-4 bg-accent text-accent-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <h3 className="mt-4 text-xl font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Start Your Journey
+              </ScrollToFormButton>
+            </div>
           </div>
         </section>
 
@@ -765,7 +919,7 @@ export default function LucknowPage() {
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Claim your New Year Offers worth{" "}
-                <span className="text-foreground font-bold">₹15,000</span>.
+                <span className="text-foreground font-bold">₹20,000</span>.
                 Valid till{" "}
                 <span className="text-foreground font-bold">Jan 1, 2026</span>.
                 Get your Website Now-Pay Later.

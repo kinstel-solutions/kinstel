@@ -87,11 +87,11 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Name/Business Name </FormLabel>
                     <FormControl>
                       <Input
                         required
-                        placeholder="Sharma and sons"
+                        placeholder="Enter your name..."
                         {...field}
                       />
                     </FormControl>
@@ -109,7 +109,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                     <FormControl>
                       <Input
                         type="tel"
-                        placeholder="098XXXXXX00"
+                        placeholder="Enter your phone number..."
                         {...field}
                       />
                     </FormControl>
@@ -127,7 +127,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="snsingh@gmail.com"
+                      placeholder="Enter your email address..."
                       {...field}
                     />
                   </FormControl>
@@ -163,7 +163,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                   Submitting...
                 </>
               ) : (
-                "Get a FREE Quote"
+                "Unlock Offers"
               )}
             </Button>
           </form>
