@@ -93,7 +93,7 @@ export function Footer() {
               <h3 className="font-semibold">Connect</h3>
               <div className="flex items-center space-x-4">
                 <a
-                  href="https://x.com/kinstels"
+                  href="https://x.com/Hi4mKinstel"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground"

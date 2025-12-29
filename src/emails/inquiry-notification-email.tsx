@@ -1,4 +1,3 @@
-
 import {
   Body,
   Container,
@@ -17,13 +16,11 @@ export const InquiryNotificationEmail = ({
   name,
   email,
   phone,
-  subject,
   details,
-  businessName,
 }: Inquiry) => (
   <Html>
     <Head />
-    <Preview>New Inquiry: {subject}</Preview>
+    <Preview>New Inquiry from {name}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Heading style={heading}>New Inquiry Received</Heading>
@@ -32,12 +29,7 @@ export const InquiryNotificationEmail = ({
         <Section style={detailsSection}>
           <Text style={label}>From:</Text>
           <Text style={value}>{name}</Text>
-          {businessName && (
-            <>
-              <Text style={label}>Business Name:</Text>
-              <Text style={value}>{businessName}</Text>
-            </>
-          )}
+          
           <Text style={label}>Email:</Text>
           <Text style={value}>{email}</Text>
           {phone && (
@@ -46,8 +38,6 @@ export const InquiryNotificationEmail = ({
               <Text style={value}>{phone}</Text>
             </>
           )}
-          <Text style={label}>Subject:</Text>
-          <Text style={value}>{subject}</Text>
         </Section>
         <Hr style={hr} />
         <Section>
