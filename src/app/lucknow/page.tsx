@@ -245,13 +245,13 @@ const portfolioItems = [
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-      {/* <ParticlesDynamic
+      <ParticlesDynamic
         className="fixed inset-0 -z-10"
         quantity={150}
         staticity={30}
         color="#F59E0B"
         refresh
-      /> */}
+      />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
