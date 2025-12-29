@@ -69,6 +69,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
 
   return (
     <LiquidCard
+      minimal={minimal}
       className={cn("w-full transition-all duration-300 ", className)}>
       <CardHeader>
         <CardTitle className="text-center">Send an Inquiry</CardTitle>
