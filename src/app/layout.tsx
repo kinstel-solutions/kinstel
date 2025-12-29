@@ -70,7 +70,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const whatsappMessage = "Hello! I'm visiting your website and would like to inquire about your law firm website development services.";
+  const whatsappMessage = "Hello! I'm visiting your website and would like to inquire about your website development services.";
   return (
     <html lang="en" className="scroll-smooth dark">
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, fontSerif.variable, fontLogo.variable)}>
