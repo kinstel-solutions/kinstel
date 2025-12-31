@@ -56,7 +56,6 @@ import {
 } from "@/components/ui/table";
 import { LiquidCard } from "@/components/ui/liquid-glass-card";
 import {
-  ParticlesDynamic,
   ScrollVelocityContainerDynamic,
   ScrollVelocityRowDynamic,
 } from "./client-wrappers";
@@ -267,25 +266,19 @@ export default function LucknowPage() {
                   className="px-4 py-2 text-sm md:text-base font-medium bg-accent/10 text-accent border-accent/20">
                   🎉 Limited Time New Year Offer: Save ₹20,000
                 </Badge> */}
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-7xl font-headline leading-tight">
-                  Lucknow's 1st{" "}
+                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl font-headline leading-tight">
+                  Lucknow's{" "}
                   <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent ">
-                    AI Powered
+                    Leading
                   </span>{" "}
                   Web Design Company
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl">
+                <p className="mt-6 text-lg leading-8  max-w-2xl">
                   Convert Clicks into Clients/Customer with a Premium, SEO-Ready
                   Website. Schedule a consultation today to claim (*Limited
-                  Time){" "}
-                  <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
-                    New Year's offers
-                  </span>{" "}
-                  worth{" "}
-                  <span className="text-foreground font-bold">₹20,000</span> &{" "}
-                  <span className="text-foreground font-bold">
-                    Zero booking cost.
-                  </span>
+                  Time) <span className="font-bold">New Year's offers</span>{" "}
+                  worth <span className=" font-bold">₹20,000</span> &{" "}
+                  <span className=" font-bold">Zero booking cost.</span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
                   <SmartCtaButton
@@ -311,7 +304,7 @@ export default function LucknowPage() {
               <div
                 id="inquiry-form"
                 className="w-full max-w-md mx-auto lg:mr-0 relative">
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent/20 to-primary/20 blur-xl opacity-50" />
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent-foreground/20 to-primary/20 blur-xl" />
                 <InquiryForm
                   minimal={true}
                   className="p-6 relative z-10"
@@ -338,7 +331,7 @@ export default function LucknowPage() {
           id="offers"
           className="py-20">
           <div className="container px-4 mx-auto">
-            <div className="bg-gradient-to-br from-accent/5 to-purple-500/5 border border-accent/20 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-primary/5 to-purple-500/5 border border-accent/20 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
               <div className="absolute top-0 right-0 p-32 bg-accent/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
               <div className="absolute bottom-0 left-0 p-32 bg-purple-500/10 rounded-full blur-3xl -ml-16 -mb-16"></div>
 
@@ -406,7 +399,7 @@ export default function LucknowPage() {
 
                 <ScrollToFormButton
                   size="lg"
-                  className="text-lg px-8 py-6 h-auto shadow-lg shadow-accent/25"
+                  className="shadow-lg shadow-accent/20"
                   trackingAction="claim_offer"
                   trackingCategory="conversion"
                   trackingLabel="offers_section">
@@ -589,13 +582,6 @@ export default function LucknowPage() {
                 </TableBody>
               </Table>
             </div>
-            <div className="mt-10 flex justify-center">
-              <ScrollToFormButton
-                size="lg"
-                className="shadow-lg shadow-accent/20">
-                Choose Kinstel Today
-              </ScrollToFormButton>
-            </div>
           </div>
         </section>
 
@@ -623,13 +609,6 @@ export default function LucknowPage() {
                   </p>
                 </LiquidCard>
               ))}
-            </div>
-            <div className="mt-10 flex justify-center">
-              <ScrollToFormButton
-                size="lg"
-                className="shadow-lg shadow-accent/20">
-                Boost Your Stats
-              </ScrollToFormButton>
             </div>
           </div>
         </section>
@@ -784,13 +763,6 @@ export default function LucknowPage() {
                 </LiquidCard>
               ))}
             </div>
-            <div className="mt-12 flex justify-center">
-              <ScrollToFormButton
-                size="lg"
-                className="shadow-lg shadow-accent/20">
-                Get a Custom Quote
-              </ScrollToFormButton>
-            </div>
           </div>
         </section>
 
@@ -853,13 +825,6 @@ export default function LucknowPage() {
                 ))}
               </Accordion>
             </div>
-            <div className="mt-10 flex justify-center">
-              <ScrollToFormButton
-                size="lg"
-                className="shadow-lg shadow-accent/20">
-                Ask a Question
-              </ScrollToFormButton>
-            </div>
           </div>
         </section>
 
@@ -888,13 +853,6 @@ export default function LucknowPage() {
                   </p>
                 </div>
               ))}
-            </div>
-            <div className="mt-12 flex justify-center">
-              <ScrollToFormButton
-                size="lg"
-                className="shadow-lg shadow-accent/20">
-                Start Your Journey
-              </ScrollToFormButton>
             </div>
           </div>
         </section>
@@ -929,20 +887,13 @@ export default function LucknowPage() {
                 </SmartCtaButton>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">
-                Talk with a Senior Developer today. No obligation.
+                Talk with a Web Designer today. No obligation.
               </p>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
-      <ParticlesDynamic
-        className="fixed inset-0 -z-10"
-        quantity={150}
-        staticity={30}
-        color="#F59E0B"
-        refresh
-      />
+      <Footer />{" "}
     </div>
   );
 }
