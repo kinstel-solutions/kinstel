@@ -6,7 +6,7 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { event } from "@/lib/gtag";
 
-interface SmartCtaButtonProps extends ButtonProps {
+interface SmartCtaButtonProps extends Omit<ButtonProps, "onClick"> {
   arrow?: boolean;
   phoneNumber: string;
   email: string;

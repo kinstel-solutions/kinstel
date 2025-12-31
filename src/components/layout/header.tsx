@@ -49,8 +49,8 @@ export function Header() {
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
-        className="ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm">
-        <Phone className="h-4 w-4 text-green-700 animate-pulse" />
+        className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
+        <Phone className="h-4 w-4 text-white animate-pulse" />
         9889988408
       </SmartCtaButton>
     </nav>
@@ -74,7 +74,7 @@ export function Header() {
       <SmartCtaButton
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
-        className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm"
+        className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent shadow-sm"
         onClick={() => setIsSheetOpen(false)}>
         Inquire Now
       </SmartCtaButton>
@@ -102,8 +102,8 @@ export function Header() {
             arrow={false}
             phoneNumber="+919889988408"
             email="contact@kinstel.com"
-            className="ml-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm">
-            <Phone className="h-4 w-4 text-green-700 animate-pulse" />
+            className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
+            <Phone className="h-4 w-4 text-white animate-pulse" />
             9889988408
           </SmartCtaButton>
           <Sheet
