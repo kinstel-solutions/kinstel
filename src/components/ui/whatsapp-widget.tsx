@@ -1,3 +1,5 @@
+"use client";
+
 import { event } from "@/lib/gtag";
 import React from "react";
 
