@@ -56,12 +56,12 @@ export function Footer() {
                 Contact
               </Link>
               <Link
-                href="/lawyers"
+                href="/law-firm-marketing"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 For Lawyers
               </Link>
               <Link
-                href="/lucknow"
+                href="/web-design-company-lucknow"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Lucknow
               </Link>

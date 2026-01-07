@@ -60,6 +60,8 @@ import {
   ScrollVelocityRowDynamic,
 } from "./client-wrappers";
 import { TrackedLink } from "@/components/ui/tracked-link";
+import { cn } from "@/lib/utils"
+import { DotPattern } from "@/components/ui/dot-pattern"
 
 // Dynamically import InquiryForm as it pulls in zod and react-hook-form
 const InquiryForm = dynamic(
@@ -74,15 +76,15 @@ const InquiryForm = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Best Website Designing Company in Lucknow",
+  title: "Leading Website Design Company in Lucknow | Kinstel",
   description:
-    "Leading Web Design Company in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, No Upfront Cost. Schedule a consultation today!",
+    "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, No Upfront Cost. Schedule a consultation today!",
   keywords: [
-    "best website designing company in lucknow",
+    "web design company in lucknow",
     "web development company in lucknow",
     "website designer in lucknow",
-    "website design company in lucknow",
-    "web design company in lucknow",
+    "website designer in lucknow",
+    "best website designing company in lucknow",
     "seo company lucknow",
   ],
 };
@@ -123,10 +125,10 @@ const lucknowServices = [
       "We build websites with 95+ SEO scores to help you rank higher and convert clicks into clients.",
   },
   {
-    icon: <CheckCircle className="h-8 w-8 text-accent" />,
-    title: "AI Powered Development",
+    icon: <ShieldCheck className="h-8 w-8 text-accent" />,
+    title: "Secure Hosting & Maintenance",
     description:
-      "By leveraging the latest AI technologies, We make your Design or Business Ideas into Reality without breaking the bank. ",
+      "Reliable, high-speed cloud hosting with 24/7 security monitoring and regular backups to keep your business online.",
   },
 ];
 
@@ -161,7 +163,7 @@ const processSteps = [
   {
     title: "Discovery",
     description:
-      "We discuss your business goals, target audience, and design preferences.",
+      "We discuss your business goals, target audience, target location(Gomti Nagar, Hazaratganj etc), and design preferences.",
   },
   {
     title: "Design",
@@ -191,7 +193,7 @@ const faqs = [
   {
     question: "What is included in the ₹9999 package?",
     answer:
-      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website (up to 5 pages), mobile optimization, basic SEO, hosting setup, and an inquiry form. It's perfect for small businesses looking for a premium online presence.",
+      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website (up to 5 pages), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a premium online presence.",
   },
   {
     question: "What does 'Zero Upfront Cost' mean?",
@@ -211,7 +213,7 @@ const faqs = [
   {
     question: "Do you offer maintenance after the website is live?",
     answer:
-      "Absolutely. We provide 5 years of warranty and support. We ensure your website stays updated, secure, and performs optimally long after the launch.",
+      "Absolutely. We provide 12 months of support. We ensure your website stays updated, secure, and performs optimally long after the launch.",
   },
 ];
 
@@ -245,8 +247,21 @@ const portfolioItems = [
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
+       <DotPattern
+       
+        width={20}
+        height={20}
+        cx={1}
+        cy={1}
+        cr={1}
+        className={cn(
+          "[mask-image:linear-gradient(to_bottom,white,transparent,transparent)]"
+        )}
+      />
       <Header />
+       
       <main className="flex-grow">
+        
         {/* Hero Section */}
         <section className="relative overflow-hidden min-h-[90vh] flex flex-col items-center justify-center py-12 md:py-20">
           <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -256,6 +271,7 @@ export default function LucknowPage() {
                 className="flex flex-col text-center lg:text-left items-center lg:items-start"
                 // animate-in fade-in slide-in-from-bottom-12 duration-500
               >
+                
                 <Badge
                   variant="outline"
                   className="mb-6 px-4 py-1.5 text-sm font-medium border-accent/30 bg-accent/5 text-accent rounded-full">
@@ -266,6 +282,7 @@ export default function LucknowPage() {
                   className="px-4 py-2 text-sm md:text-base font-medium bg-accent/10 text-accent border-accent/20">
                   🎉 Limited Time New Year Offer: Save ₹20,000
                 </Badge> */}
+                
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl font-headline leading-tight">
                   Lucknow's{" "}
                   <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent ">
@@ -273,6 +290,7 @@ export default function LucknowPage() {
                   </span>{" "}
                   Web Design Company
                 </h1>
+                
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
                   Convert Clicks into Clients/Customer with a Premium, SEO-Ready
                   Website. Schedule a consultation today to claim (*Limited
@@ -734,7 +752,7 @@ export default function LucknowPage() {
                 Local Expertise
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Best <span className="text-accent">Web Design Company</span> in
+                Affordable <span className="text-accent">Web Design Services</span> in
                 Lucknow
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -771,7 +789,7 @@ export default function LucknowPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Industries We <span className="text-accent">Serve</span>
+                Industries We <span className="text-accent">Serve</span> in Lucknow
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -868,14 +886,12 @@ export default function LucknowPage() {
                 Limited Time Offer
               </p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Lucknow&apos;s Best Web Design Company
+                Expert Web Designers in Lucknow
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Claim your New Year Offers worth{" "}
-                <span className="text-foreground font-bold">₹20,000</span>.
-                Valid till{" "}
-                <span className="text-foreground font-bold">Jan 1, 2026</span>.
-                Get your Website Now-Pay Later.
+                <span className="text-foreground font-bold">₹20,000</span>. Get
+                your Website Now-Pay Later.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <SmartCtaButton

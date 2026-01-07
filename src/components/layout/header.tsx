@@ -15,7 +15,7 @@ import { KLogo } from "@/components/ui/k-logo";
 import { SmartCtaButton } from "../ui/smart-cta-button";
 
 const navLinks = [
-  { href: "/lucknow", label: "Lucknow" },
+  { href: "/web-design-company-lucknow", label: "Lucknow" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
 ];

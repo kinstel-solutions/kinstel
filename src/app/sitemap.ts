@@ -13,7 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       '/terms-and-conditions',
       '/refund-policy',
       '/delivery-policy',
-      '/shipping'
+      '/shipping',
+      '/web-design-company-lucknow',
+      '/law-firm-marketing'
   ];
 
   const routes = staticRoutes.map((route) => ({
