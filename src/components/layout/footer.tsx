@@ -108,6 +108,11 @@ export function Footer() {
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Shipping Policy
               </Link>
+              <Link
+                href="/credentials"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Credentials
+              </Link>
             </div>
             <div className="grid gap-2">
               <h3 className="font-semibold">Connect</h3>
@@ -134,6 +139,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+          <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q</p>
           <p>&copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>
