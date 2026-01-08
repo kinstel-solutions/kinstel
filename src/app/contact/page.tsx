@@ -55,12 +55,13 @@ export default function ContactPage() {
                 </ClickToCallLink>
               </div>
             </div>
-            <div className="mt-12 text-sm text-muted-foreground border-t pt-8">
-              <p>
-                Kinstel Solutions is a proprietorship registered under India’s
-                Ministry of MSME.
-              </p>
-              <p>Udyam Registration: UDYAM-UP-50-0230220</p>
+            <div className="mt-12 border-t pt-8">
+              <h3 className="font-semibold mb-2">Legal Identity</h3>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>Registered Entity: Kinstel Solutions</p>
+                <p className="font-mono text-xs">UDYAM: UDYAM-UP-50-0230220</p>
+                <p className="font-mono text-xs">IEC: HLCPS8014Q</p>
+              </div>
             </div>
           </div>
         </div>
