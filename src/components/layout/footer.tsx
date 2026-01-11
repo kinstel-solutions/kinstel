@@ -76,6 +76,11 @@ export function Footer() {
                 Contact
               </Link>
               <Link
+                href="/pay"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Quick Pay
+              </Link>
+              <Link
                 href="/law-firm-marketing"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 For Lawyers

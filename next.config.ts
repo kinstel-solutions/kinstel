@@ -27,6 +27,10 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    // Expose Razorpay public key to client-side
+    NEXT_PUBLIC_RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID,
+  },
 };
 
 export default nextConfig;
