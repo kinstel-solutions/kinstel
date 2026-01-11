@@ -15,7 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       '/delivery-policy',
       '/shipping',
       '/web-design-company-lucknow',
-      '/law-firm-marketing'
+      '/law-firm-marketing',
+      '/credentials'
   ];
 
   const routes = staticRoutes.map((route) => ({
