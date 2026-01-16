@@ -58,22 +58,11 @@ import { LiquidCard } from "@/components/ui/liquid-glass-card";
 import {
   ScrollVelocityContainerDynamic,
   ScrollVelocityRowDynamic,
+  InquiryFormDynamic,
 } from "./client-wrappers";
 import { TrackedLink } from "@/components/ui/tracked-link";
 import { cn } from "@/lib/utils"
 import { DotPattern } from "@/components/ui/dot-pattern"
-
-// Dynamically import InquiryForm as it pulls in zod and react-hook-form
-const InquiryForm = dynamic(
-  () =>
-    import("@/components/sections/inquiry-form").then((mod) => mod.InquiryForm),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="h-[400px] w-full animate-pulse bg-card/50 border border-border/50 rounded-xl" />
-    ),
-  },
-);
 
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow | Kinstel",
@@ -323,7 +312,7 @@ export default function LucknowPage() {
                 id="inquiry-form"
                 className="w-full max-w-md mx-auto lg:mr-0 relative">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent-foreground/20 to-primary/20 blur-xl" />
-                <InquiryForm
+                <InquiryFormDynamic
                   minimal={true}
                   className="p-6 relative z-10"
                 />
