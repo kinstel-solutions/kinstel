@@ -27,4 +27,15 @@ export const ScrollVelocityRowDynamic = dynamic(
   { ssr: false },
 );
 
+export const InquiryFormDynamic = dynamic(
+  () =>
+    import("@/components/sections/inquiry-form").then((mod) => mod.InquiryForm),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[400px] w-full animate-pulse bg-card/50 border border-border/50 rounded-xl" />
+    ),
+  },
+);
+
 
