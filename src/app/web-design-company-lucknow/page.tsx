@@ -236,7 +236,7 @@ const portfolioItems = [
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-       <DotPattern
+       {/* <DotPattern
        
         width={20}
         height={20}
@@ -246,7 +246,7 @@ export default function LucknowPage() {
         className={cn(
           "[mask-image:linear-gradient(to_bottom,white,transparent,transparent)]"
         )}
-      />
+      /> */}
       <Header />
        
       <main className="flex-grow">
