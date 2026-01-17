@@ -80,20 +80,20 @@ export const metadata: Metadata = {
 
 const lucknowStats = [
   {
-    icon: <Zap className="h-8 w-8 text-accent" />,
+    icon: <Zap className="h-8 w-8 text-accent" aria-hidden="true" />,
     value: "95+",
     label: "Performance & SEO Scores",
     description:
       "Beat the competition with lightning-fast, SEO-ready websites.",
   },
   {
-    icon: <Users className="h-8 w-8 text-accent" />,
+    icon: <Users className="h-8 w-8 text-accent" aria-hidden="true" />,
     value: "Zero",
     label: "Upfront Cost",
     description: "Get your Website Now - Pay Later. No booking fees.",
   },
   {
-    icon: <Award className="h-8 w-8 text-accent" />,
+    icon: <Award className="h-8 w-8 text-accent" aria-hidden="true" />,
     value: "Zero",
     label: "Maintenance",
     description: "Your website Won't break under our watch.",
@@ -102,19 +102,19 @@ const lucknowStats = [
 
 const lucknowServices = [
   {
-    icon: <Palette className="h-8 w-8 text-accent" />,
+    icon: <Palette className="h-8 w-8 text-accent" aria-hidden="true" />,
     title: "Premium Web Design from ₹9999",
     description:
       "Complete Web Package starting at ₹9999. Custom, unique websites tailored to your brand.",
   },
   {
-    icon: <Rocket className="h-8 w-8 text-accent" />,
+    icon: <Rocket className="h-8 w-8 text-accent" aria-hidden="true" />,
     title: "SEO-Ready & Lightning Fast",
     description:
       "We build websites with 95+ SEO scores to help you rank higher and convert clicks into clients.",
   },
   {
-    icon: <ShieldCheck className="h-8 w-8 text-accent" />,
+    icon: <ShieldCheck className="h-8 w-8 text-accent" aria-hidden="true" />,
     title: "Secure Hosting & Maintenance",
     description:
       "Reliable, high-speed cloud hosting with 24/7 security monitoring and regular backups to keep your business online.",
@@ -301,7 +301,7 @@ export default function LucknowPage() {
                     className="inline-flex items-center justify-center rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-8 border-2 border-accent/80 text-accent hover:bg-accent hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] group">
                     <span className="flex items-center gap-2">
                       View Offer
-                      <ArrowDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowDown aria-hidden="true" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </TrackedLink>
                 </div>
