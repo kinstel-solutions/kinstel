@@ -57,14 +57,9 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8 lg:justify-end lg:gap-16">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8 lg:justify-end lg:gap-8">
             <div className="grid gap-2">
-              <h3 className="font-semibold">Navigation</h3>
-              <Link
-                href="/#services"
-                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
-                Services
-              </Link>
+              <h3 className="font-semibold">Company</h3>
               <Link
                 href="/#portfolio"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
@@ -89,6 +84,29 @@ export function Footer() {
                 href="/web-design-company-lucknow"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Lucknow
+              </Link>
+            </div>
+            <div className="grid gap-2">
+              <h3 className="font-semibold">Services</h3>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                All Services
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Web Design
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Development
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                SEO & Marketing
               </Link>
             </div>
             <div className="grid gap-2">
