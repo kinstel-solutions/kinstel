@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
-import { Loader2, IndianRupee, Send } from 'lucide-react';
-import { paymentSchema, type PaymentFormValues } from '../payment-schema';
+import { Loader2, Send } from 'lucide-react';
+import { paymentSchema, type PaymentFormValues, SUPPORTED_CURRENCIES, CURRENCY_SYMBOLS, type Currency, convertCurrency } from '../payment-schema';
 import { createOrderAction, verifyPaymentAction, sendPaymentReceiptAction } from '../actions';
 
 // Razorpay types
@@ -29,15 +29,37 @@ export default function PaymentForm() {
     handleSubmit,
     formState: { errors },
     watch,
+    setValue,
   } = useForm<PaymentFormValues>({
     resolver: zodResolver(paymentSchema),
     defaultValues: {
+      currency: 'INR',
       name: '',
       email: '',
       phone: '',
-      invoiceReference: '',
+      proposalRef: '',
     },
   });
+
+  // Track previous currency for conversion
+  const previousCurrency = useRef<Currency>('INR');
+
+  // Watch for currency changes and auto-convert amount
+  const currencyValue = watch('currency') || 'INR';
+  const amountValue = watch('amount');
+
+  useEffect(() => {
+    // Only convert if there's an amount and currency actually changed
+    if (amountValue && currencyValue !== previousCurrency.current) {
+      const convertedAmount = convertCurrency(
+        amountValue,
+        previousCurrency.current,
+        currencyValue as Currency
+      );
+      setValue('amount', convertedAmount);
+      previousCurrency.current = currencyValue as Currency;
+    }
+  }, [currencyValue, amountValue, setValue]);
 
   /**
    * Load Razorpay script dynamically
@@ -73,7 +95,7 @@ export default function PaymentForm() {
       }
 
       // 2. Create Razorpay order
-      const orderResult = await createOrderAction(data.amount);
+      const orderResult = await createOrderAction(data.amount, data.currency);
       if (!orderResult.success) {
         throw new Error(orderResult.message);
       }
@@ -92,7 +114,7 @@ export default function PaymentForm() {
           contact: data.phone || '',
         },
         notes: {
-          invoice_reference: data.invoiceReference || '',
+          proposal_reference: data.proposalRef || '',
         },
         theme: {
           color: '#3b82f6', // Blue accent color
@@ -117,10 +139,11 @@ export default function PaymentForm() {
             razorpayOrderId: response.razorpay_order_id,
             razorpaySignature: response.razorpay_signature,
             amount: data.amount,
+            currency: data.currency,
             name: data.name,
             email: data.email,
             phone: data.phone,
-            invoiceReference: data.invoiceReference,
+            proposalRef: data.proposalRef,
             timestamp: new Date().toISOString(),
           });
 
@@ -149,25 +172,47 @@ export default function PaymentForm() {
     }
   };
 
-  const amountValue = watch('amount');
+  const currencySymbol = CURRENCY_SYMBOLS[currencyValue as Currency];
 
   return (
     <div className="w-full max-w-2xl mx-auto">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        {/* Currency Selector - Required */}
+        <div>
+          <label htmlFor="currency" className="block text-sm font-semibold mb-2 text-foreground">
+            Currency <span className="text-red-500">*</span>
+          </label>
+          <select
+            id="currency"
+            {...register('currency')}
+            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground"
+            disabled={isProcessing}
+          >
+            {SUPPORTED_CURRENCIES.map((currency) => (
+              <option key={currency} value={currency}>
+                {currency} ({CURRENCY_SYMBOLS[currency]})
+              </option>
+            ))}
+          </select>
+          {errors.currency && (
+            <p className="text-red-500 text-sm mt-1">{errors.currency.message}</p>
+          )}
+        </div>
+
         {/* Amount Field - Required */}
         <div>
           <label htmlFor="amount" className="block text-sm font-semibold mb-2 text-foreground">
-            Amount to Pay (INR) <span className="text-red-500">*</span>
+            Amount to Pay <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <IndianRupee className="h-5 w-5 text-gray-500" />
+              <span className="text-gray-500 font-semibold">{currencySymbol}</span>
             </div>
             <input
               id="amount"
               type="number"
               step="0.01"
-              placeholder="Enter amount (₹10 - ₹5,00,000)"
+              placeholder={`Enter amount (Min: 1 ${currencyValue})`}
               {...register('amount', { valueAsNumber: true })}
               className="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
               disabled={isProcessing}
@@ -178,7 +223,7 @@ export default function PaymentForm() {
           )}
           {amountValue && !errors.amount && (
             <p className="text-sm text-muted-foreground mt-1">
-              Amount: ₹{amountValue.toLocaleString('en-IN')}
+              Amount: {currencySymbol}{amountValue.toLocaleString()}
             </p>
           )}
         </div>
@@ -244,16 +289,16 @@ export default function PaymentForm() {
           </p>
         </div>
 
-        {/* Invoice Reference */}
+        {/* Proposal Reference / Notes */}
         <div>
-          <label htmlFor="invoiceReference" className="block text-sm font-medium mb-2 text-foreground">
-            Invoice Reference / Note
+          <label htmlFor="proposalRef" className="block text-sm font-medium mb-2 text-foreground">
+            Proposal Ref / Notes
           </label>
           <input
-            id="invoiceReference"
+            id="proposalRef"
             type="text"
-            placeholder="Invoice #12345 or any reference"
-            {...register('invoiceReference')}
+            placeholder="Proposal #12345 or any notes"
+            {...register('proposalRef')}
             className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
             disabled={isProcessing}
           />

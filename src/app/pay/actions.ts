@@ -5,7 +5,7 @@ import crypto from 'crypto';
 import { Resend } from 'resend';
 import { jsPDF } from 'jspdf';
 import PaymentReceiptEmail from '@/emails/payment-receipt-email';
-import { type PaymentDetails } from './payment-schema';
+import { type PaymentDetails, CURRENCY_SYMBOLS, type Currency } from './payment-schema';
 
 /**
  * Initialize Razorpay instance with API credentials
@@ -22,26 +22,36 @@ const getRazorpayInstance = () => {
 };
 
 /**
+ * Format currency amount with proper symbol
+ */
+function formatCurrency(amount: number, currency: Currency): string {
+  const symbol = CURRENCY_SYMBOLS[currency];
+  return `${symbol}${amount.toLocaleString()}`;
+}
+
+/**
  * Server Action: Create Razorpay order
- * @param amount - Amount in INR (will be converted to paise)
+ * @param amount - Amount in selected currency
+ * @param currency - Currency code (INR, USD, AUD, etc.)
  * @returns Order details or error
  */
-export async function createOrderAction(amount: number) {
+export async function createOrderAction(amount: number, currency: Currency = 'INR') {
   try {
-    // Validate amount
-    if (!amount || amount < 10 || amount > 500000) {
+    // Validate amount (minimum 1 for all currencies)
+    if (!amount || amount < 1 || amount > 500000) {
       return { 
         success: false, 
-        message: 'Invalid amount. Must be between ₹10 and ₹5,00,000' 
+        message: 'Invalid amount. Must be between 1 and 5,00,000' 
       };
     }
 
     const razorpay = getRazorpayInstance();
 
-    // Create order with amount in paise (multiply by 100)
+    // Create order with amount in smallest currency unit
+    // For INR: paise (multiply by 100), for USD/AUD/etc: cents (multiply by 100)
     const order = await razorpay.orders.create({
-      amount: Math.round(amount * 100), // Convert to paise
-      currency: 'INR',
+      amount: Math.round(amount * 100), // Convert to smallest unit
+      currency: currency,
       receipt: `receipt_${Date.now()}`,
       notes: {
         purpose: 'Quick Pay - Kinstel Solutions',
@@ -125,7 +135,7 @@ function generateReceiptPDF(paymentDetails: PaymentDetails): string {
     name,
     email,
     phone,
-    invoiceReference,
+    proposalRef,
   } = paymentDetails;
 
   // Header
@@ -170,15 +180,15 @@ function generateReceiptPDF(paymentDetails: PaymentDetails): string {
   doc.setFont('helvetica', 'bold');
   doc.text('Amount Paid:', 20, yPos);
   doc.setFontSize(14);
-  doc.text(`₹${amount.toLocaleString('en-IN')}`, 70, yPos);
+  doc.text(formatCurrency(amount, paymentDetails.currency), 70, yPos);
   
-  // Invoice Reference (if provided)
-  if (invoiceReference) {
+  // Proposal Reference (if provided)
+  if (paymentDetails.proposalRef) {
     yPos += 10;
     doc.setFontSize(11);
-    doc.text('Invoice Reference:', 20, yPos);
+    doc.text('Proposal Reference:', 20, yPos);
     doc.setFont('helvetica', 'normal');
-    doc.text(invoiceReference, 70, yPos);
+    doc.text(paymentDetails.proposalRef, 70, yPos);
   }
   
   // Client Details (if provided)
@@ -259,13 +269,14 @@ export async function sendPaymentReceiptAction(paymentDetails: PaymentDetails) {
     const result = await resend.emails.send({
       from: 'payments@kinstel.com', // Dedicated sender for payment receipts
       to: paymentDetails.email,
-      subject: `Payment Receipt - ₹${paymentDetails.amount.toLocaleString('en-IN')} - Kinstel Solutions`,
+      subject: `Payment Receipt - ${formatCurrency(paymentDetails.amount, paymentDetails.currency)} - Kinstel Solutions`,
       react: PaymentReceiptEmail({
         name: paymentDetails.name,
         email: paymentDetails.email,
         phone: paymentDetails.phone,
-        invoiceReference: paymentDetails.invoiceReference,
+        proposalRef: paymentDetails.proposalRef,
         amount: paymentDetails.amount,
+        currency: paymentDetails.currency,
         razorpayPaymentId: paymentDetails.razorpayPaymentId,
         razorpayOrderId: paymentDetails.razorpayOrderId,
         timestamp: paymentDetails.timestamp,
