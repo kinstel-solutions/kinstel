@@ -10,6 +10,7 @@ import {
   Text,
 } from "@react-email/components";
 import * as React from "react";
+import { CURRENCY_SYMBOLS, type Currency } from '../app/pay/payment-schema';
 
 /**
  * Payment receipt email template
@@ -20,8 +21,9 @@ interface PaymentReceiptEmailProps {
   name?: string;
   email?: string;
   phone?: string;
-  invoiceReference?: string;
+  proposalRef?: string;
   amount: number;
+  currency: Currency;
   razorpayPaymentId: string;
   razorpayOrderId: string;
   timestamp: string;
@@ -31,13 +33,15 @@ export const PaymentReceiptEmail = ({
   name,
   email,
   phone,
-  invoiceReference,
+  proposalRef,
   amount,
+  currency,
   razorpayPaymentId,
   razorpayOrderId,
   timestamp,
 }: PaymentReceiptEmailProps) => {
-  const formattedAmount = `₹${amount.toLocaleString('en-IN')}`;
+  const currencySymbol = CURRENCY_SYMBOLS[currency];
+  const formattedAmount = `${currencySymbol}${amount.toLocaleString()}`;
   const date = new Date(timestamp).toLocaleString('en-IN', {
     dateStyle: 'long',
     timeStyle: 'short',
@@ -68,10 +72,10 @@ export const PaymentReceiptEmail = ({
             <Text style={label}>Date & Time:</Text>
             <Text style={value}>{date}</Text>
             
-            {invoiceReference && (
+            {proposalRef && (
               <>
-                <Text style={label}>Invoice Reference:</Text>
-                <Text style={value}>{invoiceReference}</Text>
+                <Text style={label}>Proposal Reference:</Text>
+                <Text style={value}>{proposalRef}</Text>
               </>
             )}
           </Section>
