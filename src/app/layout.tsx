@@ -77,6 +77,7 @@ export default function RootLayout({
       lang="en"
       className="scroll-smooth dark">
       <body
+        suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
