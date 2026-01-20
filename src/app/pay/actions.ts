@@ -262,10 +262,7 @@ export async function sendPaymentReceiptAction(paymentDetails: PaymentDetails) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Generate PDF receipt
-    const pdfBase64 = generateReceiptPDF(paymentDetails);
-
-    // Send email with receipt - use payments@kinstel.com for payment receipts
+    // Send email notification (without PDF attachment)
     const result = await resend.emails.send({
       from: 'payments@kinstel.com', // Dedicated sender for payment receipts
       to: paymentDetails.email,
@@ -281,12 +278,6 @@ export async function sendPaymentReceiptAction(paymentDetails: PaymentDetails) {
         razorpayOrderId: paymentDetails.razorpayOrderId,
         timestamp: paymentDetails.timestamp,
       }),
-      attachments: [
-        {
-          filename: `receipt_${paymentDetails.razorpayPaymentId}.pdf`,
-          content: pdfBase64,
-        },
-      ],
     });
 
     if (result.error) {
