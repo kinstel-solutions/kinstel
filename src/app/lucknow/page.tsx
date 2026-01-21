@@ -75,15 +75,15 @@ const lucknowStats = [
 const lucknowServices = [
   {
     icon: <Palette className="h-8 w-8 text-accent" />,
-    title: "Premium Websites in Lucknow",
+    title: "Custom Website Design",
     description:
-      "We create custom & unique websites tailored to your brand. Stand out from the competition",
+      "We create custom & unique websites tailored to your brand. We work to closely with our clients to find the perfect design & tone that resonates with your brand identity and values.",
   },
   {
     icon: <Rocket className="h-8 w-8 text-accent" />,
-    title: "Local SEO & Speed",
+    title: "Technical & On-Page SEO",
     description:
-      "We optimize for local search to ensure your business ranks high when customers search in Lucknow (or Your City).",
+      "We optimize for local search to ensure your business ranks high in your region. Our SEO strategies are designed to increase your online visibility and drive targeted traffic to your website.",
   },
   // {
   //   icon: <CheckCircle className="h-8 w-8 text-accent" />,
@@ -101,28 +101,28 @@ const lucknowServices = [
 
 const portfolioItems = [
   {
-    image: "/advratnasingh.png",
-    imageHint: "screenshot advocate ratna singh website",
-    title: "Advocate Ratna Singh",
-    category: "Independent Advocate",
-    metrics: ["Modern Design", "Client-Focused"],
-    link: "https://advratnasingh.vercel.app/",
+    image: "/Photography-Service Page.png",
+    imageHint: "screenshot photography service catalog website",
+    title: "Service Catalog Showcase",
+    category: "Independent Photographer",
+    metrics: ["Modern Design", "Visually Engaging", "SEO Optimized"],
+    link: "https://massey-production.vercel.app/",
   },
   {
     image: "/ababneh-law.png",
     imageHint: "screenshot ababneh and associates law firm website",
-    title: "Ababneh & Associates",
+    title: "Professional Business Website",
     category: "International Law Firm",
     metrics: ["Multilingual", "Corporate Branding"],
     link: "https://ababneh-law.vercel.app/",
   },
   {
-    image: "/advonex.png",
-    imageHint: "screenshot advonex legal consultancy website",
-    title: "Advonex",
-    category: "Modern Legal Consultancy",
-    metrics: ["Sleek UI", "Fast Load Times"],
-    link: "https://advonex.vercel.app/",
+    image: "/Enviro-ProductListing page.png",
+    imageHint: "screenshot a product listing page",
+    title: "Product Showcase",
+    category: "Air-Quality Monitoring Solutions",
+    metrics: ["User-Friendly", "High Conversion", "Quick Navigation"],
+    link: "https://envirosmart.vercel.app/",
   },
 ];
 
@@ -246,10 +246,12 @@ export default function LucknowPage() {
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                       {service.icon}
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-3xl">{service.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-0 mt-2">
-                    <CardDescription>{service.description}</CardDescription>
+                  <CardContent className="p-0 mt-4">
+                    <CardDescription className=" text-lg">
+                      {service.description}
+                    </CardDescription>
                   </CardContent>
                 </LiquidCard>
               ))}

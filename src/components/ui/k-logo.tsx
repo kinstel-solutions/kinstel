@@ -8,18 +8,19 @@ export function KLogo() {
       href="/"
       className="flex items-center gap-0">
       <Image
-        src="/K-Logo.svg"
+        src="/Kinstel_logo-G Font.svg"
         alt="Kinstel Logo"
-        width={35}
-        height={30}
+        width={400}
+        height={400}
         priority
-        className="object-contain w-6 md:w-[35px] h-auto"
+        className="object-contain w-[100px]  md:w-[120px] h-auto"
       />
-      <AuroraText
+      {/* Kinstel hallow Letters */}
+      {/* <AuroraText
         colors={["#F59E0B", "#D97706", "#FCD34D", "#F59E0B"]}
         className="font-logo -ml-2 text-lg md:text-2xl tracking-wide">
         INSTEL
-      </AuroraText>
+      </AuroraText> */}
     </Link>
   );
 }
