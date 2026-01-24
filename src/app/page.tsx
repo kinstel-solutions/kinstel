@@ -81,7 +81,7 @@ const defaultPortfolioItems = [
   {
     image: "/Photography-Service Page.png",
     imageHint: "screenshot photography service catalog website",
-    title: "Service Catalog Showcase",
+    title: "Service Catalog Website",
     category: "Independent Photographer",
     metrics: ["Modern Design", "Visually Engaging", "SEO Optimized"],
     link: "https://massey-production.vercel.app/",
