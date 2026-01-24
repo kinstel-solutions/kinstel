@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { inquirySchema, type InquiryFormValues } from "@/app/inquiry-schema";
 import { submitInquiryAction } from "@/app/actions";
+import { event } from "@/lib/gtag";
 import {
   Card,
   CardContent,
@@ -53,6 +54,11 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
     const result = await submitInquiryAction(values);
 
     if (result.success) {
+      event({
+        action: "generate_lead",
+        category: "form",
+        label: "inquiry_submission",
+      });
       toast({
         title: "Inquiry Sent!",
         description: result.message,
@@ -69,6 +75,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
 
   return (
     <LiquidCard
+      minimal={minimal}
       className={cn("w-full transition-all duration-300 ", className)}>
       <CardHeader>
         <CardTitle className="text-center">Send an Inquiry</CardTitle>
@@ -87,11 +94,11 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Name/Business Name </FormLabel>
                     <FormControl>
                       <Input
                         required
-                        placeholder="Sharma and sons"
+                        placeholder="Enter your name..."
                         {...field}
                       />
                     </FormControl>
@@ -109,7 +116,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                     <FormControl>
                       <Input
                         type="tel"
-                        placeholder="098XXXXXX00"
+                        placeholder="Enter your phone number..."
                         {...field}
                       />
                     </FormControl>
@@ -127,7 +134,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="snsingh@gmail.com"
+                      placeholder="Enter your email address..."
                       {...field}
                     />
                   </FormControl>
@@ -163,7 +170,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
                   Submitting...
                 </>
               ) : (
-                "Get a FREE Quote"
+                "Unlock Offers"
               )}
             </Button>
           </form>

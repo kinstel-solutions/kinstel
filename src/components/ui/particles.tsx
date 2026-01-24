@@ -9,32 +9,6 @@ import React, {
 
 import { cn } from "@/lib/utils"
 
-interface MousePosition {
-  x: number
-  y: number
-}
-
-function MousePosition(): MousePosition {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  })
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY })
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-    }
-  }, [])
-
-  return mousePosition
-}
-
 interface ParticlesProps extends ComponentPropsWithoutRef<"div"> {
   className?: string
   quantity?: number
@@ -93,19 +67,23 @@ export const Particles: React.FC<ParticlesProps> = ({
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
   const circles = useRef<Circle[]>([])
-  const mousePosition = MousePosition()
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
-  const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
+  const dpr = typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 1) : 1
   const rafID = useRef<number | null>(null)
   const resizeTimeout = useRef<NodeJS.Timeout | null>(null)
+  const isVisible = useRef<boolean>(true)
 
   useEffect(() => {
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext("2d")
     }
-    initCanvas()
-    animate()
+    
+    // Delay initial animation to reduce TBT
+    const initTimeout = setTimeout(() => {
+      initCanvas()
+      animate()
+    }, 300)
 
     const handleResize = () => {
       if (resizeTimeout.current) {
@@ -116,9 +94,41 @@ export const Particles: React.FC<ParticlesProps> = ({
       }, 200)
     }
 
+    const handleMouseMove = (event: MouseEvent) => {
+      if (canvasRef.current) {
+        const rect = canvasRef.current.getBoundingClientRect()
+        const { w, h } = canvasSize.current
+        const x = event.clientX - rect.left - w / 2
+        const y = event.clientY - rect.top - h / 2
+        const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
+        if (inside) {
+          mouse.current.x = x
+          mouse.current.y = y
+        }
+      }
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible.current = entry.isIntersecting
+      if (entry.isIntersecting) {
+        if (!rafID.current) animate()
+      } else {
+        if (rafID.current) {
+          window.cancelAnimationFrame(rafID.current)
+          rafID.current = null
+        }
+      }
+    })
+
+    if (canvasContainerRef.current) {
+      observer.observe(canvasContainerRef.current)
+    }
+
     window.addEventListener("resize", handleResize)
+    window.addEventListener("mousemove", handleMouseMove)
 
     return () => {
+      clearTimeout(initTimeout)
       if (rafID.current != null) {
         window.cancelAnimationFrame(rafID.current)
       }
@@ -126,12 +136,10 @@ export const Particles: React.FC<ParticlesProps> = ({
         clearTimeout(resizeTimeout.current)
       }
       window.removeEventListener("resize", handleResize)
+      window.removeEventListener("mousemove", handleMouseMove)
+      observer.disconnect()
     }
   }, [color])
-
-  useEffect(() => {
-    onMouseMove()
-  }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
     initCanvas()
@@ -140,20 +148,6 @@ export const Particles: React.FC<ParticlesProps> = ({
   const initCanvas = () => {
     resizeCanvas()
     drawParticles()
-  }
-
-  const onMouseMove = () => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect()
-      const { w, h } = canvasSize.current
-      const x = mousePosition.x - rect.left - w / 2
-      const y = mousePosition.y - rect.top - h / 2
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
-      if (inside) {
-        mouse.current.x = x
-        mouse.current.y = y
-      }
-    }
   }
 
   const resizeCanvas = () => {
@@ -167,7 +161,6 @@ export const Particles: React.FC<ParticlesProps> = ({
       canvasRef.current.style.height = `${canvasSize.current.h}px`
       context.current.scale(dpr, dpr)
 
-      // Clear existing particles and create new ones with exact quantity
       circles.current = []
       for (let i = 0; i < quantity; i++) {
         const circle = circleParams()
@@ -252,14 +245,19 @@ export const Particles: React.FC<ParticlesProps> = ({
   }
 
   const animate = () => {
+    if (!isVisible.current) {
+      rafID.current = null
+      return
+    }
+
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
       // Handle the alpha value
       const edge = [
-        circle.x + circle.translateX - circle.size, // distance from left edge
-        canvasSize.current.w - circle.x - circle.translateX - circle.size, // distance from right edge
-        circle.y + circle.translateY - circle.size, // distance from top edge
-        canvasSize.current.h - circle.y - circle.translateY - circle.size, // distance from bottom edge
+        circle.x + circle.translateX - circle.size,
+        canvasSize.current.w - circle.x - circle.translateX - circle.size,
+        circle.y + circle.translateY - circle.size,
+        canvasSize.current.h - circle.y - circle.translateY - circle.size,
       ]
       const closestEdge = edge.reduce((a, b) => Math.min(a, b))
       const remapClosestEdge = parseFloat(
@@ -284,16 +282,13 @@ export const Particles: React.FC<ParticlesProps> = ({
 
       drawCircle(circle, true)
 
-      // circle gets out of the canvas
       if (
         circle.x < -circle.size ||
         circle.x > canvasSize.current.w + circle.size ||
         circle.y < -circle.size ||
         circle.y > canvasSize.current.h + circle.size
       ) {
-        // remove the circle from the array
         circles.current.splice(i, 1)
-        // create a new circle
         const newCircle = circleParams()
         drawCircle(newCircle)
       }

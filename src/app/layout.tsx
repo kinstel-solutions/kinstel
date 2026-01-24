@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import { Analytics as VercelAnalytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import './globals.css';
-import { cn } from '@/lib/utils';
-import { Toaster } from '@/components/ui/toaster';
-import { fontSans, fontSerif, fontLogo } from '@/app/fonts';
-import { WhatsAppWidget } from '@/components/ui/whatsapp-widget';
-import { siteConfig } from '@/lib/site-config';
-import GoogleAnalytics from '@/components/GA-analytics';
-import { GlassFilter } from '@/components/ui/liquid-glass-card';
+import type { Metadata } from "next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
+import { fontSans, fontSerif, fontLogo } from "@/app/fonts";
+import { WhatsAppWidget } from "@/components/ui/whatsapp-widget";
+import { siteConfig } from "@/lib/site-config";
+import GoogleAnalytics from "@/components/GA-analytics";
+import { GlassFilter } from "@/components/ui/liquid-glass-card";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -46,22 +46,22 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@kinstels', 
+    creator: "@kinstels",
   },
   icons: {
     icon: [
-        { url: '/K-Logo.svg', type: 'image/svg+xml' },
-        { url: '/favicon.ico', sizes: 'any' },
+      { url: "/K-Logo.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: "/apple-touch-icon.png",
   },
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
   verification: {
-    google: 'EUyo27rp0wgUUiKu3bCvTLHZXqdCnwwBqLlMEDyc5UM',
+    google: "EUyo27rp0wgUUiKu3bCvTLHZXqdCnwwBqLlMEDyc5UM",
   },
 };
 
@@ -70,10 +70,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const whatsappMessage = "Hello! I'm visiting your website and would like to inquire about your law firm website development services.";
+  const whatsappMessage =
+    "Hello! I'm visiting your website and would like to inquire about your website development services.";
   return (
-    <html lang="en" className="scroll-smooth dark">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, fontSerif.variable, fontLogo.variable)}>
+    <html
+      lang="en"
+      className="scroll-smooth dark">
+      <body
+        suppressHydrationWarning
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontSerif.variable,
+          fontLogo.variable,
+        )}>
         {children}
         <Toaster />
         {/* Google Analytics (GA4) client component — loads gtag.js & tracks pageviews */}
@@ -84,7 +94,10 @@ export default function RootLayout({
 
         {/* Vercel Speed Insights */}
         <SpeedInsights />
-        <WhatsAppWidget phoneNumber="919889988408" message={whatsappMessage} />
+        <WhatsAppWidget
+          phoneNumber="919889988408"
+          message={whatsappMessage}
+        />
         <GlassFilter />
       </body>
     </html>

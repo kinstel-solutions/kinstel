@@ -69,7 +69,7 @@
     --muted: 215 28% 17%;
     --muted-foreground: 218 11% 65%;
 
-    --accent: 48 96% 53%;
+    --accent: 39, 83%, 52%;
     --accent-foreground: 224 71% 4%;
 
     --destructive: 0 63% 31%;
@@ -122,36 +122,29 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+
 
 @theme inline {
   @keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
+    0% {
+      background-position: 0% 50%;
+      transform: rotate(-5deg) scale(0.9);
     }
-  25% {
-    background-position: 50% 100%;
-    transform: rotate(5deg) scale(1.1);
+    25% {
+      background-position: 50% 100%;
+      transform: rotate(5deg) scale(1.1);
     }
-  50% {
-    background-position: 100% 50%;
-    transform: rotate(-3deg) scale(0.95);
+    50% {
+      background-position: 100% 50%;
+      transform: rotate(-3deg) scale(0.95);
     }
-  75% {
-    background-position: 50% 0%;
-    transform: rotate(3deg) scale(1.05);
+    75% {
+      background-position: 50% 0%;
+      transform: rotate(3deg) scale(1.05);
     }
-  100% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
+    100% {
+      background-position: 0% 50%;
+      transform: rotate(-5deg) scale(0.9);
     }
   }
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Linkedin, Twitter } from "lucide-react";
 import { ClickToCallLink } from "../ui/click-to-call-link";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,16 +36,30 @@ export function Footer() {
                 +91 98899 88408
               </ClickToCallLink>
             </address>
+            <div className="mt-8 flex flex-col items-start gap-2">
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Recognized By
+              </span>
+              <Link 
+                href="https://www.designrush.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-accent p-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 inline-block"
+              >
+                <Image 
+                  src="/designrush-badge.png" 
+                  alt="DesignRush" 
+                  width={120} 
+                  height={160}
+                  className="w-[100px] h-auto object-contain" 
+                />
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8 lg:justify-end lg:gap-16">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8 lg:justify-end lg:gap-8">
             <div className="grid gap-2">
-              <h3 className="font-semibold">Navigation</h3>
-              <Link
-                href="/#services"
-                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
-                Services
-              </Link>
+              <h3 className="font-semibold">Company</h3>
               <Link
                 href="/#portfolio"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
@@ -56,14 +71,42 @@ export function Footer() {
                 Contact
               </Link>
               <Link
-                href="/lawyers"
+                href="/pay"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Quick Pay
+              </Link>
+              <Link
+                href="/law-firm-marketing"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 For Lawyers
               </Link>
               <Link
-                href="/lucknow"
+                href="/web-design-company-lucknow"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Lucknow
+              </Link>
+            </div>
+            <div className="grid gap-2">
+              <h3 className="font-semibold">Services</h3>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                All Services
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Web Design
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Development
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                SEO & Marketing
               </Link>
             </div>
             <div className="grid gap-2">
@@ -87,6 +130,11 @@ export function Footer() {
                 href="/shipping"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Shipping Policy
+              </Link>
+              <Link
+                href="/credentials"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Credentials
               </Link>
             </div>
             <div className="grid gap-2">
@@ -114,6 +162,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+          <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q</p>
           <p>&copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>

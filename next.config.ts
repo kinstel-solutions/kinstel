@@ -5,9 +5,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -29,6 +26,10 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  env: {
+    // Expose Razorpay public key to client-side
+    NEXT_PUBLIC_RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID,
   },
 };
 
