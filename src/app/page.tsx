@@ -24,7 +24,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
 import { AuroraText } from "@/components/ui/aurora-text";
-import { DynamicIslandDemo, StripeBgGuides } from "@/components/home-client-components";
+import {
+  DynamicIslandDemo,
+  StripeBgGuides,
+} from "@/components/home-client-components";
 
 export const metadata: Metadata = {
   title: "Kinstel | Web Design & Digital Marketing Agency",
@@ -41,7 +44,7 @@ const defaultStats = [
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
-    value: "150+",
+    value: "10+",
     label: "Clients Served",
     description: "Trusted by businesses across various industries.",
   },
@@ -76,28 +79,28 @@ const defaultServices = [
 
 const defaultPortfolioItems = [
   {
-    image: "/advratnasingh.png",
-    imageHint: "screenshot advocate ratna singh website",
-    title: "Advocate Ratna Singh",
-    category: "Independent Advocate",
-    metrics: ["Modern Design", "Client-Focused"],
-    link: "https://advratnasingh.vercel.app/",
+    image: "/Photography-Service Page.png",
+    imageHint: "screenshot photography service catalog website",
+    title: "Services Showcase Website",
+    category: "Independent Photographer",
+    metrics: ["Modern Design", "Visually Engaging", "SEO Optimized"],
+    link: "https://massey-production.vercel.app/",
   },
   {
     image: "/ababneh-law.png",
     imageHint: "screenshot ababneh and associates law firm website",
     title: "Ababneh & Associates",
     category: "International Law Firm",
-    metrics: ["Multilingual", "Corporate Branding"],
+    metrics: ["Multilingual", "Fast Load Times"],
     link: "https://ababneh-law.vercel.app/",
   },
   {
-    image: "/advonex.png",
-    imageHint: "screenshot advonex legal consultancy website",
-    title: "Advonex",
-    category: "Modern Legal Consultancy",
-    metrics: ["Sleek UI", "Fast Load Times"],
-    link: "https://advonex.vercel.app/",
+    image: "/Enviro-ProductListing page.png",
+    imageHint: "screenshot a product listing page",
+    title: "B2B Company Website",
+    category: "Air-Quality Monitoring Solutions",
+    metrics: ["User-Friendly", "High Conversion", "Quick Navigation"],
+    link: "https://envirosmart.vercel.app/",
   },
 ];
 
@@ -278,7 +281,7 @@ export default function Home() {
                         />
                       </div>
                       <CardContent className="flex flex-1 flex-col p-6">
-                        <p className="mb-2 text-sm font-semibold text-accent">
+                        <p className="mb-2 text-sm font-semibold text-white/80">
                           {item.category}
                         </p>
                         <h3 className="mb-4 text-2xl font-headline font-semibold">
@@ -288,7 +291,7 @@ export default function Home() {
                           {item.metrics.map((metric, metricIndex) => (
                             <Badge
                               key={metricIndex}
-                              variant="secondary">
+                              variant="outline">
                               {metric}
                             </Badge>
                           ))}
