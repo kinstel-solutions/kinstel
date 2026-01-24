@@ -22,7 +22,7 @@ export function KLogo() {
       <span className="font-logo -ml-2 text-lg md:text-2xl tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent animate-shimmer bg-[length:200%_100%]">
         INSTEL
       </AuroraText> */}
-      </span>
+      {/* </span> */}
     </Link>
   );
 }
