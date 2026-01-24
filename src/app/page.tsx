@@ -81,7 +81,7 @@ const defaultPortfolioItems = [
   {
     image: "/Photography-Service Page.png",
     imageHint: "screenshot photography service catalog website",
-    title: "Service Catalog Showcase",
+    title: "Services Showcase Website",
     category: "Independent Photographer",
     metrics: ["Modern Design", "Visually Engaging", "SEO Optimized"],
     link: "https://massey-production.vercel.app/",
@@ -97,7 +97,7 @@ const defaultPortfolioItems = [
   {
     image: "/Enviro-ProductListing page.png",
     imageHint: "screenshot a product listing page",
-    title: "Product Showcase",
+    title: "B2B Company Website",
     category: "Air-Quality Monitoring Solutions",
     metrics: ["User-Friendly", "High Conversion", "Quick Navigation"],
     link: "https://envirosmart.vercel.app/",
@@ -281,7 +281,7 @@ export default function Home() {
                         />
                       </div>
                       <CardContent className="flex flex-1 flex-col p-6">
-                        <p className="mb-2 text-sm font-semibold text-accent">
+                        <p className="mb-2 text-sm font-semibold text-white/80">
                           {item.category}
                         </p>
                         <h3 className="mb-4 text-2xl font-headline font-semibold">
@@ -291,7 +291,7 @@ export default function Home() {
                           {item.metrics.map((metric, metricIndex) => (
                             <Badge
                               key={metricIndex}
-                              variant="secondary">
+                              variant="outline">
                               {metric}
                             </Badge>
                           ))}
