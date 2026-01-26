@@ -102,22 +102,55 @@ const lucknowStats = [
 
 const lucknowServices = [
   {
-    icon: <Palette className="h-8 w-8 text-accent" aria-hidden="true" />,
-    title: "Premium Web Design from ₹9999",
+    icon: <Code className="h-8 w-8 text-accent" />,
+    title: "Custom Web Development",
     description:
-      "Complete Web Package starting at ₹9999. Custom, unique websites tailored to your brand.",
+      "Tailored web solutions that align perfectly with your business goals, ensuring scalability and a unique competitive edge.",
+    features: [
+      "Custom UI/UX Design",
+      "React/Next.js Development",
+      "E-commerce Development",
+      "Hosting & Domain Registration",
+      "Custom IT solutions",
+    ],
   },
   {
-    icon: <Rocket className="h-8 w-8 text-accent" aria-hidden="true" />,
-    title: "SEO-Ready & Lightning Fast",
+    icon: <Zap className="h-8 w-8 text-accent" />,
+    title: "Digital Marketing",
     description:
-      "We build websites with 95+ SEO scores to help you rank higher and convert clicks into clients.",
+      "Our Strategy is simple: Increase visitors => Leads => Sales/Clients, While maintaining high relevancy from start to finish.",
+    features: [
+      "Google Ads Management",
+      "Technical & On-Page SEO",
+      "Conversion Rate Optimization",
+      "PPC Campaign Management",
+      "Google My Business Optimization",
+    ],
   },
-  {
-    icon: <ShieldCheck className="h-8 w-8 text-accent" aria-hidden="true" />,
-    title: "Secure Hosting & Maintenance",
+  // {
+  //   icon: <ShoppingBag className="h-8 w-8 text-accent" />,
+  //   title: "E-Commerce Development",
+  //   description:
+  //     "Launch a powerful online store designed to convert visitors into loyal customers with seamless payments and intuitive user experiences.",
+  //   features: [
+  //     "Custom Storefronts",
+  //     "Payment Gateway Integration",
+  //     "Secure Checkout Flow",
+  //     "Inventory Management System",
+  //   ],
+  // },
+   {
+    icon: <ShoppingBag className="h-8 w-8 text-accent" />,
+    title: "Content Creation",
     description:
-      "Reliable, high-speed cloud hosting with 24/7 security monitoring and regular backups to keep your business online.",
+      "We create engaging and informative content to help your business stand out in the digital world.",
+    features: [
+      "Logo Design",
+      "Brochure & Catalog Design",
+      "Professional Photo & Video Creation",
+      "Creative Copywriting",
+      "Ad Creatives",
+    ],
   },
 ];
 
@@ -208,28 +241,28 @@ const faqs = [
 
 const portfolioItems = [
   {
-    image: "/advratnasingh.png",
-    imageHint: "screenshot advocate ratna singh website",
-    title: "Advocate Ratna Singh",
-    category: "Independent Advocate",
-    metrics: ["Modern Design", "Client-Focused"],
-    link: "https://advratnasingh.vercel.app/",
+    image: "/Photography-Service Page.png",
+    imageHint: "screenshot photography service catalog website",
+    title: "Services Showcase Website",
+    category: "Independent Photographer",
+    metrics: ["Modern UX Design", "Visually Engaging UI", "SEO Optimization"],
+    link: "https://massey-production.vercel.app/",
   },
   {
-    image: "/ababneh-law.png",
-    imageHint: "screenshot ababneh and associates law firm website",
-    title: "Ababneh & Associates",
-    category: "International Law Firm",
-    metrics: ["Multilingual", "Corporate Branding"],
+    image: "/singhLawFirmSiteHome.png",
+    imageHint: "screenshot singh and associates law firm website",
+    title: "Lead-Gen Website",
+    category: "Law Firm",
+    metrics: ["Technical + Local SEO", "Google Ads Optimized", "Google My Business"],
     link: "https://ababneh-law.vercel.app/",
   },
   {
-    image: "/advonex.png",
-    imageHint: "screenshot advonex legal consultancy website",
-    title: "Advonex",
-    category: "Modern Legal Consultancy",
-    metrics: ["Sleek UI", "Fast Load Times"],
-    link: "https://advonex.vercel.app/",
+    image: "/Enviro-ProductListing page.png",
+    imageHint: "screenshot a product listing page",
+    title: "B2B Company Website",
+    category: "Air-Quality Monitoring Solutions",
+    metrics: ["Mobile-First Design", "High Conversion", "Quick Navigation"],
+    link: "https://envirosmart.vercel.app/",
   },
 ];
 
@@ -283,7 +316,7 @@ export default function LucknowPage() {
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
                   Convert Clicks into Clients/Customer with a Premium, SEO-Ready
                   Website. Schedule a consultation today to claim (*Limited
-                  Time) <span className="font-bold">New Year's offers</span>{" "}
+                  Time) <span className="font-bold">offers</span>{" "}
                   worth <span className=" font-bold">₹20,000</span> &{" "}
                   <span className=" font-bold">Zero booking cost.</span>
                 </p>
@@ -345,7 +378,7 @@ export default function LucknowPage() {
               <div className="relative z-10 max-w-4xl mx-auto">
                 <Gift className="h-16 w-16 text-accent mx-auto mb-6" />
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                  Unlock New Year's Offer Worth ₹20,000*
+                  Claim Limited Time Offer Worth ₹20,000*
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
                   Schedule your consultation today and claim your free digital
@@ -524,6 +557,56 @@ export default function LucknowPage() {
           </div>
         </section> */}
 
+         {/* Services Section */}
+        <section
+          id="services"
+          className=" py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="font-semibold uppercase tracking-wider text-accent">
+                What We Do
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                Affordable <span className="text-accent">Web Design Services</span> in
+                Lucknow
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground">
+                We provide comprehensive web design and digital marketing
+                services to help Lucknow businesses thrive in the digital era.
+              </p>
+            </div>
+            <div className="mt-16 grid gap-8 md:grid-cols-3">
+              {lucknowServices.map((service, index) => (
+                <LiquidCard
+                  key={index}
+                  className="flex flex-col text-left p-6 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
+                  style={{
+                    animationDelay: `${index * 150}ms`,
+                    animationFillMode: "backwards",
+                  }}>
+                  <CardHeader className="p-0">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 mt-2">
+                    <CardDescription>{service.description}</CardDescription>
+                    <ul className="mt-4 space-y-2">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-center text-sm text-muted-foreground">
+                          <CheckCircle className="h-4 w-4 mr-2 text-accent" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </LiquidCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Why Choose Us Comparison */}
         <section className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
@@ -696,7 +779,7 @@ export default function LucknowPage() {
                       />
                     </div>
                     <CardContent className="flex flex-1 flex-col p-6">
-                      <p className="mb-2 text-sm font-semibold text-accent">
+                      <p className="mb-2 text-sm font-semibold text-white/80">
                         {item.category}
                       </p>
                       <h3 className="mb-4 text-2xl font-headline font-semibold">
@@ -706,7 +789,7 @@ export default function LucknowPage() {
                         {item.metrics.map((metric, metricIndex) => (
                           <Badge
                             key={metricIndex}
-                            variant="secondary">
+                            variant="outline">
                             {metric}
                           </Badge>
                         ))}
@@ -731,47 +814,7 @@ export default function LucknowPage() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section
-          id="services"
-          className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="font-semibold uppercase tracking-wider text-accent">
-                Local Expertise
-              </p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Affordable <span className="text-accent">Web Design Services</span> in
-                Lucknow
-              </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
-                We provide comprehensive web design and digital marketing
-                services to help Lucknow businesses thrive in the digital era.
-              </p>
-            </div>
-            <div className="mt-16 grid gap-8 md:grid-cols-3">
-              {lucknowServices.map((service, index) => (
-                <LiquidCard
-                  key={index}
-                  className="flex flex-col text-left p-6 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}>
-                  <CardHeader className="p-0">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0 mt-2">
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardContent>
-                </LiquidCard>
-              ))}
-            </div>
-          </div>
-        </section>
+       
 
         {/* Industries Section */}
         <section className="py-12 md:py-24">

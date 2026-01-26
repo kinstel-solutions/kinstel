@@ -9,6 +9,8 @@ import {
   Rocket,
   CheckCircle,
   ArrowUpRight,
+  Code,
+  ShoppingBag,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -58,40 +60,73 @@ const defaultStats = [
 
 const defaultServices = [
   {
-    icon: <Palette className="h-8 w-8 text-accent" />,
-    title: "Custom Web Design",
+    icon: <Code className="h-8 w-8 text-accent" />,
+    title: "Custom Web Development",
     description:
-      "We create unique, professional websites that reflect your brand and vision.",
+      "Tailored web solutions that align perfectly with your business goals, ensuring scalability and a unique competitive edge.",
+    features: [
+      "Custom UI/UX Design",
+      "React/Next.js Development",
+      "E-commerce Development",
+      "Hosting & Domain Registration",
+      "Custom IT solutions",
+    ],
   },
   {
-    icon: <Rocket className="h-8 w-8 text-accent" />,
-    title: "Responsive Development",
+    icon: <Zap className="h-8 w-8 text-accent" />,
+    title: "Digital Marketing",
     description:
-      "We build fast, mobile-friendly websites that work perfectly on all devices.",
+      "Our Strategy is simple: Increase visitors => Leads => Sales/Clients, While maintaining high relevancy from start to finish.",
+    features: [
+      "Google Ads Management",
+      "Technical & On-Page SEO",
+      "Conversion Rate Optimization",
+      "PPC Campaign Management",
+      "Google My Business Optimization",
+    ],
   },
-  {
-    icon: <CheckCircle className="h-8 w-8 text-accent" />,
-    title: "Performance & SEO",
+  // {
+  //   icon: <ShoppingBag className="h-8 w-8 text-accent" />,
+  //   title: "E-Commerce Development",
+  //   description:
+  //     "Launch a powerful online store designed to convert visitors into loyal customers with seamless payments and intuitive user experiences.",
+  //   features: [
+  //     "Custom Storefronts",
+  //     "Payment Gateway Integration",
+  //     "Secure Checkout Flow",
+  //     "Inventory Management System",
+  //   ],
+  // },
+   {
+    icon: <ShoppingBag className="h-8 w-8 text-accent" />,
+    title: "Content Creation",
     description:
-      "Our websites are optimized for speed and search engines to help you reach a wider audience.",
+      "We create engaging and informative content to help your business stand out in the digital world.",
+    features: [
+      "Logo Design",
+      "Brochure & Catalog Design",
+      "Professional Photo & Video Creation",
+      "Creative Copywriting",
+      "Ad Creatives",
+    ],
   },
 ];
 
 const defaultPortfolioItems = [
-  {
+ {
     image: "/Photography-Service Page.png",
     imageHint: "screenshot photography service catalog website",
     title: "Services Showcase Website",
     category: "Independent Photographer",
-    metrics: ["Modern Design", "Visually Engaging", "SEO Optimized"],
+    metrics: ["Modern UX Design", "Visually Engaging UI", "SEO Optimization"],
     link: "https://massey-production.vercel.app/",
   },
   {
-    image: "/ababneh-law.png",
-    imageHint: "screenshot ababneh and associates law firm website",
-    title: "Ababneh & Associates",
-    category: "International Law Firm",
-    metrics: ["Multilingual", "Fast Load Times"],
+    image: "/singhLawFirmSiteHome.png",
+    imageHint: "screenshot singh and associates law firm website",
+    title: "Lead-Gen Website",
+    category: "Law Firm",
+    metrics: ["Technical + Local SEO", "Google Ads Optimized", "Google My Business"],
     link: "https://ababneh-law.vercel.app/",
   },
   {
@@ -99,7 +134,7 @@ const defaultPortfolioItems = [
     imageHint: "screenshot a product listing page",
     title: "B2B Company Website",
     category: "Air-Quality Monitoring Solutions",
-    metrics: ["User-Friendly", "High Conversion", "Quick Navigation"],
+    metrics: ["Mobile-First Design", "High Conversion", "Quick Navigation"],
     link: "https://envirosmart.vercel.app/",
   },
 ];
@@ -228,6 +263,14 @@ export default function Home() {
                     </CardHeader>
                     <CardContent className="p-0 mt-2">
                       <CardDescription>{service.description}</CardDescription>
+                      <ul className="mt-4 space-y-2">
+                        {service.features.map((feature, i) => (
+                          <li key={i} className="flex items-center text-sm text-muted-foreground">
+                            <CheckCircle className="h-4 w-4 mr-2 text-accent" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
                     </CardContent>
                   </Card>
                 ))}
