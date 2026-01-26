@@ -162,7 +162,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q</p>
+          <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q • D-U-N-S®: 77-197-4415</p>
           <p>&copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>

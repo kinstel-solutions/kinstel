@@ -72,6 +72,7 @@ export default function ContactPage() {
                 <p>Registered Entity: Kinstel Solutions</p>
                 <p className="font-mono text-xs">UDYAM: UDYAM-UP-50-0230220</p>
                 <p className="font-mono text-xs">IEC: HLCPS8014Q</p>
+                <p className="font-mono text-xs">D-U-N-S®: 77-197-4415</p>
               </div>
             </div>
           </div>

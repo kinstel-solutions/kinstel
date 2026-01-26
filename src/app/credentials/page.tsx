@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle2, Globe } from "lucide-react";
+import { CheckCircle2, Globe, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Credentials & Compliance | Kinstel Solutions",
@@ -76,6 +76,34 @@ export default function CredentialsPage() {
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Licensed for International Services Export
+                </p>
+                <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
+                  <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                  Status: Active / Verified
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* D-U-N-S Card */}
+            <Card className="border-accent/20 shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-xl">D-U-N-S® Number</CardTitle>
+                  <Building2 className="h-5 w-5 text-purple-500" />
+                </div>
+                <CardDescription>Dun & Bradstreet</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="bg-muted/50 p-4 rounded-lg space-y-2">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground tracking-wider">
+                    D-U-N-S® Number
+                  </p>
+                  <p className="font-mono text-lg font-medium select-all">
+                    77-197-4415
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Universal global standard for business identification
                 </p>
                 <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
                   <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
