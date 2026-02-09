@@ -67,7 +67,7 @@ import { DotPattern } from "@/components/ui/dot-pattern"
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow | Kinstel",
   description:
-    "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, No Upfront Cost. Schedule a consultation today!",
+    "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Demo (Zero Upfront Cost). Schedule a consultation today!",
   keywords: [
     "web design company in lucknow",
     "web development company in lucknow",
@@ -88,9 +88,9 @@ const lucknowStats = [
   },
   {
     icon: <Users className="h-8 w-8 text-accent" aria-hidden="true" />,
-    value: "Zero",
-    label: "Upfront Cost",
-    description: "Get your Website Now - Pay Later. No booking fees.",
+    value: "Free Demo",
+    label: "Zero Upfront Cost for Demo",
+    description: "Get your Demo Now - Pay Later. No booking fees.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" aria-hidden="true" />,
@@ -215,12 +215,12 @@ const faqs = [
   {
     question: "What is included in the ₹9999 package?",
     answer:
-      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website (up to 5 pages), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a premium online presence.",
+      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website, mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a premium online presence.",
   },
   {
-    question: "What does 'Zero Upfront Cost' mean?",
+    question: "What does 'Free Demo (Zero Upfront Cost)' mean?",
     answer:
-      "It means you don't pay a single rupee to start your project. We design and develop your website first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
+      "It means you don't pay a single rupee to start your Demo. We design and develop your Demo first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
   },
   {
     question: "How long does it take to deliver the website?",
@@ -235,7 +235,7 @@ const faqs = [
   {
     question: "Do you offer maintenance after the website is live?",
     answer:
-      "Absolutely. We provide 12 months of support. We ensure your website stays updated, secure, and performs optimally long after the launch.",
+      "Absolutely. We provide 3 months of support. We ensure your website stays updated, secure, and performs optimally long after the launch.",
   },
 ];
 
@@ -318,7 +318,7 @@ export default function LucknowPage() {
                   Website. Schedule a consultation today to claim (*Limited
                   Time) <span className="font-bold">offers</span>{" "}
                   worth <span className=" font-bold">₹20,000</span> &{" "}
-                  <span className=" font-bold">Zero booking cost.</span>
+                  <span className=" font-bold">Get a Free Demo Now.</span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
                   <SmartCtaButton
@@ -327,7 +327,7 @@ export default function LucknowPage() {
                     className="h-12 px-8 text-lg">
                     Let's Discuss on Call
                   </SmartCtaButton>
-                  <TrackedLink
+                  {/* <TrackedLink
                     href="#offers"
                     trackingAction="view_offer"
                     trackingLabel="hero_cta"
@@ -336,7 +336,7 @@ export default function LucknowPage() {
                       View Offer
                       <ArrowDown aria-hidden="true" className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
-                  </TrackedLink>
+                  </TrackedLink> */}
                 </div>
               </div>
 
@@ -360,14 +360,14 @@ export default function LucknowPage() {
             <ScrollVelocityRowDynamic baseVelocity={3}>
               <span className="mx-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Web Design Lucknow • SEO Ready • 95+ PageSpeed • Custom UI/UX •
-                No Upfront Cost • Free Hosting Setup • 24/7 Support •
+                Free Demo (Zero Upfront Cost) • Free Hosting Setup • 24/7 Support •
               </span>
             </ScrollVelocityRowDynamic>
           </ScrollVelocityContainerDynamic>
         </div>
 
         {/* Offer Details */}
-        <section
+        {/* <section
           id="offers"
           className="py-20">
           <div className="container px-4 mx-auto">
@@ -451,7 +451,7 @@ export default function LucknowPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Package Breakdown Section */}
         {/* <section
@@ -634,13 +634,13 @@ export default function LucknowPage() {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">Upfront Cost</TableCell>
+                    <TableCell className="font-medium">Free Demo</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
-                      Zero (₹0)
+                      Custom Demo
                     </TableCell>
-                    <TableCell className="text-center">50% Advance</TableCell>
+                    <TableCell className="text-center">Template Based</TableCell>
                     <TableCell className="text-center">
-                      50-100% Advance
+                     No Demo
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -659,7 +659,7 @@ export default function LucknowPage() {
                     <TableCell className="text-center">Basic/None</TableCell>
                     <TableCell className="text-center">Extra Charge</TableCell>
                   </TableRow>
-                  <TableRow>
+                  {/* <TableRow>
                     <TableCell className="font-medium">Support</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold">
                       1 year Free AMC
@@ -668,7 +668,7 @@ export default function LucknowPage() {
                       Limited/Ghosted
                     </TableCell>
                     <TableCell className="text-center">Expensive AMC</TableCell>
-                  </TableRow>
+                  </TableRow> */}
                 </TableBody>
               </Table>
             </div>
@@ -923,7 +923,7 @@ export default function LucknowPage() {
               <p className="mt-6 text-lg text-muted-foreground">
                 Claim your New Year Offers worth{" "}
                 <span className="text-foreground font-bold">₹20,000</span>. Get
-                your Website Now-Pay Later.
+                your Demo Now-Pay Later.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <SmartCtaButton
