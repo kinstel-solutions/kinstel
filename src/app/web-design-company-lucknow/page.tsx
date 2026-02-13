@@ -297,7 +297,7 @@ export default function LucknowPage() {
                 <Badge
                   variant="outline"
                   className="mb-6 px-4 py-1.5 text-sm font-medium border-accent/30 bg-accent/5 text-accent rounded-full">
-                  Premium Websites starting @9999
+                  World Class Services at local prices
                 </Badge>
                 {/* <Badge
                   variant="secondary"
@@ -312,6 +312,19 @@ export default function LucknowPage() {
                   </span>{" "}
                   Web Design Company
                 </h1>
+                <h2 className="mt-4">
+<span className="text-xl md:text-2xl font-medium text-muted-foreground tracking-tight">
+Elevating local{" "}
+<span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
+  businesses in Lucknow
+</span>{" "}
+to a{" "}
+
+  <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
+    world-class digital presence.
+  </span>
+</span>
+                </h2>
                 
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
                   Convert Clicks into Clients/Customer with a Premium, SEO-Ready
