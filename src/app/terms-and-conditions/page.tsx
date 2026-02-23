@@ -65,6 +65,21 @@ export default function TermsAndConditionsPage() {
                         We reserve the right to modify these terms at any time. We will notify clients of any
                         significant changes.
                     </p>
+                    <h2>8. Promotional Offers & Complimentary Services</h2>
+                    <p>
+                        From time to time, Kinstel Solutions may offer complimentary services, including but not limited to, Annual Maintenance Contracts (AMC) and Web Hosting, as part of a promotional package. 
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Promotional AMC:</strong> Complimentary maintenance is strictly limited to our "Reasonable Usage" policy, defined as a maximum of 2-3 minor content updates per month (totaling no more than 60 minutes of developer time). It does not cover structural redesigns, new feature development, or custom Next.js component creation.
+                        </li>
+                        <li>
+                            <strong>Promotional Hosting:</strong> Unless otherwise specified, complimentary hosting provisions our standard server infrastructure optimized for the Indian region. Clients requiring international reach are encouraged to upgrade to our Enterprise Global CDN plans.
+                        </li>
+                        <li>
+                            <strong>Value & Liability:</strong> Promotional services are provided "as-is" for the specified duration, hold no cash surrender value, and cannot be exchanged for other services or discounts. Kinstel Solutions reserves the right to terminate promotional services if usage exceeds reasonable boundaries or violates our core terms.
+                        </li>
+                    </ul>
 
                     <p className="mt-8">
                         For queries, reach out at <a href="mailto:contact@kinstel.com">contact@kinstel.com</a>.
