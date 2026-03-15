@@ -12,6 +12,9 @@ import { GlassFilter } from "@/components/ui/liquid-glass-card";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: siteConfig.title,
     template: `%s - ${siteConfig.name}`,
