@@ -40,20 +40,33 @@ export function Footer() {
               <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Recognized By
               </span>
-              <Link 
-                href="https://www.designrush.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-accent p-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 inline-block"
-              >
-                <Image 
-                  src="/designrush-badge.png" 
-                  alt="DesignRush" 
-                  width={120} 
-                  height={160}
-                  className="w-[100px] h-auto object-contain" 
-                />
-              </Link>
+              <div className="flex items-center gap-4">
+                <Link 
+                  href="https://www.designrush.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-accent p-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 inline-block"
+                >
+                  <Image 
+                    src="/designrush-badge.png" 
+                    alt="DesignRush" 
+                    width={120} 
+                    height={160}
+                    className="w-[100px] h-auto object-contain" 
+                  />
+                </Link>
+                <a 
+                  href="//www.dmca.com/Protection/Status.aspx?ID=ac032bda-1f65-4094-8b6e-d802f9a9ab66" 
+                  title="DMCA.com Protection Status" 
+                  className="dmca-badge inline-block opacity-100 hover:opacity-100 transition-opacity duration-300"
+                >
+                  <img 
+                    src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=ac032bda-1f65-4094-8b6e-d802f9a9ab66" 
+                    alt="DMCA.com Protection Status" 
+                    className="h-8 w-auto"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -166,6 +179,7 @@ export function Footer() {
           <p>&copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>
+      <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
     </footer>
   );
 }
