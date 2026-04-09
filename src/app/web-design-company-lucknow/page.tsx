@@ -61,8 +61,8 @@ import {
   InquiryFormDynamic,
 } from "./client-wrappers";
 import { TrackedLink } from "@/components/ui/tracked-link";
-import { cn } from "@/lib/utils"
-import { DotPattern } from "@/components/ui/dot-pattern"
+import { cn } from "@/lib/utils";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow | Kinstel",
@@ -80,20 +80,35 @@ export const metadata: Metadata = {
 
 const lucknowStats = [
   {
-    icon: <Zap className="h-8 w-8 text-accent" aria-hidden="true" />,
+    icon: (
+      <Zap
+        className="h-8 w-8 text-accent"
+        aria-hidden="true"
+      />
+    ),
     value: "95+",
     label: "Performance & SEO Scores",
     description:
       "Beat the competition with lightning-fast, SEO-ready websites.",
   },
   {
-    icon: <Users className="h-8 w-8 text-accent" aria-hidden="true" />,
+    icon: (
+      <Users
+        className="h-8 w-8 text-accent"
+        aria-hidden="true"
+      />
+    ),
     value: "Free Demo",
     label: "Zero Upfront Cost for Demo",
     description: "Get your Demo Now - Pay Later. No booking fees.",
   },
   {
-    icon: <Award className="h-8 w-8 text-accent" aria-hidden="true" />,
+    icon: (
+      <Award
+        className="h-8 w-8 text-accent"
+        aria-hidden="true"
+      />
+    ),
     value: "Zero",
     label: "Maintenance",
     description: "Your website Won't break under our watch.",
@@ -139,7 +154,7 @@ const lucknowServices = [
   //     "Inventory Management System",
   //   ],
   // },
-   {
+  {
     icon: <ShoppingBag className="h-8 w-8 text-accent" />,
     title: "Content Creation",
     description:
@@ -207,7 +222,7 @@ const industries = [
   { icon: <Stethoscope className="h-6 w-6" />, name: "Healthcare" },
   { icon: <GraduationCap className="h-6 w-6" />, name: "Education" },
   { icon: <ShoppingBag className="h-6 w-6" />, name: "E-Commerce" },
-  { icon: <Briefcase className="h-6 w-6" />, name: "Corporate" },
+  { icon: <Briefcase className="h-6 w-6" />, name: "Corporate & B2B" },
   { icon: <Utensils className="h-6 w-6" />, name: "Restaurants" },
 ];
 
@@ -215,12 +230,12 @@ const faqs = [
   {
     question: "What is included in the ₹9999 package?",
     answer:
-      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website, mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a premium online presence.",
+      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.",
   },
   {
     question: "What does 'Free Demo (Zero Upfront Cost)' mean?",
     answer:
-      "It means you don't pay a single rupee to start your Demo. We design and develop your Demo first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
+      "It means you don't pay a single rupee to start your Demo. We design and develop your Demo first(Single Page UI Mockup). You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
   },
   {
     question: "How long does it take to deliver the website?",
@@ -241,35 +256,65 @@ const faqs = [
 
 const portfolioItems = [
   {
-    image: "/Photography-Service Page.png",
-    imageHint: "screenshot photography service catalog website",
-    title: "Services Showcase Website",
-    category: "Independent Photographer",
-    metrics: ["Modern UX Design", "Visually Engaging UI", "SEO Optimization"],
-    link: "https://massey-production.vercel.app/",
+    image: "/portfolio-imgs/chopraretec.png",
+    imageHint: "screenshot chopra retec industrial technology website",
+    title: "Premium B2B Presence",
+    category: "Global Rubber Manufacturer",
+    metrics: [
+      "B2B Excellence",
+      "Professional Visuals & animations",
+      "Enterprise Scale",
+    ],
+    link: "https://chopraretec.com",
   },
   {
-    image: "/singhLawFirmSiteHome.png",
-    imageHint: "screenshot singh and associates law firm website",
-    title: "Lead-Gen Website",
+    image: "/portfolio-imgs/jamesbond.png",
+    imageHint: "screenshot james bond cleaning services website",
+    title: "Modern Service Industry",
+    category: "Australian Cleaning Business",
+    metrics: [
+      "Blog Pages",
+      "Lead Generation",
+      "Conversion Focused",
+      "SEO Optimized",
+    ],
+    link: "https://jamesbondcleaning.au",
+  },
+  {
+    image: "/portfolio-imgs/fahemifarz.png",
+    imageHint: "screenshot fahemi farz personal brand website",
+    title: "Personal Brand Portfolio",
+    category: "Australian Fashion Designer",
+    metrics: ["Client-Centric UI", "Custom Enquiry Forms", "E-commerce Ready"],
+    link: "https://www.fehmifarz.com/",
+  },
+  {
+    image: "/portfolio-imgs/singhassociates.png",
+    imageHint: "screenshot singh associates law firm website",
+    title: "Landing/Capture Page",
     category: "Law Firm",
-    metrics: ["Technical + Local SEO", "Google Ads Optimized", "Google My Business"],
-    link: "https://ababneh-law.vercel.app/",
+    metrics: ["Brand Authority", "Google Ads Optimized", "Minimalist UI"],
+    link: "https://singhassociates.ai-fied.com/",
   },
   {
-    image: "/Enviro-ProductListing page.png",
-    imageHint: "screenshot a product listing page",
-    title: "B2B Company Website",
-    category: "Air-Quality Monitoring Solutions",
-    metrics: ["Mobile-First Design", "High Conversion", "Quick Navigation"],
-    link: "https://envirosmart.vercel.app/",
+    image: "/portfolio-imgs/edgrowth.png",
+    imageHint:
+      "screenshot edgrowth consultants educational counselling website",
+    title: "Professional Online Presence",
+    category: "Ed-Tech Firm",
+    metrics: [
+      "Mobile Optimized",
+      "Premium Animations",
+      "Light & Dark Theme",
+      "Modern UI",
+    ],
+    link: "https://www.edgrowth.info/",
   },
 ];
-
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-       {/* <DotPattern
+      {/* <DotPattern
        
         width={20}
         height={20}
@@ -281,9 +326,7 @@ export default function LucknowPage() {
         )}
       /> */}
       <Header />
-       
       <main className="flex-grow">
-        
         {/* Hero Section */}
         <section className="relative overflow-hidden min-h-[90vh] flex flex-col items-center justify-center py-12 md:py-20">
           <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -293,7 +336,6 @@ export default function LucknowPage() {
                 className="flex flex-col text-center lg:text-left items-center lg:items-start"
                 // animate-in fade-in slide-in-from-bottom-12 duration-500
               >
-                
                 <Badge
                   variant="outline"
                   className="mb-6 px-4 py-1.5 text-sm font-medium border-accent/30 bg-accent/5 text-accent rounded-full">
@@ -304,7 +346,7 @@ export default function LucknowPage() {
                   className="px-4 py-2 text-sm md:text-base font-medium bg-accent/10 text-accent border-accent/20">
                   🎉 Limited Time New Year Offer: Save ₹20,000
                 </Badge> */}
-                
+
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl font-headline leading-tight">
                   Lucknow's{" "}
                   <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent ">
@@ -313,24 +355,23 @@ export default function LucknowPage() {
                   Web Design Company
                 </h1>
                 <h2 className="mt-4">
-<span className="text-xl md:text-2xl font-medium text-muted-foreground tracking-tight">
-Elevating local{" "}
-<span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
-  businesses in Lucknow
-</span>{" "}
-to a{" "}
-
-  <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
-    world-class digital presence.
-  </span>
-</span>
+                  <span className="text-xl md:text-2xl font-medium text-muted-foreground tracking-tight">
+                    Elevating local{" "}
+                    <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
+                      businesses in Lucknow
+                    </span>{" "}
+                    to a{" "}
+                    <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent">
+                      world-class digital presence.
+                    </span>
+                  </span>
                 </h2>
-                
+
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
                   Convert Clicks into Clients/Customer with a Premium, SEO-Ready
                   Website. Schedule a consultation today to claim (*Limited
-                  Time) <span className="font-bold">offers</span>{" "}
-                  worth <span className=" font-bold">₹20,000</span> &{" "}
+                  Time) <span className="font-bold">offers</span> worth{" "}
+                  <span className=" font-bold">₹20,000</span> &{" "}
                   <span className=" font-bold">Get a Free Demo Now.</span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
@@ -373,7 +414,8 @@ to a{" "}
             <ScrollVelocityRowDynamic baseVelocity={3}>
               <span className="mx-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Web Design Lucknow • SEO Ready • 95+ PageSpeed • Custom UI/UX •
-                Free Demo (Zero Upfront Cost) • Free Hosting Setup • 24/7 Support •
+                Free Demo (Zero Upfront Cost) • Free Hosting Setup • 24/7
+                Support •
               </span>
             </ScrollVelocityRowDynamic>
           </ScrollVelocityContainerDynamic>
@@ -570,7 +612,7 @@ to a{" "}
           </div>
         </section> */}
 
-         {/* Services Section */}
+        {/* Services Section */}
         <section
           id="services"
           className=" py-12 md:py-24 lg:py-32">
@@ -580,7 +622,8 @@ to a{" "}
                 What We Do
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Affordable <span className="text-accent">Web Design Services</span> in
+                Affordable{" "}
+                <span className="text-accent">Web Design Services</span> in
                 Lucknow
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -607,7 +650,9 @@ to a{" "}
                     <CardDescription>{service.description}</CardDescription>
                     <ul className="mt-4 space-y-2">
                       {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-muted-foreground">
+                        <li
+                          key={i}
+                          className="flex items-center text-sm text-muted-foreground">
                           <CheckCircle className="h-4 w-4 mr-2 text-accent" />
                           {feature}
                         </li>
@@ -651,10 +696,10 @@ to a{" "}
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       Custom Demo
                     </TableCell>
-                    <TableCell className="text-center">Template Based</TableCell>
                     <TableCell className="text-center">
-                     No Demo
+                      Template Based
                     </TableCell>
+                    <TableCell className="text-center">No Demo</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Delivery Time</TableCell>
@@ -827,14 +872,13 @@ to a{" "}
           </div>
         </section>
 
-       
-
         {/* Industries Section */}
         <section className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Industries We <span className="text-accent">Serve</span> in Lucknow
+                Industries We <span className="text-accent">Serve</span> in
+                Lucknow
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">

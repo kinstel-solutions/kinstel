@@ -97,7 +97,7 @@ const defaultServices = [
   //     "Inventory Management System",
   //   ],
   // },
-   {
+  {
     icon: <ShoppingBag className="h-8 w-8 text-accent" />,
     title: "Content Creation",
     description:
@@ -113,29 +113,60 @@ const defaultServices = [
 ];
 
 const defaultPortfolioItems = [
- {
-    image: "/Photography-Service Page.png",
-    imageHint: "screenshot photography service catalog website",
-    title: "Services Showcase Website",
-    category: "Independent Photographer",
-    metrics: ["Modern UX Design", "Visually Engaging UI", "SEO Optimization"],
-    link: "https://massey-production.vercel.app/",
+  {
+    image: "/portfolio-imgs/chopraretec.png",
+    imageHint: "screenshot chopra retec industrial technology website",
+    title: "Premium B2B Presence",
+    category: "Global Rubber Manufacturer",
+    metrics: [
+      "B2B Excellence",
+      "Professional Visuals & animations",
+      "Enterprise Scale",
+    ],
+    link: "https://chopraretec.com",
   },
   {
-    image: "/singhLawFirmSiteHome.png",
-    imageHint: "screenshot singh and associates law firm website",
-    title: "Lead-Gen Website",
+    image: "/portfolio-imgs/jamesbond.png",
+    imageHint: "screenshot james bond cleaning services website",
+    title: "Modern Service Industry",
+    category: "Australian Cleaning Business",
+    metrics: [
+      "Blog Pages",
+      "Lead Generation",
+      "Conversion Focused",
+      "SEO Optimized",
+    ],
+    link: "https://jamesbondcleaning.au",
+  },
+  {
+    image: "/portfolio-imgs/fahemifarz.png",
+    imageHint: "screenshot fahemi farz personal brand website",
+    title: "Personal Brand Portfolio",
+    category: "Australian Fashion Designer",
+    metrics: ["Client-Centric UI", "Custom Enquiry Forms", "E-commerce Ready"],
+    link: "https://www.fehmifarz.com/",
+  },
+  {
+    image: "/portfolio-imgs/singhassociates.png",
+    imageHint: "screenshot singh associates law firm website",
+    title: "Landing/Capture Page",
     category: "Law Firm",
-    metrics: ["Technical + Local SEO", "Google Ads Optimized", "Google My Business"],
-    link: "https://ababneh-law.vercel.app/",
+    metrics: ["Brand Authority", "Google Ads Optimized", "Minimalist UI"],
+    link: "https://singhassociates.ai-fied.com/",
   },
   {
-    image: "/Enviro-ProductListing page.png",
-    imageHint: "screenshot a product listing page",
-    title: "B2B Company Website",
-    category: "Air-Quality Monitoring Solutions",
-    metrics: ["Mobile-First Design", "High Conversion", "Quick Navigation"],
-    link: "https://envirosmart.vercel.app/",
+    image: "/portfolio-imgs/edgrowth.png",
+    imageHint:
+      "screenshot edgrowth consultants educational counselling website",
+    title: "Professional Online Presence",
+    category: "Ed-Tech Firm",
+    metrics: [
+      "Mobile Optimized",
+      "Premium Animations",
+      "Light & Dark Theme",
+      "Modern UI",
+    ],
+    link: "https://www.edgrowth.info/",
   },
 ];
 
@@ -265,7 +296,9 @@ export default function Home() {
                       <CardDescription>{service.description}</CardDescription>
                       <ul className="mt-4 space-y-2">
                         {service.features.map((feature, i) => (
-                          <li key={i} className="flex items-center text-sm text-muted-foreground">
+                          <li
+                            key={i}
+                            className="flex items-center text-sm text-muted-foreground">
                             <CheckCircle className="h-4 w-4 mr-2 text-accent" />
                             {feature}
                           </li>
