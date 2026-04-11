@@ -18,7 +18,7 @@ export default function ShippingPolicyPage() {
             <main className="flex-grow container mx-auto px-4 md:px-6 py-12">
                 <div className="prose prose-invert max-w-none mx-auto">
                     <h1>Delivery & Shipping Policy</h1>
-                    <p>Last updated: July 29, 2024</p>
+                    <p>Last updated: April 12, 2026</p>
 
                     <h2>1. Nature of Our Services</h2>
                     <p>
@@ -45,7 +45,7 @@ export default function ShippingPolicyPage() {
                     
                     <h2>5. No Shipping Fees or Physical Delivery</h2>
                     <p>
-                        As we exclusively provide digital services, there are no shipping fees, handling charges, or physical delivery involved. All communication, work-in-progress reviews, and final deliveries are managed electronically.
+                        Kinstel Solutions provides digital services only. No physical shipping is involved. Service delivery is completed via email or secure cloud transfer as per project milestones. As we exclusively provide digital services, there are no shipping fees, handling charges, or physical delivery involved. All communication, work-in-progress reviews, and final deliveries are managed electronically.
                     </p>
 
                     <p className="mt-8">

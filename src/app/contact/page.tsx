@@ -57,6 +57,19 @@ export default function ContactPage() {
             </div>
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 mt-1">
+                <Phone className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h2 className="font-semibold">Billing & Admin</h2>
+                <ClickToCallLink
+                  phoneNumber="+919415315450"
+                  className="text-muted-foreground hover:text-accent">
+                  +91 94153 15450
+                </ClickToCallLink>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 mt-1">
                 <MapPin className="h-6 w-6 text-accent" />
               </div>
               <div>

@@ -9,7 +9,7 @@ import { ShieldCheck, Zap, Mail } from 'lucide-react';
  */
 export const metadata: Metadata = {
   title: 'Quick Pay - Kinstel Solutions',
-  description: 'Make instant payments to Kinstel Solutions using Razorpay. Secure and fast payment processing for your invoices.',
+  description: 'Make instant payments to Kinstel Solutions securely. Fast payment processing for your invoices.',
 };
 
 /**
@@ -55,7 +55,7 @@ export default function QuickPayPage() {
               <h2 className="text-2xl font-semibold text-foreground">Payment Details</h2>
             </div>
             <p className="text-sm text-muted-foreground">
-              All payments are processed securely through Razorpay. You&apos;ll receive a receipt via email once payment is complete.
+              All payments are processed securely via secure payment gateway. You&apos;ll receive a receipt via email once payment is complete.
             </p>
           </div>
 

@@ -17,7 +17,7 @@ export default function TermsAndConditionsPage() {
             <main className="flex-grow container mx-auto px-4 md:px-6 py-12">
                 <div className="prose prose-invert max-w-none mx-auto">
                     <h1>Terms & Conditions</h1>
-                    <p>Last updated: July 29, 2024</p>
+                    <p>Last updated: April 12, 2026</p>
                     <p>
                         Please read these terms and conditions carefully before using our services.
                     </p>
@@ -31,15 +31,13 @@ export default function TermsAndConditionsPage() {
                     <h2>2. Services</h2>
                     <p>
                         Kinstel Solutions provides web design, web development, and other digital solutions for
-                        lawyers and law firms. All services will be outlined in a formal project-based agreement
+                        modern businesses and professional services. All services will be outlined in a formal project-based agreement
                         or proposal provided to you before work commences.
                     </p>
 
                     <h2>3. Payments</h2>
                     <p>
-                        Project fees and payment schedules will be detailed in the project agreement. We accept
-                        payments through our secure payment gateway, Razorpay. All payments are subject to the
-                        terms and conditions of Razorpay.
+                        Project fees and payment schedules will be detailed in the project agreement. We accept payments through secure, bank-integrated payment gateways. All transactions are subject to the terms of the respective payment service providers. Refunds are processed within 7-10 working days.
                     </p>
 
                     <h2>4. Intellectual Property</h2>

@@ -59,6 +59,7 @@ export function Footer() {
                   href="//www.dmca.com/Protection/Status.aspx?ID=ac032bda-1f65-4094-8b6e-d802f9a9ab66" 
                   title="DMCA.com Protection Status" 
                   className="dmca-badge inline-block opacity-100 hover:opacity-100 transition-opacity duration-300"
+                  suppressHydrationWarning
                 >
                   <img 
                     src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=ac032bda-1f65-4094-8b6e-d802f9a9ab66" 
@@ -176,7 +177,7 @@ export function Footer() {
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
           <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q • D-U-N-S®: 77-197-4415</p>
-          <p>&copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
+          <p>Copyright &copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>
       <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>

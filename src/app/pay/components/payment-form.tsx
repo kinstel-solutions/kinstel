@@ -332,8 +332,16 @@ export default function PaymentForm() {
 
         {/* Security Notice */}
         <p className="text-xs text-center text-muted-foreground">
-          Secured by Razorpay. Your payment information is encrypted and secure.
+          Secured via secure payment gateway. Your payment information is encrypted and secure.
         </p>
+        
+        {/* Card Networks */}
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-4 text-xs font-semibold text-muted-foreground">
+          <span className="px-2 py-1 bg-muted rounded border border-border">VISA</span>
+          <span className="px-2 py-1 bg-muted rounded border border-border">Mastercard</span>
+          <span className="px-2 py-1 bg-muted rounded border border-border">RuPay</span>
+          <span className="px-2 py-1 bg-muted rounded border border-border">UPI</span>
+        </div>
       </form>
     </div>
   );

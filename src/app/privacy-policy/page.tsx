@@ -17,6 +17,7 @@ export default function PrivacyPolicyPage() {
             <main className="flex-grow container mx-auto px-4 md:px-6 py-12">
                 <div className="prose prose-invert max-w-none mx-auto">
                     <h1>Privacy Policy</h1>
+                    <p>Last updated: April 12, 2026</p>
                     <p>
                         This Privacy Policy describes how Kinstel Solutions (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
                         collects, uses, and discloses your personal information when you visit our
@@ -51,10 +52,10 @@ export default function PrivacyPolicyPage() {
 
                     <h2>4. Payment Processing</h2>
                     <p>
-                        We use Razorpay as our third-party payment processor. When you make a payment, your payment
-                        details are provided directly to Razorpay. We do not collect or store your payment card
-                        details. We encourage you to review Razorpay&apos;s privacy policy to understand how they
-                        handle your payment information.
+                        We use secure third-party payment processors. When you make a payment, your payment
+                        details are provided directly to them. We do not collect or store your payment card
+                        details. We encourage you to review the payment processor's privacy policy to understand how they
+                        handle your payment information. All data is protected via industry-standard SSL/TLS encryption during transit.
                     </p>
 
                     <h2>5. Third-Party Disclosure</h2>
