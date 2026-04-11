@@ -336,11 +336,28 @@ export default function PaymentForm() {
         </p>
         
         {/* Card Networks */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-4 text-xs font-semibold text-muted-foreground">
-          <span className="px-2 py-1 bg-muted rounded border border-border">VISA</span>
-          <span className="px-2 py-1 bg-muted rounded border border-border">Mastercard</span>
-          <span className="px-2 py-1 bg-muted rounded border border-border">RuPay</span>
-          <span className="px-2 py-1 bg-muted rounded border border-border">UPI</span>
+        <div className="flex flex-wrap justify-center items-center gap-3 mt-4">
+          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
+            <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="25" fill="#1434CB" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="30">VISA</text>
+            </svg>
+          </div>
+          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
+            <svg viewBox="0 0 100 60" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="35" cy="30" r="25" fill="#EB001B" fillOpacity="0.9" />
+              <circle cx="65" cy="30" r="25" fill="#F79E1B" fillOpacity="0.9" />
+            </svg>
+          </div>
+          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
+            <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <text x="0" y="22" fill="#E86E24" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="22">RuPay</text>
+            </svg>
+          </div>
+          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
+            <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <text x="5" y="25" fill="#000" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="28">UPI</text>
+            </svg>
+          </div>
         </div>
       </form>
     </div>
