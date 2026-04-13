@@ -61,6 +61,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h2 className="font-semibold">Billing & Admin</h2>
+                <p className="text-muted-foreground">Raj Shekhar Singh</p>
                 <ClickToCallLink
                   phoneNumber="+919415315450"
                   className="text-muted-foreground hover:text-accent">
