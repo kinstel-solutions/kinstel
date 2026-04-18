@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,13 +18,27 @@ import { SmartCtaButton } from "../ui/smart-cta-button";
 const navLinks = [
   { href: "/web-design-company-lucknow", label: "Lucknow" },
   { href: "/packages", label: "Packages" },
-  { href: "#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  // Helper to determine if we should use a local hash or a full path
+  const getSmartHref = (href: string) => {
+    if (href.startsWith("/#")) {
+      const sectionId = href.substring(2);
+      const pagesWithSections = ["/", "/web-design-company-lucknow", "/law-firm-marketing"];
+      
+      if (pagesWithSections.includes(pathname)) {
+        return `#${sectionId}`;
+      }
+    }
+    return href;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +56,7 @@ export function Header() {
       {navLinks.map((link) => (
         <Link
           key={link.href}
-          href={link.href}
+          href={getSmartHref(link.href)}
           className="group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80">
           {link.label}
           <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
@@ -66,7 +81,7 @@ export function Header() {
           asChild
           className="w-full justify-start text-lg h-auto py-3">
           <Link
-            href={link.href}
+            href={getSmartHref(link.href)}
             onClick={() => setIsSheetOpen(false)}>
             {link.label}
           </Link>

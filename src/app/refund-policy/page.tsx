@@ -17,7 +17,7 @@ export default function RefundPolicyPage() {
             <main className="flex-grow container mx-auto px-4 md:px-6 py-12">
                 <div className="prose prose-invert max-w-none mx-auto">
                     <h1>Cancellation & Refund Policy</h1>
-                    <p>Last updated: July 29, 2024</p>
+                    <p>Last updated: April 12, 2026</p>
 
                     <h2>1. Service Agreements</h2>
                     <p>
@@ -50,6 +50,11 @@ export default function RefundPolicyPage() {
                     <p>
                         If we do not receive communication from the client for a period of 30 consecutive
                         days, the project will be considered abandoned, and any payments made will be forfeited.
+                    </p>
+
+                    <h2>5. Refund Timeline</h2>
+                    <p>
+                        Approved refunds will be initiated to the original payment method and will typically reflect in your account within 7 to 10 working days.
                     </p>
 
                     <p className="mt-8">
