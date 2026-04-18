@@ -39,6 +39,10 @@ export default function PaymentForm() {
   const urlAmount = searchParams.get("amount");
   const urlPurpose = searchParams.get("purpose");
   const urlPid = searchParams.get("pid");
+  const urlEmail = searchParams.get("email");
+  const urlName = searchParams.get("name");
+  const urlPhone = searchParams.get("phone");
+  const urlDesc = searchParams.get("desc");
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -54,11 +58,12 @@ export default function PaymentForm() {
     defaultValues: {
       currency: "INR",
       amount: urlAmount ? parseFloat(urlAmount) : undefined,
-      name: "",
-      email: "",
-      phone: "",
+      name: urlName || "",
+      email: urlEmail || "",
+      phone: urlPhone || "",
       proposalRef: urlPurpose || "",
       projectId: urlPid || `KS-TOKEN-${Date.now()}`,
+      description: urlDesc || "",
     },
   });
 
@@ -120,6 +125,7 @@ export default function PaymentForm() {
         projectId: data.projectId,
         proposalRef: data.proposalRef,
         customerName: data.name,
+        description: data.description,
       });
       if (!orderResult.success) {
         throw new Error(orderResult.message);
@@ -140,6 +146,7 @@ export default function PaymentForm() {
         },
         notes: {
           proposal_reference: data.proposalRef || "",
+          description: data.description || "",
         },
         theme: {
           color: "#3b82f6", // Blue accent color
@@ -170,6 +177,7 @@ export default function PaymentForm() {
             phone: data.phone,
             proposalRef: data.proposalRef,
             projectId: data.projectId,
+            description: data.description,
             timestamp: new Date().toISOString(),
           });
 
@@ -282,12 +290,12 @@ export default function PaymentForm() {
             <label
               htmlFor="name"
               className="block text-sm font-medium mb-2 text-foreground">
-              Name
+              Name / Business name
             </label>
             <input
               id="name"
               type="text"
-              placeholder="Your name"
+              placeholder="Your name or business"
               {...register("name")}
               className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
               disabled={isProcessing}
@@ -369,6 +377,23 @@ export default function PaymentForm() {
               disabled={isProcessing}
             />
           </div>
+        </div>
+
+        {/* Description */}
+        <div>
+          <label
+            htmlFor="description"
+            className="block text-sm font-medium mb-2 text-foreground">
+            Description / Special Requests (Optional)
+          </label>
+          <textarea
+            id="description"
+            placeholder="Additional details about the project, delay reason, or invoice information..."
+            {...register("description")}
+            rows={3}
+            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground resize-y"
+            disabled={isProcessing}
+          />
         </div>
 
         {/* Error Message */}
