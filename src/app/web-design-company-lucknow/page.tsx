@@ -36,6 +36,7 @@ import {
   CardTitle,
   CardDescription,
   CardFooter,
+  Card,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
@@ -118,20 +119,33 @@ const lucknowStats = [
 const lucknowServices = [
   {
     icon: <Code className="h-8 w-8 text-accent" />,
-    title: "Custom Web Development",
+    title: "Custom Web Solutions",
     description:
       "Tailored web solutions that align perfectly with your business goals, ensuring scalability and a unique competitive edge.",
     features: [
-      "Custom UI/UX Design",
-      "React/Next.js Development",
+      "React & Next.js Development",
       "E-commerce Development",
       "Hosting & Domain Registration",
-      "Custom IT solutions",
+      "Software as a Service (SaaS) Development",
+      "Secure & Scalable Architecture",
+    ],
+  },
+  {
+    icon: <Palette className="h-10 w-10 text-accent" />,
+    title: "Bespoke Web Design",
+    description:
+      "Stand out with a unique website designed specifically for your brand. We focus on user experience, conversion optimization, and stunning aesthetics.",
+    features: [
+      "Custom UI/UX Design",
+      "Brand Identity Integration",
+      "Mobile-First Approach",
+      "High Performance (Min. Load Time)",
+      "Landing Page Design (Conversion Focused)",
     ],
   },
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    title: "Digital Marketing",
+    title: "Performance & Organic Marketing",
     description:
       "Our Strategy is simple: Increase visitors => Leads => Sales/Clients, While maintaining high relevancy from start to finish.",
     features: [
@@ -154,19 +168,19 @@ const lucknowServices = [
   //     "Inventory Management System",
   //   ],
   // },
-  {
-    icon: <ShoppingBag className="h-8 w-8 text-accent" />,
-    title: "Content Creation",
-    description:
-      "We create engaging and informative content to help your business stand out in the digital world.",
-    features: [
-      "Logo Design",
-      "Brochure & Catalog Design",
-      "Professional Photo & Video Creation",
-      "Creative Copywriting",
-      "Ad Creatives",
-    ],
-  },
+  // {
+  //   icon: <ShoppingBag className="h-8 w-8 text-accent" />,
+  //   title: "Content Creation",
+  //   description:
+  //     "We create engaging and informative content to help your business stand out in the digital world.",
+  //   features: [
+  //     "Logo Design",
+  //     "Brochure & Catalog Design",
+  //     "Professional Photo & Video Creation",
+  //     "Creative Copywriting",
+  //     "Ad Creatives",
+  //   ],
+  // },
 ];
 
 const packageFeatures = [
@@ -256,6 +270,19 @@ const faqs = [
 
 const portfolioItems = [
   {
+    image: "/portfolio-imgs/blissfulStation.png",
+    imageHint: "screenshot blissful station website",
+    title: "Premium & Elegant UI",
+    category: "Blissful Station",
+    metrics: [
+      "High Performance",
+      "Mobile Optimized",
+      "Premium Animations",
+      "Custom UI/UX",
+    ],
+    link: "https://www.theblissfulstation.com/",
+  },
+  {
     image: "/portfolio-imgs/chopraretec.png",
     imageHint: "screenshot chopra retec industrial technology website",
     title: "Premium B2B Presence",
@@ -293,7 +320,12 @@ const portfolioItems = [
     imageHint: "screenshot singh associates law firm website",
     title: "Landing/Capture Page",
     category: "Law Firm",
-    metrics: ["Brand Authority", "Google Ads Optimized", "Minimalist UI"],
+    metrics: [
+      "Brand Authority",
+      "Google Ads Optimized",
+      "Minimalist UI",
+      "Local SEO Optimized",
+    ],
     link: "https://singhassociates.ai-fied.com/",
   },
   {
@@ -633,9 +665,9 @@ export default function LucknowPage() {
             </div>
             <div className="mt-16 grid gap-8 md:grid-cols-3">
               {lucknowServices.map((service, index) => (
-                <LiquidCard
+                <Card
                   key={index}
-                  className="flex flex-col text-left p-6 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
+                  className="flex flex-col text-left p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg animate-in fade-in slide-in-from-bottom-5"
                   style={{
                     animationDelay: `${index * 150}ms`,
                     animationFillMode: "backwards",
@@ -644,26 +676,185 @@ export default function LucknowPage() {
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                       {service.icon}
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-4xl tracking-wide leading-tight">
+                      {service.title}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent className="p-0 mt-2">
+                  <CardContent className="p-0 mt-4">
                     <CardDescription>{service.description}</CardDescription>
-                    <ul className="mt-4 space-y-2">
+                    <ul className="mt-8 space-y-2">
                       {service.features.map((feature, i) => (
                         <li
                           key={i}
-                          className="flex items-center text-sm text-muted-foreground">
-                          <CheckCircle className="h-4 w-4 mr-2 text-accent" />
-                          {feature}
+                          className="flex items-center text-lg font-medium animate-in fade-in slide-in-from-left-2 duration-500"
+                          style={{
+                            animationDelay: `${index * 150 + i * 100 + 400}ms`,
+                            animationFillMode: "backwards",
+                          }}>
+                          <CheckCircle className="h-5 w-5 mr-3 text-accent shrink-0" />
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
-                </LiquidCard>
+                </Card>
               ))}
+            </div>
+            <div className="mt-12 flex justify-center">
+              <Button size="lg" asChild className="shadow-lg shadow-accent/20">
+                <Link href="/services">
+                  Explore All Services
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
+
+        {/* Portfolio Section */}
+        <section
+          id="portfolio"
+          className=" py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="font-semibold uppercase tracking-wider text-accent">
+                Premium Clientele
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                Our work speaks <span className="text-accent">for itself</span>
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground">
+                We create beautiful, high-performing websites that deliver
+                measurable results for our clients. Explore some of our recent
+                projects.
+              </p>
+            </div>
+
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {portfolioItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full">
+                  <LiquidCard
+                    className="group flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5 h-full"
+                    style={{
+                      animationDelay: `${index * 150}ms`,
+                      animationFillMode: "backwards",
+                    }}
+                    data-testid={`portfolio-item-${index}`}>
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={`Showcase of the ${item.title} project`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500"
+                        data-ai-hint={item.imageHint}
+                      />
+                    </div>
+                    <CardContent className="flex flex-1 flex-col p-6">
+                      <p className="mb-2 text-sm font-semibold text-white/80">
+                        {item.category}
+                      </p>
+                      <h3 className="mb-4 text-2xl font-headline font-semibold">
+                        {item.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 text-sm mt-auto">
+                        {item.metrics.map((metric, metricIndex) => (
+                          <Badge
+                            key={metricIndex}
+                            variant="outline">
+                            {metric}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter className="p-6 pt-0">
+                      <span className="flex items-center text-sm font-semibold text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        View Project <ArrowUpRight className="ml-2 h-5 w-5" />
+                      </span>
+                    </CardFooter>
+                  </LiquidCard>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-12 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Get a Website Like This
+              </ScrollToFormButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section
+          id="stats"
+          className=" py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-4">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {lucknowStats.map((stat, index) => (
+                <LiquidCard
+                  key={index}
+                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
+                  style={{
+                    animationDelay: `${index * 150}ms`,
+                    animationFillMode: "backwards",
+                  }}>
+                  <div>{stat.icon}</div>
+                  <p className="text-3xl font-semibold text-foreground">
+                    {stat.value}
+                  </p>
+                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
+                  <p className=" text-sm text-muted-foreground">
+                    {stat.description}
+                  </p>
+                </LiquidCard>
+              ))}
+            </div>
+            <div className="mt-12 flex justify-center">
+              <ScrollToFormButton
+                size="lg"
+                className="shadow-lg shadow-accent/20">
+                Get a Free Quote
+              </ScrollToFormButton>
+            </div>
+          </div>
+        </section>
+
+        {/* Tech Stack Marquee */}
+        <div className="py-12 bg-background border-y border-border/50 min-h-[176px]">
+          <div className="container mx-auto px-4 mb-8 text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+              Powered By Modern Tech
+            </p>
+          </div>
+          <ScrollVelocityContainerDynamic>
+            <ScrollVelocityRowDynamic baseVelocity={-2}>
+              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
+                <Code className="w-6 h-6" /> Next.js
+              </span>
+              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
+                <Zap className="w-6 h-6" /> React
+              </span>
+              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
+                <Palette className="w-6 h-6" /> Tailwind CSS
+              </span>
+              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
+                <Layers className="w-6 h-6" /> Node.js
+              </span>
+              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
+                <Rocket className="w-6 h-6" /> Vercel
+              </span>
+              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
+                <ShieldCheck className="w-6 h-6" /> TypeScript
+              </span>
+            </ScrollVelocityRowDynamic>
+          </ScrollVelocityContainerDynamic>
+        </div>
 
         {/* Why Choose Us Comparison */}
         <section className="py-12 md:py-24 lg:py-32">
@@ -733,144 +924,6 @@ export default function LucknowPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section
-          id="stats"
-          className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-4">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {lucknowStats.map((stat, index) => (
-                <LiquidCard
-                  key={index}
-                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}>
-                  <div>{stat.icon}</div>
-                  <p className="text-3xl font-semibold text-foreground">
-                    {stat.value}
-                  </p>
-                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
-                  <p className=" text-sm text-muted-foreground">
-                    {stat.description}
-                  </p>
-                </LiquidCard>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Tech Stack Marquee */}
-        <div className="py-12 bg-background border-y border-border/50 min-h-[176px]">
-          <div className="container mx-auto px-4 mb-8 text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Powered By Modern Tech
-            </p>
-          </div>
-          <ScrollVelocityContainerDynamic>
-            <ScrollVelocityRowDynamic baseVelocity={-2}>
-              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
-                <Code className="w-6 h-6" /> Next.js
-              </span>
-              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
-                <Zap className="w-6 h-6" /> React
-              </span>
-              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
-                <Palette className="w-6 h-6" /> Tailwind CSS
-              </span>
-              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
-                <Layers className="w-6 h-6" /> Node.js
-              </span>
-              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
-                <Rocket className="w-6 h-6" /> Vercel
-              </span>
-              <span className="mx-8 text-xl font-bold text-foreground/50 flex items-center gap-2">
-                <ShieldCheck className="w-6 h-6" /> TypeScript
-              </span>
-            </ScrollVelocityRowDynamic>
-          </ScrollVelocityContainerDynamic>
-        </div>
-
-        {/* Portfolio Section */}
-        <section
-          id="portfolio"
-          className=" py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="font-semibold uppercase tracking-wider text-accent">
-                Our Work
-              </p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Websites That <span className="text-accent">Drive Growth</span>
-              </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
-                We create beautiful, high-performing websites that deliver
-                measurable results for our clients. Explore some of our recent
-                projects.
-              </p>
-            </div>
-
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {portfolioItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full">
-                  <LiquidCard
-                    className="group flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5 h-full"
-                    style={{
-                      animationDelay: `${index * 150}ms`,
-                      animationFillMode: "backwards",
-                    }}
-                    data-testid={`portfolio-item-${index}`}>
-                    <div className="relative h-64 w-full overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={`Showcase of the ${item.title} project`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500"
-                        data-ai-hint={item.imageHint}
-                      />
-                    </div>
-                    <CardContent className="flex flex-1 flex-col p-6">
-                      <p className="mb-2 text-sm font-semibold text-white/80">
-                        {item.category}
-                      </p>
-                      <h3 className="mb-4 text-2xl font-headline font-semibold">
-                        {item.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-2 text-sm mt-auto">
-                        {item.metrics.map((metric, metricIndex) => (
-                          <Badge
-                            key={metricIndex}
-                            variant="outline">
-                            {metric}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter className="p-6 pt-0">
-                      <span className="flex items-center text-sm font-semibold text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        View Project <ArrowUpRight className="ml-2 h-5 w-5" />
-                      </span>
-                    </CardFooter>
-                  </LiquidCard>
-                </Link>
-              ))}
-            </div>
-            <div className="mt-12 flex justify-center">
-              <ScrollToFormButton
-                size="lg"
-                className="shadow-lg shadow-accent/20">
-                Get a Website Like This
-              </ScrollToFormButton>
-            </div>
-          </div>
-        </section>
 
         {/* Industries Section */}
         <section className="py-12 md:py-24">

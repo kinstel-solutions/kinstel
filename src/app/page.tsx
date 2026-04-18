@@ -61,20 +61,33 @@ const defaultStats = [
 const defaultServices = [
   {
     icon: <Code className="h-8 w-8 text-accent" />,
-    title: "Custom Web Development",
+    title: "Custom Web Solutions",
     description:
       "Tailored web solutions that align perfectly with your business goals, ensuring scalability and a unique competitive edge.",
     features: [
-      "Custom UI/UX Design",
-      "React/Next.js Development",
+      "React & Next.js Development",
       "E-commerce Development",
       "Hosting & Domain Registration",
-      "Custom IT solutions",
+      "Software as a Service (SaaS) Development",
+      "Secure & Scalable Architecture",
+    ],
+  },
+  {
+    icon: <Palette className="h-10 w-10 text-accent" />,
+    title: "Bespoke Web Design",
+    description:
+      "Stand out with a unique website designed specifically for your brand. We focus on user experience, conversion optimization, and stunning aesthetics.",
+    features: [
+      "Custom UI/UX Design",
+      "Brand Identity Integration",
+      "Mobile-First Approach",
+      "High Performance (Min. Load Time)",
+      "Landing Page Design (Conversion Focused)",
     ],
   },
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    title: "Digital Marketing",
+    title: "Performance & Organic Marketing",
     description:
       "Our Strategy is simple: Increase visitors => Leads => Sales/Clients, While maintaining high relevancy from start to finish.",
     features: [
@@ -97,22 +110,35 @@ const defaultServices = [
   //     "Inventory Management System",
   //   ],
   // },
-  {
-    icon: <ShoppingBag className="h-8 w-8 text-accent" />,
-    title: "Content Creation",
-    description:
-      "We create engaging and informative content to help your business stand out in the digital world.",
-    features: [
-      "Logo Design",
-      "Brochure & Catalog Design",
-      "Professional Photo & Video Creation",
-      "Creative Copywriting",
-      "Ad Creatives",
-    ],
-  },
+  // {
+  //   icon: <ShoppingBag className="h-8 w-8 text-accent" />,
+  //   title: "Content Creation",
+  //   description:
+  //     "We create engaging and informative content to help your business stand out in the digital world.",
+  //   features: [
+  //     "Logo Design",
+  //     "Brochure & Catalog Design",
+  //     "Professional Photo & Video Creation",
+  //     "Creative Copywriting",
+  //     "Ad Creatives",
+  //   ],
+  // },
 ];
 
 const defaultPortfolioItems = [
+  {
+    image: "/portfolio-imgs/blissfulStation.png",
+    imageHint: "screenshot blissful station website",
+    title: "Premium & Elegant UI",
+    category: "Blissful Station",
+    metrics: [
+      "High Performance",
+      "Mobile Optimized",
+      "Premium Animations",
+      "Custom UI/UX",
+    ],
+    link: "https://www.theblissfulstation.com/",
+  },
   {
     image: "/portfolio-imgs/chopraretec.png",
     imageHint: "screenshot chopra retec industrial technology website",
@@ -151,7 +177,12 @@ const defaultPortfolioItems = [
     imageHint: "screenshot singh associates law firm website",
     title: "Landing/Capture Page",
     category: "Law Firm",
-    metrics: ["Brand Authority", "Google Ads Optimized", "Minimalist UI"],
+    metrics: [
+      "Brand Authority",
+      "Google Ads Optimized",
+      "Minimalist UI",
+      "Local SEO Optimized",
+    ],
     link: "https://singhassociates.ai-fied.com/",
   },
   {
@@ -192,14 +223,14 @@ export default function Home() {
         <Header />
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="relative overflow-hidden min-h-[100dvh] flex flex-col items-center justify-center py-20">
+          <section className="relative overflow-hidden min-h-[80dvh] flex flex-col items-center justify-center py-10">
             <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
               <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
                 <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
-                  Expert{" "}
+                  Premier{" "}
                   <AuroraText
                     colors={["#F59E0B", "#D97706", "#FCD34D", "#F59E0B"]}>
-                    Web Design
+                    Web Design Company
                   </AuroraText>{" "}
                   for Modern Businesses
                 </h1>
@@ -230,34 +261,6 @@ export default function Home() {
             </div> */}
           </section>
 
-          {/* Stats Section */}
-          <section
-            id="stats"
-            className="py-12 md:py-24 lg:py-32">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                {defaultStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center p-6 text-center animate-in fade-in slide-in-from-bottom-5"
-                    style={{
-                      animationDelay: `${index * 150}ms`,
-                      animationFillMode: "backwards",
-                    }}>
-                    <div className="mb-4">{stat.icon}</div>
-                    <p className="text-5xl font-bold text-foreground">
-                      {stat.value}
-                    </p>
-                    <h3 className="mt-2 text-lg font-semibold">{stat.label}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {stat.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
           {/* Services Section */}
           <section
             id="services"
@@ -268,8 +271,7 @@ export default function Home() {
                   Designed for Growth
                 </p>
                 <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  Modern <span className="text-accent">Web Design</span>{" "}
-                  Services
+                  Our <span className="text-accent">Premium</span> Services
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground">
                   We build beautiful, high-performing websites that are designed
@@ -290,23 +292,36 @@ export default function Home() {
                       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                         {service.icon}
                       </div>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardTitle className="text-4xl tracking-wide leading-tight">
+                        {service.title}
+                      </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-0 mt-2">
+                    <CardContent className="p-0 mt-4">
                       <CardDescription>{service.description}</CardDescription>
-                      <ul className="mt-4 space-y-2">
+                      <ul className="mt-8 space-y-2">
                         {service.features.map((feature, i) => (
                           <li
                             key={i}
-                            className="flex items-center text-sm text-muted-foreground">
-                            <CheckCircle className="h-4 w-4 mr-2 text-accent" />
-                            {feature}
+                            className="flex items-center text-lg font-medium animate-in fade-in slide-in-from-left-2 duration-500"
+                            style={{
+                              animationDelay: `${index * 150 + i * 100 + 400}ms`,
+                              animationFillMode: "backwards",
+                            }}>
+                            <CheckCircle className="h-5 w-5 mr-3 text-accent shrink-0" />
+                            <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+              <div className="mt-12 flex justify-center">
+                <Button size="lg" asChild>
+                  <Link href="/services">
+                    Explore All Services
+                  </Link>
+                </Button>
               </div>
             </div>
           </section>
@@ -318,11 +333,11 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="font-semibold uppercase tracking-wider text-accent">
-                  Our Work
+                  Premium Clientele
                 </p>
                 <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  Websites That{" "}
-                  <span className="text-accent">Drive Growth</span>
+                  Our work speaks{" "}
+                  <span className="text-accent">for itself</span>
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground">
                   We create beautiful, high-performing websites that deliver
@@ -381,6 +396,42 @@ export default function Home() {
                     </Card>
                   </Link>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Stats Section */}
+          <section
+            id="stats"
+            className="py-12 md:py-24 lg:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+                {defaultStats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center p-6 text-center animate-in fade-in slide-in-from-bottom-5"
+                    style={{
+                      animationDelay: `${index * 150}ms`,
+                      animationFillMode: "backwards",
+                    }}>
+                    <div className="mb-4">{stat.icon}</div>
+                    <p className="text-5xl font-bold text-foreground">
+                      {stat.value}
+                    </p>
+                    <h3 className="mt-2 text-lg font-semibold">{stat.label}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {stat.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-12 flex justify-center">
+                <SmartCtaButton
+                  phoneNumber="+919889988408"
+                  email="contact@kinstel.com"
+                  size="lg">
+                  Get Your Free Consultation
+                </SmartCtaButton>
               </div>
             </div>
           </section>

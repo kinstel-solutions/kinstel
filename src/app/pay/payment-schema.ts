@@ -71,6 +71,7 @@ export const paymentSchema = z.object({
   email: z.string().email('Invalid email format').optional().or(z.literal('')),
   phone: z.string().optional(),
   proposalRef: z.string().optional(),
+  projectId: z.string().optional(),
 });
 
 /**
@@ -91,5 +92,6 @@ export type PaymentDetails = {
   email?: string;
   phone?: string;
   proposalRef?: string;
+  projectId?: string;
   timestamp: string;
 };

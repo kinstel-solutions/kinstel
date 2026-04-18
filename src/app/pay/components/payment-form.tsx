@@ -1,12 +1,24 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
-import { Loader2, Send } from 'lucide-react';
-import { paymentSchema, type PaymentFormValues, SUPPORTED_CURRENCIES, CURRENCY_SYMBOLS, type Currency, convertCurrency } from '../payment-schema';
-import { createOrderAction, verifyPaymentAction, sendPaymentReceiptAction } from '../actions';
+import { useState, useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Loader2, Send, Info } from "lucide-react";
+import {
+  paymentSchema,
+  type PaymentFormValues,
+  SUPPORTED_CURRENCIES,
+  CURRENCY_SYMBOLS,
+  type Currency,
+  convertCurrency,
+} from "../payment-schema";
+import {
+  createOrderAction,
+  verifyPaymentAction,
+  sendPaymentReceiptAction,
+} from "../actions";
+import { Button } from "@/components/ui/button";
 
 // Razorpay types
 declare global {
@@ -20,7 +32,13 @@ declare global {
  * Handles client payment input and Razorpay checkout integration
  */
 export default function PaymentForm() {
-  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // URL Parameter parsing
+  const urlAmount = searchParams.get("amount");
+  const urlPurpose = searchParams.get("purpose");
+  const urlPid = searchParams.get("pid");
+
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -33,20 +51,22 @@ export default function PaymentForm() {
   } = useForm<PaymentFormValues>({
     resolver: zodResolver(paymentSchema),
     defaultValues: {
-      currency: 'INR',
-      name: '',
-      email: '',
-      phone: '',
-      proposalRef: '',
+      currency: "INR",
+      amount: urlAmount ? parseFloat(urlAmount) : undefined,
+      name: "",
+      email: "",
+      phone: "",
+      proposalRef: urlPurpose || "",
+      projectId: urlPid || `KS-TOKEN-${Date.now()}`,
     },
   });
 
   // Track previous currency for conversion
-  const previousCurrency = useRef<Currency>('INR');
+  const previousCurrency = useRef<Currency>("INR");
 
   // Watch for currency changes and auto-convert amount
-  const currencyValue = watch('currency') || 'INR';
-  const amountValue = watch('amount');
+  const currencyValue = watch("currency") || "INR";
+  const amountValue = watch("amount");
 
   useEffect(() => {
     // Only convert if there's an amount and currency actually changed
@@ -54,9 +74,9 @@ export default function PaymentForm() {
       const convertedAmount = convertCurrency(
         amountValue,
         previousCurrency.current,
-        currencyValue as Currency
+        currencyValue as Currency,
       );
-      setValue('amount', convertedAmount);
+      setValue("amount", convertedAmount);
       previousCurrency.current = currencyValue as Currency;
     }
   }, [currencyValue, amountValue, setValue]);
@@ -72,8 +92,8 @@ export default function PaymentForm() {
         return;
       }
 
-      const script = document.createElement('script');
-      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
       script.onload = () => resolve(true);
       script.onerror = () => resolve(false);
       document.body.appendChild(script);
@@ -91,11 +111,15 @@ export default function PaymentForm() {
       // 1. Load Razorpay script
       const isScriptLoaded = await loadRazorpayScript();
       if (!isScriptLoaded) {
-        throw new Error('Failed to load payment gateway. Please try again.');
+        throw new Error("Failed to load payment gateway. Please try again.");
       }
 
       // 2. Create Razorpay order
-      const orderResult = await createOrderAction(data.amount, data.currency);
+      const orderResult = await createOrderAction(data.amount, data.currency, {
+        projectId: data.projectId,
+        proposalRef: data.proposalRef,
+        customerName: data.name,
+      });
       if (!orderResult.success) {
         throw new Error(orderResult.message);
       }
@@ -105,19 +129,19 @@ export default function PaymentForm() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: orderResult.amount,
         currency: orderResult.currency,
-        name: 'Kinstel Solutions',
-        description: 'Quick Pay Invoice Payment',
+        name: "Kinstel Solutions",
+        description: "Quick Pay Invoice Payment",
         order_id: orderResult.orderId,
         prefill: {
-          name: data.name || '',
-          email: data.email || '',
-          contact: data.phone || '',
+          name: data.name || "",
+          email: data.email || "",
+          contact: data.phone || "",
         },
         notes: {
-          proposal_reference: data.proposalRef || '',
+          proposal_reference: data.proposalRef || "",
         },
         theme: {
-          color: '#3b82f6', // Blue accent color
+          color: "#3b82f6", // Blue accent color
         },
         handler: async function (response: any) {
           // 4. Payment successful - verify signature
@@ -144,6 +168,7 @@ export default function PaymentForm() {
             email: data.email,
             phone: data.phone,
             proposalRef: data.proposalRef,
+            projectId: data.projectId,
             timestamp: new Date().toISOString(),
           });
 
@@ -159,7 +184,9 @@ export default function PaymentForm() {
         modal: {
           ondismiss: function () {
             setIsProcessing(false);
-            setError('Payment cancelled. Please try again if you wish to complete the payment.');
+            setError(
+              "Payment cancelled. Please try again if you wish to complete the payment.",
+            );
           },
         },
       };
@@ -167,7 +194,7 @@ export default function PaymentForm() {
       const razorpay = new window.Razorpay(options);
       razorpay.open();
     } catch (err: any) {
-      setError(err.message || 'Something went wrong. Please try again.');
+      setError(err.message || "Something went wrong. Please try again.");
       setIsProcessing(false);
     }
   };
@@ -176,44 +203,55 @@ export default function PaymentForm() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="space-y-6">
         {/* Currency Selector - Required */}
         <div>
-          <label htmlFor="currency" className="block text-sm font-semibold mb-2 text-foreground">
+          <label
+            htmlFor="currency"
+            className="block text-sm font-semibold mb-2 text-foreground">
             Currency <span className="text-red-500">*</span>
           </label>
           <select
             id="currency"
-            {...register('currency')}
+            {...register("currency")}
             className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground"
-            disabled={isProcessing}
-          >
+            disabled={isProcessing}>
             {SUPPORTED_CURRENCIES.map((currency) => (
-              <option key={currency} value={currency}>
+              <option
+                key={currency}
+                value={currency}>
                 {currency} ({CURRENCY_SYMBOLS[currency]})
               </option>
             ))}
           </select>
           {errors.currency && (
-            <p className="text-red-500 text-sm mt-1">{errors.currency.message}</p>
+            <p className="text-red-500 text-sm mt-1">
+              {errors.currency.message}
+            </p>
           )}
         </div>
 
         {/* Amount Field - Required */}
         <div>
-          <label htmlFor="amount" className="block text-sm font-semibold mb-2 text-foreground">
+          <label
+            htmlFor="amount"
+            className="block text-sm font-semibold mb-2 text-foreground">
             Amount to Pay <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <span className="text-gray-500 font-semibold">{currencySymbol}</span>
+              <span className="text-gray-500 font-semibold">
+                {currencySymbol}
+              </span>
             </div>
             <input
               id="amount"
               type="number"
               step="0.01"
               placeholder={`Enter amount (Min: 1 ${currencyValue})`}
-              {...register('amount', { valueAsNumber: true })}
+              {...register("amount", { valueAsNumber: true })}
               className="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
               disabled={isProcessing}
             />
@@ -223,7 +261,8 @@ export default function PaymentForm() {
           )}
           {amountValue && !errors.amount && (
             <p className="text-sm text-muted-foreground mt-1">
-              Amount: {currencySymbol}{amountValue.toLocaleString()}
+              Amount: {currencySymbol}
+              {amountValue.toLocaleString()}
             </p>
           )}
         </div>
@@ -239,14 +278,16 @@ export default function PaymentForm() {
         <div className="grid md:grid-cols-2 gap-4">
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium mb-2 text-foreground">
               Name
             </label>
             <input
               id="name"
               type="text"
               placeholder="Your name"
-              {...register('name')}
+              {...register("name")}
               className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
               disabled={isProcessing}
             />
@@ -254,14 +295,16 @@ export default function PaymentForm() {
 
           {/* Phone */}
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium mb-2 text-foreground">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium mb-2 text-foreground">
               Phone
             </label>
             <input
               id="phone"
               type="tel"
               placeholder="+91 98899 88408"
-              {...register('phone')}
+              {...register("phone")}
               className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
               disabled={isProcessing}
             />
@@ -270,14 +313,16 @@ export default function PaymentForm() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium mb-2 text-foreground">
             Email
           </label>
           <input
             id="email"
             type="email"
             placeholder="your@email.com"
-            {...register('email')}
+            {...register("email")}
             className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
             disabled={isProcessing}
           />
@@ -290,18 +335,39 @@ export default function PaymentForm() {
         </div>
 
         {/* Proposal Reference / Notes */}
-        <div>
-          <label htmlFor="proposalRef" className="block text-sm font-medium mb-2 text-foreground">
-            Proposal Ref / Notes
-          </label>
-          <input
-            id="proposalRef"
-            type="text"
-            placeholder="Proposal #12345 or any notes"
-            {...register('proposalRef')}
-            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
-            disabled={isProcessing}
-          />
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label
+              htmlFor="proposalRef"
+              className="block text-sm font-medium mb-2 text-foreground">
+              Invoice / Proposal Ref
+            </label>
+            <input
+              id="proposalRef"
+              type="text"
+              placeholder="KS/23-24/001"
+              {...register("proposalRef")}
+              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
+              disabled={isProcessing}
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="projectId"
+              className="block text-sm font-medium mb-2 text-foreground flex items-center gap-1.5">
+              Project ID
+              <Info className="h-3.5 w-3.5 text-muted-foreground" />
+            </label>
+            <input
+              id="projectId"
+              type="text"
+              placeholder="KS-TOKEN-..."
+              {...register("projectId")}
+              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground bg-muted/30"
+              disabled={isProcessing}
+            />
+          </div>
         </div>
 
         {/* Error Message */}
@@ -312,11 +378,10 @@ export default function PaymentForm() {
         )}
 
         {/* Submit Button */}
-        <button
+        <Button
           type="submit"
           disabled={isProcessing}
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-4 px-6 rounded-lg transition duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
+          className="w-full">
           {isProcessing ? (
             <>
               <Loader2 className="h-5 w-5 animate-spin" />
@@ -328,7 +393,7 @@ export default function PaymentForm() {
               Pay Now
             </>
           )}
-        </button>
+        </Button>
 
         {/* Security Notice */}
         <p className="text-xs text-center text-muted-foreground">
