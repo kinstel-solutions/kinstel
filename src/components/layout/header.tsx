@@ -16,6 +16,7 @@ import { SmartCtaButton } from "../ui/smart-cta-button";
 
 const navLinks = [
   { href: "/web-design-company-lucknow", label: "Lucknow" },
+  { href: "/packages", label: "Packages" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
 ];

@@ -35,7 +35,15 @@ function formatCurrency(amount: number, currency: Currency): string {
  * @param currency - Currency code (INR, USD, AUD, etc.)
  * @returns Order details or error
  */
-export async function createOrderAction(amount: number, currency: Currency = 'INR') {
+export async function createOrderAction(
+  amount: number, 
+  currency: Currency = 'INR',
+  metadata?: {
+    projectId?: string;
+    proposalRef?: string;
+    customerName?: string;
+  }
+) {
   try {
     // Validate amount (minimum 1 for all currencies)
     if (!amount || amount < 1 || amount > 500000) {
@@ -54,7 +62,9 @@ export async function createOrderAction(amount: number, currency: Currency = 'IN
       currency: currency,
       receipt: `receipt_${Date.now()}`,
       notes: {
-        purpose: 'Quick Pay - Kinstel Solutions',
+        purpose: metadata?.proposalRef || 'Quick Pay - Kinstel Solutions',
+        project_id: metadata?.projectId || 'N/A',
+        customer_name: metadata?.customerName || 'N/A',
       },
     });
 
@@ -272,6 +282,7 @@ export async function sendPaymentReceiptAction(paymentDetails: PaymentDetails) {
         email: paymentDetails.email,
         phone: paymentDetails.phone,
         proposalRef: paymentDetails.proposalRef,
+        projectId: paymentDetails.projectId,
         amount: paymentDetails.amount,
         currency: paymentDetails.currency,
         razorpayPaymentId: paymentDetails.razorpayPaymentId,

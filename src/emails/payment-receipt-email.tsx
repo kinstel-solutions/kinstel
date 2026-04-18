@@ -22,6 +22,7 @@ interface PaymentReceiptEmailProps {
   email?: string;
   phone?: string;
   proposalRef?: string;
+  projectId?: string;
   amount: number;
   currency: Currency;
   razorpayPaymentId: string;
@@ -34,6 +35,7 @@ export const PaymentReceiptEmail = ({
   email,
   phone,
   proposalRef,
+  projectId,
   amount,
   currency,
   razorpayPaymentId,
@@ -74,8 +76,15 @@ export const PaymentReceiptEmail = ({
             
             {proposalRef && (
               <>
-                <Text style={label}>Proposal Reference:</Text>
+                <Text style={label}>Invoice / Proposal Ref:</Text>
                 <Text style={value}>{proposalRef}</Text>
+              </>
+            )}
+            
+            {projectId && (
+              <>
+                <Text style={label}>Project ID:</Text>
+                <Text style={value}>{projectId}</Text>
               </>
             )}
           </Section>
