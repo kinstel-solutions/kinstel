@@ -33,6 +33,7 @@ declare global {
  */
 export default function PaymentForm() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   // URL Parameter parsing
   const urlAmount = searchParams.get("amount");
