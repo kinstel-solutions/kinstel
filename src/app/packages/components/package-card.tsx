@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 interface PackageCardProps {
   name: string;
@@ -21,7 +20,7 @@ interface PackageCardProps {
   ctaText: string;
   tokenAmount?: number;
   highlight?: boolean;
-  href: string;
+  onSelect?: () => void;
 }
 
 export function PackageCard({
@@ -32,7 +31,7 @@ export function PackageCard({
   ctaText,
   tokenAmount,
   highlight = false,
-  href,
+  onSelect,
 }: PackageCardProps) {
   return (
     <LiquidCard
@@ -76,13 +75,11 @@ export function PackageCard({
 
       <CardFooter className="pt-6">
         <Button
-          asChild
           className="w-full"
-          variant={"default"}>
-          <Link href={href}>
-            {ctaText}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          variant={"default"}
+          onClick={onSelect}>
+          {ctaText}
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>
       </CardFooter>
     </LiquidCard>

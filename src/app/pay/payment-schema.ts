@@ -72,6 +72,7 @@ export const paymentSchema = z.object({
   phone: z.string().optional(),
   proposalRef: z.string().optional(),
   projectId: z.string().optional(),
+  description: z.string().optional(),
 });
 
 /**
@@ -93,5 +94,6 @@ export type PaymentDetails = {
   phone?: string;
   proposalRef?: string;
   projectId?: string;
+  description?: string;
   timestamp: string;
 };

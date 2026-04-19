@@ -42,6 +42,7 @@ export async function createOrderAction(
     projectId?: string;
     proposalRef?: string;
     customerName?: string;
+    description?: string;
   }
 ) {
   try {
@@ -65,6 +66,7 @@ export async function createOrderAction(
         purpose: metadata?.proposalRef || 'Quick Pay - Kinstel Solutions',
         project_id: metadata?.projectId || 'N/A',
         customer_name: metadata?.customerName || 'N/A',
+        description: metadata?.description || 'N/A',
       },
     });
 
@@ -232,6 +234,23 @@ function generateReceiptPDF(paymentDetails: PaymentDetails): string {
     }
   }
   
+  if (paymentDetails.description) {
+    yPos += 15;
+    doc.setLineWidth(0.5);
+    doc.line(20, yPos, 190, yPos);
+    
+    yPos += 10;
+    doc.setFont('helvetica', 'bold');
+    doc.text('Project Details / Description', 20, yPos);
+    
+    doc.setFont('helvetica', 'normal');
+    yPos += 8;
+    const splitDesc = doc.splitTextToSize(paymentDetails.description, 170);
+    doc.text(splitDesc, 20, yPos);
+    yPos += (splitDesc.length * 6);
+  }
+
+  
   // Footer
   doc.setLineWidth(0.5);
   doc.line(20, 270, 190, 270);
@@ -272,9 +291,10 @@ export async function sendPaymentReceiptAction(paymentDetails: PaymentDetails) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Send email notification (without PDF attachment)
+    // Send email notification to User (without PDF attachment for now, can be added later)
     const result = await resend.emails.send({
-      from: 'payments@kinstel.com', // Dedicated sender for payment receipts
+      from: 'Kinstel Solutions <purchase@kinstel.com>',
+      replyTo: ['purchase@kinstel.com', 'support@kinstel.com'],
       to: paymentDetails.email,
       subject: `Payment Receipt - ${formatCurrency(paymentDetails.amount, paymentDetails.currency)} - Kinstel Solutions`,
       react: PaymentReceiptEmail({
@@ -290,6 +310,26 @@ export async function sendPaymentReceiptAction(paymentDetails: PaymentDetails) {
         timestamp: paymentDetails.timestamp,
       }),
     });
+
+    // Send internal notification tracking to Kinstel
+    await resend.emails.send({
+      from: 'Kinstel System <purchase@kinstel.com>',
+      to: 'purchase@kinstel.com',
+      subject: `[Internal Order Alert] New Payment from ${paymentDetails.email || paymentDetails.name || 'Client'}`,
+      react: PaymentReceiptEmail({
+        name: paymentDetails.name,
+        email: paymentDetails.email,
+        phone: paymentDetails.phone,
+        proposalRef: paymentDetails.proposalRef,
+        projectId: paymentDetails.projectId,
+        amount: paymentDetails.amount,
+        currency: paymentDetails.currency,
+        razorpayPaymentId: paymentDetails.razorpayPaymentId,
+        razorpayOrderId: paymentDetails.razorpayOrderId,
+        timestamp: paymentDetails.timestamp,
+      }),
+    });
+
 
     if (result.error) {
       console.error('Failed to send receipt email:', result.error);
