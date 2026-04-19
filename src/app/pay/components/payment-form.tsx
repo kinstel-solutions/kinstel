@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Loader2, Send, Info, User, Mail, Phone, FileText, Fingerprint, MessageSquare, ShieldCheck, Wallet } from "lucide-react";
+import { Loader2, Send, Info, User, Mail, Phone, FileText, Fingerprint, MessageSquare, ShieldCheck, Wallet, Lock, Shield } from "lucide-react";
+import { BorderBeam } from "@/components/ui/border-beam";
 import {
   paymentSchema,
   type PaymentFormValues,
@@ -91,6 +92,7 @@ export default function PaymentForm() {
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [hoveredLogo, setHoveredLogo] = useState<number | null>(null);
 
   const {
     register,
@@ -465,38 +467,59 @@ export default function PaymentForm() {
           </div>
         </div>
 
-        {/* Error Message */}
-        {error && (
-          <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg animate-in shake duration-300">
-            <p className="text-red-500 text-sm font-medium">{error}</p>
+        {/* Security / Trust Badges */}
+        <div className="pt-8 border-t border-border/50 mt-10">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-accent/5 border border-accent/10">
+              <div className="p-2 rounded-lg bg-background/50 text-accent">
+                <Shield className="h-5 w-5" />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-[10px] uppercase tracking-wider text-accent font-bold">Encrypted</p>
+                <p className="text-xs font-semibold text-foreground">256-bit SSL Secure</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-accent/5 border border-accent/10">
+              <div className="p-2 rounded-lg bg-background/50 text-accent">
+                <Lock className="h-5 w-5" />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-[10px] uppercase tracking-wider text-accent font-bold">Compliant</p>
+                <p className="text-xs font-semibold text-foreground">PCI-DSS Gateway</p>
+              </div>
+            </div>
           </div>
-        )}
+        </div>
 
         {/* Submit Button */}
-        <Button
-          type="submit"
-          disabled={isProcessing}
-          className="w-full">
-          {isProcessing ? (
-            <>
-              <Loader2 className="h-5 w-5 animate-spin" />
-              Processing...
-            </>
-          ) : (
-            <>
-              <Send className="h-5 w-5" />
-              Pay Now
-            </>
-          )}
-        </Button>
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-accent/50 to-accent/20 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+          <Button
+            type="submit"
+            disabled={isProcessing}
+            className="w-full h-14 text-lg font-bold relative bg-accent text-white hover:bg-accent/90 transition-all">
+            {isProcessing ? (
+              <>
+                <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                Processing Securely...
+              </>
+            ) : (
+              <>
+                <ShieldCheck className="h-5 w-5 mr-2" />
+                Pay Securely Now
+              </>
+            )}
+          </Button>
+        </div>
 
-        {/* Security Notice */}
-        <p className="text-xs text-center text-muted-foreground">
-          Secured via secure payment gateway. Your payment information is encrypted and secure.
+        {/* Global Security Notice */}
+        <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5">
+          <ShieldCheck className="h-3.5 w-3.5 text-accent" />
+          Kinstel Solutions never stores your credit card details.
         </p>
         
         {/* Card Networks */}
-        <div className="flex flex-wrap justify-center items-center gap-3 mt-4">
+        <div className="flex flex-wrap justify-center items-center gap-3 mt-6">
           <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
             <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <text x="0" y="25" fill="#1434CB" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="30">VISA</text>
