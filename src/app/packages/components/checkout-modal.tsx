@@ -109,7 +109,7 @@ export function CheckoutModal({
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
-                  className="bg-background/50 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-300"
+                  className="bg-background border-border"
                   required
                 />
               </div>
@@ -124,7 +124,7 @@ export function CheckoutModal({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your Name or Firm"
-                  className="bg-background/50 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-300"
+                  className="bg-background border-border"
                 />
               </div>
 
@@ -138,7 +138,7 @@ export function CheckoutModal({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91 00000 00000"
-                  className="bg-background/50 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-300"
+                  className="bg-background border-border"
                 />
               </div>
 
@@ -152,7 +152,7 @@ export function CheckoutModal({
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Any specific requirements or project details you'd like to share..."
-                  className="bg-background/50 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-300 min-h-[100px] resize-none"
+                  className="bg-background border-border min-h-[100px] resize-none"
                 />
               </div>
             </div>
