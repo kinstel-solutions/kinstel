@@ -19,6 +19,9 @@ import {
   sendPaymentReceiptAction,
 } from "../actions";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 // Razorpay types
 declare global {
@@ -217,24 +220,27 @@ export default function PaymentForm() {
         className="space-y-6">
         {/* Currency Selector - Required */}
         <div>
-          <label
-            htmlFor="currency"
-            className="block text-sm font-semibold mb-2 text-foreground">
-            Currency <span className="text-red-500">*</span>
-          </label>
-          <select
-            id="currency"
-            {...register("currency")}
-            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground"
-            disabled={isProcessing}>
-            {SUPPORTED_CURRENCIES.map((currency) => (
-              <option
-                key={currency}
-                value={currency}>
-                {currency} ({CURRENCY_SYMBOLS[currency]})
-              </option>
-            ))}
-          </select>
+            <label
+              htmlFor="currency"
+              className="block text-sm font-semibold mb-2 text-foreground">
+              Currency <span className="text-red-500">*</span>
+            </label>
+            <Select 
+              defaultValue={watch("currency")} 
+              onValueChange={(value) => setValue("currency", value as Currency)}
+              disabled={isProcessing}
+            >
+              <SelectTrigger id="currency">
+                <SelectValue placeholder="Select Currency" />
+              </SelectTrigger>
+              <SelectContent>
+                {SUPPORTED_CURRENCIES.map((currency) => (
+                  <SelectItem key={currency} value={currency}>
+                    {currency} ({CURRENCY_SYMBOLS[currency]})
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           {errors.currency && (
             <p className="text-red-500 text-sm mt-1">
               {errors.currency.message}
@@ -255,13 +261,13 @@ export default function PaymentForm() {
                 {currencySymbol}
               </span>
             </div>
-            <input
+            <Input
               id="amount"
               type="number"
               step="0.01"
               placeholder={`Enter amount (Min: 1 ${currencyValue})`}
               {...register("amount", { valueAsNumber: true })}
-              className="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
+              className="pl-10 h-12"
               disabled={isProcessing}
             />
           </div>
@@ -292,12 +298,12 @@ export default function PaymentForm() {
               className="block text-sm font-medium mb-2 text-foreground">
               Name / Business name
             </label>
-            <input
+            <Input
               id="name"
               type="text"
               placeholder="Your name or business"
               {...register("name")}
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
+              className="h-12"
               disabled={isProcessing}
             />
           </div>
@@ -309,12 +315,12 @@ export default function PaymentForm() {
               className="block text-sm font-medium mb-2 text-foreground">
               Phone
             </label>
-            <input
+            <Input
               id="phone"
               type="tel"
               placeholder="+91 98899 88408"
               {...register("phone")}
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
+              className="h-12"
               disabled={isProcessing}
             />
           </div>
@@ -327,12 +333,12 @@ export default function PaymentForm() {
             className="block text-sm font-medium mb-2 text-foreground">
             Email
           </label>
-          <input
+          <Input
             id="email"
             type="email"
             placeholder="your@email.com"
             {...register("email")}
-            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
+            className="h-12"
             disabled={isProcessing}
           />
           {errors.email && (
@@ -351,12 +357,12 @@ export default function PaymentForm() {
               className="block text-sm font-medium mb-2 text-foreground">
               Invoice / Proposal Ref
             </label>
-            <input
+            <Input
               id="proposalRef"
               type="text"
               placeholder="KS/23-24/001"
               {...register("proposalRef")}
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground"
+              className="h-12"
               disabled={isProcessing}
             />
           </div>
@@ -368,12 +374,12 @@ export default function PaymentForm() {
               Project ID
               <Info className="h-3.5 w-3.5 text-muted-foreground" />
             </label>
-            <input
+            <Input
               id="projectId"
               type="text"
               placeholder="KS-TOKEN-..."
               {...register("projectId")}
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground bg-muted/30"
+              className="h-12 bg-muted/10"
               disabled={isProcessing}
             />
           </div>
@@ -386,12 +392,12 @@ export default function PaymentForm() {
             className="block text-sm font-medium mb-2 text-foreground">
             Description / Special Requests (Optional)
           </label>
-          <textarea
+          <Textarea
             id="description"
             placeholder="Additional details about the project, delay reason, or invoice information..."
             {...register("description")}
             rows={3}
-            className="w-full px-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition text-foreground placeholder:text-muted-foreground resize-y"
+            className="resize-y"
             disabled={isProcessing}
           />
         </div>

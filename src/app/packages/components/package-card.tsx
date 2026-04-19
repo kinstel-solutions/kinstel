@@ -35,6 +35,7 @@ export function PackageCard({
 }: PackageCardProps) {
   return (
     <LiquidCard
+      glow={true}
       className={cn(
         "h-full flex flex-col transition-all duration-300 hover:scale-[1.02]",
         highlight

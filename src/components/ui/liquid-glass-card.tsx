@@ -93,12 +93,15 @@ export {
   GlassFilter,
 };
 
+import { BorderBeam } from "./border-beam";
+
 interface LiquidCardProps extends React.ComponentProps<"div"> {
   minimal?: boolean;
+  glow?: boolean;
 }
 
-function LiquidCard({ className, minimal = false, ...props }: LiquidCardProps) {
-  return (
+function LiquidCard({ className, minimal = false, glow = false, children, ...props }: LiquidCardProps) {
+  const card = (
     <div
       data-slot="card"
       className={cn(
@@ -107,8 +110,16 @@ function LiquidCard({ className, minimal = false, ...props }: LiquidCardProps) {
         className,
       )}
       {...props}
-    />
+    >
+      {children}
+    </div>
   );
+
+  if (glow) {
+    return <BorderBeam active={true}>{card}</BorderBeam>;
+  }
+
+  return card;
 }
 
 function GlassFilter() {

@@ -64,6 +64,7 @@ import {
 import { TrackedLink } from "@/components/ui/tracked-link";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow | Kinstel",
@@ -701,10 +702,11 @@ export default function LucknowPage() {
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <Button size="lg" asChild className="shadow-lg shadow-accent/20">
-                <Link href="/services">
-                  Explore All Services
-                </Link>
+              <Button
+                size="lg"
+                asChild
+                className="shadow-lg shadow-accent/20">
+                <Link href="/services">Explore All Services</Link>
               </Button>
             </div>
           </div>
@@ -923,7 +925,6 @@ export default function LucknowPage() {
             </div>
           </div>
         </section>
-
 
         {/* Industries Section */}
         <section className="py-12 md:py-24">

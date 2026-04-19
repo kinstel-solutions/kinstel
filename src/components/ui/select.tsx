@@ -5,6 +5,7 @@ import * as SelectPrimitive from "@radix-ui/react-select"
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { BorderBeam } from "./border-beam"
 
 const Select = SelectPrimitive.Root
 
@@ -16,13 +17,7 @@ const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <div className="group relative overflow-hidden rounded-md p-[2px]">
-    {/* The Animated Beam Layer */}
-    <div className="absolute inset-[-1000%] animate-border-beam [background:conic-gradient(from_0deg,transparent_65%,#F59E0B_85%,#FFFFFF_100%)] opacity-0 group-focus-within:opacity-100 transition-opacity duration-300" />
-    
-    {/* The Blocking Layer */}
-    <div className="absolute inset-[2px] bg-background rounded-[calc(var(--radius)-2px)] z-0 pointer-events-none" />
-
+  <BorderBeam active={false} beamClassName="group-focus-within:opacity-100">
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(
@@ -36,7 +31,7 @@ const SelectTrigger = React.forwardRef<
         <ChevronDown className="h-4 w-4 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
-  </div>
+  </BorderBeam>
 ))
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
