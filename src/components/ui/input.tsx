@@ -1,17 +1,11 @@
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
+import { BorderBeam } from "./border-beam"
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
     return (
-      <div className="group relative overflow-hidden rounded-md p-[2px]">
-        {/* The Animated Beam Layer */}
-        <div className="absolute inset-[-1000%] animate-border-beam [background:conic-gradient(from_0deg,transparent_65%,#F59E0B_85%,#FFFFFF_100%)] opacity-0 group-focus-within:opacity-100 transition-opacity duration-300" />
-        
-        {/* The Blocking Layer (Prevents beam visibility through transparent inputs) */}
-        <div className="absolute inset-[2px] bg-background rounded-[calc(var(--radius)-2px)] z-0 pointer-events-none" />
-
+      <BorderBeam active={false} beamClassName="group-focus-within:opacity-100">
         <input
           type={type}
           className={cn(
@@ -21,7 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
           ref={ref}
           {...props}
         />
-      </div>
+      </BorderBeam>
     )
   }
 )
