@@ -16,19 +16,27 @@ const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
-    ref={ref}
-    className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
-      className
-    )}
-    {...props}
-  >
-    {children}
-    <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
-    </SelectPrimitive.Icon>
-  </SelectPrimitive.Trigger>
+  <div className="group relative overflow-hidden rounded-md p-[2px]">
+    {/* The Animated Beam Layer */}
+    <div className="absolute inset-[-1000%] animate-border-beam [background:conic-gradient(from_0deg,transparent_65%,#F59E0B_85%,#FFFFFF_100%)] opacity-0 group-focus-within:opacity-100 transition-opacity duration-300" />
+    
+    {/* The Blocking Layer */}
+    <div className="absolute inset-[2px] bg-background rounded-[calc(var(--radius)-2px)] z-0 pointer-events-none" />
+
+    <SelectPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        "relative z-10 flex h-10 w-full items-center justify-between rounded-[calc(var(--radius)-2px)] border border-input bg-background/0 px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <SelectPrimitive.Icon asChild>
+        <ChevronDown className="h-4 w-4 opacity-50" />
+      </SelectPrimitive.Icon>
+    </SelectPrimitive.Trigger>
+  </div>
 ))
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
