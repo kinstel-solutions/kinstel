@@ -47,7 +47,7 @@ export function EntryOfferSection() {
     if (data.name) params.set('name', data.name);
     if (data.phone) params.set('phone', data.phone);
     
-    let finalDesc = `I'm interested in booking: ${auditPackage.name}.\nMy primary goal for this project is:\n${data.description || "(Client hasn't specified yet)"}`;
+    let finalDesc = `I'm interested in booking: ${auditPackage.name}.\n\nMy primary goal for this project is: ${data.description || ""}`;
     params.set('desc', finalDesc);
     
     router.push(`/pay?${params.toString()}`);
