@@ -112,6 +112,10 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         shimmer: 'shimmer 8s linear infinite',
       },
+      boxShadow: {
+        'glow-sm': '0 0 8px -2px hsl(var(--accent) / 0.15)',
+        'glow-md': '0 0 20px -5px hsl(var(--accent) / 0.25)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
