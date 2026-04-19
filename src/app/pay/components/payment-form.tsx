@@ -518,28 +518,40 @@ export default function PaymentForm() {
           Kinstel Solutions never stores your credit card details.
         </p>
         
-        {/* Card Networks */}
-        <div className="flex flex-wrap justify-center items-center gap-3 mt-6">
-          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
-            <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="25" fill="#1434CB" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="30">VISA</text>
-            </svg>
-          </div>
-          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
-            <svg viewBox="0 0 100 60" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="35" cy="30" r="25" fill="#EB001B" fillOpacity="0.9" />
-              <circle cx="65" cy="30" r="25" fill="#F79E1B" fillOpacity="0.9" />
-            </svg>
-          </div>
-          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
-            <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-              <text x="0" y="22" fill="#E86E24" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="22">RuPay</text>
-            </svg>
-          </div>
-          <div className="bg-white px-3 py-1.5 rounded border border-gray-200 shadow-sm flex items-center justify-center h-8 w-14">
-            <svg viewBox="0 0 100 30" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <text x="5" y="25" fill="#000" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="28">UPI</text>
-            </svg>
+        {/* Card Networks - Ultra-Minimalist Trust Tray */}
+        <div className="space-y-6 pt-10 border-t border-border/10 mt-10">
+          <p className="text-[10px] text-center uppercase tracking-[0.3em] text-muted-foreground/30 font-bold">Trusted Payment Networks</p>
+          <div className="flex flex-wrap justify-center items-center gap-10">
+            {/* Visa */}
+            <div className="flex items-center justify-center">
+              <svg viewBox="0 0 100 30" className="w-12 h-auto" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="25" fill="#1434CB" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="30">VISA</text>
+              </svg>
+            </div>
+
+            {/* Mastercard */}
+            <div className="flex items-center justify-center">
+              <svg viewBox="0 0 100 60" className="w-10 h-auto" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="35" cy="30" r="25" fill="#EB001B" fillOpacity="0.9" />
+                <circle cx="65" cy="30" r="25" fill="#F79E1B" fillOpacity="0.9" />
+              </svg>
+            </div>
+
+            {/* RuPay */}
+            <div className="flex items-center justify-center">
+              <svg viewBox="0 0 100 30" className="w-14 h-auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <text x="0" y="22" fill="#2D3291" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="22">RuPay</text>
+              </svg>
+            </div>
+
+            {/* UPI */}
+            <div className="flex items-center justify-center">
+              <img 
+                src="/extra-assets/UPI-Logo-vector.svg" 
+                alt="UPI" 
+                className="h-6 w-auto brightness-110 contrast-125" 
+              />
+            </div>
           </div>
         </div>
       </form>
