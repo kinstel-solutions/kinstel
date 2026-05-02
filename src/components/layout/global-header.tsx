@@ -13,7 +13,7 @@ import {
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { SmartCtaButton } from "../ui/smart-cta-button";
+import { TimeBasedSmartCtaButton } from "../ui/time-based-smart-cta-button";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -54,13 +54,13 @@ export function GlobalHeader() {
           <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
         </Link>
       ))}
-      <SmartCtaButton
+      <TimeBasedSmartCtaButton
         phoneNumber="+919889988408"
-        email="contact@kinstel.com"
+        whatsappNumber="919889988408"
         className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
         <Phone className="h-4 w-4 text-white animate-pulse" />
         9889988408
-      </SmartCtaButton>
+      </TimeBasedSmartCtaButton>
     </nav>
   );
 
@@ -79,13 +79,13 @@ export function GlobalHeader() {
           </Link>
         </Button>
       ))}
-      <SmartCtaButton
+      <TimeBasedSmartCtaButton
         phoneNumber="+919889988408"
-        email="contact@kinstel.com"
+        whatsappNumber="919889988408"
         className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent shadow-sm"
         onClick={() => setIsSheetOpen(false)}>
         Inquire Now
-      </SmartCtaButton>
+      </TimeBasedSmartCtaButton>
     </nav>
   );
 
@@ -114,15 +114,15 @@ export function GlobalHeader() {
 
         {/* Mobile Navigation Trigger */}
         <div className="md:hidden flex items-center gap-1">
-          <SmartCtaButton
+          <TimeBasedSmartCtaButton
             size="sm"
             arrow={false}
             phoneNumber="+919889988408"
-            email="contact@kinstel.com"
+            whatsappNumber="919889988408"
             className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
             <Phone className="h-4 w-4 text-white animate-pulse" />
             9889988408
-          </SmartCtaButton>
+          </TimeBasedSmartCtaButton>
           <Sheet
             open={isSheetOpen}
             onOpenChange={setIsSheetOpen}>
