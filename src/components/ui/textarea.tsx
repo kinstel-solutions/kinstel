@@ -5,7 +5,7 @@ import { BorderBeam } from './border-beam';
 const Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textarea'>>(
   ({className, ...props}, ref) => {
     return (
-      <BorderBeam active={false} beamClassName="group-focus-within:opacity-100">
+      <BorderBeam active={false} beamClassName="group-focus-within/beam:opacity-100">
         <textarea
           className={cn(
             'relative z-10 flex min-h-[80px] w-full rounded-[calc(var(--radius)-2px)] border border-input bg-background/0 px-3 py-2 text-base placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',

@@ -5,7 +5,7 @@ import { BorderBeam } from "./border-beam"
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
     return (
-      <BorderBeam active={false} beamClassName="group-focus-within:opacity-100">
+      <BorderBeam active={false} beamClassName="group-focus-within/beam:opacity-100">
         <input
           type={type}
           className={cn(
