@@ -38,7 +38,7 @@ import {
   Card,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SmartCtaButton } from "@/components/ui/smart-cta-button";
+import { TimeBasedSmartCtaButton } from "@/components/ui/time-based-smart-cta-button";
 import { ScrollToFormButton } from "@/components/ui/scroll-to-form-button";
 import {
   Accordion,
@@ -362,12 +362,12 @@ export default function GlobalPage() {
                   <span className=" font-bold">Get a Free Digital Audit Now.</span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <SmartCtaButton
+                  <TimeBasedSmartCtaButton
                     phoneNumber="+919889988408"
-                    email="contact@kinstel.com"
+                    whatsappNumber="919889988408"
                     className="h-12 px-8 text-lg">
                     Let's Discuss on Call
-                  </SmartCtaButton>
+                  </TimeBasedSmartCtaButton>
                 </div>
               </div>
 
@@ -770,13 +770,13 @@ export default function GlobalPage() {
                 your Digital Audit Now.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <SmartCtaButton
+                <TimeBasedSmartCtaButton
                   phoneNumber="+919889988408"
-                  email="contact@kinstel.com"
+                  whatsappNumber="919889988408"
                   size="lg"
                   className="shadow-lg shadow-accent/20 h-14 px-10 text-xl">
                   Schedule Consultation
-                </SmartCtaButton>
+                </TimeBasedSmartCtaButton>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">
                 Talk with a Web Designer today. No obligation.
