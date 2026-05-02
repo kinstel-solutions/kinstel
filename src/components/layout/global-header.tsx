@@ -12,32 +12,23 @@ import {
 } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { KLogo } from "@/components/ui/k-logo";
+import Image from "next/image";
 import { SmartCtaButton } from "../ui/smart-cta-button";
 
 const navLinks = [
-  { href: "/web-design-company-lucknow", label: "Lucknow" },
-  { href: "/global", label: "Global" },
-  { href: "/packages", label: "Packages" },
-  { href: "/services", label: "Services" },
+  { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
+  { href: "#contact", label: "Contact" },
 ];
 
-export function Header() {
+export function GlobalHeader() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   // Helper to determine if we should use a local hash or a full path
+  // Since this is specifically for the global landing page, we just return the hash.
   const getSmartHref = (href: string) => {
-    if (href.startsWith("/#")) {
-      const sectionId = href.substring(2);
-      const pagesWithSections = ["/", "/web-design-company-lucknow", "/law-firm-marketing"];
-      
-      if (pagesWithSections.includes(pathname)) {
-        return `#${sectionId}`;
-      }
-    }
     return href;
   };
 
@@ -107,7 +98,16 @@ export function Header() {
           : "bg-transparent",
       )}>
       <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-3 md:px-6">
-        <KLogo />
+        <div className="flex items-center gap-0">
+          <Image
+            src="/Kinstel_logo-G Font.svg"
+            alt="Kinstel Logo"
+            width={400}
+            height={400}
+            priority
+            className="object-contain w-[100px]  md:w-[120px] h-auto"
+          />
+        </div>
 
         {/* Desktop Navigation */}
         {DesktopNav}

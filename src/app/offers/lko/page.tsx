@@ -128,7 +128,7 @@ export default function OffersLkoPage() {
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                     <span className="text-sm font-medium">
-                      Pay Later Options
+                      Free Consultation
                     </span>
                   </div>
                   <div className="flex items-center gap-2">

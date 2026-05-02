@@ -41,7 +41,7 @@ export function BorderBeam({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden",
+        "group/beam relative overflow-hidden",
         !radius && "rounded-md",
         className
       )}
