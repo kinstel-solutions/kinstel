@@ -115,7 +115,8 @@ const globalStats = [
     ),
     value: "3 Months",
     label: "Free Support Included",
-    description: "Post-launch support to keep your site updated, secure & fast.",
+    description:
+      "Post-launch support to keep your site updated, secure & fast.",
   },
 ];
 
@@ -160,8 +161,6 @@ const globalServices = [
     ],
   },
 ];
-
-
 
 const processSteps = [
   {
@@ -335,15 +334,16 @@ export default function GlobalPage() {
                 </h2>
 
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
-                  Convert Clicks into Clients &amp; Customers with a Premium, SEO-Ready
-                  Website. Schedule a consultation today to claim (*Limited
-                  Time) <span className="font-bold">offers</span> worth{" "}
-                  <span className="font-bold">₹20,000</span> &amp;{" "}
-                  <span className="font-bold">Get a Free Digital Audit Now.</span>
+                  Convert Clicks into Clients &amp; Customers with a Premium,
+                  SEO-Ready Website. Schedule a consultation today to claim
+                  (*Limited Time) <span className="font-bold">offers</span>{" "}
+                  worth <span className="font-bold">₹20,000</span> &amp;{" "}
+                  <span className="font-bold">
+                    Get a Free Digital Audit Now.
+                  </span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <ScrollToFormButton
-                    className="h-12 px-8 text-lg">
+                  <ScrollToFormButton className="h-12 px-8 text-lg">
                     Claim Free Consultation Now
                   </ScrollToFormButton>
                 </div>
@@ -369,8 +369,7 @@ export default function GlobalPage() {
             <ScrollVelocityRowDynamic baseVelocity={3}>
               <span className="mx-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Premium Web Design • SEO Ready • 95+ PageSpeed • Custom UI/UX •
-                Free Digital Consult • Free Hosting Setup • 24/7
-                Support •
+                Free Digital Consult • Free Hosting Setup • 24/7 Support •
               </span>
             </ScrollVelocityRowDynamic>
           </ScrollVelocityContainerDynamic>
@@ -386,8 +385,7 @@ export default function GlobalPage() {
                 What We Do
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Premium{" "}
-                <span className="text-accent">Web Design Services</span>
+                Premium <span className="text-accent">Web Design Services</span>
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 We provide comprehensive web design and digital marketing
@@ -431,7 +429,6 @@ export default function GlobalPage() {
                 </Card>
               ))}
             </div>
-
           </div>
         </section>
 
@@ -608,14 +605,28 @@ export default function GlobalPage() {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">Consultation Type</TableCell>
+                    <TableCell className="font-medium">
+                      Design Approach
+                    </TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
-                      Custom Audit
+                      100% Custom UI/UX
                     </TableCell>
                     <TableCell className="text-center">
                       Template Based
                     </TableCell>
-                    <TableCell className="text-center">No Audit</TableCell>
+                    <TableCell className="text-center">
+                      Generic / Recycled
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Initial Step</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      Free Digital Audit
+                    </TableCell>
+                    <TableCell className="text-center">Direct Quote</TableCell>
+                    <TableCell className="text-center">
+                      Paid Consultation
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Delivery Time</TableCell>
@@ -628,7 +639,7 @@ export default function GlobalPage() {
                   <TableRow>
                     <TableCell className="font-medium">SEO & Speed</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
-                      Guaranteed 95+ Score
+                      Guaranteed 90+ Score
                     </TableCell>
                     <TableCell className="text-center">Basic/None</TableCell>
                     <TableCell className="text-center">Extra Charge</TableCell>
@@ -743,9 +754,9 @@ export default function GlobalPage() {
                 Expert Web Designers
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Claim your limited time offer(First 50 customers this summer) worth{" "}
-                <span className="text-foreground font-bold">₹20,000</span>. Get
-                your Digital Audit Now.
+                Claim your limited time offer(First 50 customers this summer)
+                worth <span className="text-foreground font-bold">₹20,000</span>
+                . Get your Digital Audit Now.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <ContactCtaButton
