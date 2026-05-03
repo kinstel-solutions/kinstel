@@ -58,7 +58,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 export const metadata: Metadata = {
   title: "Premium Global Website Design Company | Kinstel",
   description:
-    "Top Tier Web Designers. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
+    "Top Tier Web Designers. Get Premium Web Design from ₹14,999. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
   keywords: [
     "global web design company",
     "web development company",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Premium Global Website Design Company | Kinstel",
     description:
-      "Top Tier Web Designers. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+      "Top Tier Web Designers. Get Premium Web Design from ₹14,999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
     url: "https://kinstel.com/global",
     siteName: "Kinstel",
     type: "website",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium Global Website Design Company | Kinstel",
     description:
-      "Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+      "Get Premium Web Design from ₹14,999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
   },
 };
 
@@ -579,7 +579,9 @@ export default function GlobalPage() {
         </div>
 
         {/* Why Choose Us Comparison */}
-        <section id="why-choose-us" className="py-12 md:py-24 lg:py-32">
+        <section
+          id="why-choose-us"
+          className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -645,27 +647,37 @@ export default function GlobalPage() {
                     <TableCell className="text-center">Extra Charge</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Post-Launch Support</TableCell>
+                    <TableCell className="font-medium">
+                      Post-Launch Support
+                    </TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       3 Months Free
                     </TableCell>
                     <TableCell className="text-center">Usually None</TableCell>
-                    <TableCell className="text-center">Expensive Retainer</TableCell>
+                    <TableCell className="text-center">
+                      Expensive Retainer
+                    </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Conversion Focus</TableCell>
+                    <TableCell className="font-medium">
+                      Conversion Focus
+                    </TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       CRO Optimized
                     </TableCell>
                     <TableCell className="text-center">Hit or Miss</TableCell>
-                    <TableCell className="text-center">Upsell Service</TableCell>
+                    <TableCell className="text-center">
+                      Upsell Service
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Pricing</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       Transparent & Fixed
                     </TableCell>
-                    <TableCell className="text-center">Variable / Hidden</TableCell>
+                    <TableCell className="text-center">
+                      Variable / Hidden
+                    </TableCell>
                     <TableCell className="text-center">High / Hourly</TableCell>
                   </TableRow>
                 </TableBody>
@@ -675,7 +687,9 @@ export default function GlobalPage() {
         </section>
 
         {/* Industries Section */}
-        <section id="industries" className="py-12 md:py-24">
+        <section
+          id="industries"
+          className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -703,7 +717,9 @@ export default function GlobalPage() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className=" py-12 md:py-24 lg:py-32">
+        <section
+          id="faq"
+          className=" py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -736,7 +752,9 @@ export default function GlobalPage() {
         </section>
 
         {/* Process Section */}
-        <section id="process" className="py-12 md:py-24">
+        <section
+          id="process"
+          className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
