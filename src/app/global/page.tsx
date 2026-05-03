@@ -31,7 +31,7 @@ import {
   Card,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TimeBasedSmartCtaButton } from "@/components/ui/time-based-smart-cta-button";
+import { ContactCtaButton } from "@/components/ui/contact-cta-button";
 import { ScrollToFormButton } from "@/components/ui/scroll-to-form-button";
 import {
   Accordion,
@@ -748,13 +748,11 @@ export default function GlobalPage() {
                 your Digital Audit Now.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <TimeBasedSmartCtaButton
-                  phoneNumber="+919889988408"
-                  whatsappNumber="919889988408"
+                <ContactCtaButton
                   size="lg"
                   className="shadow-lg shadow-accent/20 h-14 px-10 text-xl">
                   Schedule Consultation
-                </TimeBasedSmartCtaButton>
+                </ContactCtaButton>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">
                 Talk with a Web Designer today. No obligation.
