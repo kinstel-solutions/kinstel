@@ -51,8 +51,8 @@ import { LiquidCard } from "@/components/ui/liquid-glass-card";
 import {
   ScrollVelocityContainerDynamic,
   ScrollVelocityRowDynamic,
-  InquiryFormDynamic,
 } from "../web-design-company-lucknow/client-wrappers";
+import { InquiryForm } from "@/components/sections/inquiry-form";
 import { DotPattern } from "@/components/ui/dot-pattern";
 
 export const metadata: Metadata = {
@@ -342,21 +342,19 @@ export default function GlobalPage() {
                   <span className="font-bold">Get a Free Digital Audit Now.</span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <TimeBasedSmartCtaButton
-                    phoneNumber="+919889988408"
-                    whatsappNumber="919889988408"
+                  <ScrollToFormButton
                     className="h-12 px-8 text-lg">
-                    Let's Discuss on Call
-                  </TimeBasedSmartCtaButton>
+                    Claim Free Consultation Now
+                  </ScrollToFormButton>
                 </div>
               </div>
 
               {/* Form Content */}
               <div
                 id="inquiry-form"
-                className="w-full max-w-md mx-auto lg:mr-0 relative order-first lg:order-last">
+                className="w-full max-w-md mx-auto lg:mr-0 relative">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent-foreground/20 to-primary/20 blur-xl" />
-                <InquiryFormDynamic
+                <InquiryForm
                   minimal={true}
                   className="p-6 relative z-10"
                 />
