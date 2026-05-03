@@ -316,9 +316,9 @@ export default function GlobalPage() {
 
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl font-headline leading-tight">
                   <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent ">
-                    Premium
+                    Premier
                   </span>{" "}
-                  Web Design Company
+                  Web Development Company
                 </h1>
                 <h2 className="mt-4">
                   <span className="text-xl md:text-2xl font-medium text-muted-foreground tracking-tight">
@@ -579,7 +579,7 @@ export default function GlobalPage() {
         </div>
 
         {/* Why Choose Us Comparison */}
-        <section className="py-12 md:py-24 lg:py-32">
+        <section id="why-choose-us" className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -675,7 +675,7 @@ export default function GlobalPage() {
         </section>
 
         {/* Industries Section */}
-        <section className="py-12 md:py-24">
+        <section id="industries" className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -703,7 +703,7 @@ export default function GlobalPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className=" py-12 md:py-24 lg:py-32">
+        <section id="faq" className=" py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -736,7 +736,7 @@ export default function GlobalPage() {
         </section>
 
         {/* Process Section */}
-        <section className="py-12 md:py-24">
+        <section id="process" className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

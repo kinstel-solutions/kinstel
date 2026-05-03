@@ -18,6 +18,10 @@ import { ContactCtaButton } from "../ui/contact-cta-button";
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
+  { href: "#why-choose-us", label: "Why Us" },
+  { href: "#industries", label: "Industries" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
 
