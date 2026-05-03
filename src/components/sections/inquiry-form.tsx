@@ -78,10 +78,12 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
       minimal={minimal}
       className={cn("w-full transition-all duration-300 ", className)}>
       <CardHeader>
-        <CardTitle className="text-center">Send an Inquiry</CardTitle>
-        {/* <CardDescription>
-          Fill out the form and we'll be in touch shortly.
-        </CardDescription> */}
+        <CardTitle className="text-center">
+          Book your Free Consultation
+        </CardTitle>
+        <CardDescription className="text-center mt-2">
+          Let's find out how we can help elevate your Digital presence.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>

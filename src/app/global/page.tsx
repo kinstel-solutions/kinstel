@@ -31,7 +31,7 @@ import {
   Card,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TimeBasedSmartCtaButton } from "@/components/ui/time-based-smart-cta-button";
+import { ContactCtaButton } from "@/components/ui/contact-cta-button";
 import { ScrollToFormButton } from "@/components/ui/scroll-to-form-button";
 import {
   Accordion,
@@ -115,7 +115,8 @@ const globalStats = [
     ),
     value: "3 Months",
     label: "Free Support Included",
-    description: "Post-launch support to keep your site updated, secure & fast.",
+    description:
+      "Post-launch support to keep your site updated, secure & fast.",
   },
 ];
 
@@ -160,8 +161,6 @@ const globalServices = [
     ],
   },
 ];
-
-
 
 const processSteps = [
   {
@@ -317,9 +316,9 @@ export default function GlobalPage() {
 
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl font-headline leading-tight">
                   <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-500 to-accent ">
-                    Premium
+                    Premier
                   </span>{" "}
-                  Web Design Company
+                  Web Development Company
                 </h1>
                 <h2 className="mt-4">
                   <span className="text-xl md:text-2xl font-medium text-muted-foreground tracking-tight">
@@ -335,15 +334,16 @@ export default function GlobalPage() {
                 </h2>
 
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
-                  Convert Clicks into Clients &amp; Customers with a Premium, SEO-Ready
-                  Website. Schedule a consultation today to claim (*Limited
-                  Time) <span className="font-bold">offers</span> worth{" "}
-                  <span className="font-bold">₹20,000</span> &amp;{" "}
-                  <span className="font-bold">Get a Free Digital Audit Now.</span>
+                  Convert Clicks into Clients &amp; Customers with a Premium,
+                  SEO-Ready Website. Schedule a consultation today to claim
+                  (*Limited Time) <span className="font-bold">offers</span>{" "}
+                  worth <span className="font-bold">₹20,000</span> &amp;{" "}
+                  <span className="font-bold">
+                    Get a Free Digital Audit Now.
+                  </span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <ScrollToFormButton
-                    className="h-12 px-8 text-lg">
+                  <ScrollToFormButton className="h-12 px-8 text-lg">
                     Claim Free Consultation Now
                   </ScrollToFormButton>
                 </div>
@@ -369,8 +369,7 @@ export default function GlobalPage() {
             <ScrollVelocityRowDynamic baseVelocity={3}>
               <span className="mx-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Premium Web Design • SEO Ready • 95+ PageSpeed • Custom UI/UX •
-                Free Digital Consult • Free Hosting Setup • 24/7
-                Support •
+                Free Digital Consult • Free Hosting Setup • 24/7 Support •
               </span>
             </ScrollVelocityRowDynamic>
           </ScrollVelocityContainerDynamic>
@@ -386,8 +385,7 @@ export default function GlobalPage() {
                 What We Do
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Premium{" "}
-                <span className="text-accent">Web Design Services</span>
+                Premium <span className="text-accent">Web Design Services</span>
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 We provide comprehensive web design and digital marketing
@@ -431,7 +429,6 @@ export default function GlobalPage() {
                 </Card>
               ))}
             </div>
-
           </div>
         </section>
 
@@ -582,7 +579,7 @@ export default function GlobalPage() {
         </div>
 
         {/* Why Choose Us Comparison */}
-        <section className="py-12 md:py-24 lg:py-32">
+        <section id="why-choose-us" className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -608,14 +605,28 @@ export default function GlobalPage() {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">Consultation Type</TableCell>
+                    <TableCell className="font-medium">
+                      Design Approach
+                    </TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
-                      Custom Audit
+                      100% Custom UI/UX
                     </TableCell>
                     <TableCell className="text-center">
                       Template Based
                     </TableCell>
-                    <TableCell className="text-center">No Audit</TableCell>
+                    <TableCell className="text-center">
+                      Generic / Recycled
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Initial Step</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      Free Digital Audit
+                    </TableCell>
+                    <TableCell className="text-center">Direct Quote</TableCell>
+                    <TableCell className="text-center">
+                      Paid Consultation
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Delivery Time</TableCell>
@@ -628,10 +639,34 @@ export default function GlobalPage() {
                   <TableRow>
                     <TableCell className="font-medium">SEO & Speed</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
-                      Guaranteed 95+ Score
+                      Guaranteed 90+ Score
                     </TableCell>
                     <TableCell className="text-center">Basic/None</TableCell>
                     <TableCell className="text-center">Extra Charge</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Post-Launch Support</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      3 Months Free
+                    </TableCell>
+                    <TableCell className="text-center">Usually None</TableCell>
+                    <TableCell className="text-center">Expensive Retainer</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Conversion Focus</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      CRO Optimized
+                    </TableCell>
+                    <TableCell className="text-center">Hit or Miss</TableCell>
+                    <TableCell className="text-center">Upsell Service</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Pricing</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      Transparent & Fixed
+                    </TableCell>
+                    <TableCell className="text-center">Variable / Hidden</TableCell>
+                    <TableCell className="text-center">High / Hourly</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -640,7 +675,7 @@ export default function GlobalPage() {
         </section>
 
         {/* Industries Section */}
-        <section className="py-12 md:py-24">
+        <section id="industries" className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -668,7 +703,7 @@ export default function GlobalPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className=" py-12 md:py-24 lg:py-32">
+        <section id="faq" className=" py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -701,7 +736,7 @@ export default function GlobalPage() {
         </section>
 
         {/* Process Section */}
-        <section className="py-12 md:py-24">
+        <section id="process" className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -743,18 +778,16 @@ export default function GlobalPage() {
                 Expert Web Designers
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Claim your limited time offer(First 50 customers this summer) worth{" "}
-                <span className="text-foreground font-bold">₹20,000</span>. Get
-                your Digital Audit Now.
+                Claim your limited time offer(First 50 customers this summer)
+                worth <span className="text-foreground font-bold">₹20,000</span>
+                . Get your Digital Audit Now.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <TimeBasedSmartCtaButton
-                  phoneNumber="+919889988408"
-                  whatsappNumber="919889988408"
+                <ContactCtaButton
                   size="lg"
                   className="shadow-lg shadow-accent/20 h-14 px-10 text-xl">
                   Schedule Consultation
-                </TimeBasedSmartCtaButton>
+                </ContactCtaButton>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">
                 Talk with a Web Designer today. No obligation.

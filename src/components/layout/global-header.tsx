@@ -13,11 +13,15 @@ import {
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { TimeBasedSmartCtaButton } from "../ui/time-based-smart-cta-button";
+import { ContactCtaButton } from "../ui/contact-cta-button";
 
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
+  { href: "#why-choose-us", label: "Why Us" },
+  { href: "#industries", label: "Industries" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -54,13 +58,10 @@ export function GlobalHeader() {
           <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
         </Link>
       ))}
-      <TimeBasedSmartCtaButton
-        phoneNumber="+919889988408"
-        whatsappNumber="919889988408"
+      <ContactCtaButton
         className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
-        <Phone className="h-4 w-4 text-white animate-pulse" />
-        9889988408
-      </TimeBasedSmartCtaButton>
+        Consult Now
+      </ContactCtaButton>
     </nav>
   );
 
@@ -79,13 +80,11 @@ export function GlobalHeader() {
           </Link>
         </Button>
       ))}
-      <TimeBasedSmartCtaButton
-        phoneNumber="+919889988408"
-        whatsappNumber="919889988408"
+      <ContactCtaButton
         className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent shadow-sm"
         onClick={() => setIsSheetOpen(false)}>
-        Inquire Now
-      </TimeBasedSmartCtaButton>
+        Consult Now
+      </ContactCtaButton>
     </nav>
   );
 
@@ -114,15 +113,12 @@ export function GlobalHeader() {
 
         {/* Mobile Navigation Trigger */}
         <div className="md:hidden flex items-center gap-1">
-          <TimeBasedSmartCtaButton
+          <ContactCtaButton
             size="sm"
             arrow={false}
-            phoneNumber="+919889988408"
-            whatsappNumber="919889988408"
             className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
-            <Phone className="h-4 w-4 text-white animate-pulse" />
-            9889988408
-          </TimeBasedSmartCtaButton>
+            Consult Now
+          </ContactCtaButton>
           <Sheet
             open={isSheetOpen}
             onOpenChange={setIsSheetOpen}>
