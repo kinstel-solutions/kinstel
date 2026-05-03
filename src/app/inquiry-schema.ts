@@ -6,9 +6,16 @@ export const inquirySchema = z
     // businessName: z.string().optional(),
     email: z
       .string()
-      // .email({ message: "Please enter a valid email address." })
-      .optional(),
-    phone: z.string().optional(),
+      .optional()
+      .refine((val) => !val || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+        message: "Please enter a valid email address.",
+      }),
+    phone: z
+      .string()
+      .optional()
+      .refine((val) => !val || /^\+?[0-9\s\-()]{7,20}$/.test(val), {
+        message: "Please enter a valid phone number.",
+      }),
     // subject: z.string().optional(),
     details: z.string().optional(),
   })
@@ -18,6 +25,11 @@ export const inquirySchema = z
         code: z.ZodIssueCode.custom,
         message: "Please provide either an email or a phone number.",
         path: ["email"],
+      });
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please provide either an email or a phone number.",
+        path: ["phone"],
       });
     }
   });

@@ -9,12 +9,7 @@ import {
   Rocket,
   CheckCircle,
   ArrowUpRight,
-  ArrowRight,
   ShieldCheck,
-  Smartphone,
-  Search,
-  Timer,
-  MousePointer2,
   Code,
   Layers,
   Building2,
@@ -23,8 +18,6 @@ import {
   ShoppingBag,
   Briefcase,
   Utensils,
-  Gift,
-  ArrowDown,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -58,12 +51,9 @@ import { LiquidCard } from "@/components/ui/liquid-glass-card";
 import {
   ScrollVelocityContainerDynamic,
   ScrollVelocityRowDynamic,
-  InquiryFormDynamic,
 } from "../web-design-company-lucknow/client-wrappers";
-import { TrackedLink } from "@/components/ui/tracked-link";
-import { cn } from "@/lib/utils";
+import { InquiryForm } from "@/components/sections/inquiry-form";
 import { DotPattern } from "@/components/ui/dot-pattern";
-import { BorderBeam } from "@/components/ui/border-beam";
 
 export const metadata: Metadata = {
   title: "Premium Global Website Design Company | Kinstel",
@@ -76,6 +66,20 @@ export const metadata: Metadata = {
     "best website designing company",
     "international seo company",
   ],
+  openGraph: {
+    title: "Premium Global Website Design Company | Kinstel",
+    description:
+      "Top Tier Web Designers. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+    url: "https://kinstel.com/global",
+    siteName: "Kinstel",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Premium Global Website Design Company | Kinstel",
+    description:
+      "Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+  },
 };
 
 const globalStats = [
@@ -109,9 +113,9 @@ const globalStats = [
         aria-hidden="true"
       />
     ),
-    value: "Zero",
-    label: "Maintenance",
-    description: "Your website Won't break under our watch.",
+    value: "3 Months",
+    label: "Free Support Included",
+    description: "Post-launch support to keep your site updated, secure & fast.",
   },
 ];
 
@@ -146,7 +150,7 @@ const globalServices = [
     icon: <Zap className="h-8 w-8 text-accent" />,
     title: "Performance & Organic Marketing",
     description:
-      "Our Strategy is simple: Increase visitors => Leads => Sales/Clients, While maintaining high relevancy from start to finish.",
+      "Our strategy is simple: Increase visitors → Leads → Sales & Clients, while maintaining high relevancy from start to finish.",
     features: [
       "Google Ads Management",
       "Technical & On-Page SEO",
@@ -157,32 +161,7 @@ const globalServices = [
   },
 ];
 
-const packageFeatures = [
-  {
-    icon: <Smartphone className="h-5 w-5 text-accent" />,
-    text: "Fully Responsive & Mobile-Friendly",
-  },
-  {
-    icon: <Search className="h-5 w-5 text-accent" />,
-    text: "Advanced On-Page SEO Optimization",
-  },
-  {
-    icon: <Zap className="h-5 w-5 text-accent" />,
-    text: "Lightning Fast Loading (95+ Score)",
-  },
-  {
-    icon: <ShieldCheck className="h-5 w-5 text-accent" />,
-    text: "Free SSL Certificate & Hosting Setup",
-  },
-  {
-    icon: <Timer className="h-5 w-5 text-accent" />,
-    text: "Fast Delivery (Within 7-10 Days)",
-  },
-  {
-    icon: <MousePointer2 className="h-5 w-5 text-accent" />,
-    text: "Custom UI/UX Design (No Templates)",
-  },
-];
+
 
 const processSteps = [
   {
@@ -324,7 +303,8 @@ export default function GlobalPage() {
       <GlobalHeader />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative overflow-hidden min-h-[90vh] flex flex-col items-center justify-center py-12 md:py-20">
+        <section className="relative overflow-hidden md:min-h-[90vh] flex flex-col items-center justify-center py-12 md:py-20">
+          <DotPattern className="absolute inset-0 opacity-20 text-accent [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,white_20%,transparent_100%)]" />
           <div className="container relative z-10 mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
@@ -332,7 +312,7 @@ export default function GlobalPage() {
                 <Badge
                   variant="outline"
                   className="mb-6 px-4 py-1.5 text-sm font-medium border-accent/30 bg-accent/5 text-accent rounded-full">
-                  World Class Services at Affordable prices
+                  World Class Services at Affordable Prices
                 </Badge>
 
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl font-headline leading-tight">
@@ -355,19 +335,17 @@ export default function GlobalPage() {
                 </h2>
 
                 <p className="mt-6 text-lg leading-8  max-w-2xl">
-                  Convert Clicks into Clients/Customer with a Premium, SEO-Ready
+                  Convert Clicks into Clients &amp; Customers with a Premium, SEO-Ready
                   Website. Schedule a consultation today to claim (*Limited
                   Time) <span className="font-bold">offers</span> worth{" "}
-                  <span className=" font-bold">₹20,000</span> &{" "}
-                  <span className=" font-bold">Get a Free Digital Audit Now.</span>
+                  <span className="font-bold">₹20,000</span> &amp;{" "}
+                  <span className="font-bold">Get a Free Digital Audit Now.</span>
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <TimeBasedSmartCtaButton
-                    phoneNumber="+919889988408"
-                    whatsappNumber="919889988408"
+                  <ScrollToFormButton
                     className="h-12 px-8 text-lg">
-                    Let's Discuss on Call
-                  </TimeBasedSmartCtaButton>
+                    Claim Free Consultation Now
+                  </ScrollToFormButton>
                 </div>
               </div>
 
@@ -376,7 +354,7 @@ export default function GlobalPage() {
                 id="inquiry-form"
                 className="w-full max-w-md mx-auto lg:mr-0 relative">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent-foreground/20 to-primary/20 blur-xl" />
-                <InquiryFormDynamic
+                <InquiryForm
                   minimal={true}
                   className="p-6 relative z-10"
                 />
@@ -630,7 +608,7 @@ export default function GlobalPage() {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">Free Consult</TableCell>
+                    <TableCell className="font-medium">Consultation Type</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       Custom Audit
                     </TableCell>
