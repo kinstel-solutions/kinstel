@@ -644,6 +644,30 @@ export default function GlobalPage() {
                     <TableCell className="text-center">Basic/None</TableCell>
                     <TableCell className="text-center">Extra Charge</TableCell>
                   </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Post-Launch Support</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      3 Months Free
+                    </TableCell>
+                    <TableCell className="text-center">Usually None</TableCell>
+                    <TableCell className="text-center">Expensive Retainer</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Conversion Focus</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      CRO Optimized
+                    </TableCell>
+                    <TableCell className="text-center">Hit or Miss</TableCell>
+                    <TableCell className="text-center">Upsell Service</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Pricing</TableCell>
+                    <TableCell className="text-center bg-accent/5 font-bold text-green-500">
+                      Transparent & Fixed
+                    </TableCell>
+                    <TableCell className="text-center">Variable / Hidden</TableCell>
+                    <TableCell className="text-center">High / Hourly</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </div>
