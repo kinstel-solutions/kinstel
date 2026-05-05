@@ -75,7 +75,7 @@ export function Footer() {
             <div className="grid gap-2">
               <h3 className="font-semibold">Company</h3>
               <Link
-                href="/global"
+                href="/global-promo"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Global
               </Link>
