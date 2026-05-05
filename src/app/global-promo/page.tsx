@@ -44,7 +44,7 @@ import { PortfolioGridSequential } from "../global/client-components";
 import { PromoInquiryForm } from "./promo-inquiry-form";
 import {
   PromoHeader,
-  StickyMobileCTA,
+  MothersDayPromo,
   PromoEmailCta,
 } from "./client-components";
 
@@ -238,7 +238,6 @@ export default function GlobalPromoPage() {
   return (
     <div className="flex flex-col w-full">
       <PromoHeader />
-      <StickyMobileCTA />
 
       <main className="flex-grow">
         {/* ═══════ S1: HERO ═══════ */}
@@ -293,6 +292,8 @@ export default function GlobalPromoPage() {
                     </span>
                   ))}
                 </div>
+
+                <MothersDayPromo />
               </div>
 
               {/* Hero Form */}

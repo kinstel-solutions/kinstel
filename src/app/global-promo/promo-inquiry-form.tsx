@@ -167,12 +167,12 @@ export function PromoInquiryForm({
         <CardTitle className="text-center">
           {isHero
             ? "Get Your Free Website Audit"
-            : "Claim Your Free Audit Now"}
+            : "Claim Your Special Offer"}
         </CardTitle>
         <CardDescription className="text-center mt-1">
           {isHero
             ? "Tell us what you need — we'll show you how to get there."
-            : "Fill in the details and we'll get back to you within 24 hours."}
+            : "Complete the form below to secure your 20% Mother's Day discount."}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -291,7 +291,7 @@ export function PromoInquiryForm({
                   Submitting...
                 </>
               ) : (
-                "Get A Free Audit"
+                isHero ? "Get A Free Audit" : "Claim Offer NOW!"
               )}
             </Button>
 
