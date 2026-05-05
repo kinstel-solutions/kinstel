@@ -33,6 +33,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ContactCtaButton } from "@/components/ui/contact-cta-button";
 import { ScrollToFormButton } from "@/components/ui/scroll-to-form-button";
+import { DynamicPrice, DynamicTerm } from "@/components/ui/dynamic-price";
 import {
   Accordion,
   AccordionContent,
@@ -54,11 +55,12 @@ import {
 } from "../web-design-company-lucknow/client-wrappers";
 import { InquiryForm } from "@/components/sections/inquiry-form";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { PortfolioGridSequential, StatsGridSequential } from "./client-components";
 
 export const metadata: Metadata = {
   title: "Premium Global Website Design Company | Kinstel",
   description:
-    "Top Tier Web Designers. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
+    "Top Tier Web Designers. Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
   keywords: [
     "global web design company",
     "web development company",
@@ -69,7 +71,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Premium Global Website Design Company | Kinstel",
     description:
-      "Top Tier Web Designers. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+      "Top Tier Web Designers. Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
     url: "https://kinstel.com/global",
     siteName: "Kinstel",
     type: "website",
@@ -78,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium Global Website Design Company | Kinstel",
     description:
-      "Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+      "Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
   },
 };
 
@@ -194,14 +196,20 @@ const industries = [
 
 const faqs = [
   {
-    question: "What is included in the ₹9999 package?",
-    answer:
-      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.",
+    question: "What is included in the starting package?",
+    answer: (
+      <>
+        Our starting package (from <DynamicPrice amount={14999} />) is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.
+      </>
+    ),
   },
   {
     question: "What does 'Free Digital Consult' mean?",
-    answer:
-      "It means you don't pay a single rupee to start your Consult. We perform a Free Digital Audit first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
+    answer: (
+      <>
+        It means you don't pay a single <DynamicTerm type="currency-fraction" /> to start your Consult. We perform a Free Digital Audit first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.
+      </>
+    ),
   },
   {
     question: "How long does it take to deliver the website?",
@@ -222,7 +230,7 @@ const faqs = [
 
 const portfolioItems = [
   {
-    image: "/portfolio-imgs/blissfulStation.png",
+    image: "/portfolio-imgs/blissfulStation.webp",
     imageHint: "screenshot blissful station website",
     title: "Premium & Elegant UI",
     category: "Blissful Station",
@@ -235,7 +243,7 @@ const portfolioItems = [
     link: "https://www.theblissfulstation.com/",
   },
   {
-    image: "/portfolio-imgs/chopraretec.png",
+    image: "/portfolio-imgs/chopraretec.webp",
     imageHint: "screenshot chopra retec industrial technology website",
     title: "Premium B2B Presence",
     category: "Global Rubber Manufacturer",
@@ -247,7 +255,7 @@ const portfolioItems = [
     link: "https://chopraretec.com",
   },
   {
-    image: "/portfolio-imgs/jamesbond.png",
+    image: "/portfolio-imgs/jamesbond.webp",
     imageHint: "screenshot james bond cleaning services website",
     title: "Modern Service Industry",
     category: "Australian Cleaning Business",
@@ -260,7 +268,7 @@ const portfolioItems = [
     link: "https://jamesbondcleaning.au",
   },
   {
-    image: "/portfolio-imgs/fahemifarz.png",
+    image: "/portfolio-imgs/fahemifarz.webp",
     imageHint: "screenshot fahemi farz personal brand website",
     title: "Personal Brand Portfolio",
     category: "Australian Fashion Designer",
@@ -268,7 +276,7 @@ const portfolioItems = [
     link: "https://www.fehmifarz.com/",
   },
   {
-    image: "/portfolio-imgs/singhassociates.png",
+    image: "/portfolio-imgs/singhassociates.webp",
     imageHint: "screenshot singh associates law firm website",
     title: "Landing/Capture Page",
     category: "Law Firm",
@@ -281,7 +289,7 @@ const portfolioItems = [
     link: "https://singhassociates.ai-fied.com/",
   },
   {
-    image: "/portfolio-imgs/edgrowth.png",
+    image: "/portfolio-imgs/edgrowth.webp",
     imageHint:
       "screenshot edgrowth consultants educational counselling website",
     title: "Professional Online Presence",
@@ -337,7 +345,7 @@ export default function GlobalPage() {
                   Convert Clicks into Clients &amp; Customers with a Premium,
                   SEO-Ready Website. Schedule a consultation today to claim
                   (*Limited Time) <span className="font-bold">offers</span>{" "}
-                  worth <span className="font-bold">₹20,000</span> &amp;{" "}
+                  worth over <span className="font-bold"><DynamicPrice amount={20000} /></span> &amp;{" "}
                   <span className="font-bold">
                     Get a Free Digital Audit Now.
                   </span>
@@ -451,57 +459,7 @@ export default function GlobalPage() {
               </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {portfolioItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full">
-                  <LiquidCard
-                    className="group flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5 h-full"
-                    style={{
-                      animationDelay: `${index * 150}ms`,
-                      animationFillMode: "backwards",
-                    }}
-                    data-testid={`portfolio-item-${index}`}>
-                    <div className="relative h-64 w-full overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={`Showcase of the ${item.title} project`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500"
-                        data-ai-hint={item.imageHint}
-                      />
-                    </div>
-                    <CardContent className="flex flex-1 flex-col p-6">
-                      <p className="mb-2 text-sm font-semibold text-white/80">
-                        {item.category}
-                      </p>
-                      <h3 className="mb-4 text-2xl font-headline font-semibold">
-                        {item.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-2 text-sm mt-auto">
-                        {item.metrics.map((metric, metricIndex) => (
-                          <Badge
-                            key={metricIndex}
-                            variant="outline">
-                            {metric}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter className="p-6 pt-0">
-                      <span className="flex items-center text-sm font-semibold text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        View Project <ArrowUpRight className="ml-2 h-5 w-5" />
-                      </span>
-                    </CardFooter>
-                  </LiquidCard>
-                </Link>
-              ))}
-            </div>
+            <PortfolioGridSequential items={portfolioItems} />
             <div className="mt-12 flex justify-center">
               <ScrollToFormButton
                 size="lg"
@@ -517,26 +475,7 @@ export default function GlobalPage() {
           id="stats"
           className=" py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-4">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {globalStats.map((stat, index) => (
-                <LiquidCard
-                  key={index}
-                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}>
-                  <div>{stat.icon}</div>
-                  <p className="text-3xl font-semibold text-foreground">
-                    {stat.value}
-                  </p>
-                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
-                  <p className=" text-sm text-muted-foreground">
-                    {stat.description}
-                  </p>
-                </LiquidCard>
-              ))}
-            </div>
+            <StatsGridSequential items={globalStats} />
             <div className="mt-12 flex justify-center">
               <ScrollToFormButton
                 size="lg"
@@ -579,7 +518,9 @@ export default function GlobalPage() {
         </div>
 
         {/* Why Choose Us Comparison */}
-        <section id="why-choose-us" className="py-12 md:py-24 lg:py-32">
+        <section
+          id="why-choose-us"
+          className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -645,27 +586,37 @@ export default function GlobalPage() {
                     <TableCell className="text-center">Extra Charge</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Post-Launch Support</TableCell>
+                    <TableCell className="font-medium">
+                      Post-Launch Support
+                    </TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       3 Months Free
                     </TableCell>
                     <TableCell className="text-center">Usually None</TableCell>
-                    <TableCell className="text-center">Expensive Retainer</TableCell>
+                    <TableCell className="text-center">
+                      Expensive Retainer
+                    </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Conversion Focus</TableCell>
+                    <TableCell className="font-medium">
+                      Conversion Focus
+                    </TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       CRO Optimized
                     </TableCell>
                     <TableCell className="text-center">Hit or Miss</TableCell>
-                    <TableCell className="text-center">Upsell Service</TableCell>
+                    <TableCell className="text-center">
+                      Upsell Service
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Pricing</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
                       Transparent & Fixed
                     </TableCell>
-                    <TableCell className="text-center">Variable / Hidden</TableCell>
+                    <TableCell className="text-center">
+                      Variable / Hidden
+                    </TableCell>
                     <TableCell className="text-center">High / Hourly</TableCell>
                   </TableRow>
                 </TableBody>
@@ -675,7 +626,9 @@ export default function GlobalPage() {
         </section>
 
         {/* Industries Section */}
-        <section id="industries" className="py-12 md:py-24">
+        <section
+          id="industries"
+          className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -703,7 +656,9 @@ export default function GlobalPage() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className=" py-12 md:py-24 lg:py-32">
+        <section
+          id="faq"
+          className=" py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -736,7 +691,9 @@ export default function GlobalPage() {
         </section>
 
         {/* Process Section */}
-        <section id="process" className="py-12 md:py-24">
+        <section
+          id="process"
+          className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -778,8 +735,8 @@ export default function GlobalPage() {
                 Expert Web Designers
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Claim your limited time offer(First 50 customers this summer)
-                worth <span className="text-foreground font-bold">₹20,000</span>
+                Claim your limited time offer (First 50 customers this summer)
+                worth over <span className="text-foreground font-bold"><DynamicPrice amount={20000} /></span>
                 . Get your Digital Audit Now.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
