@@ -37,66 +37,89 @@ export function PromoHeader() {
           priority
           className="object-contain w-[100px] md:w-[120px] h-auto"
         />
-        {/* Desktop-only: subtle email CTA */}
-        <div className="hidden md:block">
-          <PromoEmailCta />
-        </div>
+        <PromoEmailCta />
       </div>
     </header>
   );
 }
 
 /* ═══════════════════════════════════════════════════════════
-   StickyMobileCTA — Fixed bottom bar on mobile
-   Appears after user scrolls past the hero section.
+   MothersDayPromo — Countdown timer + CTA for Mother's Day
    ═══════════════════════════════════════════════════════════ */
 
-export function StickyMobileCTA() {
-  const [visible, setVisible] = useState(false);
+export function MothersDayPromo() {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Show the sticky CTA when hero is NOT visible (scrolled past it)
-        setVisible(!entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
+    // Mother's Day 2026: May 10
+    const targetDate = new Date("2026-05-10T00:00:00").getTime();
 
-    // Observe the hero inquiry form (top of page)
-    const heroForm = document.getElementById("promo-hero-form");
-    if (heroForm) observer.observe(heroForm);
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
 
-    return () => observer.disconnect();
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
-  const scrollToForm = () => {
-    const form = document.getElementById("promo-hero-form");
+  const scrollToBottomForm = () => {
+    const form = document.getElementById("inquiry-form");
     if (form) {
       form.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
-        const input = form.querySelector(
-          'input[name="name"]'
-        ) as HTMLInputElement;
+        const input = form.querySelector('input[name="name"]') as HTMLInputElement;
         if (input) input.focus({ preventScroll: true });
-      }, 600);
+      }, 800);
     }
   };
 
   return (
-    <div
-      className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300",
-        visible
-          ? "translate-y-0 opacity-100"
-          : "translate-y-full opacity-0 pointer-events-none"
-      )}>
-      <div className="bg-background/95 backdrop-blur-md border-t border-border/50 px-4 py-3 shadow-lg shadow-black/20">
-        <Button
-          onClick={scrollToForm}
-          className="w-full h-12 text-base font-semibold shadow-lg shadow-accent/25"
-          size="lg">
-          Get A Free Audit
+    <div className="mt-8 p-4 rounded-2xl border border-pink-500/20 bg-pink-500/5 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col items-center md:items-start">
+          <p className="text-sm font-bold text-pink-500 uppercase tracking-widest mb-1">
+            🌸 Mother&apos;s Day Special
+          </p>
+          <div className="flex gap-3">
+            {[
+              { label: "D", val: timeLeft.days },
+              { label: "H", val: timeLeft.hours },
+              { label: "M", val: timeLeft.minutes },
+              { label: "S", val: timeLeft.seconds },
+            ].map((unit, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <span className="text-xl font-bold text-foreground tabular-nums">
+                  {unit.val.toString().padStart(2, "0")}
+                </span>
+                <span className="text-[10px] text-muted-foreground uppercase">{unit.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="text-center md:text-left flex-grow">
+          <p className="text-sm text-foreground font-medium">
+            Get an extra <span className="text-pink-500 font-bold text-base">20% OFF</span> for all new clients!
+          </p>
+        </div>
+
+        <Button 
+          onClick={scrollToBottomForm}
+          variant="secondary" 
+          className="bg-pink-500 hover:bg-pink-600 text-white border-none shadow-lg shadow-pink-500/20"
+        >
+          Claim Offer NOW!
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>

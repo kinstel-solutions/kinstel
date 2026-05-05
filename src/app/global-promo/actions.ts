@@ -68,41 +68,41 @@ export async function submitPromoInquiryAction(data: PromoFormValues) {
     .join("\n\n");
 
   try {
-    const promises: Promise<any>[] = [];
-
     // Admin notification — tagged with [PMax] for source identification
-    promises.push(
-      resend.emails.send({
-        from: fromEmail,
-        to: toEmails,
-        subject: `[PMax] New Lead from ${name} — ${servicesList}`,
-        react: InquiryNotificationEmail({
-          name,
-          email,
-          phone,
-          details: detailsText,
-        }),
-      })
-    );
+    const adminResult = await resend.emails.send({
+      from: fromEmail,
+      to: toEmails,
+      subject: `[PMax] New Lead from ${name} — ${servicesList}`,
+      react: InquiryNotificationEmail({
+        name,
+        email,
+        phone,
+        details: detailsText,
+      }),
+    });
 
-    // User confirmation email
+    if (adminResult.error) {
+      console.error("Failed to send admin notification:", adminResult.error);
+      return {
+        success: false,
+        message: "Something went wrong on our end. Please try again later.",
+      };
+    }
+
+    // User confirmation email — best-effort, don't fail the whole action
     if (email) {
-      promises.push(
-        resend.emails.send({
+      try {
+        const userResult = await resend.emails.send({
           from: fromEmail,
           to: email,
           subject: "We have received your inquiry — Kinstel",
           react: UserConfirmationEmail({ name }),
-        })
-      );
-    }
-
-    const results = await Promise.all(promises);
-
-    for (const result of results) {
-      if (result.error) {
-        console.error("Failed to send an email:", result.error);
-        throw new Error("A failure occurred while sending emails.");
+        });
+        if (userResult.error) {
+          console.error("User confirmation email failed (non-critical):", userResult.error);
+        }
+      } catch (confirmErr) {
+        console.error("User confirmation email threw (non-critical):", confirmErr);
       }
     }
 
