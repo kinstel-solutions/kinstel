@@ -20,6 +20,8 @@
 # raw-content for local files while working, ignore all nested files and folders here
 /raw-content
 /raw-content/**
+/raw-contents
+/raw-contents/**
 
 # production
 /build
@@ -49,7 +51,3 @@ firebase-debug.log
 firestore-debug.log
 
 # sample pdfs
-raw-contents/sample-pdfs-invoices/gads-invoice_KS_25-26_TBSPL-GA120426-01.pdf
-raw-contents/sample-pdfs-invoices/invoice_KS_25-26_JBCPL-006.pdf
-raw-contents/sample-pdfs-invoices/invoice_KS_25-26_JBCPL-GA306.pdf
-raw-contents/sample-pdfs-invoices/Updated_gads-invoice_KS25-26ECLLP-GA0201.pdf

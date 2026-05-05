@@ -127,7 +127,7 @@ const defaultServices = [
 
 const defaultPortfolioItems = [
   {
-    image: "/portfolio-imgs/blissfulStation.png",
+    image: "/portfolio-imgs/blissfulStation.webp",
     imageHint: "screenshot blissful station website",
     title: "Premium & Elegant UI",
     category: "Blissful Station",
@@ -140,7 +140,7 @@ const defaultPortfolioItems = [
     link: "https://www.theblissfulstation.com/",
   },
   {
-    image: "/portfolio-imgs/chopraretec.png",
+    image: "/portfolio-imgs/chopraretec.webp",
     imageHint: "screenshot chopra retec industrial technology website",
     title: "Premium B2B Presence",
     category: "Global Rubber Manufacturer",
@@ -152,7 +152,7 @@ const defaultPortfolioItems = [
     link: "https://chopraretec.com",
   },
   {
-    image: "/portfolio-imgs/jamesbond.png",
+    image: "/portfolio-imgs/jamesbond.webp",
     imageHint: "screenshot james bond cleaning services website",
     title: "Modern Service Industry",
     category: "Australian Cleaning Business",
@@ -165,7 +165,7 @@ const defaultPortfolioItems = [
     link: "https://jamesbondcleaning.au",
   },
   {
-    image: "/portfolio-imgs/fahemifarz.png",
+    image: "/portfolio-imgs/fahemifarz.webp",
     imageHint: "screenshot fahemi farz personal brand website",
     title: "Personal Brand Portfolio",
     category: "Australian Fashion Designer",
@@ -173,7 +173,7 @@ const defaultPortfolioItems = [
     link: "https://www.fehmifarz.com/",
   },
   {
-    image: "/portfolio-imgs/singhassociates.png",
+    image: "/portfolio-imgs/singhassociates.webp",
     imageHint: "screenshot singh associates law firm website",
     title: "Landing/Capture Page",
     category: "Law Firm",
@@ -186,7 +186,7 @@ const defaultPortfolioItems = [
     link: "https://singhassociates.ai-fied.com/",
   },
   {
-    image: "/portfolio-imgs/edgrowth.png",
+    image: "/portfolio-imgs/edgrowth.webp",
     imageHint:
       "screenshot edgrowth consultants educational counselling website",
     title: "Professional Online Presence",

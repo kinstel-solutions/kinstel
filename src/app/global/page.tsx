@@ -229,7 +229,7 @@ const faqs = [
 
 const portfolioItems = [
   {
-    image: "/portfolio-imgs/blissfulStation.png",
+    image: "/portfolio-imgs/blissfulStation.webp",
     imageHint: "screenshot blissful station website",
     title: "Premium & Elegant UI",
     category: "Blissful Station",
@@ -242,7 +242,7 @@ const portfolioItems = [
     link: "https://www.theblissfulstation.com/",
   },
   {
-    image: "/portfolio-imgs/chopraretec.png",
+    image: "/portfolio-imgs/chopraretec.webp",
     imageHint: "screenshot chopra retec industrial technology website",
     title: "Premium B2B Presence",
     category: "Global Rubber Manufacturer",
@@ -254,7 +254,7 @@ const portfolioItems = [
     link: "https://chopraretec.com",
   },
   {
-    image: "/portfolio-imgs/jamesbond.png",
+    image: "/portfolio-imgs/jamesbond.webp",
     imageHint: "screenshot james bond cleaning services website",
     title: "Modern Service Industry",
     category: "Australian Cleaning Business",
@@ -267,7 +267,7 @@ const portfolioItems = [
     link: "https://jamesbondcleaning.au",
   },
   {
-    image: "/portfolio-imgs/fahemifarz.png",
+    image: "/portfolio-imgs/fahemifarz.webp",
     imageHint: "screenshot fahemi farz personal brand website",
     title: "Personal Brand Portfolio",
     category: "Australian Fashion Designer",
@@ -275,7 +275,7 @@ const portfolioItems = [
     link: "https://www.fehmifarz.com/",
   },
   {
-    image: "/portfolio-imgs/singhassociates.png",
+    image: "/portfolio-imgs/singhassociates.webp",
     imageHint: "screenshot singh associates law firm website",
     title: "Landing/Capture Page",
     category: "Law Firm",
@@ -288,7 +288,7 @@ const portfolioItems = [
     link: "https://singhassociates.ai-fied.com/",
   },
   {
-    image: "/portfolio-imgs/edgrowth.png",
+    image: "/portfolio-imgs/edgrowth.webp",
     imageHint:
       "screenshot edgrowth consultants educational counselling website",
     title: "Professional Online Presence",
@@ -466,8 +466,8 @@ export default function GlobalPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block h-full">
-                  <LiquidCard
-                    className="group flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5 h-full"
+                  <Card
+                    className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl animate-in fade-in slide-in-from-bottom-5 h-full"
                     style={{
                       animationDelay: `${index * 150}ms`,
                       animationFillMode: "backwards",
@@ -479,7 +479,7 @@ export default function GlobalPage() {
                         alt={`Showcase of the ${item.title} project`}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         data-ai-hint={item.imageHint}
                       />
                     </div>
@@ -505,7 +505,7 @@ export default function GlobalPage() {
                         View Project <ArrowUpRight className="ml-2 h-5 w-5" />
                       </span>
                     </CardFooter>
-                  </LiquidCard>
+                  </Card>
                 </Link>
               ))}
             </div>
