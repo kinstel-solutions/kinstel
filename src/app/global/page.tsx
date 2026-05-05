@@ -33,6 +33,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ContactCtaButton } from "@/components/ui/contact-cta-button";
 import { ScrollToFormButton } from "@/components/ui/scroll-to-form-button";
+import { DynamicPrice, DynamicTerm } from "@/components/ui/dynamic-price";
 import {
   Accordion,
   AccordionContent,
@@ -58,7 +59,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 export const metadata: Metadata = {
   title: "Premium Global Website Design Company | Kinstel",
   description:
-    "Top Tier Web Designers. Get Premium Web Design from ₹14,999. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
+    "Top Tier Web Designers. Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
   keywords: [
     "global web design company",
     "web development company",
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Premium Global Website Design Company | Kinstel",
     description:
-      "Top Tier Web Designers. Get Premium Web Design from ₹14,999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+      "Top Tier Web Designers. Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
     url: "https://kinstel.com/global",
     siteName: "Kinstel",
     type: "website",
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium Global Website Design Company | Kinstel",
     description:
-      "Get Premium Web Design from ₹14,999. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
+      "Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
   },
 };
 
@@ -194,14 +195,20 @@ const industries = [
 
 const faqs = [
   {
-    question: "What is included in the ₹9999 package?",
-    answer:
-      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.",
+    question: "What is included in the starting package?",
+    answer: (
+      <>
+        Our starting package (from <DynamicPrice amount={14999} />) is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.
+      </>
+    ),
   },
   {
     question: "What does 'Free Digital Consult' mean?",
-    answer:
-      "It means you don't pay a single rupee to start your Consult. We perform a Free Digital Audit first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
+    answer: (
+      <>
+        It means you don't pay a single <DynamicTerm type="currency-fraction" /> to start your Consult. We perform a Free Digital Audit first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.
+      </>
+    ),
   },
   {
     question: "How long does it take to deliver the website?",
@@ -337,7 +344,7 @@ export default function GlobalPage() {
                   Convert Clicks into Clients &amp; Customers with a Premium,
                   SEO-Ready Website. Schedule a consultation today to claim
                   (*Limited Time) <span className="font-bold">offers</span>{" "}
-                  worth <span className="font-bold">₹20,000</span> &amp;{" "}
+                  worth over <span className="font-bold"><DynamicPrice amount={20000} /></span> &amp;{" "}
                   <span className="font-bold">
                     Get a Free Digital Audit Now.
                   </span>
@@ -796,8 +803,8 @@ export default function GlobalPage() {
                 Expert Web Designers
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Claim your limited time offer(First 50 customers this summer)
-                worth <span className="text-foreground font-bold">₹20,000</span>
+                Claim your limited time offer (First 50 customers this summer)
+                worth over <span className="text-foreground font-bold"><DynamicPrice amount={20000} /></span>
                 . Get your Digital Audit Now.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
