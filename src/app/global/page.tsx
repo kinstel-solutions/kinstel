@@ -55,6 +55,7 @@ import {
 } from "../web-design-company-lucknow/client-wrappers";
 import { InquiryForm } from "@/components/sections/inquiry-form";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { PortfolioGridSequential, StatsGridSequential } from "./client-components";
 
 export const metadata: Metadata = {
   title: "Premium Global Website Design Company | Kinstel",
@@ -458,57 +459,7 @@ export default function GlobalPage() {
               </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {portfolioItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full">
-                  <Card
-                    className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl animate-in fade-in slide-in-from-bottom-5 h-full"
-                    style={{
-                      animationDelay: `${index * 150}ms`,
-                      animationFillMode: "backwards",
-                    }}
-                    data-testid={`portfolio-item-${index}`}>
-                    <div className="relative h-64 w-full overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={`Showcase of the ${item.title} project`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        data-ai-hint={item.imageHint}
-                      />
-                    </div>
-                    <CardContent className="flex flex-1 flex-col p-6">
-                      <p className="mb-2 text-sm font-semibold text-white/80">
-                        {item.category}
-                      </p>
-                      <h3 className="mb-4 text-2xl font-headline font-semibold">
-                        {item.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-2 text-sm mt-auto">
-                        {item.metrics.map((metric, metricIndex) => (
-                          <Badge
-                            key={metricIndex}
-                            variant="outline">
-                            {metric}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter className="p-6 pt-0">
-                      <span className="flex items-center text-sm font-semibold text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        View Project <ArrowUpRight className="ml-2 h-5 w-5" />
-                      </span>
-                    </CardFooter>
-                  </Card>
-                </Link>
-              ))}
-            </div>
+            <PortfolioGridSequential items={portfolioItems} />
             <div className="mt-12 flex justify-center">
               <ScrollToFormButton
                 size="lg"
@@ -524,26 +475,7 @@ export default function GlobalPage() {
           id="stats"
           className=" py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-4">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {globalStats.map((stat, index) => (
-                <LiquidCard
-                  key={index}
-                  className="flex flex-col items-center p-4 transition-all duration-300 text-center animate-in fade-in slide-in-from-bottom-5"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}>
-                  <div>{stat.icon}</div>
-                  <p className="text-3xl font-semibold text-foreground">
-                    {stat.value}
-                  </p>
-                  <h3 className=" text-lg font-semibold">{stat.label}</h3>
-                  <p className=" text-sm text-muted-foreground">
-                    {stat.description}
-                  </p>
-                </LiquidCard>
-              ))}
-            </div>
+            <StatsGridSequential items={globalStats} />
             <div className="mt-12 flex justify-center">
               <ScrollToFormButton
                 size="lg"
