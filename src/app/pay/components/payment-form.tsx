@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { ToWords } from "to-words";
+import { event } from "@/lib/gtag";
 
 const toWordsIN = new ToWords({
   localeCode: "en-IN",
@@ -211,6 +212,12 @@ export default function PaymentForm() {
             setIsProcessing(false);
             return;
           }
+
+          event({
+            action: "generate_lead",
+            category: "form",
+            label: "payment_form",
+          });
 
           // 5. Send receipt email (if email provided)
           await sendPaymentReceiptAction({

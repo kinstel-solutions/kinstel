@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { PackageCard } from './package-card';
 import { SectionHeader } from './section-header';
 import { CheckoutModal, type CheckoutFormData } from './checkout-modal';
+import { event } from '@/lib/gtag';
 
 const packages = [
   {
@@ -109,7 +110,13 @@ export function SignaturePackagesSection() {
     
     let finalDesc = `I'm interested in booking: ${selectedPkg.name}.\n\nMy primary goal for this project is: ${data.description || ""}`;
     params.set('desc', finalDesc);
-    
+
+    event({
+      action: 'generate_lead',
+      category: 'form',
+      label: 'signature_package_checkout',
+    });
+
     router.push(`/pay?${params.toString()}`);
   };
 

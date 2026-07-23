@@ -47,6 +47,10 @@ export function TimeBasedCallButton({
     });
 
     if (isBusinessHours) {
+      event({
+        action: "click_to_call",
+        category: "contact",
+      });
       window.location.href = `tel:${phoneNumber}`;
     } else {
       setIsModalOpen(true);

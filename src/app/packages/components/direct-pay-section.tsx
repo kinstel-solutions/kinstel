@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from '@/lib/utils';
+import { event } from '@/lib/gtag';
 
 /**
  * Direct Pay Section
@@ -33,7 +34,13 @@ export function DirectPaySection() {
     params.set('amount', manualAmount);
     params.set('purpose', manualInvoice);
     if (manualPid) params.set('pid', manualPid);
-    
+
+    event({
+      action: 'generate_lead',
+      category: 'form',
+      label: 'direct_pay_redirect',
+    });
+
     router.push(`/pay?${params.toString()}`);
   };
 
