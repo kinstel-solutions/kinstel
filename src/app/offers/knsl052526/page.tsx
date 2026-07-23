@@ -67,7 +67,7 @@ const solutionCards = [
   {
     icon: <Zap className="h-7 w-7 text-accent" />,
     title: "Enterprise Performance",
-    desc: "98%+ Lighthouse scores. Server-side rendering. Edge-optimized delivery. Your site loads before they blink.",
+    desc: "95+ Lighthouse scores. Server-side rendering. Edge-optimized delivery. Your site loads before they blink.",
   },
   {
     icon: <ShieldCheck className="h-7 w-7 text-accent" />,
@@ -143,9 +143,9 @@ const portfolioItems = [
 ];
 
 const stats = [
-  { icon: <Zap className="h-8 w-8 text-accent" />, value: "98%", label: "PageSpeed Score" },
+  { icon: <Zap className="h-8 w-8 text-accent" />, value: "95+", label: "PageSpeed Score" },
   { icon: <Users className="h-8 w-8 text-accent" />, value: "10+", label: "Clients Served" },
-  { icon: <Award className="h-8 w-8 text-accent" />, value: "300%", label: "Avg. Conversion Uplift" },
+  { icon: <Award className="h-8 w-8 text-accent" />, value: "3–5 Day", label: "Delivery" },
   { icon: <Globe className="h-8 w-8 text-accent" />, value: "3+", label: "Countries Served" },
 ];
 
@@ -246,8 +246,8 @@ export default function HighTicketLandingPage() {
               {/* Trust markers - pill style */}
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start pt-1">
                 {[
-                  { label: "98% PageSpeed", icon: <Zap className="h-3.5 w-3.5" /> },
-                  { label: "300% More Conversions", icon: <Award className="h-3.5 w-3.5" /> },
+                  { label: "95+ PageSpeed", icon: <Zap className="h-3.5 w-3.5" /> },
+                  { label: "3–5 Day Delivery", icon: <Award className="h-3.5 w-3.5" /> },
                   { label: "Global Clients", icon: <Globe className="h-3.5 w-3.5" /> },
                 ].map((t) => (
                   <span key={t.label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/15 text-xs font-medium text-accent">

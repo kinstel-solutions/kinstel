@@ -52,7 +52,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Get Your Free Website Audit — Premium Web Design | Kinstel",
   description:
-    "Stop losing clients to a bad website. Get a Free Website Audit + Strategy Session. Custom web design, SEO-ready, 98% PageSpeed scores. Serving US, UK, CA, AU.",
+    "Stop losing clients to a bad website. Get a Free Website Audit + Strategy Session. Custom web design, SEO-ready, 95+ PageSpeed scores. Serving US, UK, CA, AU.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "Get Your Free Website Audit — Premium Web Design | Kinstel",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Get Your Free Website Audit | Kinstel",
     description:
-      "Free Website Audit + Strategy Session. Custom web design, SEO-ready, 98% PageSpeed.",
+      "Free Website Audit + Strategy Session. Custom web design, SEO-ready, 95+ PageSpeed.",
   },
 };
 
@@ -87,7 +87,7 @@ const solutionCards = [
   {
     icon: <Zap className="h-7 w-7 text-accent" />,
     title: "Enterprise Performance",
-    desc: "98%+ Lighthouse scores. Server-side rendering. Edge-optimized delivery. Your site loads before they blink — on any device, anywhere.",
+    desc: "95+ Lighthouse scores. Server-side rendering. Edge-optimized delivery. Your site loads before they blink — on any device, anywhere.",
   },
   {
     icon: <ShieldCheck className="h-7 w-7 text-accent" />,
@@ -307,8 +307,8 @@ export default function GlobalPromoPage() {
                 {/* Trust pills */}
                 <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                   {[
-                    { label: "98% PageSpeed", icon: <Zap className="h-3.5 w-3.5" /> },
-                    { label: "300% More Conversions", icon: <Award className="h-3.5 w-3.5" /> },
+                    { label: "95+ PageSpeed", icon: <Zap className="h-3.5 w-3.5" /> },
+                    { label: "3–5 Day Delivery", icon: <Award className="h-3.5 w-3.5" /> },
                     { label: "Serving 3+ Countries", icon: <Globe className="h-3.5 w-3.5" /> },
                   ].map((t) => (
                     <span

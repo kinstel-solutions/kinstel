@@ -40,21 +40,21 @@ export const metadata: Metadata = {
 const lawyerStats = [
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    value: "98%",
+    value: "95+",
     label: "Page Speed Score",
     description: "Blazing-fast load times to keep potential clients engaged.",
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
-    value: "150+",
-    label: "Law Firms Served",
+    value: "10+",
+    label: "Clients Served",
     description:
       "Trusted by legal professionals across various practice areas.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
-    value: "300%",
-    label: "Avg. Lead Increase",
+    value: "3–5 Day",
+    label: "Delivery",
     description: "Our conversion-focused designs deliver measurable results.",
   },
 ];

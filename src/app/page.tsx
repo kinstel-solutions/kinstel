@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const defaultStats = [
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    value: "98%",
+    value: "95+",
     label: "Page Speed Score",
     description: "Blazing-fast load times to keep your users engaged.",
   },
@@ -57,8 +57,8 @@ const defaultStats = [
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
-    value: "300%",
-    label: "Avg. Conversion Uplift",
+    value: "3–5 Day",
+    label: "Delivery",
     description: "Our conversion-focused designs deliver measurable results.",
   },
 ];
