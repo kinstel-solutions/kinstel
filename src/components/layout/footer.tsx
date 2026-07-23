@@ -80,6 +80,11 @@ export function Footer() {
                 About
               </Link>
               <Link
+                href="/website-audit"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Free Website Audit
+              </Link>
+              <Link
                 href="/global-promo"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Global

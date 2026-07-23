@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platforms', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/packages', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/contact', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/website-audit', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/web-design-company-lucknow', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/law-firm-marketing', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/global', priority: 0.6, changeFrequency: 'monthly' },
