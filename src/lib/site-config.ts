@@ -1,14 +1,17 @@
 export const siteConfig = {
   name: 'Kinstel',
   url: 'https://www.kinstel.com',
-  title: 'Kinstel | Premier Web Design & Digital Marketing Agency',
+  title: 'Kinstel | Premium Web Design, Development & Digital Marketing',
   description:
-    'Kinstel is a leading web design and digital marketing agency that helps businesses grow with professional websites, SEO, and targeted marketing strategies.',
+    'Kinstel is a web studio that designs and builds high-performing websites and custom platforms, and runs the SEO & Google Ads that grow them — for businesses in Lucknow and worldwide.',
   keywords: [
     'web design agency',
     'digital marketing agency',
     'professional website design',
     'seo services',
     'digital marketing strategies',
+    'web development',
+    'custom web platforms',
+    'google ads management',
   ],
 };

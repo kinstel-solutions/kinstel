@@ -34,9 +34,9 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { localBusinessJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Kinstel | Web Design & Digital Marketing Agency",
+  title: "Web Design, Development & Digital Marketing",
   description:
-    "Kinstel is a leading web design and digital marketing agency. We help businesses grow online with custom websites, SEO, and marketing strategies.",
+    "Kinstel is a web studio that designs and builds high-performing websites and custom platforms — then runs the SEO and Google Ads that grow them. Conversion-focused work, delivered fast.",
   alternates: {
     canonical: "/",
   },
@@ -59,7 +59,8 @@ const defaultStats = [
     icon: <Award className="h-8 w-8 text-accent" />,
     value: "3–5 Day",
     label: "Delivery",
-    description: "Our conversion-focused designs deliver measurable results.",
+    description:
+      "Rapid delivery without cutting corners — most sites go live in under a week.",
   },
 ];
 
@@ -241,9 +242,9 @@ export default function Home() {
                   for Modern Businesses
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                  We are a web design agency that helps businesses grow online.
-                  We build beautiful, high-performing websites that are designed
-                  to convert.
+                  We design and build high-performing websites and custom
+                  platforms — then run the marketing that fills them with
+                  customers. Design, development, and growth, under one roof.
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
                   <DynamicIslandDemo />
@@ -280,9 +281,9 @@ export default function Home() {
                   Our <span className="text-accent">Premium</span> Services
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground">
-                  We build beautiful, high-performing websites that are designed
-                  to convert visitors into customers. Every project is built
-                  around speed, simplicity, and strategic design.
+                  From high-performing websites to custom platforms and SaaS,
+                  every build is engineered for speed, conversion, and growth —
+                  and backed by the marketing to match.
                 </p>
               </div>
               <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -455,9 +456,10 @@ export default function Home() {
                   Ready to Grow Your Business?
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground">
-                  Your website is your most important marketing asset. Partner
-                  with a trusted web design agency to build a website that
-                  drives results. Get a free quote to get started.
+                  Your website is your most important growth asset. Partner
+                  with a studio that designs, builds, and markets — so your
+                  site doesn't just look great, it delivers customers. Get a
+                  free quote to start.
                 </p>
                 <div className="mt-10">
                   <SmartCtaButton
