@@ -1,5 +1,6 @@
 import { type MetadataRoute } from 'next';
 import { caseStudies } from '@/lib/case-studies';
+import { posts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://www.kinstel.com';
@@ -24,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/work', priority: 0.7, changeFrequency: 'monthly' },
     ...caseStudies.map((study) => ({
       path: `/work/${study.slug}`,
+      priority: 0.6,
+      changeFrequency: 'monthly' as MetadataRoute.Sitemap[number]['changeFrequency'],
+    })),
+    { path: '/blog', priority: 0.7, changeFrequency: 'monthly' },
+    ...posts.map((post) => ({
+      path: `/blog/${post.slug}`,
       priority: 0.6,
       changeFrequency: 'monthly' as MetadataRoute.Sitemap[number]['changeFrequency'],
     })),

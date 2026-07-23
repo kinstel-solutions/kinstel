@@ -23,6 +23,7 @@ const navLinks = [
   { href: "/platforms", label: "Platforms" },
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Header() {

@@ -95,6 +95,11 @@ export function Footer() {
                 Work
               </Link>
               <Link
+                href="/blog"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Blog
+              </Link>
+              <Link
                 href="/contact"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Contact
