@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   title: "Kinstel | Web Design & Digital Marketing Agency",
   description:
     "Kinstel is a leading web design and digital marketing agency. We help businesses grow online with custom websites, SEO, and marketing strategies.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const defaultStats = [

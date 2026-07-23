@@ -11,7 +11,10 @@ const InquiryForm = dynamic(() => import("@/components/sections/inquiry-form").t
 });
 
 export const metadata: Metadata = {
-  title: "Kinstel Solutions | Contact Us",
+  title: "Contact Us",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

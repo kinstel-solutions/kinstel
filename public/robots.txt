@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kinstel.com/sitemap.xml
+Sitemap: https://www.kinstel.com/sitemap.xml

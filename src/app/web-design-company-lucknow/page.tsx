@@ -67,7 +67,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 import { BorderBeam } from "@/components/ui/border-beam";
 
 export const metadata: Metadata = {
-  title: "Leading Website Design Company in Lucknow | Kinstel",
+  title: "Leading Website Design Company in Lucknow",
   description:
     "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Demo (Zero Upfront Cost). Schedule a consultation today!",
   keywords: [
@@ -78,6 +78,9 @@ export const metadata: Metadata = {
     "best website designing company in lucknow",
     "seo company lucknow",
   ],
+  alternates: {
+    canonical: "/web-design-company-lucknow",
+  },
 };
 
 const lucknowStats = [

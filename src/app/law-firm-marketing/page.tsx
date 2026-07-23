@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
 
 export const metadata: Metadata = {
-  title: "Kinstel | Premier Law Firm Marketing Firm for Legal Growth",
+  title: "Law Firm Website Design & Marketing",
   description:
     "Kinstel empowers lawyers and law firms to elevate their practice with custom website development, proven SEO, and legally compliant marketing.",
   keywords: [
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "law firm website development",
     "law firm seo",
   ],
+  alternates: {
+    canonical: "/law-firm-marketing",
+  },
 };
 
 const lawyerStats = [

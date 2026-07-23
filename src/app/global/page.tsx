@@ -58,7 +58,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 import { PortfolioGridSequential, StatsGridSequential } from "./client-components";
 
 export const metadata: Metadata = {
-  title: "Premium Global Website Design Company | Kinstel",
+  title: "Premium Global Website Design Company",
   description:
     "Top Tier Web Designers. Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult. Schedule a consultation today!",
   keywords: [
@@ -68,6 +68,9 @@ export const metadata: Metadata = {
     "best website designing company",
     "international seo company",
   ],
+  alternates: {
+    canonical: "/global",
+  },
   openGraph: {
     title: "Premium Global Website Design Company | Kinstel",
     description:

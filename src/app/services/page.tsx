@@ -16,9 +16,12 @@ import Link from "next/link";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
 
 export const metadata: Metadata = {
-  title: "Services | Kinstel - Web Design & Digital Marketing",
+  title: "Services | Web Design & Digital Marketing",
   description:
     "Explore our professional web design, development, and digital marketing services. specialized packages for businesses of all sizes.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const services = [
