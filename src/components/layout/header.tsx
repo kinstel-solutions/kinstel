@@ -20,6 +20,7 @@ const navLinks = [
   { href: "/global-promo", label: "Global" },
   { href: "/packages", label: "Packages" },
   { href: "/services", label: "Services" },
+  { href: "/platforms", label: "Platforms" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
 ];

@@ -137,6 +137,11 @@ export function Footer() {
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 SEO & Marketing
               </Link>
+              <Link
+                href="/platforms"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Custom Platforms
+              </Link>
             </div>
             <div className="grid gap-2">
               <h3 className="font-semibold">Legal</h3>
