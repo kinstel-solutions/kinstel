@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 import Link from "next/link";
-import { FileText, FileSignature, ArrowRight } from "lucide-react";
+import { FileText, FileSignature, KanbanSquare, ArrowRight } from "lucide-react";
 
 import {
   Card,
@@ -33,6 +33,13 @@ const studioTools = [
     title: "Proposal Generator",
     description:
       "Build a branded client proposal — objectives, scope, timeline, investment — and download it as a PDF. Shares business details and clients with the Invoice Generator.",
+  },
+  {
+    href: "/studio/leads",
+    icon: <KanbanSquare className="h-7 w-7 text-accent" />,
+    title: "Lead Tracker",
+    description:
+      "Kanban board for tracking leads from New through Contacted, Quoted, Won, or Lost. Data stays on this device only.",
   },
   // Add more internal Kinstel Studio tools here as they are built.
 ];
