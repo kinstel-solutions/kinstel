@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 import Link from "next/link";
-import { FileText, ArrowRight } from "lucide-react";
+import { FileText, FileSignature, ArrowRight } from "lucide-react";
 
 import {
   Card,
@@ -26,6 +26,13 @@ const studioTools = [
     title: "Invoice Generator",
     description:
       "Create and download a Kinstel Solutions invoice PDF. Everything is saved locally on this device only.",
+  },
+  {
+    href: "/studio/proposal",
+    icon: <FileSignature className="h-7 w-7 text-accent" />,
+    title: "Proposal Generator",
+    description:
+      "Build a branded client proposal — objectives, scope, timeline, investment — and download it as a PDF. Shares business details and clients with the Invoice Generator.",
   },
   // Add more internal Kinstel Studio tools here as they are built.
 ];
