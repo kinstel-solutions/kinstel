@@ -741,6 +741,16 @@ export default function LucknowPage() {
                 <Link href="/services">Explore All Services</Link>
               </Button>
             </div>
+            <p className="mt-6 text-center text-sm text-muted-foreground">
+              Related:{" "}
+              <Link href="/packages" className="underline hover:text-accent">
+                View Packages
+              </Link>{" "}
+              &middot;{" "}
+              <Link href="/contact" className="underline hover:text-accent">
+                Contact Us
+              </Link>
+            </p>
           </div>
         </section>
 

@@ -27,7 +27,7 @@ Two five-page websites can differ 20× in price and value. What you're really pa
 
 - **DIY / template (₹0 – 10,000):** Website builders and marketplace templates. Fine for a hobby or a quick placeholder. Slow, generic, hard to rank, and rarely built to convert.
 - **Freelancer / small shop (₹10,000 – 30,000):** Usually WordPress + a theme. Gets you online. Quality and support vary widely; performance and SEO are often afterthoughts.
-- **Custom, conversion-focused (₹30,000 – 1,00,000+):** Hand-built (modern frameworks like Next.js), fast, mobile-first, tracked, and designed around turning traffic into leads. This is where a website starts paying for itself.
+- **Custom, conversion-focused (₹30,000 – 1,00,000+):** Hand-built (modern frameworks like Next.js), fast, mobile-first, tracked, and designed around turning traffic into leads. This is where a website starts paying for itself. See our [packages](/packages) for what's included at each tier.
 - **Web platforms & apps (₹1,00,000+):** Booking systems, marketplaces, dashboards, custom software — priced by complexity, not pages.
 
 ## Why the cheapest option usually costs more
@@ -45,7 +45,7 @@ A website is a **conversion tool, not a brochure.** Priced right, it's the cheap
 
 ## How we think about pricing
 
-We price by outcome, not page count — and we're upfront about it. Many clients start with a focused build and grow into ongoing marketing (SEO, Google Ads) once the site proves itself. If you want a straight answer for your specific project, tell us what you're building and we'll scope it honestly.`,
+We price by outcome, not page count — and we're upfront about it. Many clients start with a focused build and grow into ongoing marketing (SEO, Google Ads) once the site proves itself. If you want a straight answer for your specific project, [contact us](/contact) and tell us what you're building — we'll scope it honestly.`,
   },
   {
     slug: "nextjs-vs-wordpress",
@@ -78,6 +78,6 @@ Choose **WordPress** if you need a content-heavy site you'll update daily yourse
 
 ## Our take
 
-We build in Next.js because most businesses we work with want speed, a distinctive experience, and something that can grow into a real platform — not a template everyone else is using. But the right answer is the one that fits *your* goals, budget, and how you'll run the site. If you're not sure, that's exactly the conversation to have before anyone writes a line of code.`,
+We build in Next.js because most businesses we work with want speed, a distinctive experience, and something that can grow into a real [platform](/platforms) — not a template everyone else is using. But the right answer is the one that fits *your* goals, budget, and how you'll run the site. If you're not sure, that's exactly the conversation to have with our [services](/services) team — before anyone writes a line of code.`,
   },
 ];

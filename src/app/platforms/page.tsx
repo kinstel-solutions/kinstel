@@ -154,6 +154,13 @@ export default function PlatformsPage() {
                 full web apps — engineered in modern code, built to scale, and
                 designed to convert. If you can describe it, we can build it.
               </p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Just need a website?{" "}
+                <Link href="/services" className="underline hover:text-accent">
+                  See our web design & marketing services
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>
@@ -226,13 +233,20 @@ export default function PlatformsPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="https://www.theblissfulstation.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 font-semibold text-accent hover:underline">
-                  Visit the live platform →
-                </Link>
+                <div className="mt-4 flex flex-wrap items-center gap-4">
+                  <Link
+                    href="https://www.theblissfulstation.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-accent hover:underline">
+                    Visit the live platform →
+                  </Link>
+                  <Link
+                    href="/work/blissful-station"
+                    className="font-semibold text-accent hover:underline">
+                    Read the full case study →
+                  </Link>
+                </div>
               </div>
             </Card>
           </div>

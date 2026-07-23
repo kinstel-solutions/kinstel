@@ -138,8 +138,15 @@ export default function AboutPage() {
                 Kinstel Solutions is an AI-native web design, development, and
                 marketing studio based in Lucknow, working with businesses
                 across India and around the world. We design and build
-                high-performing websites and custom platforms — then run the
-                marketing that grows them.
+                high-performing websites and{" "}
+                <Link href="/platforms" className="underline hover:text-accent">
+                  custom platforms
+                </Link>{" "}
+                — then run{" "}
+                <Link href="/services" className="underline hover:text-accent">
+                  the marketing
+                </Link>{" "}
+                that grows them.
               </p>
             </div>
           </div>
@@ -214,6 +221,12 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Related:{" "}
+              <Link href="/work" className="underline hover:text-accent">
+                See our work
+              </Link>
+            </p>
           </div>
         </section>
 

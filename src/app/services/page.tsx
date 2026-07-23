@@ -160,8 +160,19 @@ export default function ServicesPage() {
                 Our <span className="text-accent">Services</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Comprehensive digital solutions designed to help your business grow. 
+                Comprehensive digital solutions designed to help your business grow.
                 From design to deployment, we've got you covered.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Need something beyond a website? See our{" "}
+                <Link href="/platforms" className="underline hover:text-accent">
+                  custom platforms & applications
+                </Link>
+                , or browse{" "}
+                <Link href="/work" className="underline hover:text-accent">
+                  our recent work
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -262,7 +273,11 @@ export default function ServicesPage() {
               Need a Custom Solution?
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-              We understand that every business is unique. Contact us to discuss your specific requirements and get a tailored quote.
+              We understand that every business is unique.{" "}
+              <Link href="/contact" className="underline hover:opacity-80">
+                Contact us
+              </Link>{" "}
+              to discuss your specific requirements and get a tailored quote.
             </p>
              <SmartCtaButton 
                 variant="secondary" 

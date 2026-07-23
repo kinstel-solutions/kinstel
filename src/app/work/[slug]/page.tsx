@@ -234,6 +234,16 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   Get a Free Consultation
                 </SmartCtaButton>
               </div>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Related:{" "}
+                <Link href="/services" className="underline hover:text-accent">
+                  Our Services
+                </Link>{" "}
+                &middot;{" "}
+                <Link href="/platforms" className="underline hover:text-accent">
+                  Custom Platforms
+                </Link>
+              </p>
             </div>
           </div>
         </section>
