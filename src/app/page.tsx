@@ -30,6 +30,8 @@ import {
   DynamicIslandDemo,
   StripeBgGuides,
 } from "@/components/home-client-components";
+import { JsonLd } from "@/components/seo/json-ld";
+import { localBusinessJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Kinstel | Web Design & Digital Marketing Agency",
@@ -207,6 +209,7 @@ const defaultPortfolioItems = [
 export default function Home() {
   return (
     <div className="flex flex-col gap-8 py-4">
+      <JsonLd data={localBusinessJsonLd} />
       <StripeBgGuides
         columnCount={8}
         animated={true}

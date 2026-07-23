@@ -8,6 +8,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
+import { JsonLd } from "@/components/seo/json-ld";
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Law Firm Marketing & Website Development",
+  provider: {
+    "@type": "Organization",
+    name: "Kinstel Solutions",
+  },
+  areaServed: ["India", "Worldwide"],
+};
 
 export const metadata: Metadata = {
   title: "Law Firm Website Design & Marketing",
@@ -98,6 +110,7 @@ const lawyerPortfolioItems = [
 export default function LawyersPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={serviceJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}

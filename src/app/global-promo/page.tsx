@@ -47,6 +47,7 @@ import {
   MothersDayPromo,
   PromoEmailCta,
 } from "./client-components";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Get Your Free Website Audit — Premium Web Design | Kinstel",
@@ -232,11 +233,36 @@ const testimonials = [
   },
 ];
 
+// Plain-text mirror of `faqItems` above (first item contains JSX for
+// dynamic currency display) — JSON-LD requires plain text. Amount reflects
+// the base INR value used in the source data (DynamicPrice amount prop).
+const faqPlainTextAnswers = [
+  "We analyze your current website (or your competitor's if you don't have one yet) across performance, SEO, design, and conversion metrics. You'll receive a detailed report with actionable recommendations — completely free, no strings attached. The audit alone is valued at over ₹30,000.",
+  "Standard websites are delivered within 7-10 working days. Complex projects like SaaS platforms or large e-commerce stores typically take 3-6 weeks, depending on scope.",
+  "Absolutely. We actively serve clients in Australia, the US, UK, and Canada. We're experienced in cross-timezone collaboration and use modern project management tools to keep everything seamless.",
+  "We build exclusively with Next.js and React — the same stack used by Netflix, Notion, and Vercel. No WordPress, no Wix, no page builders. Every site is hand-coded for maximum performance.",
+  "We provide 3 months of free post-launch support — bug fixes, content updates, and performance monitoring. After that, we offer affordable maintenance plans to keep your site evolving.",
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((faq, index) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faqPlainTextAnswers[index],
+    },
+  })),
+};
+
 /* ─── PAGE ─── */
 
 export default function GlobalPromoPage() {
   return (
     <div className="flex flex-col w-full">
+      <JsonLd data={faqJsonLd} />
       <PromoHeader />
 
       <main className="flex-grow">

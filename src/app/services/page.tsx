@@ -14,6 +14,18 @@ import {
 import { Check, Palette, Smartphone, LineChart, Code, Shield } from "lucide-react";
 import Link from "next/link";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
+import { JsonLd } from "@/components/seo/json-ld";
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Web Design & Digital Marketing",
+  provider: {
+    "@type": "Organization",
+    name: "Kinstel Solutions",
+  },
+  areaServed: ["India", "Worldwide"],
+};
 
 export const metadata: Metadata = {
   title: "Services | Web Design & Digital Marketing",
@@ -137,6 +149,7 @@ const pricingPackages = [
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <JsonLd data={serviceJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}

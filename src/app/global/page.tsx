@@ -56,6 +56,7 @@ import {
 import { InquiryForm } from "@/components/sections/inquiry-form";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { PortfolioGridSequential, StatsGridSequential } from "./client-components";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Premium Global Website Design Company",
@@ -307,9 +308,45 @@ const portfolioItems = [
   },
 ];
 
+// Plain-text mirror of `faqs` above (which contains JSX for dynamic currency
+// display) — JSON-LD requires plain text. Amounts reflect the base INR
+// pricing used in the source data (DynamicPrice amount props).
+const faqPlainTextAnswers = [
+  "Our starting package (from ₹14,999) is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.",
+  "It means you don't pay a single rupee to start your Consult. We perform a Free Digital Audit first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
+  "Standard websites are usually delivered within 7 to 10 working days, depending on the complexity and how quickly we receive content from your side.",
+  "Yes, every website we build is optimized for search engines from the ground up. We target a 95+ SEO score on Google PageSpeed Insights to ensure you rank well globally.",
+  "Absolutely. We provide 3 months of support. We ensure your website stays updated, secure, and performs optimally long after the launch.",
+];
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Web Design & Development",
+  provider: {
+    "@type": "Organization",
+    name: "Kinstel Solutions",
+  },
+  areaServed: "Worldwide",
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq, index) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faqPlainTextAnswers[index],
+    },
+  })),
+};
+
 export default function GlobalPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
+      <JsonLd data={[serviceJsonLd, faqJsonLd]} />
       <GlobalHeader />
       <main className="flex-grow">
         {/* Hero Section */}

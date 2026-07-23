@@ -13,6 +13,7 @@ import {
   Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter,
 } from "@/components/ui/card";
 import { TimeBasedCallButton } from "@/components/ui/time-based-call-button";
+import { JsonLd } from "@/components/seo/json-ld";
 
 const InquiryForm = dynamic(
   () => import("@/components/sections/inquiry-form").then((mod) => mod.InquiryForm),
@@ -194,10 +195,24 @@ function MidPageCta() {
   );
 }
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 /* ─── PAGE ─── */
 export default function HighTicketLandingPage() {
   return (
     <div className="flex flex-col w-full">
+      <JsonLd data={faqJsonLd} />
 
       {/* ═══════ S1: HERO ═══════ */}
       <section className="relative overflow-hidden min-h-[85dvh] flex items-center">

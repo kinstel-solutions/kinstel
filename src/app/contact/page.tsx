@@ -4,6 +4,8 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ClickToCallLink } from "@/components/ui/click-to-call-link";
+import { JsonLd } from "@/components/seo/json-ld";
+import { localBusinessJsonLd } from "@/lib/schema";
 
 const InquiryForm = dynamic(() => import("@/components/sections/inquiry-form").then(mod => mod.InquiryForm), {
   ssr: true,
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={localBusinessJsonLd} />
       <Header />
       <main className="flex-grow container mx-auto px-4 md:px-6 py-2">
         <div className="max-w-4xl mx-auto text-center">

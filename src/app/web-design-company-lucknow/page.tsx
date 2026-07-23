@@ -65,6 +65,7 @@ import { TrackedLink } from "@/components/ui/tracked-link";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow",
@@ -347,9 +348,37 @@ const portfolioItems = [
     link: "https://www.edgrowth.info/",
   },
 ];
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Web Design & Development",
+  provider: {
+    "@type": "Organization",
+    name: "Kinstel Solutions",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Lucknow",
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
+      <JsonLd data={[serviceJsonLd, faqJsonLd]} />
       {/* <DotPattern
        
         width={20}
