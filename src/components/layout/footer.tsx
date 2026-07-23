@@ -90,9 +90,9 @@ export function Footer() {
                 Pricing & Packages
               </Link>
               <Link
-                href="/#portfolio"
+                href="/work"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
-                Portfolio
+                Work
               </Link>
               <Link
                 href="/contact"
