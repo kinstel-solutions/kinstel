@@ -85,6 +85,11 @@ export function Footer() {
                 Free Website Audit
               </Link>
               <Link
+                href="/tools"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Free Tools
+              </Link>
+              <Link
                 href="/quote"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Get a Quote
