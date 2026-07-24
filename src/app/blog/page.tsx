@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Straight-talking articles on web design, development, and marketing from Kinstel Solutions — pricing, platform choices, and what actually drives results.",
   alternates: {
     canonical: "/blog",
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 

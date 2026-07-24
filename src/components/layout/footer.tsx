@@ -120,6 +120,12 @@ export function Footer() {
                 Blog
               </Link>
               <Link
+                href="/feed.xml"
+                className="block py-2 sm:py-0 text-xs text-muted-foreground/70 hover:text-foreground"
+                aria-label="Blog RSS feed">
+                RSS
+              </Link>
+              <Link
                 href="/contact"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Contact
