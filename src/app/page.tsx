@@ -11,6 +11,9 @@ import {
   ArrowUpRight,
   Code,
   ShoppingBag,
+  Gauge,
+  Calculator,
+  Wrench,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -204,6 +207,30 @@ const defaultPortfolioItems = [
       "Modern UI",
     ],
     link: "https://www.edgrowth.info/",
+  },
+];
+
+const defaultFreeTools = [
+  {
+    icon: <Gauge className="h-8 w-8 text-accent" />,
+    title: "Free Website Audit",
+    description:
+      "See your site's real speed, SEO & performance scores in seconds.",
+    link: "/website-audit",
+  },
+  {
+    icon: <Calculator className="h-8 w-8 text-accent" />,
+    title: "Instant Quote",
+    description:
+      "Get a ballpark price for your project in a couple of clicks.",
+    link: "/quote",
+  },
+  {
+    icon: <Wrench className="h-8 w-8 text-accent" />,
+    title: "Free Calculators",
+    description:
+      "Website ROI, Google Ads budget, and Next.js-vs-WordPress — free tools to plan smarter.",
+    link: "/tools",
   },
 ];
 
@@ -439,6 +466,58 @@ export default function Home() {
                   size="lg">
                   Get Your Free Consultation
                 </SmartCtaButton>
+              </div>
+            </div>
+          </section>
+
+          {/* Free Tools Section */}
+          <section
+            id="free-tools"
+            className="py-12 md:py-24 lg:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="font-semibold uppercase tracking-wider text-accent">
+                  Free Tools
+                </p>
+                <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                  Try Before You{" "}
+                  <span className="text-accent">Talk to Us</span>
+                </h2>
+                <p className="mt-6 text-lg text-muted-foreground">
+                  Free, no-strings tools to see where you stand and plan your
+                  project.
+                </p>
+              </div>
+              <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+                {defaultFreeTools.map((tool, index) => (
+                  <Link
+                    key={index}
+                    href={tool.link}
+                    className="block h-full">
+                    <Card
+                      className="group flex h-full flex-col text-left p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg animate-in fade-in slide-in-from-bottom-5"
+                      style={{
+                        animationDelay: `${index * 150}ms`,
+                        animationFillMode: "backwards",
+                      }}>
+                      <CardHeader className="p-0">
+                        <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                          {tool.icon}
+                        </div>
+                        <CardTitle className="text-2xl font-headline tracking-wide leading-tight">
+                          {tool.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex flex-1 flex-col p-0 mt-4">
+                        <CardDescription>{tool.description}</CardDescription>
+                        <span className="mt-auto pt-6 flex items-center text-sm font-semibold text-accent">
+                          Try it now{" "}
+                          <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
               </div>
             </div>
           </section>
