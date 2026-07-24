@@ -1,0 +1,30 @@
+
+i want you to do a detailed(exhaustive: leave no leaf unturned) audit of the digital presence(local, global, etc.) of Kinstel Solutions. I have a context.txt file in the root folder with info(website, GBP, NAP, etc.). I want you to find the current digital footprint, strengths and weaknesses, what it represents(who or what Kinstel Solutions is and what they do, according to the digital footprint, for search engines, SEO, AEO, GEO, bots, crawlers, etc.), etc. Then 1. finding/report, 2. all issues in current, 3. I need you to grill me to formulate a strategy. 4. Document the top 2 pathways/strategies. 5. Create a 3-phase detailed roadmap/execution plan with a step-by-step guide for each phase in separate files.
+You can install, configure, and use any tools, MCP, etc., required for the task.
+
+So first tell me how you plan to do it.
+
+INFO:
+business name - kinstel solutions
+website - kinstel.com
+GBP - https://share.google/zwMIBKEFPGINt7VsU
+
+Email
+contact@kinstel.com
+Phone
++91 98899 88408
+Billing & Admin
+Raj Shekhar Singh
+
++91 94153 15450
+Registered Office
+Kinstel Solutions H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1, Gomtinagar, Lucknow, Uttar Pradesh, 226010.
+
+Legal Identity
+Registered Entity: Kinstel Solutions
+
+UDYAM: UDYAM-UP-50-0230220
+
+IEC: HLCPS8014Q
+
+D-U-N-S®: 77-197-4415

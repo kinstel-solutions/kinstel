@@ -236,8 +236,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q • D-U-N-S®: 77-197-4415</p>
+        <div className="mt-12 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
+          <div className="mb-3 flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-muted-foreground/80">
+            <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">UDYAM: UDYAM-UP-50-0230220</span>
+            <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">IEC: HLCPS8014Q</span>
+            <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">D-U-N-S®: 77-197-4415</span>
+          </div>
           <p>Copyright &copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>
