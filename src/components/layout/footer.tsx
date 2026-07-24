@@ -120,6 +120,11 @@ export function Footer() {
                 Contact
               </Link>
               <Link
+                href="/faq"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                FAQ
+              </Link>
+              <Link
                 href="/pay"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Quick Pay

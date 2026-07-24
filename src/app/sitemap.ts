@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/website-audit', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/quote', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/faq', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/tools', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/tools/website-roi-calculator', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/tools/nextjs-vs-wordpress', priority: 0.6, changeFrequency: 'monthly' },
