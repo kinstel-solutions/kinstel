@@ -15,6 +15,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { StudioOverview } from "@/components/studio/studio-overview";
 
 // Internal tool — must never be indexed or crawled.
 export const metadata: Metadata = {
@@ -80,6 +81,9 @@ export default function StudioPage() {
 
         <section className="pb-16 md:pb-24">
           <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto max-w-5xl">
+              <StudioOverview />
+            </div>
             <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
               {studioTools.map((tool) => (
                 <Link
