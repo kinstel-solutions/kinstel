@@ -16,6 +16,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { StudioOverview } from "@/components/studio/studio-overview";
+import { StudioBackup } from "@/components/studio/studio-backup";
 
 // Internal tool — must never be indexed or crawled.
 export const metadata: Metadata = {
@@ -111,6 +112,10 @@ export default function StudioPage() {
                   </Card>
                 </Link>
               ))}
+            </div>
+
+            <div className="mx-auto mt-6 max-w-5xl">
+              <StudioBackup />
             </div>
           </div>
         </section>
