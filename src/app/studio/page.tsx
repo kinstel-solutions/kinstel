@@ -1,6 +1,12 @@
 import { type Metadata } from "next";
 import Link from "next/link";
-import { FileText, FileSignature, KanbanSquare, ArrowRight } from "lucide-react";
+import {
+  FileText,
+  FileSignature,
+  KanbanSquare,
+  ArrowRight,
+  IndianRupee,
+} from "lucide-react";
 
 import {
   Card,
@@ -40,6 +46,13 @@ const studioTools = [
     title: "Lead Tracker",
     description:
       "Kanban board for tracking leads from New through Contacted, Quoted, Won, or Lost. Data stays on this device only.",
+  },
+  {
+    href: "/studio/retainers",
+    icon: <IndianRupee className="h-7 w-7 text-accent" />,
+    title: "Retainers & MRR",
+    description:
+      "Track recurring client retainers, monthly recurring revenue, and upcoming billing renewals. Data stays on this device only.",
   },
   // Add more internal Kinstel Studio tools here as they are built.
 ];
