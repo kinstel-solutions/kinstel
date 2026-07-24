@@ -130,6 +130,11 @@ export function Footer() {
                 FAQ
               </Link>
               <Link
+                href="/compare"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Compare Options
+              </Link>
+              <Link
                 href="/pay"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Quick Pay
