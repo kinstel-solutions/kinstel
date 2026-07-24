@@ -24,7 +24,7 @@ const serviceJsonLd = {
 export const metadata: Metadata = {
   title: "Law Firm Website Design & Marketing",
   description:
-    "Kinstel empowers lawyers and law firms to elevate their practice with custom website development, proven SEO, and legally compliant marketing.",
+    "Conversion-focused websites and marketing for law firms — part of the work Kinstel Solutions does for businesses across industries.",
   keywords: [
     "law firm marketing firm",
     "legal marketing firm",

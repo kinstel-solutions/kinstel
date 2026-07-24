@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Premium Global Website Design Company | Kinstel",
     description:
       "Top Tier Web Designers. Get Affordable Premium Web Design. SEO-Ready, Mobile-Friendly, Free Digital Consult.",
-    url: "https://kinstel.com/global",
+    url: "https://www.kinstel.com/global",
     siteName: "Kinstel",
     type: "website",
   },

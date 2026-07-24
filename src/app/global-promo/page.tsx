@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Get Your Free Website Audit — Premium Web Design | Kinstel",
     description:
       "Stop losing clients to a bad website. Free Website Audit + Strategy Session from Kinstel.",
-    url: "https://kinstel.com/global-promo",
+    url: "https://www.kinstel.com/global-promo",
     siteName: "Kinstel",
     type: "website",
   },
