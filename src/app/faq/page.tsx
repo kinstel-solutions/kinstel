@@ -88,6 +88,16 @@ const faqs: {
       "Modern, high-performance code — Next.js, React, and TypeScript — not templates. That means faster sites, better SEO, and a foundation that scales. See Next.js vs WordPress.",
   },
   {
+    question: "What does an AI-native workflow mean for my business?",
+    answer: (
+      <>
+        AI doesn't replace our engineering craft — it accelerates it. By leveraging modern AI dev tools, our team builds sub-second Next.js applications and ad funnels in days rather than months, delivering enterprise-grade quality at a fraction of traditional agency costs.
+      </>
+    ),
+    plainText:
+      "AI doesn't replace our engineering craft — it accelerates it. By leveraging modern AI dev tools, our team builds sub-second Next.js applications and ad funnels in days rather than months, delivering enterprise-grade quality at a fraction of traditional agency costs.",
+  },
+  {
     question: "Do you work with clients outside India?",
     answer: (
       <>

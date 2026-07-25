@@ -97,9 +97,9 @@ const globalStats = [
       />
     ),
     value: "95+",
-    label: "Performance & SEO Scores",
+    label: "Performance Score",
     description:
-      "Beat the competition with lightning-fast, SEO-ready websites.",
+      "Sub-second load times guaranteed with modern Next.js engineering.",
   },
   {
     icon: (
@@ -108,9 +108,9 @@ const globalStats = [
         aria-hidden="true"
       />
     ),
-    value: "Free Digital Consult",
-    label: "Free Consultation",
-    description: "Get your Digital Audit Now. No booking fees.",
+    value: "45+",
+    label: "Projects Delivered",
+    description: "Across custom web apps, platforms & growth campaigns.",
   },
   {
     icon: (
@@ -119,10 +119,10 @@ const globalStats = [
         aria-hidden="true"
       />
     ),
-    value: "3 Months",
-    label: "Free Support Included",
+    value: "3–5 Days",
+    label: "Rapid Delivery",
     description:
-      "Post-launch support to keep your site updated, secure & fast.",
+      "Rapid turnaround without cutting corners — most sites live in under a week.",
   },
 ];
 
@@ -203,7 +203,7 @@ const faqs = [
     question: "What is included in the starting package?",
     answer: (
       <>
-        Our starting package (from <DynamicPrice amount={14999} />) is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.
+        Our starting package (from <DynamicPrice amount={25000} />) is a comprehensive starter kit including a custom-designed Next.js website (3-5 pages), mobile optimization, 95+ PageSpeed performance, basic SEO, and hosting setup. Perfect for growing businesses wanting a high-converting web presence.
       </>
     ),
   },
@@ -218,7 +218,7 @@ const faqs = [
   {
     question: "How long does it take to deliver the website?",
     answer:
-      "Standard websites are usually delivered within 7 to 10 working days, depending on the complexity and how quickly we receive content from your side.",
+      "Standard websites are usually delivered within 3 to 5 working days, depending on the complexity and how quickly we receive content from your side.",
   },
   {
     question: "Will my website be SEO-friendly?",
@@ -312,9 +312,9 @@ const portfolioItems = [
 // display) — JSON-LD requires plain text. Amounts reflect the base INR
 // pricing used in the source data (DynamicPrice amount props).
 const faqPlainTextAnswers = [
-  "Our starting package (from ₹14,999) is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.",
+  "Our starting package (from ₹25,000) is a comprehensive starter kit including a custom-designed Next.js website (3-5 pages), mobile optimization, 95+ PageSpeed performance, basic SEO, and hosting setup. Perfect for growing businesses wanting a high-converting web presence.",
   "It means you don't pay a single rupee to start your Consult. We perform a Free Digital Audit first. You only pay once you are 100% satisfied with the work. No booking fees, no hidden charges.",
-  "Standard websites are usually delivered within 7 to 10 working days, depending on the complexity and how quickly we receive content from your side.",
+  "Standard websites are usually delivered within 3 to 5 working days, depending on the complexity and how quickly we receive content from your side.",
   "Yes, every website we build is optimized for search engines from the ground up. We target a 95+ SEO score on Google PageSpeed Insights to ensure you rank well globally.",
   "Absolutely. We provide 3 months of support. We ensure your website stays updated, secure, and performs optimally long after the launch.",
 ];
@@ -612,7 +612,7 @@ export default function GlobalPage() {
                   <TableRow>
                     <TableCell className="font-medium">Delivery Time</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold">
-                      7-10 Days
+                      3–5 Days
                     </TableCell>
                     <TableCell className="text-center">Unpredictable</TableCell>
                     <TableCell className="text-center">4-6 Weeks</TableCell>

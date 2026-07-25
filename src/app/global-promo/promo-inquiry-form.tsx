@@ -172,7 +172,7 @@ export function PromoInquiryForm({
         <CardDescription className="text-center mt-1">
           {isHero
             ? "Tell us what you need — we'll show you how to get there."
-            : "Complete the form below to secure your 20% Mother's Day discount."}
+            : "Complete the form below to secure your 20% Special Studio Growth discount."}
         </CardDescription>
       </CardHeader>
       <CardContent>

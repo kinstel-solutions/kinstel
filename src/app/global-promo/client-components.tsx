@@ -48,15 +48,16 @@ export function PromoHeader() {
    ═══════════════════════════════════════════════════════════ */
 
 export function MothersDayPromo() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({ days: 3, hours: 14, minutes: 22, seconds: 45 });
 
   useEffect(() => {
-    // Mother's Day 2026: May 10
-    const targetDate = new Date("2026-05-10T00:00:00").getTime();
+    // Dynamic rolling 3-day countdown
+    const now = new Date();
+    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 3, 23, 59, 59).getTime();
 
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
+      const current = new Date().getTime();
+      const difference = targetDate - current;
 
       if (difference > 0) {
         setTimeLeft({
@@ -65,8 +66,6 @@ export function MothersDayPromo() {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         });
-      } else {
-        clearInterval(timer);
       }
     }, 1000);
 
@@ -85,11 +84,11 @@ export function MothersDayPromo() {
   };
 
   return (
-    <div className="mt-8 p-4 rounded-2xl border border-pink-500/20 bg-pink-500/5 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="mt-8 p-4 rounded-2xl border border-accent/20 bg-accent/5 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-col items-center md:items-start">
-          <p className="text-sm font-bold text-pink-500 uppercase tracking-widest mb-1">
-            🌸 Mother&apos;s Day Special
+          <p className="text-sm font-bold text-accent uppercase tracking-widest mb-1">
+            ⚡ Special Studio Growth Offer
           </p>
           <div className="flex gap-3">
             {[

@@ -207,7 +207,7 @@ const packageFeatures = [
   },
   {
     icon: <Timer className="h-5 w-5 text-accent" />,
-    text: "Fast Delivery (Within 7-10 Days)",
+    text: "Fast Delivery (Within 3–5 Days)",
   },
   {
     icon: <MousePointer2 className="h-5 w-5 text-accent" />,
@@ -247,9 +247,9 @@ const industries = [
 
 const faqs = [
   {
-    question: "What is included in the ₹9999 package?",
+    question: "What is included in the ₹25,000 Starter package?",
     answer:
-      "Our ₹9999 package is a comprehensive starter kit including a custom-designed professional website(2-3 pages maximum), mobile optimization, basic SEO, hosting setup. It's perfect for small businesses looking for a basic online presence.",
+      "Our ₹25,000 Starter package includes a custom-designed Next.js website (3-5 pages), mobile optimization, 95+ PageSpeed performance, basic SEO, and hosting setup. Perfect for growing businesses wanting a high-converting web presence.",
   },
   {
     question: "What does 'Free Demo (Zero Upfront Cost)' mean?",
@@ -259,7 +259,7 @@ const faqs = [
   {
     question: "How long does it take to deliver the website?",
     answer:
-      "Standard websites are usually delivered within 7 to 10 working days, depending on the complexity and how quickly we receive content from your side.",
+      "Standard websites are usually delivered within 3 to 5 working days, depending on the complexity and how quickly we receive content from your side.",
   },
   {
     question: "Will my website be SEO-friendly?",
@@ -650,7 +650,7 @@ export default function LucknowPage() {
                     <div className="flex justify-between text-sm py-2 border-b border-border/50">
                       <span className="text-muted-foreground">Delivery</span>
                       <span className="font-semibold text-foreground">
-                        7-10 Days
+                        3–5 Days
                       </span>
                     </div>
                     <div className="flex justify-between text-sm py-2 border-b border-border/50">
@@ -939,7 +939,7 @@ export default function LucknowPage() {
                   <TableRow>
                     <TableCell className="font-medium">Delivery Time</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold">
-                      7-10 Days
+                      3–5 Days
                     </TableCell>
                     <TableCell className="text-center">Unpredictable</TableCell>
                     <TableCell className="text-center">4-6 Weeks</TableCell>
