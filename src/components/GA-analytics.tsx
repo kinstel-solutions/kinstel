@@ -8,16 +8,10 @@ import { GA_TRACKING_ID, pageview } from '@/lib/gtag'
 export default function GoogleAnalytics() {
   const pathname = usePathname()
 
-  // send initial pageview + subsequent route changes
+  // send pageview on initial load + subsequent route changes (exactly once each)
   useEffect(() => {
     if (!GA_TRACKING_ID) return
     pageview(window.location.pathname + window.location.search)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []) // run once on mount
-
-  useEffect(() => {
-    if (!GA_TRACKING_ID) return
-    pageview(pathname)
   }, [pathname])
 
   if (!GA_TRACKING_ID) return null
@@ -40,7 +34,7 @@ export default function GoogleAnalytics() {
             function gtag(){dataLayer.push(arguments);}
             window.gtag = window.gtag || gtag;
             gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', { page_path: window.location.pathname });
+            gtag('config', '${GA_TRACKING_ID}', { page_path: window.location.pathname, send_page_view: false });
         `,
         }}
       />

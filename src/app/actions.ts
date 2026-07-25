@@ -4,6 +4,10 @@ import { Resend } from 'resend';
 import { inquirySchema, type InquiryFormValues } from '@/app/inquiry-schema';
 import InquiryNotificationEmail from '@/emails/inquiry-notification-email';
 import UserConfirmationEmail from '@/emails/user-confirmation-email';
+import { auditLeadSchema, type AuditLeadValues } from '@/app/audit-schema';
+import AuditLeadNotificationEmail from '@/emails/audit-lead-notification-email';
+import { quoteLeadSchema, type QuoteLeadValues } from '@/app/quote-schema';
+import QuoteLeadNotificationEmail from '@/emails/quote-lead-notification-email';
 
 const fromEmail = process.env.EMAIL_FROM;
 const toEmails = process.env.EMAIL_TO?.split(',') || [];
@@ -70,4 +74,82 @@ export async function submitInquiryAction(data: InquiryFormValues) {
     console.error('Error submitting inquiry:', error);
     return { success: false, message: 'Something went wrong on our end. Please try again later.' };
   }
+}
+
+/**
+ * Captures a lead from the free Website Audit tool. This is best-effort:
+ * the audit itself should still run and render for the user even if the
+ * notification email fails to send (e.g. missing Resend config locally).
+ */
+export async function submitAuditLead(data: AuditLeadValues) {
+  const parsed = auditLeadSchema.safeParse(data);
+
+  if (!parsed.success) {
+    const errorMessages = parsed.error.issues.map(issue => issue.message).join(', ');
+    return { success: false, message: `Invalid input: ${errorMessages}` };
+  }
+
+  if (!process.env.RESEND_API_KEY || !fromEmail || toEmails.length === 0) {
+    console.error('Missing email environment variables; skipping audit lead notification.');
+    // Don't block the audit tool just because email isn't configured.
+    return { success: true, message: 'Lead captured (email notification skipped).' };
+  }
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const result = await resend.emails.send({
+      from: fromEmail,
+      to: toEmails,
+      subject: `New Website Audit lead: ${parsed.data.url}`,
+      react: AuditLeadNotificationEmail(parsed.data),
+    });
+
+    if (result.error) {
+      console.error('Failed to send audit lead notification email:', result.error);
+    }
+  } catch (error) {
+    console.error('Error submitting audit lead:', error);
+  }
+
+  // Always resolve successfully so the audit report still renders for the user.
+  return { success: true, message: 'Lead captured.' };
+}
+
+/**
+ * Captures a lead from the interactive Quote Builder tool. Best-effort, like
+ * the audit lead: the result screen should still render for the user even if
+ * the notification email fails to send. Only the soft {low, high} range is
+ * ever passed in — never a full itemized breakdown.
+ */
+export async function submitQuoteLead(data: QuoteLeadValues) {
+  const parsed = quoteLeadSchema.safeParse(data);
+
+  if (!parsed.success) {
+    const errorMessages = parsed.error.issues.map(issue => issue.message).join(', ');
+    return { success: false, message: `Invalid input: ${errorMessages}` };
+  }
+
+  if (!process.env.RESEND_API_KEY || !fromEmail || toEmails.length === 0) {
+    console.error('Missing email environment variables; skipping quote lead notification.');
+    return { success: true, message: 'Lead captured (email notification skipped).' };
+  }
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const result = await resend.emails.send({
+      from: fromEmail,
+      to: toEmails,
+      subject: `New Quote Builder lead: ${parsed.data.name}`,
+      react: QuoteLeadNotificationEmail(parsed.data),
+    });
+
+    if (result.error) {
+      console.error('Failed to send quote lead notification email:', result.error);
+    }
+  } catch (error) {
+    console.error('Error submitting quote lead:', error);
+  }
+
+  // Always resolve successfully so the result screen still renders for the user.
+  return { success: true, message: 'Lead captured.' };
 }

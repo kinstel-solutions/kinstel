@@ -8,11 +8,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
+import { JsonLd } from "@/components/seo/json-ld";
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Law Firm Marketing & Website Development",
+  provider: {
+    "@type": "Organization",
+    name: "Kinstel Solutions",
+  },
+  areaServed: ["India", "Worldwide"],
+};
 
 export const metadata: Metadata = {
-  title: "Kinstel | Premier Law Firm Marketing Firm for Legal Growth",
+  title: "Law Firm Website Design & Marketing",
   description:
-    "Kinstel empowers lawyers and law firms to elevate their practice with custom website development, proven SEO, and legally compliant marketing.",
+    "Conversion-focused websites and marketing for law firms — part of the work Kinstel Solutions does for businesses across industries.",
   keywords: [
     "law firm marketing firm",
     "legal marketing firm",
@@ -20,26 +32,29 @@ export const metadata: Metadata = {
     "law firm website development",
     "law firm seo",
   ],
+  alternates: {
+    canonical: "/law-firm-marketing",
+  },
 };
 
 const lawyerStats = [
   {
     icon: <Zap className="h-8 w-8 text-accent" />,
-    value: "98%",
+    value: "95+",
     label: "Page Speed Score",
     description: "Blazing-fast load times to keep potential clients engaged.",
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
-    value: "150+",
-    label: "Law Firms Served",
+    value: "10+",
+    label: "Clients Served",
     description:
       "Trusted by legal professionals across various practice areas.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
-    value: "300%",
-    label: "Avg. Lead Increase",
+    value: "3–5 Day",
+    label: "Delivery",
     description: "Our conversion-focused designs deliver measurable results.",
   },
 ];
@@ -95,6 +110,7 @@ const lawyerPortfolioItems = [
 export default function LawyersPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={serviceJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -102,10 +118,14 @@ export default function LawyersPage() {
           <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
             <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
-                Expert <span className="text-accent">Legal Marketing</span> for Law Firms
+                Websites &amp; <span className="text-accent">Marketing</span> for Law Firms
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                As a specialized law marketing firm, we focus on law firm website development and SEO for lawyers. We blend professional design with performance to make your practice stand out.
+                We design conversion-focused websites and run the marketing that brings law firms qualified enquiries — part of the{" "}
+                <Link href="/services" className="underline hover:text-accent">
+                  work we do for businesses across industries
+                </Link>
+                .
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
                 <Button asChild size="lg" className="h-12 px-8 text-lg">
@@ -241,6 +261,16 @@ export default function LawyersPage() {
                 </Link>
               ))}
             </div>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Related:{" "}
+              <Link href="/work" className="underline hover:text-accent">
+                See more case studies
+              </Link>{" "}
+              &middot;{" "}
+              <Link href="/contact" className="underline hover:text-accent">
+                Get in touch
+              </Link>
+            </p>
           </div>
         </section>
 

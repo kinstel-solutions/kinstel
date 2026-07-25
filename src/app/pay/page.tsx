@@ -11,6 +11,10 @@ import { Suspense } from 'react';
 export const metadata: Metadata = {
   title: 'Quick Pay - Kinstel Solutions',
   description: 'Make instant payments to Kinstel Solutions securely. Fast payment processing for your invoices.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 /**

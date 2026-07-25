@@ -65,9 +65,10 @@ import { TrackedLink } from "@/components/ui/tracked-link";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Leading Website Design Company in Lucknow | Kinstel",
+  title: "Leading Website Design Company in Lucknow",
   description:
     "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Demo (Zero Upfront Cost). Schedule a consultation today!",
   keywords: [
@@ -78,6 +79,9 @@ export const metadata: Metadata = {
     "best website designing company in lucknow",
     "seo company lucknow",
   ],
+  alternates: {
+    canonical: "/web-design-company-lucknow",
+  },
 };
 
 const lucknowStats = [
@@ -344,9 +348,37 @@ const portfolioItems = [
     link: "https://www.edgrowth.info/",
   },
 ];
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Web Design & Development",
+  provider: {
+    "@type": "Organization",
+    name: "Kinstel Solutions",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Lucknow",
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
+      <JsonLd data={[serviceJsonLd, faqJsonLd]} />
       {/* <DotPattern
        
         width={20}
@@ -709,6 +741,16 @@ export default function LucknowPage() {
                 <Link href="/services">Explore All Services</Link>
               </Button>
             </div>
+            <p className="mt-6 text-center text-sm text-muted-foreground">
+              Related:{" "}
+              <Link href="/packages" className="underline hover:text-accent">
+                View Packages
+              </Link>{" "}
+              &middot;{" "}
+              <Link href="/contact" className="underline hover:text-accent">
+                Contact Us
+              </Link>
+            </p>
           </div>
         </section>
 

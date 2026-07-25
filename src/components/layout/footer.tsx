@@ -75,6 +75,31 @@ export function Footer() {
             <div className="grid gap-2">
               <h3 className="font-semibold">Company</h3>
               <Link
+                href="/about"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                About
+              </Link>
+              <Link
+                href="/website-audit"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Free Website Audit
+              </Link>
+              <Link
+                href="/industries"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Industries
+              </Link>
+              <Link
+                href="/tools"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Free Tools
+              </Link>
+              <Link
+                href="/quote"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Get a Quote
+              </Link>
+              <Link
                 href="/global-promo"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Global
@@ -85,14 +110,35 @@ export function Footer() {
                 Pricing & Packages
               </Link>
               <Link
-                href="/#portfolio"
+                href="/work"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
-                Portfolio
+                Work
+              </Link>
+              <Link
+                href="/blog"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Blog
+              </Link>
+              <Link
+                href="/feed.xml"
+                className="block py-2 sm:py-0 text-xs text-muted-foreground/70 hover:text-foreground"
+                aria-label="Blog RSS feed">
+                RSS
               </Link>
               <Link
                 href="/contact"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Contact
+              </Link>
+              <Link
+                href="/faq"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                FAQ
+              </Link>
+              <Link
+                href="/compare"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Compare Options
               </Link>
               <Link
                 href="/pay"
@@ -131,6 +177,11 @@ export function Footer() {
                 href="/services"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 SEO & Marketing
+              </Link>
+              <Link
+                href="/platforms"
+                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
+                Custom Platforms
               </Link>
             </div>
             <div className="grid gap-2">
@@ -185,8 +236,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p className="mb-2 text-xs opacity-70">Udyam: UDYAM-UP-50-0230220 • IEC: HLCPS8014Q • D-U-N-S®: 77-197-4415</p>
+        <div className="mt-12 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
+          <div className="mb-3 flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-muted-foreground/80">
+            <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">UDYAM: UDYAM-UP-50-0230220</span>
+            <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">IEC: HLCPS8014Q</span>
+            <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">D-U-N-S®: 77-197-4415</span>
+          </div>
           <p>Copyright &copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>

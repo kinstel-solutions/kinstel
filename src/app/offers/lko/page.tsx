@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     "best web design company in lucknow",
     "premium web design lucknow",
   ],
+  alternates: {
+    canonical: "/offers/lko",
+  },
 };
 
 const features = [

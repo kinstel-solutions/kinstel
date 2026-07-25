@@ -9,15 +9,55 @@ import { WhatsAppWidget } from "@/components/ui/whatsapp-widget";
 import { siteConfig } from "@/lib/site-config";
 import GoogleAnalytics from "@/components/GA-analytics";
 import { GlassFilter } from "@/components/ui/liquid-glass-card";
+import { JsonLd } from "@/components/seo/json-ld";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Kinstel Solutions",
+  url: "https://www.kinstel.com",
+  logo: "https://www.kinstel.com/android-chrome-512x512.png",
+  sameAs: [
+    "https://www.linkedin.com/company/kinstel",
+    "https://x.com/Hi4mKinstel",
+  ],
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      propertyID: "UDYAM",
+      value: "UDYAM-UP-50-0230220",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "IEC",
+      value: "HLCPS8014Q",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "D-U-N-S",
+      value: "77-197-4415",
+    },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-98899-88408",
+    email: "contact@kinstel.com",
+    contactType: "customer service",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "https://www.kinstel.com",
+  name: "Kinstel Solutions",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: "/",
-  },
   title: {
     default: siteConfig.title,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s | Kinstel Solutions`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -39,20 +79,11 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
     creator: "@kinstels",
   },
   icons: {
@@ -90,6 +121,7 @@ export default function RootLayout({
           fontSerif.variable,
           fontLogo.variable,
         )}>
+        <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         {children}
         <Toaster />
         {/* Google Analytics (GA4) client component — loads gtag.js & tracks pageviews */}

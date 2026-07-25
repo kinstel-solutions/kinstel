@@ -2,5 +2,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /studio
+Disallow: /pay
+Disallow: /api/
 
-Sitemap: https://kinstel.com/sitemap.xml
+Sitemap: https://www.kinstel.com/sitemap.xml

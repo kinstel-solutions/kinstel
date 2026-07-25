@@ -11,8 +11,11 @@ import {
 import { CheckCircle2, Globe, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Credentials & Compliance | Kinstel Solutions",
+  title: "Credentials & Compliance",
   description: "View our government registrations and compliance credentials including Udyam MSME and IEC.",
+  alternates: {
+    canonical: "/credentials",
+  },
 };
 
 export default function CredentialsPage() {
