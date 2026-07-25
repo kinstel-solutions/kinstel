@@ -17,10 +17,6 @@ const organizationJsonLd = {
   name: "Kinstel Solutions",
   url: "https://www.kinstel.com",
   logo: "https://www.kinstel.com/android-chrome-512x512.png",
-  sameAs: [
-    "https://www.linkedin.com/company/kinstel",
-    "https://x.com/Hi4mKinstel",
-  ],
   identifier: [
     {
       "@type": "PropertyValue",
