@@ -117,7 +117,7 @@ const portfolioItems = [
     title: "Modern Service Industry",
     category: "Australian Cleaning Business",
     metrics: ["Blog Pages", "Lead Generation", "Conversion Focused", "SEO Optimized"],
-    link: "https://jamesbondcleaning.au",
+    link: "https://www.jamesbondcleaning.au",
   },
   {
     image: "/portfolio-imgs/fahemifarz.png",

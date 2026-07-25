@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Service Business (Cleaning)",
     location: "Queensland, Australia",
     image: "/portfolio-imgs/jamesbond.webp",
-    liveUrl: "https://jamesbondcleaning.au",
+    liveUrl: "https://www.jamesbondcleaning.au",
     summary:
       "A conversion-focused 17-page website plus ongoing SEO for an Australian commercial cleaning business.",
     challenge:

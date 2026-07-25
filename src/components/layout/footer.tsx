@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Linkedin, Twitter } from "lucide-react";
 import { ClickToCallLink } from "../ui/click-to-call-link";
 import Image from "next/image";
 
@@ -206,27 +205,6 @@ export function Footer() {
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Credentials
               </Link>
-            </div>
-            <div className="grid gap-2">
-              <h3 className="font-semibold">Connect</h3>
-              <div className="flex items-center space-x-4">
-                <a
-                  href="https://x.com/Hi4mKinstel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
-                  aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://linkedin.com/company/kinstel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
-                  aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </div>
             </div>
           </div>
         </div>
