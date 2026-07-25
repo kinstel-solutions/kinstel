@@ -109,14 +109,13 @@ export function MothersDayPromo() {
         
         <div className="text-center md:text-left flex-grow">
           <p className="text-sm text-foreground font-medium">
-            Get an extra <span className="text-pink-500 font-bold text-base">20% OFF</span> for all new clients!
+            Get an extra <span className="text-accent font-bold text-base">20% OFF</span> for all new clients!
           </p>
         </div>
 
         <Button 
           onClick={scrollToBottomForm}
-          variant="secondary" 
-          className="bg-pink-500 hover:bg-pink-600 text-white border-none shadow-lg shadow-pink-500/20"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold border-none shadow-lg shadow-accent/20 transition-all"
         >
           Claim Offer NOW!
           <ArrowRight className="ml-2 h-4 w-4" />
