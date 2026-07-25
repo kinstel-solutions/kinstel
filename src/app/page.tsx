@@ -54,9 +54,9 @@ const defaultStats = [
   },
   {
     icon: <Users className="h-8 w-8 text-accent" />,
-    value: "10+",
-    label: "Clients Served",
-    description: "Trusted by businesses across various industries.",
+    value: "45+",
+    label: "Projects Delivered",
+    description: "Across custom web apps, platforms & growth campaigns.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
@@ -261,19 +261,25 @@ export default function Home() {
             <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
               <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
                 <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">
-                  Premier{" "}
+                  Turn Your{" "}
                   <AuroraText
                     colors={["#F59E0B", "#D97706", "#FCD34D", "#F59E0B"]}>
-                    Web Design Company
+                    Web Presence
                   </AuroraText>{" "}
-                  for Modern Businesses
+                  Into a High-Converting Sales Engine
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                  We design and build high-performing websites and custom
-                  platforms — then run the marketing that fills them with
-                  customers. Design, development, and growth, under one roof.
+                  No bloated agency timelines. No slow templates. Just lightning-fast web builds and performance marketing that generates real revenue.
                 </p>
-                <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
+                <div className="mt-8 flex flex-wrap items-center gap-4 justify-center">
+                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md font-semibold px-6 py-6 text-base">
+                    <Link href="/website-audit">Get Free Instant Audit</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="px-6 py-6 text-base font-medium">
+                    <Link href="/quote">Estimate Project Quote</Link>
+                  </Button>
+                </div>
+                <div className="mt-8 flex flex-wrap items-center gap-4 justify-center">
                   <DynamicIslandDemo />
                 </div>
               </div>

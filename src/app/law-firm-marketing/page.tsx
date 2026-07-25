@@ -25,13 +25,7 @@ export const metadata: Metadata = {
   title: "Law Firm Website Design & Marketing",
   description:
     "Conversion-focused websites and marketing for law firms — part of the work Kinstel Solutions does for businesses across industries.",
-  keywords: [
-    "law firm marketing firm",
-    "legal marketing firm",
-    "website developers for lawyers",
-    "law firm website development",
-    "law firm seo",
-  ],
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "/law-firm-marketing",
   },

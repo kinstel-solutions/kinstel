@@ -63,7 +63,7 @@ const whyKinstel = [
     icon: <Sparkles className="h-6 w-6 text-accent" />,
     title: "AI-native & senior",
     description:
-      "A small, senior team amplified by AI. That means enterprise-grade craft with turnaround measured in days, not months.",
+      "AI doesn't replace our engineering craft—it accelerates it. By leveraging modern AI dev tools, our team builds sub-second Next.js applications and ad funnels in days rather than months.",
   },
   {
     icon: <Workflow className="h-6 w-6 text-accent" />,

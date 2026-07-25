@@ -38,86 +38,62 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: <Palette className="h-10 w-10 text-accent" />,
-    title: "Custom Web Design",
-    description:
-      "Stand out with a unique website designed specifically for your brand. We focus on user experience, conversion optimization, and stunning aesthetics.",
-    features: [
-      "Custom UI/UX Design",
-      "Brand Identity Integration",
-      "Mobile-First Approach",
-      "Interactive Elements",
-    ],
-  },
-  {
     icon: <Code className="h-10 w-10 text-accent" />,
-    title: "Web Development",
+    title: "Custom Next.js Web Development",
     description:
-      "Robust and scalable web solutions built with modern technologies. From simple landing pages to complex web applications.",
+      "Sub-second, mobile-first websites built with modern Next.js and React. Engineered for peak conversion and 95+ PageSpeed scores.",
     features: [
-      "Next.js & React Development",
-      "CMS Integration",
-      "API Development",
-      "Secure & Scalable Architecture",
+      "Next.js & React 19 Development",
+      "3–5 Day Rapid Rush Delivery",
+      "95+ PageSpeed Guarantee",
+      "Conversion-Focused UI/UX Design",
     ],
   },
   {
     icon: <LineChart className="h-10 w-10 text-accent" />,
-    title: "SEO & Performance",
+    title: "Performance Marketing & Local SEO",
     description:
-      "Get found online and keep visitors engaged. We optimize every aspect of your site for search engines and loading speed.",
+      "High-intent Google Ads RSA management and Google Business Profile optimization designed to drive immediate, qualified customer inquiries.",
     features: [
-      "Technical SEO",
-      "Core Web Vitals Optimization",
-      "Content Strategy",
-      "Keyword Research",
+      "Google Search Ads (RSA) Management",
+      "Google Business Profile Maps 3-Pack SEO",
+      "Technical & On-Page SEO Optimization",
+      "Conversion Rate Optimization (CRO)",
     ],
   },
   {
-    icon: <Smartphone className="h-10 w-10 text-accent" />,
-    title: "App Development",
+    icon: <Palette className="h-10 w-10 text-accent" />,
+    title: "Custom Web Platforms & SaaS MVPs",
     description:
-      "Extend your reach with mobile applications. We build cross-platform apps that provide seamless user experiences.",
+      "Scalable multi-tenant web applications, appointment booking engines, telehealth platforms, and client portals built for growing B2B businesses.",
     features: [
-      "React Native Development",
-      "iOS & Android",
-      "App Store Deployment",
-      "Maintenance & Support",
-    ],
-  },
-  {
-    icon: <Shield className="h-10 w-10 text-accent" />,
-    title: "Maintenance & Security",
-    description:
-      "Keep your website running smoothly and securely. We provide ongoing support and updates to protect your digital assets.",
-    features: [
-      "Regular Updates",
-      "Security Monitoring",
-      "Backup Solutions",
-      "Performance Monitoring",
+      "Supabase & PostgreSQL Backends",
+      "Slot Booking & Availability Engines",
+      "In-Browser Video & Payment Gateways",
+      "Admin Dashboards & Client Portals",
     ],
   },
 ];
 
 const pricingPackages = [
   {
-    name: "Starter",
-    price: "From ₹24,999",
-    description: "Perfect for small businesses and startups.",
+    name: "Starter Web Suite",
+    price: "From ₹25,000",
+    description: "Perfect for local SMBs & starter builds. Delivered in 3-5 days.",
     features: [
-      "Custom 5-Page Website",
-      "Mobile Responsive Design",
-      "Basic SEO Setup",
-      "Contact Form Integration",
-      "1 Month Support",
+      "Custom Next.js Website",
+      "Mobile-First Responsive Design",
+      "95+ PageSpeed Performance",
+      "Basic SEO & Contact Form",
+      "1 Month Free Support",
     ],
     cta: "Get Started",
     popular: false,
   },
   {
-    name: "Business",
-    price: "From ₹49,999",
-    description: "Ideal for growing businesses needing more features.",
+    name: "Growth Lead Funnel",
+    price: "From ₹54,000",
+    description: "Ideal for growing B2B businesses needing leads & ad integration.",
     features: [
       "10-Page Custom Website",
       "CMS Integration",

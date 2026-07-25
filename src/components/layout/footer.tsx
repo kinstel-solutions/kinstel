@@ -146,11 +146,6 @@ export function Footer() {
                 Quick Pay
               </Link>
               <Link
-                href="/law-firm-marketing"
-                className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
-                For Lawyers
-              </Link>
-              <Link
                 href="/web-design-company-lucknow"
                 className="block py-2 sm:py-0 text-muted-foreground hover:text-foreground">
                 Lucknow

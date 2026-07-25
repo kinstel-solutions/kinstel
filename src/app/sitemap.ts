@@ -27,7 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/tools/nextjs-vs-wordpress', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/tools/google-ads-budget-estimator', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/web-design-company-lucknow', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/law-firm-marketing', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/global', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/offers/lko', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/credentials', priority: 0.6, changeFrequency: 'yearly' },

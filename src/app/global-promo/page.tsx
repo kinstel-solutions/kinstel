@@ -184,7 +184,7 @@ const faqItems = [
   },
   {
     q: "How long does a project take?",
-    a: "Standard websites are delivered within 7-10 working days. Complex projects like SaaS platforms or large e-commerce stores typically take 3-6 weeks, depending on scope.",
+    a: "Standard websites are delivered within 3-5 working days. Complex projects like SaaS platforms or large e-commerce stores typically take 3-6 weeks, depending on scope.",
   },
   {
     q: "Do you work with clients outside India?",
@@ -238,7 +238,7 @@ const testimonials = [
 // the base INR value used in the source data (DynamicPrice amount prop).
 const faqPlainTextAnswers = [
   "We analyze your current website (or your competitor's if you don't have one yet) across performance, SEO, design, and conversion metrics. You'll receive a detailed report with actionable recommendations — completely free, no strings attached. The audit alone is valued at over ₹30,000.",
-  "Standard websites are delivered within 7-10 working days. Complex projects like SaaS platforms or large e-commerce stores typically take 3-6 weeks, depending on scope.",
+  "Standard websites are delivered within 3 to 5 working days. Complex projects like SaaS platforms or large e-commerce stores typically take 3-6 weeks, depending on scope.",
   "Absolutely. We actively serve clients in Australia, the US, UK, and Canada. We're experienced in cross-timezone collaboration and use modern project management tools to keep everything seamless.",
   "We build exclusively with Next.js and React — the same stack used by Netflix, Notion, and Vercel. No WordPress, no Wix, no page builders. Every site is hand-coded for maximum performance.",
   "We provide 3 months of free post-launch support — bug fixes, content updates, and performance monitoring. After that, we offer affordable maintenance plans to keep your site evolving.",
@@ -465,7 +465,7 @@ export default function GlobalPromoPage() {
                   {[
                     ["Design Approach", "100% Custom UI/UX", "Template Based", "Generic / Recycled"],
                     ["Initial Step", "Free Website Audit", "Direct Quote", "Paid Consultation"],
-                    ["Delivery Time", "7-10 Days", "Unpredictable", "4-6 Weeks"],
+                    ["Delivery Time", "3–5 Days", "Unpredictable", "4-6 Weeks"],
                     ["SEO & Speed", "Guaranteed 90+ Score", "Basic/None", "Extra Charge"],
                     ["Post-Launch Support", "3 Months Free", "Usually None", "Expensive Retainer"],
                     ["Conversion Focus", "CRO Optimized", "Hit or Miss", "Upsell Service"],

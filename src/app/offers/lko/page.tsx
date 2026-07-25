@@ -36,9 +36,9 @@ const InquiryForm = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Complete Web Package @ ₹9999 | Best Website Designer in Lucknow",
+  title: "Starter Web Suite @ ₹25,000 | Best Website Designer in Lucknow",
   description:
-    "Get a premium, SEO-ready website starting at just ₹9999. No upfront cost options available. Schedule a consultation with Kinstel, Lucknow's leading web design company.",
+    "Get a premium, SEO-ready Next.js website starting at ₹25,000. Delivered in 3-5 days. Schedule a consultation with Kinstel, Lucknow's leading web design studio.",
   keywords: [
     "best website designing company in lucknow",
     "web development company in lucknow",
@@ -90,16 +90,16 @@ export default function OffersLkoPage() {
                   <Badge
                     variant="secondary"
                     className="px-4 py-2 text-sm md:text-base font-medium bg-accent/10 text-accent border-accent/20">
-                    🎉 Limited Time Offer: Save ₹20,000
+                    🎉 Starter Web Suite: 3–5 Day Rush Delivery
                   </Badge>
                   <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
                     Convert Clicks into <br className="hidden lg:block" />
                     <span className="text-accent">Loyal Clients</span>
                   </h1>
                   <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                    Get a <strong>Complete Web Package</strong> starting at just{" "}
-                    <span className="text-foreground font-bold">₹9999</span>.
-                    Partner with Lucknow's leading web designer to grow your
+                    Get a <strong>Complete Starter Web Suite</strong> starting at{" "}
+                    <span className="text-foreground font-bold">₹25,000</span>.
+                    Partner with Lucknow's leading web studio to grow your
                     business.
                   </p>
                 </div>
