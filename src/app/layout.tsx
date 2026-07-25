@@ -17,6 +17,11 @@ const organizationJsonLd = {
   name: "Kinstel Solutions",
   url: "https://www.kinstel.com",
   logo: "https://www.kinstel.com/android-chrome-512x512.png",
+  sameAs: [
+    "https://share.google/oZnuHrxf7oGYX8BGP",
+    "https://www.designrush.com/agency/profile/kinstel-solutions",
+    "https://jsdl.in/DT-3969OKJ36IF",
+  ],
   identifier: [
     {
       "@type": "PropertyValue",
