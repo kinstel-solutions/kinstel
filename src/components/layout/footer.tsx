@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Globe, Building2 } from "lucide-react";
+import { MapPin, Globe, Building2, Twitter } from "lucide-react";
 import { ClickToCallLink } from "../ui/click-to-call-link";
 import Image from "next/image";
 
@@ -230,13 +230,22 @@ export function Footer() {
                 </span>
                 <div className="flex items-center space-x-1.5 text-muted-foreground">
                   <a
-                    href="https://share.google/oZnuHrxf7oGYX8BGP"
+                    href="https://maps.google.com/?cid=11184302972758853612"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors"
                     aria-label="Google Business Profile"
                     title="Google Business Profile">
                     <MapPin className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://x.com/kinstelhq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors"
+                    aria-label="X (Twitter) Profile"
+                    title="X (@kinstelhq)">
+                    <Twitter className="h-3.5 w-3.5" />
                   </a>
                   <a
                     href="https://www.designrush.com/agency/profile/kinstel-solutions"
