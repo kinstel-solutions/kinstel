@@ -68,6 +68,7 @@ export function Header() {
         </Link>
       ))}
       <SmartCtaButton
+        mode="enabled"
         phoneNumber="+919889988408"
         email="contact@kinstel.com"
         className="ml-2 bg-accent text-accent-foreground hover:bg-accent shadow-sm">
@@ -119,6 +120,7 @@ export function Header() {
         {/* Mobile Navigation Trigger */}
         <div className="md:hidden flex items-center gap-1">
           <SmartCtaButton
+            mode="enabled"
             size="sm"
             arrow={false}
             phoneNumber="+919889988408"
