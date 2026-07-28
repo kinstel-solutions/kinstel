@@ -527,7 +527,7 @@ export default function PaymentForm() {
         
         {/* Card Networks - Ultra-Minimalist Trust Tray */}
         <div className="space-y-6 pt-10 border-t border-border/10 mt-10">
-          <p className="text-[10px] text-center uppercase tracking-[0.3em] text-muted-foreground/30 font-bold">Trusted Payment Networks</p>
+          <p className="text-[10px] text-center uppercase tracking-[0.3em] text-muted-foreground/30 font-bold">Trusted Global Payment Networks</p>
           <div className="flex flex-wrap justify-center items-center gap-10">
             {/* Visa */}
             <div className="flex items-center justify-center">
@@ -541,6 +541,13 @@ export default function PaymentForm() {
               <svg viewBox="0 0 100 60" className="w-10 h-auto" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="35" cy="30" r="25" fill="#EB001B" fillOpacity="0.9" />
                 <circle cx="65" cy="30" r="25" fill="#F79E1B" fillOpacity="0.9" />
+              </svg>
+            </div>
+
+            {/* PayPal */}
+            <div className="flex items-center justify-center">
+              <svg viewBox="0 0 100 30" className="w-16 h-auto" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="23" fill="#003087" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="22">Pay<tspan fill="#009CDE">Pal</tspan></text>
               </svg>
             </div>
 

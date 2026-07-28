@@ -22,6 +22,8 @@ interface CheckoutModalProps {
   onConfirm: (data: CheckoutFormData) => void;
   packageName: string;
   tokenAmount: number;
+  currency?: string;
+  currencySymbol?: string;
 }
 
 export interface CheckoutFormData {
@@ -37,6 +39,8 @@ export function CheckoutModal({
   onConfirm,
   packageName,
   tokenAmount,
+  currency = "INR",
+  currencySymbol = "₹",
 }: CheckoutModalProps) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -76,7 +80,7 @@ export function CheckoutModal({
                   Secure Checkout
                 </DialogTitle>
                 <DialogDescription className="text-sm font-medium text-muted-foreground mr-4">
-                  Confirm your details to proceed with the booking token.
+                  Confirm your details to proceed with the booking token ({currency}).
                 </DialogDescription>
               </div>
             </div>
@@ -90,8 +94,8 @@ export function CheckoutModal({
                 <h3 className="text-lg font-bold text-foreground">{packageName}</h3>
               </div>
               <div className="text-right">
-                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Booking Token</p>
-                <p className="text-xl font-black text-accent">₹{tokenAmount.toLocaleString()}</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Booking Token ({currency})</p>
+                <p className="text-xl font-black text-accent">{currencySymbol}{tokenAmount.toLocaleString()}</p>
               </div>
             </div>
           </div>

@@ -10,10 +10,10 @@ import { Suspense } from 'react';
  */
 export const metadata: Metadata = {
   title: 'Quick Pay - Kinstel Solutions',
-  description: 'Make instant payments to Kinstel Solutions securely. Fast payment processing for your invoices.',
+  description: 'Make instant payments to Kinstel Solutions securely via Razorpay or PayPal. Fast payment processing for your invoices.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
@@ -35,32 +35,41 @@ export default function QuickPayPage() {
           <p className="text-lg text-muted-foreground">
             Make secure payments to Kinstel Solutions instantly. Enter your invoice amount and complete payment in seconds.
           </p>
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
+            <span>🌐 International Payments:</span>
+            <span className="text-foreground">Cards, PayPal & Direct Wire Remittances via Razorpay</span>
+          </div>
         </div>
 
         {/* Payment Form Card */}
         <div className="bg-card rounded-2xl shadow-lg border border-border p-8 md:p-12 max-w-3xl mx-auto">
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-accent"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-semibold text-foreground">Payment Details</h2>
               </div>
-              <h2 className="text-2xl font-semibold text-foreground">Payment Details</h2>
+              <span className="text-xs text-muted-foreground font-mono">
+                Billing Support: <a href="mailto:payments@kinstel.com" className="text-accent hover:underline">payments@kinstel.com</a>
+              </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              All payments are processed securely via secure payment gateway. You&apos;ll receive a receipt via email once payment is complete.
+              All payments are processed securely via 256-bit encrypted payment gateways (Razorpay & PayPal). An official receipt will be emailed instantly to your email address upon completion.
             </p>
           </div>
 

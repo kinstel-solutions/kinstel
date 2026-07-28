@@ -24,7 +24,7 @@ export function Footer() {
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground mt-2">
                 Kinstel builds high-performance, fast, and conversion-engineered websites & platforms for modern businesses.
               </p>
-              <address className="mt-4 text-sm text-muted-foreground not-italic space-y-2">
+              <address className="mt-4 text-sm text-muted-foreground not-italic space-y-1.5">
                 <div>
                   <a
                     href="mailto:contact@kinstel.com"
@@ -32,7 +32,12 @@ export function Footer() {
                     contact@kinstel.com
                   </a>
                 </div>
-                <div>
+                <div className="text-xs space-y-1 text-muted-foreground/80 pt-1">
+                  <p>Sales: <a href="mailto:sales@kinstel.com" className="hover:text-foreground transition-colors font-mono">sales@kinstel.com</a></p>
+                  <p>Billing & Remittances: <a href="mailto:payments@kinstel.com" className="hover:text-foreground transition-colors font-mono">payments@kinstel.com</a></p>
+                  <p>Support: <a href="mailto:support@kinstel.com" className="hover:text-foreground transition-colors font-mono">support@kinstel.com</a></p>
+                </div>
+                <div className="pt-1">
                   <ClickToCallLink
                     phoneNumber="+919889988408"
                     className="hover:text-foreground transition-colors">
@@ -278,6 +283,9 @@ export function Footer() {
             <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">IEC: HLCPS8014Q</span>
             <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">D-U-N-S®: 77-197-4415</span>
           </div>
+          <p className="text-xs text-accent/90 mb-2 font-medium">
+            🔒 Secure International Payments, PayPal & Bank Wire Remittances Processed via Razorpay
+          </p>
           <p>Copyright &copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>

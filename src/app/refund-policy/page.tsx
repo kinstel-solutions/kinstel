@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 export const metadata: Metadata = {
     title: 'Kinstel Solutions | Cancellation & Refund Policy',
     robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
     },
 };
 
@@ -17,19 +17,19 @@ export default function RefundPolicyPage() {
             <main className="flex-grow container mx-auto px-4 md:px-6 py-12">
                 <div className="prose prose-invert max-w-none mx-auto">
                     <h1>Cancellation & Refund Policy</h1>
-                    <p>Last updated: April 12, 2026</p>
+                    <p>Last updated: July 29, 2026</p>
 
                     <h2>1. Service Agreements</h2>
                     <p>
                         Kinstel Solutions operates on a project-based model where services (web design,
-                        development, etc.) are detailed in a formal agreement. This agreement includes a
+                        development, software engineering, and marketing) are detailed in a formal agreement. This agreement includes a
                         clear scope of work and a payment schedule.
                     </p>
 
                     <h2>2. Cancellation</h2>
                     <p>
-                        Clients may request to cancel a project at any time by providing written notice to
-                        contact@kinstel.com.
+                        Clients may request to cancel a project at any time by providing written notice to our Billing Department at
+                        <a href="mailto:payments@kinstel.com"> payments@kinstel.com</a> (cc: <a href="mailto:contact@kinstel.com">contact@kinstel.com</a>).
                     </p>
                     <p>
                         If a project is canceled before any work has commenced, any advance payment may be
@@ -52,13 +52,13 @@ export default function RefundPolicyPage() {
                         days, the project will be considered abandoned, and any payments made will be forfeited.
                     </p>
 
-                    <h2>5. Refund Timeline</h2>
+                    <h2>5. International Refund Timeline & Processing</h2>
                     <p>
-                        Approved refunds will be initiated to the original payment method and will typically reflect in your account within 7 to 10 working days.
+                        Approved refunds (whether for domestic or cross-border international payments made via credit/debit card, PayPal, or bank wire transfer) will be initiated to the original payment method. Refunds typically reflect in your account within 7 to 10 working days, subject to international correspondent bank processing times.
                     </p>
 
                     <p className="mt-8">
-                        For queries, reach out at <a href="mailto:contact@kinstel.com">contact@kinstel.com</a>.
+                        For billing or refund queries, contact <a href="mailto:payments@kinstel.com">payments@kinstel.com</a>.
                     </p>
                 </div>
             </main>
