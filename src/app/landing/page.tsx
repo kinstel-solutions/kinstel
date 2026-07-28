@@ -42,7 +42,7 @@ export default function LandingPage() {
 
           <div className="pt-4">
             <Link 
-              href="/contact" 
+              href="/quote" 
               className="inline-flex items-center gap-2 px-8 py-4 text-lg font-bold text-black transition-all transform bg-[#00FF94] rounded-full hover:bg-[#00cc76] hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,255,148,0.4)]"
             >
               Get Your Speed Audit
@@ -199,7 +199,7 @@ export default function LandingPage() {
           <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">Ready to Upgrade?</h2>
           <div className="flex flex-col items-center gap-6">
             <Link 
-              href="/contact" 
+              href="/quote" 
               className="inline-flex items-center gap-2 px-10 py-5 text-xl font-bold bg-black text-white rounded-full hover:bg-gray-900 hover:scale-105 transition-all shadow-xl"
             >
               Book a Strategy Call
