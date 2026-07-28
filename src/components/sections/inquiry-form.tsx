@@ -32,9 +32,18 @@ import { cn } from "@/lib/utils";
 interface InquiryFormProps {
   minimal?: boolean;
   className?: string;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
 }
 
-export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
+export function InquiryForm({
+  minimal = false,
+  className,
+  title = "Book your Free Consultation",
+  subtitle = "Let's find out how we can help elevate your Digital presence.",
+  ctaText = "Unlock Offers",
+}: InquiryFormProps) {
   const { toast } = useToast();
   const form = useForm<InquiryFormValues>({
     resolver: zodResolver(inquirySchema),
@@ -78,11 +87,11 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
       minimal={minimal}
       className={cn("w-full transition-all duration-300 ", className)}>
       <CardHeader>
-        <CardTitle className="text-center">
-          Book your Free Consultation
+        <CardTitle className="text-center text-2xl font-bold">
+          {title}
         </CardTitle>
-        <CardDescription className="text-center mt-2">
-          Let's find out how we can help elevate your Digital presence.
+        <CardDescription className="text-center mt-2 text-sm text-muted-foreground">
+          {subtitle}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -150,7 +159,7 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
               name="details"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Project Details(Optional)</FormLabel>
+                  <FormLabel>Project Details (Optional)</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Tell us about your project needs..."
@@ -164,16 +173,16 @@ export function InquiryForm({ minimal = false, className }: InquiryFormProps) {
             />
             <Button
               type="submit"
-              className="w-full"
+              className="w-full font-bold text-base h-12"
               size="lg"
               disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Submitting...
+                  Sending Message...
                 </>
               ) : (
-                "Unlock Offers"
+                ctaText
               )}
             </Button>
           </form>
