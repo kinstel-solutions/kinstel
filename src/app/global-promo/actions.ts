@@ -76,7 +76,7 @@ export async function submitPromoInquiryAction(data: PromoFormValues) {
       react: InquiryNotificationEmail({
         name,
         email,
-        phone,
+        phone: "phone" in parsed.data ? (parsed.data as any).phone : undefined,
         details: detailsText,
       }),
     });

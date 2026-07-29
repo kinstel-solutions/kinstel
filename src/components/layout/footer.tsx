@@ -114,6 +114,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Careers <span className="text-[10px] bg-accent/20 text-accent font-semibold px-1.5 py-0.5 rounded-full ml-1">Hiring</span>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                     Contact Us
                   </Link>

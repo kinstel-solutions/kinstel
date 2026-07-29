@@ -8,6 +8,8 @@ import { auditLeadSchema, type AuditLeadValues } from '@/app/audit-schema';
 import AuditLeadNotificationEmail from '@/emails/audit-lead-notification-email';
 import { quoteLeadSchema, type QuoteLeadValues } from '@/app/quote-schema';
 import QuoteLeadNotificationEmail from '@/emails/quote-lead-notification-email';
+import { careerApplicationSchema, type CareerApplicationValues } from '@/app/careers/schema';
+import CareerApplicationEmail from '@/emails/career-application-email';
 
 const fromEmail = process.env.EMAIL_FROM;
 const toEmails = process.env.EMAIL_TO?.split(',') || [];
@@ -153,3 +155,42 @@ export async function submitQuoteLead(data: QuoteLeadValues) {
   // Always resolve successfully so the result screen still renders for the user.
   return { success: true, message: 'Lead captured.' };
 }
+
+/**
+ * Submits a candidate application from the Careers page.
+ * Validates candidate input and sends notification email to hiring team via Resend.
+ */
+export async function submitCareerApplicationAction(data: CareerApplicationValues) {
+  const parsed = careerApplicationSchema.safeParse(data);
+
+  if (!parsed.success) {
+    const errorMessages = parsed.error.issues.map(issue => issue.message).join(', ');
+    return { success: false, message: `Invalid input: ${errorMessages}` };
+  }
+
+  if (!process.env.RESEND_API_KEY || !fromEmail || toEmails.length === 0) {
+    console.error('Missing email environment variables; skipping career application notification email.');
+    return { success: true, message: 'Application received successfully!' };
+  }
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const result = await resend.emails.send({
+      from: fromEmail,
+      to: toEmails,
+      subject: `New Career Application: ${parsed.data.fullName} - ${parsed.data.role}`,
+      react: CareerApplicationEmail(parsed.data),
+    });
+
+    if (result.error) {
+      console.error('Failed to send career application email:', result.error);
+      return { success: false, message: 'Failed to send application notification email. Please try again.' };
+    }
+  } catch (error) {
+    console.error('Error submitting career application:', error);
+    return { success: false, message: 'Something went wrong while submitting your application. Please try again.' };
+  }
+
+  return { success: true, message: 'Application submitted successfully! Our team will review your application and be in touch.' };
+}
+
