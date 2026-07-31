@@ -40,7 +40,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DotPattern } from "@/components/ui/dot-pattern";
-import { PortfolioGridSequential } from "../global/client-components";
+import { PortfolioGridSequential } from "./portfolio-components";
 import { PromoInquiryForm } from "./promo-inquiry-form";
 import {
   PromoHeader,
@@ -50,12 +50,15 @@ import {
 import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Get Your Free Website Audit — Premium Web Design | Kinstel",
+  title: "Premium Global Web Design & Development",
   description:
-    "Stop losing clients to a bad website. Get a Free Website Audit + Strategy Session. Custom web design, SEO-ready, 95+ PageSpeed scores. Serving US, UK, CA, AU.",
-  robots: { index: false, follow: false },
+    "Get a Free Website Audit & Strategy Session from Kinstel. Custom web design, SEO-ready, 90+ PageSpeed scores. Serving US, UK, CA, AU, and worldwide.",
+  alternates: {
+    canonical: "/global-promo",
+  },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Get Your Free Website Audit — Premium Web Design | Kinstel",
+    title: "Premium Global Web Design & Development | Kinstel",
     description:
       "Stop losing clients to a bad website. Free Website Audit + Strategy Session from Kinstel.",
     url: "https://www.kinstel.com/global-promo",
@@ -66,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Get Your Free Website Audit | Kinstel",
     description:
-      "Free Website Audit + Strategy Session. Custom web design, SEO-ready, 95+ PageSpeed.",
+      "Free Website Audit + Strategy Session. Custom web design, SEO-ready, 90+ PageSpeed.",
   },
 };
 
@@ -87,7 +90,7 @@ const solutionCards = [
   {
     icon: <Zap className="h-7 w-7 text-accent" />,
     title: "Enterprise Performance",
-    desc: "95+ Lighthouse scores. Server-side rendering. Edge-optimized delivery. Your site loads before they blink — on any device, anywhere.",
+    desc: "90+ Lighthouse scores. Server-side rendering. Edge-optimized delivery. Your site loads before they blink — on any device, anywhere.",
   },
   {
     icon: <ShieldCheck className="h-7 w-7 text-accent" />,
@@ -307,7 +310,7 @@ export default function GlobalPromoPage() {
                 {/* Trust pills */}
                 <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                   {[
-                    { label: "95+ PageSpeed", icon: <Zap className="h-3.5 w-3.5" /> },
+                    { label: "90+ PageSpeed", icon: <Zap className="h-3.5 w-3.5" /> },
                     { label: "3–5 Day Delivery", icon: <Award className="h-3.5 w-3.5" /> },
                     { label: "Serving 3+ Countries", icon: <Globe className="h-3.5 w-3.5" /> },
                   ].map((t) => (

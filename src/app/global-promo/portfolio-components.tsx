@@ -98,12 +98,12 @@ export function StatsGridSequential({ items }: { items: StatItem[] }) {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % items.length);
-        }, 3000); // 3 seconds per stat
+        }, 3000); // 3 seconds per card
         return () => clearInterval(interval);
     }, [items.length]);
 
     return (
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {items.map((stat, index) => (
                 <BorderBeam
                     key={index}
@@ -113,15 +113,22 @@ export function StatsGridSequential({ items }: { items: StatItem[] }) {
                     className="h-full"
                     radius="var(--radius)">
                     <Card
-                        className="flex flex-col items-center p-8 transition-all duration-300 text-center h-full border-0 bg-card/50">
-                        <div className="mb-4">{stat.icon}</div>
-                        <p className="text-4xl font-bold text-foreground mb-2">
-                            {stat.value}
-                        </p>
-                        <h3 className="text-xl font-semibold mb-2">{stat.label}</h3>
-                        <p className="text-sm text-muted-foreground">
-                            {stat.description}
-                        </p>
+                        className="text-center transition-all duration-300 hover:shadow-lg border-0 bg-card/50 h-full flex flex-col justify-between"
+                        data-testid={`stat-item-${index}`}>
+                        <CardContent className="pt-6">
+                            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
+                                {stat.icon}
+                            </div>
+                            <div className="text-4xl font-bold font-headline text-accent">
+                                {stat.value}
+                            </div>
+                            <div className="mt-2 text-xl font-semibold">
+                                {stat.label}
+                            </div>
+                            <p className="mt-2 text-sm text-muted-foreground">
+                                {stat.description}
+                            </p>
+                        </CardContent>
                     </Card>
                 </BorderBeam>
             ))}

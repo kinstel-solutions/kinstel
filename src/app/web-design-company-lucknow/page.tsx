@@ -82,6 +82,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/web-design-company-lucknow",
   },
+  openGraph: {
+    title: "Leading Website Design Company in Lucknow | Kinstel Solutions",
+    description:
+      "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Demo. Schedule a consultation today!",
+    url: "https://www.kinstel.com/web-design-company-lucknow",
+    siteName: "Kinstel Solutions",
+    type: "website",
+    images: [
+      {
+        url: "/logos/knsl-mkt-banner-for-lucknow.webp",
+        width: 1000,
+        height: 1000,
+        alt: "Kinstel Solutions — Trusted Web Development & IT Solutions Agency in Lucknow",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leading Website Design Company in Lucknow | Kinstel",
+    description:
+      "Best Web Designers in Lucknow. Custom web design, SEO-ready, 90+ PageSpeed scores.",
+    images: ["/logos/knsl-mkt-banner-for-lucknow.webp"],
+  },
 };
 
 const lucknowStats = [
@@ -92,7 +115,7 @@ const lucknowStats = [
         aria-hidden="true"
       />
     ),
-    value: "95+",
+    value: "90+",
     label: "Performance & SEO Scores",
     description:
       "Beat the competition with lightning-fast, SEO-ready websites.",
@@ -199,7 +222,7 @@ const packageFeatures = [
   },
   {
     icon: <Zap className="h-5 w-5 text-accent" />,
-    text: "Lightning Fast Loading (95+ Score)",
+    text: "Lightning Fast Loading (90+ Score)",
   },
   {
     icon: <ShieldCheck className="h-5 w-5 text-accent" />,
@@ -249,7 +272,7 @@ const faqs = [
   {
     question: "What is included in the ₹25,000 Starter package?",
     answer:
-      "Our ₹25,000 Starter package includes a custom-designed Next.js website (3-5 pages), mobile optimization, 95+ PageSpeed performance, basic SEO, and hosting setup. Perfect for growing businesses wanting a high-converting web presence.",
+      "Our ₹25,000 Starter package includes a custom-designed Next.js website (3-5 pages), mobile optimization, 90+ PageSpeed performance, basic SEO, and hosting setup. Perfect for growing businesses wanting a high-converting web presence.",
   },
   {
     question: "What does 'Free Demo (Zero Upfront Cost)' mean?",
@@ -264,7 +287,7 @@ const faqs = [
   {
     question: "Will my website be SEO-friendly?",
     answer:
-      "Yes, every website we build is optimized for search engines from the ground up. We target a 95+ SEO score on Google PageSpeed Insights to ensure you rank well in Lucknow and beyond.",
+      "Yes, every website we build is optimized for search engines from the ground up. We target a 90+ SEO score on Google PageSpeed Insights to ensure you rank well in Lucknow and beyond.",
   },
   {
     question: "Do you offer maintenance after the website is live?",
@@ -478,7 +501,7 @@ export default function LucknowPage() {
           <ScrollVelocityContainerDynamic>
             <ScrollVelocityRowDynamic baseVelocity={3}>
               <span className="mx-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-                Web Design Lucknow • SEO Ready • 95+ PageSpeed • Custom UI/UX •
+                Web Design Lucknow • SEO Ready • 90+ PageSpeed • Custom UI/UX •
                 Free Demo (Zero Upfront Cost) • Free Hosting Setup • 24/7
                 Support •
               </span>
@@ -947,7 +970,7 @@ export default function LucknowPage() {
                   <TableRow>
                     <TableCell className="font-medium">SEO & Speed</TableCell>
                     <TableCell className="text-center bg-accent/5 font-bold text-green-500">
-                      Guaranteed 95+ Score
+                      Guaranteed 90+ Score
                     </TableCell>
                     <TableCell className="text-center">Basic/None</TableCell>
                     <TableCell className="text-center">Extra Charge</TableCell>

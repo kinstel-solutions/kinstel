@@ -3,10 +3,14 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-    title: 'Kinstel Solutions | Delivery Policy',
+    title: 'Delivery Policy',
+    description: 'Digital Service Delivery Policy for Kinstel Solutions web development & design projects.',
+    alternates: {
+        canonical: '/delivery-policy',
+    },
     robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
     },
 };
 

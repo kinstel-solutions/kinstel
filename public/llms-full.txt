@@ -1,0 +1,83 @@
+# Kinstel Solutions - Full Technical & Entity Specifications
+
+> Kinstel Solutions is a premium web engineering, custom software platform development, and digital growth agency headquartered in Lucknow, Uttar Pradesh, India, delivering bespoke digital solutions for clients in India, USA, UK, Canada, Australia, and worldwide.
+
+---
+
+## Executive Overview & Value Proposition
+
+Kinstel Solutions builds conversion-engineered websites and custom SaaS platforms. Unlike traditional agencies that build slow, plugin-heavy CMS websites, Kinstel engineers custom static and server-rendered web applications using modern web technologies: Next.js 15, React 19, TypeScript, and Tailwind CSS, hosted on global edge networks (Vercel CDN).
+
+Key Value Metrics:
+- **Performance**: 90+ Google PageSpeed Insights & Lighthouse Scores.
+- **Latency**: Sub-second (<0.5s) initial page load times worldwide.
+- **Security**: Static edge architecture with zero database or plugin security vulnerabilities.
+- **Conversion-Driven**: Built with clear user journeys, strategic CTA placement, integrated lead capture, and end-to-end event analytics (GA4 & Vercel Analytics).
+
+---
+
+## Primary Service Offerings
+
+### 1. Custom Web Engineering & Web Design
+- Bespoke Next.js / React application development.
+- Responsive, mobile-first visual design tailored for luxury brands, legal firms, tech startups, corporate platforms, and professional services.
+- Speed optimization, asset compression, dynamic OpenGraph generation, and clean SEO architecture.
+
+### 2. Custom Web Platforms & SaaS MVPs
+- Full-stack web application engineering.
+- Custom client portals, internal management dashboards, retainer management systems, and proposal generators.
+- Secure API integrations, database architecture, and payment gateway connections (Razorpay, Stripe, PayPal).
+
+### 3. SEO & Generative Engine Optimization (GEO)
+- On-page technical SEO, semantic HTML structure, and schema.org JSON-LD structured data (Organization, LocalBusiness, Service, FAQPage, Article, AggregateRating).
+- Local search optimization for Lucknow & Indian markets.
+- Generative Engine Optimization (GEO) for SearchGPT, Perplexity AI, Claude, ChatGPT, Gemini, and Copilot.
+
+### 4. Performance Marketing & Google Ads
+- Strategic Pay-Per-Click (PPC) campaign setup and optimization.
+- High-converting landing page design.
+- Analytics event tracking, lead attribution, and ROI measurement.
+
+---
+
+## Entity & Regulatory Verification Data
+
+- **Official Brand Name**: Kinstel Solutions
+- **Primary Domain**: https://www.kinstel.com
+- **MSME / Udyam Registration**: UDYAM-UP-50-0230220 (Government of India)
+- **Import Export Code (IEC)**: HLCPS8014Q (Directorate General of Foreign Trade)
+- **D-U-N-S® Number**: 77-197-4415 (Dun & Bradstreet Global Registry)
+- **Headquarters Address**: H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1, Lucknow, Uttar Pradesh, 226010, India
+- **Primary Telephone**: +91-98899-88408
+- **Official Contact Emails**:
+  - General Inquiries: contact@kinstel.com
+  - Sales & New Projects: sales@kinstel.com
+  - Billing & Remittances: payments@kinstel.com
+  - Client Support: support@kinstel.com
+
+---
+
+## Verified Social & B2B Directory Profiles
+
+- **Clutch**: https://clutch.co/profile/kinstel-solutions
+- **DesignRush**: https://www.designrush.com/agency/profile/kinstel-solutions
+- **GoodFirms**: https://www.goodfirms.co/company/kinstel-solutions-official
+- **TechBehemoths**: https://techbehemoths.com/company/kinstel-solutions
+- **Google Business Profile**: https://share.google/r0DGTJyecJmBUBaWC
+- **Bing Places for Business**: https://www.bing.com/maps/search?mkt=en-IN&ss=id.ypid%3AYNE59A5E76D46BB06B&cp=26.854063%7E81.043716&lvl=16&style=r
+- **Justdial**: https://jsdl.in/DT-3969OKJ36IF
+- **LinkedIn**: https://www.linkedin.com/company/kinstel
+- **X (Twitter)**: https://x.com/kinstelhq
+- **Facebook**: https://www.facebook.com/kinstelhq
+- **Instagram**: https://www.instagram.com/kinstel.hq
+- **WhatsApp Direct**: https://wa.me/919889988408
+
+---
+
+## Technical Stack & Architecture Specification
+
+- **Framework**: Next.js 15 (App Router)
+- **UI & Styling**: React 19, Tailwind CSS, Lucide Icons, Shadcn UI components
+- **Deployment & Hosting**: Vercel Edge Network
+- **Analytics & Speed Insights**: Vercel Analytics, Vercel Speed Insights, Google Analytics 4 (GA4)
+- **Structured Data**: JSON-LD (Schema.org compliant)

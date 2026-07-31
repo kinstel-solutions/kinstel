@@ -28,7 +28,7 @@ const serviceJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Services | Web Design & Digital Marketing",
+  title: "Services & Digital Marketing",
   description:
     "Explore our professional web design, development, and digital marketing services. specialized packages for businesses of all sizes.",
   alternates: {
@@ -41,11 +41,11 @@ const services = [
     icon: <Code className="h-10 w-10 text-accent" />,
     title: "Custom Next.js Web Development",
     description:
-      "Sub-second, mobile-first websites built with modern Next.js and React. Engineered for peak conversion and 95+ PageSpeed scores.",
+      "Sub-second, mobile-first websites built with modern Next.js and React. Engineered for peak conversion and 90+ PageSpeed scores.",
     features: [
       "Next.js & React 19 Development",
       "3–5 Day Rapid Rush Delivery",
-      "95+ PageSpeed Guarantee",
+      "90+ PageSpeed Guarantee",
       "Conversion-Focused UI/UX Design",
     ],
   },
@@ -83,7 +83,7 @@ const pricingPackages = [
     features: [
       "Custom Next.js Website",
       "Mobile-First Responsive Design",
-      "95+ PageSpeed Performance",
+      "90+ PageSpeed Performance",
       "Basic SEO & Contact Form",
       "1 Month Free Support",
     ],

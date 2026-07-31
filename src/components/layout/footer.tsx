@@ -240,13 +240,22 @@ export function Footer() {
                 </span>
                 <div className="flex items-center space-x-1.5 text-muted-foreground">
                   <a
-                    href="https://maps.google.com/?cid=11184302972758853612"
+                    href="https://share.google/r0DGTJyecJmBUBaWC"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors"
                     aria-label="Google Business Profile"
                     title="Google Business Profile">
                     <MapPin className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/kinstel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors text-xs font-semibold px-2"
+                    aria-label="LinkedIn Company Profile"
+                    title="LinkedIn">
+                    in
                   </a>
                   <a
                     href="https://x.com/kinstelhq"
@@ -258,6 +267,42 @@ export function Footer() {
                     <Twitter className="h-3.5 w-3.5" />
                   </a>
                   <a
+                    href="https://www.instagram.com/kinstel.hq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors text-xs font-semibold px-2"
+                    aria-label="Instagram Profile"
+                    title="Instagram">
+                    IG
+                  </a>
+                  <a
+                    href="https://www.facebook.com/kinstelhq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors text-xs font-semibold px-2"
+                    aria-label="Facebook Page"
+                    title="Facebook">
+                    FB
+                  </a>
+                  <a
+                    href="https://www.goodfirms.co/company/kinstel-solutions-official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors text-xs font-semibold px-2"
+                    aria-label="GoodFirms Profile"
+                    title="GoodFirms">
+                    GF
+                  </a>
+                  <a
+                    href="https://techbehemoths.com/company/kinstel-solutions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors text-xs font-semibold px-2"
+                    aria-label="TechBehemoths Profile"
+                    title="TechBehemoths">
+                    TB
+                  </a>
+                  <a
                     href="https://www.designrush.com/agency/profile/kinstel-solutions"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -265,6 +310,15 @@ export function Footer() {
                     aria-label="DesignRush Profile"
                     title="DesignRush Profile">
                     <Globe className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://clutch.co/profile/kinstel-solutions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-colors text-xs font-semibold px-2"
+                    aria-label="Clutch Profile"
+                    title="Clutch Profile">
+                    CL
                   </a>
                   <a
                     href="https://jsdl.in/DT-3969OKJ36IF"

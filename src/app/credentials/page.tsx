@@ -115,6 +115,49 @@ export default function CredentialsPage() {
               </CardContent>
             </Card>
           </div>
+
+          {/* Verified Directory Profiles Section */}
+          <div className="pt-10 space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl font-bold font-headline text-foreground">
+                Verified B2B Directory Profiles
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+                Official agency profiles across global B2B platforms and search networks.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { name: "Clutch.co", link: "https://clutch.co/profile/kinstel-solutions", category: "B2B Agency Reviews" },
+                { name: "DesignRush", link: "https://www.designrush.com/agency/profile/kinstel-solutions", category: "Top Web Design Agency" },
+                { name: "GoodFirms", link: "https://www.goodfirms.co/company/kinstel-solutions-official", category: "Verified Tech Vendor" },
+                { name: "TechBehemoths", link: "https://techbehemoths.com/company/kinstel-solutions", category: "Web Development Studio" },
+                { name: "Google Business Profile", link: "https://share.google/r0DGTJyecJmBUBaWC", category: "Verified Local Listing (5.0 ★)" },
+                { name: "Justdial", link: "https://jsdl.in/DT-3969OKJ36IF", category: "Verified Service Listing (5.0 ★)" },
+                { name: "Bing Places for Business", link: "https://www.bing.com/maps/search?mkt=en-IN&ss=id.ypid%3AYNE59A5E76D46BB06B&cp=26.854063%7E81.043716&lvl=16&style=r", category: "Verified Search Listing" },
+                { name: "LinkedIn Company Page", link: "https://www.linkedin.com/company/kinstel", category: "Official Corporate Page" },
+                { name: "X (Twitter) Official", link: "https://x.com/kinstelhq", category: "Official Brand Channel" },
+              ].map((profile, i) => (
+                <a
+                  key={i}
+                  href={profile.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-xl border border-border/60 bg-card/40 hover:bg-card hover:border-accent/40 transition-all flex flex-col justify-between group">
+                  <div>
+                    <span className="text-[11px] font-semibold text-accent uppercase tracking-wider block mb-1">
+                      {profile.category}
+                    </span>
+                    <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors flex items-center justify-between">
+                      {profile.name}
+                      <span className="text-xs text-muted-foreground group-hover:translate-x-0.5 transition-transform">→</span>
+                    </h3>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
