@@ -3,7 +3,11 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-    title: 'Kinstel Solutions | Terms & Conditions',
+    title: 'Terms & Conditions',
+    description: 'Terms and Conditions for using Kinstel Solutions services and website.',
+    alternates: {
+        canonical: '/terms-and-conditions',
+    },
     robots: {
         index: true,
         follow: true,

@@ -32,6 +32,22 @@ export async function generateMetadata({
     alternates: {
       canonical: `/blog/${slug}`,
     },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://www.kinstel.com/blog/${slug}`,
+      siteName: "Kinstel Solutions",
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      creator: "@kinstelhq",
+    },
   };
 }
 
@@ -42,6 +58,21 @@ function formatDate(dateStr: string) {
     day: "numeric",
   });
 }
+
+const verifiedSameAs = [
+  "https://share.google/r0DGTJyecJmBUBaWC",
+  "https://www.linkedin.com/company/kinstel",
+  "https://x.com/kinstelhq",
+  "https://www.facebook.com/kinstelhq",
+  "https://www.instagram.com/kinstel.hq",
+  "https://wa.me/919889988408",
+  "https://www.goodfirms.co/company/kinstel-solutions-official",
+  "https://techbehemoths.com/company/kinstel-solutions",
+  "https://www.designrush.com/agency/profile/kinstel-solutions",
+  "https://clutch.co/profile/kinstel-solutions",
+  "https://jsdl.in/DT-3969OKJ36IF",
+  "https://www.bing.com/maps/search?mkt=en-IN&ss=id.ypid%3AYNE59A5E76D46BB06B&cp=26.854063%7E81.043716&lvl=16&style=r",
+];
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
@@ -54,18 +85,53 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.kinstel.com/blog/${slug}`,
+    },
     headline: post.title,
     datePublished: post.date,
+    dateModified: post.date,
     author: {
       "@type": "Organization",
       name: "Kinstel Solutions",
+      url: "https://www.kinstel.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Kinstel Solutions",
+      url: "https://www.kinstel.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.kinstel.com/android-chrome-512x512.png",
+      },
+      sameAs: verifiedSameAs,
     },
     description: post.description,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Blog",
+        item: "https://www.kinstel.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: post.title,
+        item: `https://www.kinstel.com/blog/${slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <JsonLd data={jsonLd} />
+      <JsonLd data={[jsonLd, breadcrumbJsonLd]} />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}

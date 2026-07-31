@@ -3,7 +3,11 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-    title: 'Kinstel Solutions | Privacy Policy',
+    title: 'Privacy Policy',
+    description: 'Privacy Policy for Kinstel Solutions — how we collect, use, and protect your personal information.',
+    alternates: {
+        canonical: '/privacy-policy',
+    },
     robots: {
         index: true,
         follow: true,
@@ -21,7 +25,7 @@ export default function PrivacyPolicyPage() {
                     <p>
                         This Privacy Policy describes how Kinstel Solutions (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
                         collects, uses, and discloses your personal information when you visit our
-                        website (https://kinstel.com) or use our services.
+                        website (https://www.kinstel.com) or use our services.
                     </p>
 
                     <h2>1. Information We Collect</h2>

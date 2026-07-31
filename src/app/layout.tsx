@@ -16,12 +16,20 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Kinstel Solutions",
   url: "https://www.kinstel.com",
-  logo: "https://www.kinstel.com/android-chrome-512x512.png",
+  logo: "https://www.kinstel.com/logos/K%20arrow%20500x500px%20BG=Black.png",
   sameAs: [
-    "https://maps.google.com/?cid=11184302972758853612",
+    "https://share.google/r0DGTJyecJmBUBaWC",
+    "https://www.linkedin.com/company/kinstel",
     "https://x.com/kinstelhq",
+    "https://www.facebook.com/kinstelhq",
+    "https://www.instagram.com/kinstel.hq",
+    "https://wa.me/919889988408",
+    "https://www.goodfirms.co/company/kinstel-solutions-official",
+    "https://techbehemoths.com/company/kinstel-solutions",
     "https://www.designrush.com/agency/profile/kinstel-solutions",
+    "https://clutch.co/profile/kinstel-solutions",
     "https://jsdl.in/DT-3969OKJ36IF",
+    "https://www.bing.com/maps/search?mkt=en-IN&ss=id.ypid%3AYNE59A5E76D46BB06B&cp=26.854063%7E81.043716&lvl=16&style=r",
   ],
   identifier: [
     {
@@ -78,15 +86,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/logos/Banner-KINSTEL-COVER.png",
+        width: 1200,
+        height: 630,
+        alt: "Kinstel Solutions — Premium Web Design & Development Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
-    creator: "@kinstels",
+    creator: "@kinstelhq",
+    images: ["/logos/Banner-KINSTEL-COVER.png"],
   },
   icons: {
     icon: [

@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
       "2-Year managed server infrastructure & maintenance subscription",
     ],
     results: [
-      "Enterprise-scale B2B presence live with 95+ PageSpeed score",
+      "Enterprise-scale B2B presence live with 90+ PageSpeed score",
       "Delivered on a 10-day rush schedule",
       "2-year prepaid managed server infrastructure & maintenance contract",
     ],

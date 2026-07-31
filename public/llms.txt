@@ -1,0 +1,48 @@
+# Kinstel Solutions
+
+> Kinstel Solutions is a premium web design, custom software development, and digital growth agency headquartered in Lucknow, Uttar Pradesh, India, serving clients across India and globally (USA, UK, Canada, Australia).
+
+## Core Capabilities & Services
+
+- **Custom Next.js & React Web Engineering**: High-performance, hand-coded static & dynamic web applications. Engineered for 90+ PageSpeed scores, zero plugin vulnerability, and sub-second load times.
+- **Custom Web Platforms & SaaS MVPs**: Full-stack application design, custom dashboard interfaces, API integration, and cloud-native software architecture.
+- **Conversion-Focused Web Design**: Bespoke UI/UX design tailored for professional services, luxury brands, technology startups, and corporate platforms.
+- **SEO & Organic Growth Marketing**: Technical SEO, structured data implementation, local search optimization, content strategy, and GEO (Generative Engine Optimization).
+- **Google Ads & Performance Marketing**: Pay-Per-Click campaign strategy, landing page conversion rate optimization (CRO), lead generation, and ROI tracking.
+
+## Entity & Business Verification
+
+- **Legal Entity Name**: Kinstel Solutions
+- **Primary Website**: https://www.kinstel.com
+- **UDYAM Registration**: UDYAM-UP-50-0230220
+- **Import Export Code (IEC)**: HLCPS8014Q
+- **D-U-N-S Number**: 77-197-4415
+- **Headquarters Address**: H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1, Lucknow, Uttar Pradesh, 226010, India
+- **Primary Phone**: +91-98899-88408
+- **Primary Email**: contact@kinstel.com
+- **Official Profiles**:
+  - Google Business Profile: https://share.google/r0DGTJyecJmBUBaWC
+  - Bing Places: https://www.bing.com/maps/search?mkt=en-IN&ss=id.ypid%3AYNE59A5E76D46BB06B&cp=26.854063%7E81.043716&lvl=16&style=r
+  - LinkedIn: https://www.linkedin.com/company/kinstel
+  - X (Twitter): https://x.com/kinstelhq
+  - Facebook: https://www.facebook.com/kinstelhq
+  - Instagram: https://www.instagram.com/kinstel.hq
+  - WhatsApp Direct: https://wa.me/919889988408
+  - GoodFirms: https://www.goodfirms.co/company/kinstel-solutions-official
+  - TechBehemoths: https://techbehemoths.com/company/kinstel-solutions
+  - DesignRush: https://www.designrush.com/agency/profile/kinstel-solutions
+  - Clutch: https://clutch.co/profile/kinstel-solutions
+  - Justdial: https://jsdl.in/DT-3969OKJ36IF
+
+## Key Pages & Resources
+
+- [Services & Solutions](https://www.kinstel.com/services): Overview of web design, Next.js development, and performance marketing services.
+- [Lucknow Web Studio](https://www.kinstel.com/web-design-company-lucknow): Local web development and digital marketing services in Lucknow, India.
+- [Global Web Engineering](https://www.kinstel.com/global-promo): International web studio services for US, UK, CA, and AU businesses.
+- [Case Studies & Portfolio](https://www.kinstel.com/work): Client work, performance metrics, and build breakdowns.
+- [Pricing Packages](https://www.kinstel.com/packages): Transparent service packages and project tiers.
+- [Free Website Audit Tool](https://www.kinstel.com/website-audit): Automated speed, SEO, and performance evaluation tool.
+- [Website ROI Calculator](https://www.kinstel.com/tools/website-roi-calculator): Interactive revenue impact calculator.
+- [Next.js vs WordPress Picker](https://www.kinstel.com/tools/nextjs-vs-wordpress): Technical comparison tool for web architecture selection.
+- [Google Ads Budget Estimator](https://www.kinstel.com/tools/google-ads-budget-estimator): Interactive PPC budget and lead estimator.
+- [FAQ](https://www.kinstel.com/faq): Answers regarding pricing, timelines, technology stack, and process.

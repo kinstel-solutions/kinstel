@@ -3,7 +3,11 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-    title: 'Kinstel Solutions | Cancellation & Refund Policy',
+    title: 'Cancellation & Refund Policy',
+    description: 'Cancellation and Refund Policy for web design and development services from Kinstel Solutions.',
+    alternates: {
+        canonical: '/refund-policy',
+    },
     robots: {
         index: true,
         follow: true,
