@@ -16,11 +16,15 @@ export function Footer() {
             <div>
               <Link
                 href="/"
-                className="mb-4 inline-flex items-center gap-2"
+                className="mb-3 inline-flex items-center gap-2"
                 aria-label="Kinstel Home">
-                <span className="text-2xl font-bold font-headline text-foreground tracking-tight">
-                  <span className="text-accent">K</span>instel
-                </span>
+                <Image
+                  src="/Kinstel_logo-G Font.svg"
+                  alt="Kinstel Logo"
+                  width={140}
+                  height={48}
+                  className="w-[110px] md:w-[130px] h-auto object-contain"
+                />
               </Link>
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground mt-2">
                 Kinstel builds high-performance, fast, and conversion-engineered websites & platforms for modern businesses.

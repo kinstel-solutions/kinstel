@@ -7,25 +7,27 @@
 
 ## Executive Overview
 
-This plan establishes the design engineering roadmap for integrating the Kinstel K-arrow logo mark across the website, structured data schemas, favicons, studio generators, and background animations.
+This plan establishes the design engineering roadmap for integrating the Kinstel K-arrow logo mark and full vector logo (`public/Kinstel_logo-G Font.svg`) across the website, PDF generators, structured data schemas, favicons, studio tools, and background animations.
 
 Key Directive Rules:
-1. **SVG Standard:** Use `public/K-Logo.svg` for all UI headers, footers, modals, buttons, and watermarks.
+1. **SVG Standard:** Use `public/Kinstel_logo-G Font.svg` for full brand headers/PDFs and `public/K-Logo.svg` for icon marks, modals, buttons, and watermarks.
 2. **Circular Solid BG Rule:** Square solid background logos are eliminated. Wherever a solid background is required (Schema.org JSON-LD, PWA app icons, profile avatars), strictly use **circular container** variants (`public/logos/K arrow 400x400px BG=Black&Circle.webp` and derived sizes).
 
 ---
 
 ## 📋 Comprehensive Task List
 
-### Task 1: `K-Logo.svg` Codebase Migration
-- **Navigation Header (`src/components/ui/k-logo.tsx`):**
-  - Update `<KLogo />` to render `public/K-Logo.svg` vector mark alongside typography.
-- **Footer Section (`src/components/layout/footer.tsx`):**
-  - Embed `public/K-Logo.svg` icon mark alongside footer branding mark.
-- **Studio Invoice & Proposal Generators (`src/components/studio/`):**
-  - Render vector `public/K-Logo.svg` in exported PDF invoice and proposal headers.
-- **Lead Modals & Interactive Tools (`src/components/ui/`):**
-  - Update `<WebsiteAuditModal />`, `<QuoteCalculator />`, and `<LeadCaptureModal />` headers to display `public/K-Logo.svg`.
+### Task 1: Full Logo (`Kinstel_logo-G Font.svg`) & Icon Mark (`K-Logo.svg`) Integration
+- **PDF Invoice & Proposal Generators (`src/components/studio/`):**
+  - Embed vector `public/Kinstel_logo-G Font.svg` in top-left header of exported client PDF invoices and proposals.
+- **Lead Capture & Audit Modal Headers (`src/components/ui/website-audit-modal.tsx`):**
+  - Display full vector logo header badge at top of lead capture modals.
+- **Studio Dashboard (`src/app/studio/page.tsx`):**
+  - Embed full vector logo mark beside Studio operations title banner.
+- **Contact Page Office Card (`src/app/contact/page.tsx`):**
+  - Render full vector logo directly above Lucknow office address & direct call links.
+- **Payment Success Receipt (`src/app/pay/success/page.tsx`):**
+  - Render full vector logo in checkout receipt confirmation card.
 
 ---
 
@@ -60,7 +62,9 @@ Key Directive Rules:
 
 | Surface | Target Asset | Container Format |
 |---|---|---|
-| **Header Navigation** | `public/K-Logo.svg` | No-BG (Transparent Vector) |
+| **Header Navigation & Footer** | `public/Kinstel_logo-G Font.svg` | No-BG (Transparent Vector) |
+| **Exported PDF Invoices & Proposals** | `public/Kinstel_logo-G Font.svg` | Vector PDF Header |
+| **Audit & Lead Modal Headers** | `public/Kinstel_logo-G Font.svg` | No-BG (Transparent Vector) |
 | **Hero & Footer Watermarks** | `public/K-Logo.svg` | No-BG (Transparent `0.03` opacity) |
 | **Scroll Laser Animations** | `public/K-Logo.svg` | No-BG (Motion SVG) |
 | **Schema.org JSON-LD Logo** | `K arrow 400x400px BG=Black&Circle.webp` | **Circular Black Container** |
