@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { CheckCircle2, Home, Mail } from 'lucide-react';
 import { Suspense } from 'react';
+import Image from 'next/image';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
@@ -35,8 +36,17 @@ function SuccessPageContent() {
         <div className="max-w-2xl mx-auto">
           {/* Success Card */}
           <div className="bg-card rounded-2xl shadow-lg border border-border p-8 md:p-12">
-            {/* Success Icon */}
+            {/* Success Icon & Logo */}
             <div className="text-center mb-8">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/logos/Kinstel-Solutions_logo.svg"
+                  alt="Kinstel Solutions"
+                  width={200}
+                  height={70}
+                  className="w-[160px] h-auto object-contain"
+                />
+              </div>
               <div className="inline-flex items-center justify-center w-20 h-20 bg-green-500/10 rounded-full mb-4">
                 <CheckCircle2 className="w-12 h-12 text-green-500" />
               </div>

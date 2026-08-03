@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -106,6 +107,13 @@ export default function ContactPage() {
                 <MapPin className="h-6 w-6 text-accent" />
               </div>
               <div>
+                <Image
+                  src="/logos/Kinstel-Solutions_logo.svg"
+                  alt="Kinstel Solutions"
+                  width={180}
+                  height={60}
+                  className="w-[140px] h-auto object-contain mb-3"
+                />
                 <h2 className="font-semibold">Registered Office</h2>
                 <p className="text-muted-foreground text-base">
                   H. No. 33, Shivlok Colony, Vigyan Khand, Gomti Nagar, Nijampur Malhaur, Lucknow, Uttar Pradesh 226010, India.
