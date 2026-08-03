@@ -19,11 +19,11 @@ export function Footer() {
                 className="mb-3 inline-flex items-center gap-2"
                 aria-label="Kinstel Home">
                 <Image
-                  src="/Kinstel_logo-G Font.svg"
-                  alt="Kinstel Logo"
-                  width={140}
-                  height={48}
-                  className="w-[110px] md:w-[130px] h-auto object-contain"
+                  src="/logos/Kinstel-Solutions_logo.svg"
+                  alt="Kinstel Solutions Logo"
+                  width={160}
+                  height={56}
+                  className="w-[130px] md:w-[155px] h-auto object-contain"
                 />
               </Link>
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground mt-2">

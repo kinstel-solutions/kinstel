@@ -8,12 +8,12 @@ export function KLogo() {
       href="/"
       className="flex items-center gap-0">
       <Image
-        src="/Kinstel_logo-G Font.svg"
-        alt="Kinstel Logo"
+        src="/logos/Kinstel-Solutions_logo.svg"
+        alt="Kinstel Solutions Logo"
         width={400}
         height={400}
         priority
-        className="object-contain w-[100px]  md:w-[120px] h-auto"
+        className="object-contain w-[125px] md:w-[150px] h-auto"
       />
       {/* Kinstel hallow Letters */}
       {/* <AuroraText
