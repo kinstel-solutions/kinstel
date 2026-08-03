@@ -16,7 +16,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Kinstel Solutions",
   url: "https://www.kinstel.com",
-  logo: "https://www.kinstel.com/logos/K%20arrow%20500x500px%20BG=Black.png",
+  logo: "https://www.kinstel.com/logos/K%20arrow%20500x500px%20BG=Black.webp",
   sameAs: [
     "https://share.google/r0DGTJyecJmBUBaWC",
     "https://www.linkedin.com/company/kinstel",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/logos/Banner-KINSTEL-COVER.png",
+        url: "/social-assets/home-og-image.webp",
         width: 1200,
         height: 630,
         alt: "Kinstel Solutions — Premium Web Design & Development Studio",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     creator: "@kinstelhq",
-    images: ["/logos/Banner-KINSTEL-COVER.png"],
+    images: ["/social-assets/home-og-image.webp"],
   },
   icons: {
     icon: [

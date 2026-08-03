@@ -31,7 +31,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Custom Web Platforms & Applications",
   description:
-    "Kinstel builds custom web platforms — booking systems, multi-vendor marketplaces, dashboards, and web apps — engineered in modern code (Next.js, React). From MVP to scale.",
+    "Kinstel Solutions builds custom web platforms — booking systems, multi-vendor marketplaces, client portals, and SaaS web apps — engineered in modern code (Next.js, React).",
   alternates: {
     canonical: "/platforms",
   },

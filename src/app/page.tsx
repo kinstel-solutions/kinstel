@@ -37,11 +37,33 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { localBusinessJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Web Design, Development & Digital Marketing",
+  title: "Kinstel Solutions | Premium Web Design, Development & Digital Marketing",
   description:
-    "Kinstel is a web studio that designs and builds high-performing websites and custom platforms — then runs the SEO and Google Ads that grow them. Conversion-focused work, delivered fast.",
+    "Kinstel Solutions is a web engineering studio that designs and builds high-performing websites and custom platforms — then runs the SEO and Google Ads that grow them.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "Kinstel Solutions | Premium Web Engineering & Digital Growth",
+    description:
+      "Kinstel Solutions designs and builds high-performing websites and custom platforms — then runs the SEO and Google Ads that grow them.",
+    url: "https://www.kinstel.com",
+    siteName: "Kinstel Solutions",
+    images: [
+      {
+        url: "/social-assets/home-og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kinstel Solutions — Premium Web Design & Development Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kinstel Solutions | Premium Web Engineering & Digital Growth",
+    description:
+      "Kinstel Solutions designs and builds high-performing websites and custom platforms.",
+    images: ["/social-assets/home-og-image.webp"],
   },
 };
 

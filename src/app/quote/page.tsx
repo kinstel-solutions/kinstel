@@ -10,7 +10,7 @@ import { createWebApplicationJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Get a Quote — Website & Growth Pricing",
   description:
-    "Answer a few quick questions and get an instant starting-from range for your website, platform, or marketing project — then book a free call to lock in the details.",
+    "Calculate an instant cost and scope estimate for custom website development, SaaS platforms, or performance marketing campaigns from Kinstel Solutions.",
   alternates: {
     canonical: "/quote",
   },

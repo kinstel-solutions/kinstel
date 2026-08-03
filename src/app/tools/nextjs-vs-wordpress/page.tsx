@@ -10,7 +10,7 @@ import { createWebApplicationJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Next.js vs WordPress — Which Should You Choose? (Free Picker)",
   description:
-    "Answer 5 quick, honest questions and find out whether Next.js or WordPress is the better fit for your website or platform — no bias, just tradeoffs.",
+    "Answer 5 quick, honest questions and find out whether Next.js or WordPress is the better fit for your website — free interactive trade-off tool from Kinstel Solutions.",
   alternates: {
     canonical: "/tools/nextjs-vs-wordpress",
   },

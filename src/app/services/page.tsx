@@ -48,9 +48,9 @@ const breadcrumbJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Services & Digital Marketing",
+  title: "Web Engineering & Growth Marketing Services",
   description:
-    "Explore our professional web design, development, and digital marketing services. specialized packages for businesses of all sizes.",
+    "Explore professional web design, development, and digital marketing services from Kinstel Solutions. Specialized engineering packages for growing businesses.",
   alternates: {
     canonical: "/services",
   },

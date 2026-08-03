@@ -10,7 +10,7 @@ import { createWebApplicationJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Free Google Ads Budget Estimator — Clicks & Leads Calculator (India)",
   description:
-    "Estimate how many clicks and leads your Google Ads budget can realistically deliver in India — or work backward from a lead target to a budget.",
+    "Estimate how many clicks and leads your Google Ads budget can realistically deliver in India — free interactive PPC calculator from Kinstel Solutions.",
   alternates: {
     canonical: "/tools/google-ads-budget-estimator",
   },
