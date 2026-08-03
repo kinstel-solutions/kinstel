@@ -16,7 +16,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Kinstel Solutions",
   url: "https://www.kinstel.com",
-  logo: "https://www.kinstel.com/logos/K%20arrow%20500x500px%20BG=Black.webp",
+  logo: "https://www.kinstel.com/logos/K%20arrow%20400x400px%20BG=Black&Circle.webp",
   sameAs: [
     "https://share.google/r0DGTJyecJmBUBaWC",
     "https://www.linkedin.com/company/kinstel",

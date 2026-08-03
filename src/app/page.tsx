@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { KLogoWatermark } from "@/components/ui/k-logo-watermark";
 import { type Metadata } from "next";
 import {
   Award,
@@ -280,6 +281,7 @@ export default function Home() {
         <main className="flex-grow">
           {/* Hero Section */}
           <section className="relative overflow-hidden min-h-[80dvh] flex flex-col items-center justify-center py-10">
+            <KLogoWatermark className="top-1/2 -translate-y-1/2 -right-16 md:-right-28 pointer-events-none" side="right" opacity={0.035} />
             <div className="container relative z-10 mx-auto flex flex-col items-center justify-center text-center px-4 md:px-6">
               <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-12 duration-500">
                 <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline">

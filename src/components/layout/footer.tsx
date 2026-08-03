@@ -3,13 +3,15 @@ import Script from "next/script";
 import { MapPin, Globe, Building2, Twitter } from "lucide-react";
 import { ClickToCallLink } from "../ui/click-to-call-link";
 import Image from "next/image";
+import { KLogoWatermark } from "../ui/k-logo-watermark";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-border/40 text-secondary-foreground">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
+    <footer className="relative bg-background border-t border-border/40 text-secondary-foreground overflow-hidden">
+      <KLogoWatermark className="top-1/2 -translate-y-1/2 -left-20 md:-left-32 pointer-events-none" side="left" opacity={0.035} />
+      <div className="container relative z-10 mx-auto px-4 py-12 md:px-6 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand & Contact Information Column */}
           <div className="lg:col-span-4 flex flex-col justify-between">

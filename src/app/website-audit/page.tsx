@@ -46,7 +46,7 @@ const whatWeCheck = [
 
 export default function WebsiteAuditPage() {
   const webAppJsonLd = createWebApplicationJsonLd({
-    name: "Free Website Audit Tool",
+    name: "Website Speed & SEO Audit Tool",
     description:
       "Get a free instant audit of your website's speed, SEO, accessibility, and best practices — powered by Google PageSpeed Insights.",
     url: "https://www.kinstel.com/website-audit",

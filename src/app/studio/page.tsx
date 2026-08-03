@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   FileText,
@@ -66,6 +67,15 @@ export default function StudioPage() {
         <section className="relative overflow-hidden py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/logos/Kinstel-Solutions_logo.svg"
+                  alt="Kinstel Solutions Logo"
+                  width={220}
+                  height={75}
+                  className="w-[180px] h-auto object-contain"
+                />
+              </div>
               <p className="font-semibold uppercase tracking-wider text-accent">
                 Internal
               </p>
