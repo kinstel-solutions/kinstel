@@ -95,7 +95,7 @@ Key Value Metrics:
 - **MSME / Udyam Registration**: UDYAM-UP-50-0230220 (Government of India)
 - **Import Export Code (IEC)**: HLCPS8014Q (Directorate General of Foreign Trade)
 - **D-U-N-S® Number**: 77-197-4415 (Dun & Bradstreet Global Registry)
-- **Headquarters Address**: H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1, Lucknow, Uttar Pradesh, 226010, India
+- **Headquarters Address**: H. No. 33, Shivlok Colony, Vigyan Khand, Gomti Nagar, Nijampur Malhaur, Lucknow, Uttar Pradesh 226010, India
 - **Primary Telephone**: +91-98899-88408
 - **Official Contact Emails**:
   - General Inquiries: contact@kinstel.com

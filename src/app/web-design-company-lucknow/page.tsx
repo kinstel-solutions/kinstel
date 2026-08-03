@@ -1151,13 +1151,13 @@ export default function LucknowPage() {
                   </div>
                 </div>
                 <div className="pt-2 text-xs text-muted-foreground">
-                  <strong>Office Address:</strong> H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1, Lucknow, UP 226010, India
+                  <strong>Office Address:</strong> H. No. 33, Shivlok Colony, Vigyan Khand, Gomti Nagar, Nijampur Malhaur, Lucknow, UP 226010, India
                 </div>
               </div>
               <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-border/60 shadow-xl h-[320px] md:h-[380px]">
                 <iframe
-                  title="Kinstel Solutions Lucknow Office Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.8517260592864!2d81.0415273!3d26.854063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be30058b8888b%3A0x280e22709e99ab66!2sKinstel%20Solutions!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  title="Kinstel Solutions Lucknow Office Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14238.250123932039!2d81.04234215!3d26.8538632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x63e0a7fe2fa957fb%3A0x9b36a04bf7a307ec!2sKinstel%20Solutions!5e0!3m2!1sen!2sin!4v1785763367462!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

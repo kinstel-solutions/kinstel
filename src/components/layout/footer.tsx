@@ -245,12 +245,27 @@ export function Footer() {
                     href="https://share.google/r0DGTJyecJmBUBaWC"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-all hover:scale-105"
+                    className="inline-flex items-center gap-1.5 p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-all hover:scale-105 text-xs font-semibold text-foreground"
                     aria-label="Google Business Profile (5.0 Stars)"
                     title="Google Business Profile (5.0 ★)">
-                    <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 24 24">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
                     </svg>
+                    <span>Google 5.0 ★</span>
+                  </a>
+
+                  {/* Justdial Profile */}
+                  <a
+                    href="https://jsdl.in/DT-3969OKJ36IF"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 p-1.5 rounded-md border border-border/50 bg-muted/20 hover:bg-muted hover:text-foreground transition-all hover:scale-105 text-xs font-semibold text-foreground"
+                    aria-label="Justdial Profile (5.0 Stars)"
+                    title="Justdial Profile (5.0 ★)">
+                    <svg className="w-3.5 h-3.5 text-amber-400 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    <span>Justdial 5.0 ★</span>
                   </a>
 
                   {/* LinkedIn */}

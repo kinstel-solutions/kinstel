@@ -4,7 +4,7 @@
 
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "WebDesignCompany"],
   name: "Kinstel Solutions",
   url: "https://www.kinstel.com",
   image: "https://www.kinstel.com/android-chrome-512x512.png",
@@ -21,7 +21,7 @@ export const localBusinessJsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress:
-      "H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1",
+      "H. No. 33, Shivlok Colony, Vigyan Khand, Gomti Nagar, Nijampur Malhaur",
     addressLocality: "Lucknow",
     addressRegion: "Uttar Pradesh",
     postalCode: "226010",
@@ -42,12 +42,13 @@ export const localBusinessJsonLd = {
         "Thursday",
         "Friday",
         "Saturday",
+        "Sunday",
       ],
-      opens: "09:00",
-      closes: "20:00",
+      opens: "00:00",
+      closes: "23:59",
     },
   ],
-  hasMap: "https://share.google/r0DGTJyecJmBUBaWC",
+  hasMap: "https://www.google.com/maps/dir/?api=1&destination=Kinstel+Solutions+Lucknow",
   sameAs: [
     "https://share.google/r0DGTJyecJmBUBaWC",
     "https://www.linkedin.com/company/kinstel",

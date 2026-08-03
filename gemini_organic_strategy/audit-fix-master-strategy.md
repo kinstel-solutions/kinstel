@@ -49,7 +49,14 @@ All performance-related tasks (image compression, font loading, critical CSS, bu
   - `src/app/blog/[slug]/page.tsx`
   - `src/app/services/page.tsx`
   - `src/app/global-promo/page.tsx`
-  - `src/app/packages/page.tsx`
+### Phase 38: GBP Alignment & Contact Map Enhancements
+- **File:** `gemini_organic_strategy/plans/phase-38_gbp-alignment-and-contact-map-enhancements.md`
+- **Focus:** 24/7 hours & 1-review count alignment in `schema.ts`, exact CID map embed in Lucknow page, interactive map + "Get Directions" & "Review Us" buttons on `/contact`, and `5.0 ★` badge in `footer.tsx`.
+- **Target Files:**
+  - `src/lib/schema.ts`
+  - `src/app/web-design-company-lucknow/page.tsx`
+  - `src/app/contact/page.tsx`
+  - `src/components/layout/footer.tsx`
 
 ---
 *Strategy managed in `gemini_organic_strategy`.*
