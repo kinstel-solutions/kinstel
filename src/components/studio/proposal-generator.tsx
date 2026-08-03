@@ -109,7 +109,7 @@ interface ProposalDraft {
 // the invoice tool).
 const DEFAULT_BUSINESS: BusinessDetails = {
   businessName: "Kinstel Solutions",
-  address: "33 Shivdham, Shivlok Colony, Malhaur, Lucknow (U.P.) 226010",
+  address: "H. No. 33, Shivlok Colony, Vigyan Khand, Gomti Nagar, Nijampur Malhaur, Lucknow (U.P.) 226010",
   email: "contact@kinstel.com",
   pan: "HLCPS8014Q",
   registrations:
