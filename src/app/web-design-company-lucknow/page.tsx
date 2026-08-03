@@ -26,6 +26,7 @@ import {
   Utensils,
   Gift,
   ArrowDown,
+  MapPin,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -66,6 +67,7 @@ import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { JsonLd } from "@/components/seo/json-ld";
+import { localBusinessJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow",
@@ -81,6 +83,12 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/web-design-company-lucknow",
+    languages: {
+      "en-IN": "https://www.kinstel.com/web-design-company-lucknow",
+      "en-US": "https://www.kinstel.com/global-promo",
+      "en-AU": "https://www.kinstel.com/global-promo",
+      "en-GB": "https://www.kinstel.com/global-promo",
+    },
   },
   openGraph: {
     title: "Leading Website Design Company in Lucknow | Kinstel Solutions",
@@ -398,10 +406,29 @@ const faqJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.kinstel.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Lucknow Web Design Studio",
+      item: "https://www.kinstel.com/web-design-company-lucknow",
+    },
+  ],
+};
+
 export default function LucknowPage() {
   return (
     <div className="flex flex-col gap-8 py-4">
-      <JsonLd data={[serviceJsonLd, faqJsonLd]} />
+      <JsonLd data={[localBusinessJsonLd, serviceJsonLd, faqJsonLd, breadcrumbJsonLd]} />
       {/* <DotPattern
        
         width={20}
@@ -1079,6 +1106,66 @@ export default function LucknowPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Lucknow Sub-Locations & Google Map Section */}
+        <section className="py-12 md:py-16 bg-muted/20 border-y border-border/40">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent uppercase tracking-wider">
+                  <MapPin className="w-3.5 h-3.5" /> Serving All Lucknow Hubs
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-tight">
+                  Web Design & Digital Marketing Across <span className="text-accent">Lucknow</span>
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Headquartered in Malhaur / Vigyan Khand-1, Kinstel Solutions provides local web design, custom Next.js development, and Google Ads management across all major business districts in Lucknow:
+                </p>
+                <div className="grid grid-cols-2 gap-2.5 pt-2 text-sm">
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-border/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span>Gomti Nagar & Ext.</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-border/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span>Hazratganj</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-border/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span>Indira Nagar</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-border/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span>IT City & Malhaur</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-border/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span>Aliganj & Mahanagar</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-border/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span>Sushant Golf City</span>
+                  </div>
+                </div>
+                <div className="pt-2 text-xs text-muted-foreground">
+                  <strong>Office Address:</strong> H. No. 33, Shivdham, Shivlok Colony, Nijampur, Malhaur, Vigyan Khand-1, Lucknow, UP 226010, India
+                </div>
+              </div>
+              <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-border/60 shadow-xl h-[320px] md:h-[380px]">
+                <iframe
+                  title="Kinstel Solutions Lucknow Office Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.8517260592864!2d81.0415273!3d26.854063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be30058b8888b%3A0x280e22709e99ab66!2sKinstel%20Solutions!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </section>

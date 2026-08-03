@@ -27,6 +27,26 @@ export const localBusinessJsonLd = {
     postalCode: "226010",
     addressCountry: "IN",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 26.854063,
+    longitude: 81.043716,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:00",
+      closes: "20:00",
+    },
+  ],
   hasMap: "https://share.google/r0DGTJyecJmBUBaWC",
   sameAs: [
     "https://share.google/r0DGTJyecJmBUBaWC",
@@ -53,3 +73,33 @@ export const localBusinessJsonLd = {
     },
   ],
 };
+
+export function createWebApplicationJsonLd({
+  name,
+  description,
+  url,
+  applicationCategory = "BusinessApplication",
+  operatingSystem = "All",
+}: {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory?: string;
+  operatingSystem?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory,
+    operatingSystem,
+    browserRequirements: "Requires JavaScript. Requires HTML5.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+}

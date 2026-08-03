@@ -5,6 +5,8 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { AuditTool } from "@/components/tools/audit-tool";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
+import { JsonLd } from "@/components/seo/json-ld";
+import { createWebApplicationJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Free Website Audit — Speed, SEO & Performance Checker",
@@ -43,8 +45,16 @@ const whatWeCheck = [
 ];
 
 export default function WebsiteAuditPage() {
+  const webAppJsonLd = createWebApplicationJsonLd({
+    name: "Free Website Audit Tool",
+    description:
+      "Get a free instant audit of your website's speed, SEO, accessibility, and best practices — powered by Google PageSpeed Insights.",
+    url: "https://www.kinstel.com/website-audit",
+  });
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={webAppJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero */}

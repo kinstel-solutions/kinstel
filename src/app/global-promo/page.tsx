@@ -55,6 +55,13 @@ export const metadata: Metadata = {
     "Get a Free Website Audit & Strategy Session from Kinstel. Custom web design, SEO-ready, 90+ PageSpeed scores. Serving US, UK, CA, AU, and worldwide.",
   alternates: {
     canonical: "/global-promo",
+    languages: {
+      "en-US": "https://www.kinstel.com/global-promo",
+      "en-AU": "https://www.kinstel.com/global-promo",
+      "en-GB": "https://www.kinstel.com/global-promo",
+      "en-CA": "https://www.kinstel.com/global-promo",
+      "en-IN": "https://www.kinstel.com/web-design-company-lucknow",
+    },
   },
   robots: { index: true, follow: true },
   openGraph: {

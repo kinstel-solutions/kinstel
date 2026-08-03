@@ -4,6 +4,8 @@ import { Clock, TrendingUp } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { AdsBudgetEstimator } from "@/components/tools/ads-budget-estimator";
+import { JsonLd } from "@/components/seo/json-ld";
+import { createWebApplicationJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Free Google Ads Budget Estimator — Clicks & Leads Calculator (India)",
@@ -15,8 +17,16 @@ export const metadata: Metadata = {
 };
 
 export default function GoogleAdsBudgetEstimatorPage() {
+  const webAppJsonLd = createWebApplicationJsonLd({
+    name: "Google Ads PPC Budget & Lead Estimator",
+    description:
+      "Interactive PPC budget and lead estimation tool for calculating clicks, cost per lead, and campaign ROI.",
+    url: "https://www.kinstel.com/tools/google-ads-budget-estimator",
+  });
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={webAppJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero */}

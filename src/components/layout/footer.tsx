@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import { MapPin, Globe, Building2, Twitter } from "lucide-react";
 import { ClickToCallLink } from "../ui/click-to-call-link";
 import Image from "next/image";
@@ -418,7 +419,7 @@ export function Footer() {
           <p>Copyright &copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>
-      <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+      <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" strategy="lazyOnload" />
     </footer>
   );
 }
