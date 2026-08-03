@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/seo/json-ld";
 import { posts } from "@/lib/blog";
+import { KeyTakeaways } from "@/components/ui/key-takeaways";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -174,6 +175,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 [&_strong]:font-semibold [&_strong]:text-foreground
                 [&_em]:italic
                 [&>*:first-child]:mt-0">
+              {post.takeaways && <KeyTakeaways items={post.takeaways} />}
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {post.body}
               </ReactMarkdown>

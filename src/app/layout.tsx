@@ -132,6 +132,14 @@ export default function RootLayout({
     <html
       lang="en"
       className="scroll-smooth dark">
+      <head>
+        <link
+          rel="alternate"
+          type="text/markdown"
+          href="/llms.txt"
+          title="LLM Site Summary"
+        />
+      </head>
       <body
         suppressHydrationWarning
         className={cn(

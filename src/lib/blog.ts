@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   author: string;
   tags: string[];
+  takeaways?: string[];
   body: string;
 }
 
@@ -17,6 +18,11 @@ export const posts: BlogPost[] = [
     date: "2026-07-24",
     author: "Kinstel Solutions",
     tags: ["Pricing", "Web Design", "India"],
+    takeaways: [
+      "Website pricing in India ranges from ₹0 (DIY builders) to ₹2,00,000+ (custom platforms).",
+      "What you pay for is speed, conversion engineering, and custom Next.js code — not raw page count.",
+      "A cheap ₹9,000 site that fails to convert visitors is far more expensive in lost leads than a hand-coded conversion site.",
+    ],
     body: `Ask three agencies for a website quote and you'll get three wildly different numbers — ₹8,000, ₹40,000, ₹2,00,000. So what's the *real* price of a website in India? The honest answer: it depends entirely on what you're actually buying. Here's a transparent breakdown.
 
 ## You're not paying for "pages"
@@ -55,6 +61,11 @@ We price by outcome, not page count — and we're upfront about it. Many clients
     date: "2026-07-24",
     author: "Kinstel Solutions",
     tags: ["Next.js", "WordPress", "Web Development"],
+    takeaways: [
+      "WordPress is ideal for content-heavy sites requiring daily self-editing on a tight budget.",
+      "Next.js delivers 95+ PageSpeed scores, sub-second load times, and zero plugin vulnerability risk.",
+      "Next.js is the preferred choice for custom SaaS platforms, booking engines, and conversion-focused web design.",
+    ],
     body: `WordPress powers a huge share of the web. Next.js is what a lot of modern, high-performance sites are built on today. Both are good tools — for different jobs. Here's a practical comparison, minus the hype.
 
 ## The quick answer
@@ -88,6 +99,11 @@ We build in Next.js because most businesses we work with want speed, a distincti
     date: "2026-07-24",
     author: "Kinstel Solutions",
     tags: ["Conversion", "Web Design", "SEO"],
+    takeaways: [
+      "Slow load times over 3 seconds cause nearly 50% of visitors to bounce.",
+      "Non-responsive mobile layouts alienate the majority of your traffic.",
+      "Websites without single clear calls to action fail to convert interested visitors.",
+    ],
     body: `Your website is either winning you customers or quietly losing them — there's no neutral. If enquiries are thin even though people visit, one of these five things is usually the culprit.
 
 ## 1. It loads slowly
@@ -116,6 +132,11 @@ Every one of these is fixable — usually faster and cheaper than you'd expect. 
     date: "2026-07-24",
     author: "Kinstel Solutions",
     tags: ["Local SEO", "Lucknow", "Google Business Profile"],
+    takeaways: [
+      "Claiming & optimizing a Google Business Profile is the highest-impact action for local Google Maps 3-Pack rankings.",
+      "Encourage customer reviews and maintain identical NAP (Name, Address, Phone) across local directory citations.",
+      "Optimize website content for plain-language local search terms like 'website designer in Lucknow'.",
+    ],
     body: `When someone in Lucknow searches "near me" or "in Lucknow" for what you sell, do you show up? If not, you're handing those customers to competitors. Local SEO is how you fix that — and most of it is within your control. Here's the practical version.
 
 ## 1. Claim and complete your Google Business Profile
@@ -147,6 +168,11 @@ Local SEO compounds — the earlier you start, the bigger the lead. If you'd rat
     date: "2026-07-24",
     author: "Kinstel Solutions",
     tags: ["Google Ads", "PPC", "Small Business"],
+    takeaways: [
+      "Google Search Ads target active intent at the exact moment customers search for your services.",
+      "Sending ad traffic to dedicated, conversion-focused landing pages delivers up to 15–40% lead conversion rates.",
+      "Set up conversion event tracking (calls, form submits, WhatsApp clicks) before launching campaigns.",
+    ],
     body: `Done right, Google Ads is one of the fastest ways for a small business in India to get in front of people actively searching for what you sell. Done wrong, it's one of the fastest ways to burn cash. Here's the practical starter guide.
 
 ## Why Google Ads works for small businesses

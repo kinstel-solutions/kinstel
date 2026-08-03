@@ -4,12 +4,13 @@ import { posts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://www.kinstel.com';
-  const lastModified = new Date();
+  const defaultLastModified = new Date();
 
-  const routes: {
+  const staticRoutes: {
     path: string;
     priority: number;
     changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
+    lastModified?: Date;
   }[] = [
     { path: '/', priority: 1.0, changeFrequency: 'weekly' },
     { path: '/about', priority: 0.6, changeFrequency: 'monthly' },
@@ -36,22 +37,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/shipping', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/credentials', priority: 0.6, changeFrequency: 'yearly' },
     { path: '/work', priority: 0.7, changeFrequency: 'monthly' },
-    ...caseStudies.map((study) => ({
-      path: `/work/${study.slug}`,
-      priority: 0.6,
-      changeFrequency: 'monthly' as MetadataRoute.Sitemap[number]['changeFrequency'],
-    })),
     { path: '/blog', priority: 0.7, changeFrequency: 'monthly' },
-    ...posts.map((post) => ({
-      path: `/blog/${post.slug}`,
-      priority: 0.6,
-      changeFrequency: 'monthly' as MetadataRoute.Sitemap[number]['changeFrequency'],
-    })),
   ];
 
-  return routes.map(({ path, priority, changeFrequency }) => ({
+  const caseStudyRoutes = caseStudies.map((study) => ({
+    path: `/work/${study.slug}`,
+    priority: 0.6,
+    changeFrequency: 'monthly' as MetadataRoute.Sitemap[number]['changeFrequency'],
+    lastModified: defaultLastModified,
+  }));
+
+  const blogPostRoutes = posts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    priority: 0.6,
+    changeFrequency: 'monthly' as MetadataRoute.Sitemap[number]['changeFrequency'],
+    lastModified: post.date ? new Date(post.date) : defaultLastModified,
+  }));
+
+  const allRoutes = [...staticRoutes, ...caseStudyRoutes, ...blogPostRoutes];
+
+  return allRoutes.map(({ path, priority, changeFrequency, lastModified }) => ({
     url: `${siteUrl}${path}`,
-    lastModified,
+    lastModified: lastModified || defaultLastModified,
     changeFrequency,
     priority,
   }));

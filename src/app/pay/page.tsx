@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   title: 'Quick Pay - Kinstel Solutions',
   description: 'Make instant payments to Kinstel Solutions securely via Razorpay or PayPal. Fast payment processing for your invoices.',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 

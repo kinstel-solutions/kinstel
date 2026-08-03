@@ -4,6 +4,8 @@ import { Clock } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { QuoteBuilder } from "@/components/tools/quote-builder";
+import { JsonLd } from "@/components/seo/json-ld";
+import { createWebApplicationJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Get a Quote — Website & Growth Pricing",
@@ -15,8 +17,16 @@ export const metadata: Metadata = {
 };
 
 export default function QuotePage() {
+  const webAppJsonLd = createWebApplicationJsonLd({
+    name: "Interactive Project Quote Builder",
+    description:
+      "Calculate an instant cost and scope estimate for custom website development, SaaS platforms, or performance marketing campaigns.",
+    url: "https://www.kinstel.com/quote",
+  });
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={webAppJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero */}

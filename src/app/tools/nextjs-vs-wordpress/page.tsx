@@ -4,6 +4,8 @@ import { Clock, Scale } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { NextjsVsWordpressPicker } from "@/components/tools/nextjs-vs-wordpress-picker";
+import { JsonLd } from "@/components/seo/json-ld";
+import { createWebApplicationJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Next.js vs WordPress — Which Should You Choose? (Free Picker)",
@@ -15,8 +17,16 @@ export const metadata: Metadata = {
 };
 
 export default function NextjsVsWordpressPage() {
+  const webAppJsonLd = createWebApplicationJsonLd({
+    name: "Next.js vs WordPress Architecture Decision Matrix",
+    description:
+      "Interactive comparison tool to help businesses select between Next.js modern web framework and WordPress CMS based on speed, budget, and features.",
+    url: "https://www.kinstel.com/tools/nextjs-vs-wordpress",
+  });
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={webAppJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero */}

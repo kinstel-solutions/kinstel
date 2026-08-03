@@ -15,6 +15,7 @@ import { Check, Palette, Smartphone, LineChart, Code, Shield } from "lucide-reac
 import Link from "next/link";
 import { SmartCtaButton } from "@/components/ui/smart-cta-button";
 import { JsonLd } from "@/components/seo/json-ld";
+import { KeyTakeaways } from "@/components/ui/key-takeaways";
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
@@ -25,6 +26,25 @@ const serviceJsonLd = {
     name: "Kinstel Solutions",
   },
   areaServed: ["India", "Worldwide"],
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.kinstel.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.kinstel.com/services",
+    },
+  ],
 };
 
 export const metadata: Metadata = {
@@ -122,10 +142,17 @@ const pricingPackages = [
   },
 ];
 
+const serviceTakeaways = [
+  "Sub-Second Next.js Engineering: Custom static & edge-rendered applications built for 95+ PageSpeed scores.",
+  "Conversion-Engineered Funnels: Dedicated landing page design with built-in event tracking & lead forms.",
+  "Performance PPC & Local SEO: Google Ads RSA setup & Google Business Profile 3-Pack optimization.",
+  "Rapid Delivery SLA: 3-to-5 day rush build timelines for starter web suites and high-intent campaign funnels.",
+];
+
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={[serviceJsonLd, breadcrumbJsonLd]} />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -139,6 +166,7 @@ export default function ServicesPage() {
                 Comprehensive digital solutions designed to help your business grow.
                 From design to deployment, we've got you covered.
               </p>
+              <KeyTakeaways items={serviceTakeaways} className="text-left max-w-2xl mx-auto mb-8" />
               <p className="text-sm text-muted-foreground">
                 Need something beyond a website? See our{" "}
                 <Link href="/platforms" className="underline hover:text-accent">

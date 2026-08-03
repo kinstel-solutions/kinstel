@@ -4,6 +4,8 @@ import { Clock, Calculator } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { RoiCalculator } from "@/components/tools/roi-calculator";
+import { JsonLd } from "@/components/seo/json-ld";
+import { createWebApplicationJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Free Website ROI Calculator — Conversion Rate Revenue Impact",
@@ -15,8 +17,16 @@ export const metadata: Metadata = {
 };
 
 export default function WebsiteRoiCalculatorPage() {
+  const webAppJsonLd = createWebApplicationJsonLd({
+    name: "Website ROI & Conversion Value Calculator",
+    description:
+      "Calculate the revenue impact of website conversion optimization and traffic improvements.",
+    url: "https://www.kinstel.com/tools/website-roi-calculator",
+  });
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={webAppJsonLd} />
       <Header />
       <main className="flex-grow">
         {/* Hero */}
