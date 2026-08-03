@@ -22,7 +22,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
-    "Kinstel builds websites, platforms, and marketing for B2B & manufacturing, healthcare & wellness, education & coaching, home & local services, and legal — with the results each sector needs.",
+    "Kinstel Solutions engineers websites, custom platforms, and digital marketing for B2B manufacturing, healthcare, education, local services, and legal practices.",
   alternates: {
     canonical: "/industries",
   },

@@ -58,5 +58,18 @@ All performance-related tasks (image compression, font loading, critical CSS, bu
   - `src/app/contact/page.tsx`
   - `src/components/layout/footer.tsx`
 
+### Phase 42: Brand Name & Meta Consistency Audit
+- **File:** `gemini_organic_strategy/plans/phase-42_brand-name-and-meta-consistency-audit.md`
+- **Focus:** Adding "Kinstel Solutions" / "Kinstel" to all meta descriptions, OpenGraph tags, and tool metadata where it was missing.
+- **Target Files:**
+  - `src/app/website-audit/page.tsx`
+  - `src/app/services/page.tsx`
+  - `src/app/tools/page.tsx`
+  - `src/app/tools/google-ads-budget-estimator/page.tsx`
+  - `src/app/tools/nextjs-vs-wordpress/page.tsx`
+  - `src/app/tools/website-roi-calculator/page.tsx`
+  - `src/app/blog/[slug]/page.tsx`
+
 ---
 *Strategy managed in `gemini_organic_strategy`.*
+

@@ -10,7 +10,7 @@ import { createWebApplicationJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Free Website ROI Calculator — Conversion Rate Revenue Impact",
   description:
-    "See exactly how much more revenue a higher conversion rate would add to your website — free, instant, and based only on the numbers you enter.",
+    "See exactly how much more revenue a higher conversion rate would add to your website — free instant ROI calculator from Kinstel Solutions.",
   alternates: {
     canonical: "/tools/website-roi-calculator",
   },

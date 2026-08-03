@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Packages & Pricing — Kinstel Solutions",
   description:
-    "Explore transparent pricing packages for custom Next.js web design, SaaS platforms, SEO, and Google Ads performance marketing.",
+    "Clear, transparent pricing packages for web design, development, and digital marketing from Kinstel Solutions.",
   alternates: {
     canonical: "/packages",
   },

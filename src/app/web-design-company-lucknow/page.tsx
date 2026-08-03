@@ -72,7 +72,7 @@ import { localBusinessJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Leading Website Design Company in Lucknow",
   description:
-    "Best Web Designers in Lucknow. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Demo (Zero Upfront Cost). Schedule a consultation today!",
+    "Best Web Designers in Lucknow from Kinstel Solutions. Get Premium Web Design from ₹9999. SEO-Ready, Mobile-Friendly, Free Demo. Schedule a consultation today!",
   keywords: [
     "web design company in lucknow",
     "web development company in lucknow",
@@ -99,9 +99,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logos/knsl-mkt-banner-for-lucknow.webp",
-        width: 1000,
-        height: 1000,
+        url: "/social-assets/home-og-image.webp",
+        width: 1200,
+        height: 630,
         alt: "Kinstel Solutions — Trusted Web Development & IT Solutions Agency in Lucknow",
       },
     ],
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     title: "Leading Website Design Company in Lucknow | Kinstel",
     description:
       "Best Web Designers in Lucknow. Custom web design, SEO-ready, 90+ PageSpeed scores.",
-    images: ["/logos/knsl-mkt-banner-for-lucknow.webp"],
+    images: ["/social-assets/home-og-image.webp"],
   },
 };
 

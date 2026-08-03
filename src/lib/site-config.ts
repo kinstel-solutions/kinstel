@@ -14,4 +14,5 @@ export const siteConfig = {
     'custom web platforms',
     'google ads management',
   ],
+  ogImage: '/social-assets/home-og-image.webp',
 };

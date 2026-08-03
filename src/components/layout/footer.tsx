@@ -60,7 +60,7 @@ export function Footer() {
                   className="bg-accent p-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 inline-block"
                 >
                   <Image 
-                    src="/designrush-badge.png" 
+                    src="/designrush-badge.webp" 
                     alt="DesignRush" 
                     width={120} 
                     height={160}

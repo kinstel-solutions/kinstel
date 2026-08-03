@@ -70,13 +70,21 @@ export const metadata: Metadata = {
       "Stop losing clients to a bad website. Free Website Audit + Strategy Session from Kinstel.",
     url: "https://www.kinstel.com/global-promo",
     siteName: "Kinstel",
-    type: "website",
+    images: [
+      {
+        url: "/social-assets/home-og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Premium Global Web Design & Development | Kinstel Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Get Your Free Website Audit | Kinstel",
     description:
       "Free Website Audit + Strategy Session. Custom web design, SEO-ready, 90+ PageSpeed.",
+    images: ["/social-assets/home-og-image.webp"],
   },
 };
 

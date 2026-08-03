@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /studio
+Disallow: /studio/
 Disallow: /pay
 Disallow: /api/
 
@@ -13,7 +13,7 @@ User-agent: GPTBot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /studio
+Disallow: /studio/
 Disallow: /pay
 Disallow: /api/
 
@@ -21,7 +21,7 @@ User-agent: PerplexityBot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /studio
+Disallow: /studio/
 Disallow: /pay
 Disallow: /api/
 
@@ -29,7 +29,7 @@ User-agent: ClaudeBot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /studio
+Disallow: /studio/
 Disallow: /pay
 Disallow: /api/
 
@@ -37,7 +37,7 @@ User-agent: Bytespider
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /studio
+Disallow: /studio/
 Disallow: /pay
 Disallow: /api/
 
@@ -45,7 +45,7 @@ User-agent: CCBot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /studio
+Disallow: /studio/
 Disallow: /pay
 Disallow: /api/
 

@@ -11,7 +11,7 @@ import { createWebApplicationJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Free Website Audit — Speed, SEO & Performance Checker",
   description:
-    "Get a free instant audit of your website's speed, SEO, accessibility, and best practices — powered by Google. See what's costing you customers, in seconds.",
+    "Get a free, instant speed, SEO, and performance audit of your website from Kinstel Solutions. Powered by Google PageSpeed Insights.",
   alternates: {
     canonical: "/website-audit",
   },

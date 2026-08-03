@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: "Free Tools for Growing Your Website",
   description:
-    "Free, instant, ungated tools to help you grow your website — an ROI calculator, a Next.js vs WordPress picker, a Google Ads budget estimator, a speed & SEO audit, and an instant project quote.",
+    "Free, instant, ungated web growth tools from Kinstel Solutions — an ROI calculator, Next.js vs WordPress picker, Google Ads budget estimator, speed audit, and instant quote builder.",
   alternates: {
     canonical: "/tools",
   },
