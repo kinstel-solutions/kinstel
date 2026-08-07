@@ -1,0 +1,4 @@
+[2026-08-08 02:45:00] AUDIT: Audited Blog Post 3 (5-signs-your-website-is-costing-you-customers).
+[2026-08-08 02:45:15] ISSUE FOUND: Replaced generic DevTools cover image with a dedicated 1200x630 '5 Warning Signs Infographic' (5-warning-signs-website-costing-customers.webp).
+[2026-08-08 02:45:30] ENHANCEMENT: Embedded the real 100/100 DevTools performance benchmark screenshot inline under Section 1 ('It loads slowly') as empirical proof of sub-second load performance.
+[2026-08-08 02:46:00] VERIFICATION: Blog 3 audited, images updated, and verified on dev server.

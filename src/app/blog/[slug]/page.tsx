@@ -9,6 +9,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { posts } from "@/lib/blog";
 import { KeyTakeaways } from "@/components/ui/key-takeaways";
 
+import Image from "next/image";
+
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -27,6 +29,8 @@ export async function generateMetadata({
     return {};
   }
 
+  const ogImage = post.coverImage || "/social-assets/home-og-image.webp";
+
   return {
     title: post.title,
     description: post.description,
@@ -43,7 +47,7 @@ export async function generateMetadata({
       authors: [post.author],
       images: [
         {
-          url: "/social-assets/home-og-image.webp",
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -55,7 +59,7 @@ export async function generateMetadata({
       title: `${post.title} | Kinstel Solutions`,
       description: post.description,
       creator: "@kinstelhq",
-      images: ["/social-assets/home-og-image.webp"],
+      images: [ogImage],
     },
   };
 }
@@ -168,6 +172,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </Badge>
                 ))}
               </div>
+              {post.coverImage && (
+                <div className="relative mt-8 overflow-hidden rounded-xl border border-accent/20 bg-muted shadow-2xl">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title}
+                    width={1200}
+                    height={630}
+                    priority
+                    className="w-full object-cover transition-transform duration-500 hover:scale-[1.01]"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>

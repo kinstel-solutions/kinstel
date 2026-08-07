@@ -1,0 +1,4 @@
+[2026-08-08 02:19:00] AUDIT: Audited Blog Post 2 (nextjs-vs-wordpress).
+[2026-08-08 02:19:15] ISSUE FOUND: Replaced generic portfolio screenshot with a high-impact side-by-side comparison infographic (nextjs-vs-wordpress-comparison-infographic.webp) contrasting WordPress legacy plugin bloat vs Next.js 99+ PageSpeed & Edge CDN.
+[2026-08-08 02:41:00] CURRENCY FIX: Standardized currency notation across post — replacing inconsistent $20,000 reference with ₹1,50,000+ ($2,000+) and ₹15,000 (approx. $180 / A$250) for total regional currency consistency.
+[2026-08-08 02:41:30] VERIFICATION: Blog 2 currency fix verified on dev server.
