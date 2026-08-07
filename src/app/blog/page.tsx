@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { type Metadata } from "next";
@@ -59,12 +60,23 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   className="block h-full">
                   <Card
-                    className="group flex h-full flex-col p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-xl animate-in fade-in slide-in-from-bottom-5"
+                    className="group flex h-full flex-col overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-xl animate-in fade-in slide-in-from-bottom-5"
                     style={{
                       animationDelay: `${index * 100}ms`,
                       animationFillMode: "backwards",
                     }}>
-                    <CardContent className="flex flex-1 flex-col p-0">
+                    {post.coverImage && (
+                      <div className="relative aspect-video w-full overflow-hidden border-b border-border/50 bg-muted">
+                        <Image
+                          src={post.coverImage}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+                    <CardContent className="flex flex-1 flex-col p-6">
                       <p className="mb-2 text-sm font-semibold text-accent">
                         {formatDate(post.date)}
                       </p>

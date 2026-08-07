@@ -1,0 +1,4 @@
+[2026-08-08 03:36:00] AUDIT: Audited Blog Post 6 (hiring-indian-web-agency-without-swift-fees).
+[2026-08-08 03:36:15] ISSUE FOUND: Blog post missing coverImage property. Created a dedicated 1200x630 'Hiring Indian Web Agencies Without SWIFT Fees Infographic' (hiring-indian-agency-zero-swift-fees-infographic.webp) illustrating USD ACH, UK BACS, EU SEPA, AUD Osko local transfers and e-FIRC compliance.
+[2026-08-08 03:36:30] ENHANCEMENT: Embedded user's manually blurred Search Console screenshot (gsc-jbc-search-clicks-up-162-percent.webp) inline under Section 3 ('Review Tech Stack') showing empirical 194 clicks & +162% organic growth on Next.js builds.
+[2026-08-08 03:37:00] VERIFICATION: Blog 6 audited, images updated, and verified on dev server.

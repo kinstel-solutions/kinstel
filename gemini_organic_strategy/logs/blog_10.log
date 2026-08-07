@@ -1,0 +1,5 @@
+[2026-08-08 03:48:00] AUDIT: Audited Blog Post 10 (zero-swift-wire-fees-cross-border-remittances).
+[2026-08-08 03:48:15] COVER UPDATE: Replaced GA4 analytics screenshot cover with a 1200x630 'Global Remittances Zero SWIFT Wire Fees Infographic' (zero-swift-remittance-global-infographic.webp) illustrating USD ACH, UK BACS, EU SEPA, AUD Osko, CAD EFT rails and e-FIRC compliance.
+[2026-08-08 03:48:30] BRAND FIX: Removed vendor name Razorpay from description, tags, takeaways, and body text.
+[2026-08-08 03:48:45] ENHANCEMENT: Embedded real GA4 ChatGPT AI traffic dashboard screenshot (ga4-chatgpt-ai-assistant-54-percent-conversion-rate.webp) inline under Section 4 ('Experience Friction-Free Global Invoicing') as empirical proof of high-conversion traffic.
+[2026-08-08 03:49:00] VERIFICATION: Blog 10 audited, images updated, and verified on dev server.

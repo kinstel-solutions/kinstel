@@ -1,0 +1,4 @@
+[2026-08-08 03:40:00] AUDIT: Audited Blog Post 7 (nextjs-vs-wordpress-global-stack-performance).
+[2026-08-08 03:40:15] ISSUE FOUND: Replaced generic PageSpeed screenshot cover with a 1200x630 'Global Stack Performance Next.js vs WordPress Infographic' (global-stack-performance-infographic.webp) illustrating legacy PHP origin latency vs Next.js Edge CDN nodes across global hubs.
+[2026-08-08 03:40:30] ENHANCEMENT: Embedded the real 99 Performance & 100 SEO DevTools Lighthouse screenshot (pagespeed-chopra-retec-99-performance-100-seo.webp) inline under Section 2 ('The Next.js Advantage') as empirical proof of enterprise performance.
+[2026-08-08 03:41:00] VERIFICATION: Blog 7 audited, images updated, and verified on dev server.
