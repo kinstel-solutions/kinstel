@@ -341,7 +341,7 @@ const portfolioItems = [
       "Conversion Focused",
       "SEO Optimized",
     ],
-    link: "https://www.jamesbondcleaning.au",
+    link: "https://gold-coast-cleaners-git-main-james-bond-cleaning.vercel.app",
   },
   {
     image: "/portfolio-imgs/fahemifarz.webp",

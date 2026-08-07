@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Loader2, Send, Info, User, Mail, Phone, FileText, Fingerprint, MessageSquare, ShieldCheck, Wallet, Lock, Shield } from "lucide-react";
+import { Loader2, Send, Info, User, Mail, Phone, FileText, Fingerprint, MessageSquare, ShieldCheck, Wallet, Lock, Shield, Building2 } from "lucide-react";
 import { BorderBeam } from "@/components/ui/border-beam";
 import {
   paymentSchema,
@@ -81,6 +81,9 @@ declare global {
 export default function PaymentForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  // Payment mode tab state: 'card' or 'bank'
+  const [paymentMode, setPaymentMode] = useState<'card' | 'bank'>('card');
 
   // URL Parameter parsing
   const urlAmount = searchParams.get("amount");
@@ -265,17 +268,104 @@ export default function PaymentForm() {
   const currencySymbol = CURRENCY_SYMBOLS[currencyValue as Currency];
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-6">
-        <div className="space-y-2">
-          <h2 className="text-xl font-bold flex items-center gap-2">
-            <Wallet className="h-5 w-5 text-accent" />
-            Payment Details
-          </h2>
-          <p className="text-sm text-muted-foreground">Select your currency and enter the amount from your invoice.</p>
+    <div className="w-full max-w-2xl mx-auto space-y-6">
+      {/* Payment Method Selector Tabs */}
+      <div className="grid grid-cols-2 gap-2 p-1.5 bg-muted/60 rounded-xl border border-border/50">
+        <button
+          type="button"
+          onClick={() => setPaymentMode('card')}
+          className={`flex items-center justify-center gap-2 py-2.5 px-3 text-xs md:text-sm font-semibold rounded-lg transition-all duration-200 ${
+            paymentMode === 'card'
+              ? 'bg-background text-foreground shadow-sm border border-border/80'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <Wallet className="w-4 h-4 text-accent" />
+          <span>💳 Credit Card / PayPal</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setPaymentMode('bank')}
+          className={`flex items-center justify-center gap-2 py-2.5 px-3 text-xs md:text-sm font-semibold rounded-lg transition-all duration-200 ${
+            paymentMode === 'bank'
+              ? 'bg-background text-foreground shadow-sm border border-border/80'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <Building2 className="w-4 h-4 text-emerald-500" />
+          <span>🏛️ Direct Bank Transfer</span>
+          <span className="text-[10px] bg-emerald-500/10 text-emerald-600 px-1.5 py-0.5 rounded-full border border-emerald-500/20 font-bold">$0 Fee</span>
+        </button>
+      </div>
+
+      {paymentMode === 'bank' ? (
+        /* Direct Bank Transfer Information Card */
+        <div className="bg-card rounded-2xl border-2 border-emerald-500/20 p-6 md:p-8 space-y-6 shadow-sm">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+              <Building2 className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold font-headline text-foreground">
+                Local ACH / Wire Transfer (Razorpay MoneySaver)
+              </h3>
+              <p className="text-xs text-muted-foreground mt-1">
+                Transfer funds directly in your currency (USD, GBP, EUR, AUD, CAD, DKK, INR) with <strong>$0 Intermediary SWIFT Wire Fees</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-accent/10 border border-accent/20 space-y-2 text-xs">
+            <div className="flex items-center gap-2 font-bold text-accent">
+              <ShieldCheck className="w-4 h-4" /> 💡 High-Ticket Transfer Incentive
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Save <strong>2% on project invoices over $2,000 / €2,000 / £2,000</strong> when paying via direct local ACH, SEPA, BACS, or domestic Wire transfer.
+            </p>
+          </div>
+
+          <div className="border-t border-border/60 pt-4 space-y-3">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Official Verified Accounts Available:
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-border/40 font-medium">🇺🇸 USD (ACH / FedWire)</div>
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-border/40 font-medium">🇬🇧 GBP (FPS / BACS)</div>
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-border/40 font-medium">🇪🇺 EUR (SEPA Instant)</div>
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-border/40 font-medium">🇦🇺 AUD (Osko / NPP)</div>
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-border/40 font-medium">🇨🇦 CAD (EFT Direct)</div>
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-border/40 font-medium">🇮🇳 INR (Bank of Baroda)</div>
+            </div>
+          </div>
+
+          <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+            <Button asChild className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-semibold">
+              <a href="/payment-methods" target="_blank" rel="noopener noreferrer">
+                View Account Numbers & Routing Codes →
+              </a>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setPaymentMode('card')}
+              className="w-full sm:w-auto text-xs"
+            >
+              Switch to Credit Card Checkout
+            </Button>
+          </div>
         </div>
+      ) : (
+        /* Online Credit Card / PayPal Form */
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold flex items-center gap-2">
+              <Wallet className="h-5 w-5 text-accent" />
+              Online Card & PayPal Details
+            </h2>
+            <p className="text-sm text-muted-foreground">Select your currency and enter the amount from your invoice.</p>
+          </div>
 
         {/* Currency Selector - Required */}
         <div className="space-y-2">
@@ -569,6 +659,7 @@ export default function PaymentForm() {
           </div>
         </div>
       </form>
+      )}
     </div>
   );
 }

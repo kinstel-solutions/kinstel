@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/tools/google-ads-budget-estimator', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/web-design-company-lucknow', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/global-promo', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/payment-methods', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/terms-and-conditions', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/refund-policy', priority: 0.3, changeFrequency: 'yearly' },
