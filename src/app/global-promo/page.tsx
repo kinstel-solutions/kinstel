@@ -206,7 +206,15 @@ const faqItems = [
   },
   {
     q: "Do you work with clients outside India?",
-    a: "Absolutely. We actively serve clients in Australia, the US, UK, and Canada. We're experienced in cross-timezone collaboration and use modern project management tools to keep everything seamless.",
+    a: "Absolutely. We actively serve clients in Australia, the US, UK, Europe, and Canada. We offer local currency bank accounts (USD ACH, UK BACS, EU SEPA, AUD EFT) with zero SWIFT wire fees, and use modern project management tools for smooth cross-timezone collaboration.",
+  },
+  {
+    q: "How do international clients pay for projects?",
+    a: (
+      <>
+        Clients in the US, UK, EU, Australia, Canada, and India can pay via direct local bank transfers (ACH, BACS, SEPA, EFT, UPI) or credit cards/PayPal. You can view all supported local bank account routing details on our <Link href="/payment-methods" className="text-accent hover:underline font-semibold">Payment Methods Portal</Link>.
+      </>
+    ),
   },
   {
     q: "What technologies do you use?",

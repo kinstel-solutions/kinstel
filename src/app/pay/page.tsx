@@ -1,8 +1,9 @@
 import { type Metadata } from 'next';
+import Link from 'next/link';
 import PaymentForm from './components/payment-form';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { ShieldCheck, Zap, Mail } from 'lucide-react';
+import { ShieldCheck, Zap, Mail, ArrowRight } from 'lucide-react';
 import { Suspense } from 'react';
 
 /**
@@ -36,8 +37,10 @@ export default function QuickPayPage() {
             Make secure payments to Kinstel Solutions instantly. Enter your invoice amount and complete payment in seconds.
           </p>
           <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
-            <span>🌐 International Payments:</span>
-            <span className="text-foreground">Cards, PayPal & Direct Wire Remittances via Razorpay</span>
+            <span>🌐 Looking for local ACH, SEPA, BACS or Wire Transfer details?</span>
+            <Link href="/payment-methods" className="text-foreground hover:underline font-bold flex items-center gap-1">
+              View Payment Methods Portal <ArrowRight className="w-3 h-3" />
+            </Link>
           </div>
         </div>
 

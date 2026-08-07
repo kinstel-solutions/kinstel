@@ -179,22 +179,30 @@ export function SignaturePackagesSection() {
       />
 
       {/* Currency Switcher & International Payments Trust Tray */}
-      <div className="mb-12 flex flex-col md:flex-row items-center justify-between gap-6 p-4 rounded-2xl bg-card/50 border border-border/60 backdrop-blur-sm">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+      <div className="mb-12 flex flex-col md:flex-row items-center justify-between gap-6 p-4 md:p-6 rounded-2xl bg-card/50 border border-border/60 backdrop-blur-sm shadow-sm">
+        <div className="flex items-start md:items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 mt-0.5 md:mt-0">
             <Globe className="w-5 h-5" />
           </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-accent">Cross-Border Service Exports</p>
-            <p className="text-sm text-muted-foreground font-medium">
-              Accepting International Cards, PayPal & Direct Bank Wire Remittances via Razorpay
+          <div className="space-y-0.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-xs font-bold uppercase tracking-wider text-accent">Frictionless Cross-Border Remittances</p>
+              <span className="text-[10px] bg-emerald-500/10 text-emerald-600 font-bold px-2 py-0.5 rounded-full border border-emerald-500/20">
+                ⚡ $0 Intermediary Wire Fee
+              </span>
+            </div>
+            <p className="text-xs md:text-sm text-muted-foreground font-medium">
+              Pay in USD, GBP, EUR, AUD, CAD, or INR via Credit Card, PayPal, or Direct Bank Transfer (ACH / SEPA / BACS).{' '}
+              <a href="/payment-methods" className="text-accent hover:underline font-bold">
+                View Local Account Details →
+              </a>
             </p>
           </div>
         </div>
 
         {/* Currency Dropdown Selector */}
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold text-foreground">Payment Currency:</span>
+        <div className="flex items-center gap-3 shrink-0">
+          <span className="text-xs md:text-sm font-semibold text-foreground">Payment Currency:</span>
           <Select value={currency} onValueChange={(val) => setCurrency(val as Currency)}>
             <SelectTrigger className="w-[140px] h-10 font-bold bg-background border-border">
               <SelectValue />

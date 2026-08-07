@@ -195,6 +195,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/payment-methods" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Payment Methods
+                  </Link>
+                </li>
+                <li>
                   <Link href="/web-design-company-lucknow" className="text-muted-foreground hover:text-foreground transition-colors">
                     Lucknow Agency
                   </Link>
@@ -434,9 +439,35 @@ export function Footer() {
             <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">IEC: HLCPS8014Q</span>
             <span className="rounded-md border border-border/60 bg-muted/30 px-2.5 py-1">D-U-N-S®: 77-197-4415</span>
           </div>
-          <p className="text-xs text-accent/90 mb-2 font-medium">
+          <p className="text-xs text-accent/90 mb-3 font-medium">
             🔒 Secure International Payments, PayPal & Bank Wire Remittances Processed via Razorpay
           </p>
+
+          {/* Visual Payment Badges Tray */}
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-2 text-[11px] text-muted-foreground font-semibold">
+            <span className="px-2.5 py-1 rounded-md bg-secondary/80 border border-border/50 flex items-center gap-1">
+              💳 Visa & Mastercard
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-secondary/80 border border-border/50 flex items-center gap-1">
+              🅿️ PayPal
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center gap-1">
+              🇺🇸 US ACH / Wire
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center gap-1">
+              🇪🇺 EU SEPA
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center gap-1">
+              🇬🇧 UK BACS
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center gap-1">
+              🇦🇺 AU Osko
+            </span>
+            <Link href="/payment-methods" className="px-2.5 py-1 rounded-md bg-accent/10 text-accent border border-accent/20 hover:underline flex items-center gap-1">
+              ⚡ All Payment Methods →
+            </Link>
+          </div>
+
           <p>Copyright &copy; {currentYear} Kinstel Solutions. All rights reserved.</p>
         </div>
       </div>

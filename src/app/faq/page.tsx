@@ -101,13 +101,29 @@ const faqs: {
     question: "Do you work with clients outside India?",
     answer: (
       <>
-        Yes. We've built and marketed sites for businesses in India and
-        abroad (including Australia), and we can quote and invoice in your
-        local currency.
+        Yes. We actively serve clients in the US, UK, Europe, Australia, Canada, and India. We provide dedicated local currency bank receiving accounts (USD ACH, UK BACS, EU SEPA, AUD EFT) with zero SWIFT wire fees, and invoice in your native currency. View all supported region account details on our{" "}
+        <Link href="/payment-methods" className="underline hover:text-accent font-semibold">
+          Payment Methods Portal
+        </Link>
+        .
       </>
     ),
     plainText:
-      "Yes. We've built and marketed sites for businesses in India and abroad (including Australia), and we can quote and invoice in your local currency.",
+      "Yes. We actively serve clients in the US, UK, Europe, Australia, Canada, and India. We provide dedicated local currency bank receiving accounts (USD ACH, UK BACS, EU SEPA, AUD EFT) with zero SWIFT wire fees, and invoice in your native currency.",
+  },
+  {
+    question: "How can international clients pay Kinstel Solutions?",
+    answer: (
+      <>
+        Clients worldwide can pay via direct local bank transfers (US ACH / FedWire, UK BACS, EU SEPA Instant, Australian EFT/Osko, Canadian EFT, Indian UPI/NEFT) or online via major Credit Cards and PayPal. For local wire details, visit our{" "}
+        <Link href="/payment-methods" className="underline hover:text-accent font-semibold">
+          Payment Methods page
+        </Link>
+        .
+      </>
+    ),
+    plainText:
+      "Clients worldwide can pay via direct local bank transfers (US ACH / FedWire, UK BACS, EU SEPA Instant, Australian EFT/Osko, Canadian EFT, Indian UPI/NEFT) or online via major Credit Cards and PayPal.",
   },
   {
     question: "Do you only build websites, or marketing too?",
