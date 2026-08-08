@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Service Business (Cleaning)",
     location: "Queensland, Australia",
     image: "/portfolio-imgs/jamesbond.webp",
-    liveUrl: "https://gold-coast-cleaners-git-main-james-bond-cleaning.vercel.app",
+    liveUrl: "https://gold-coast-cleaners.vercel.app",
     summary:
       "A conversion-focused 17-page website plus ongoing SEO for an Australian commercial cleaning business.",
     challenge:
